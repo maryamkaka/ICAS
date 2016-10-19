@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NewApplication</string>
+    <string name="title_activity_first_question">FirstQuestion</string>
+    <string name="text_to_change">Headache</string>
+    <string name="lessSevere">Less Severe</string>
+    <string name="moreSevere">More Severe</string>
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+</resources>
