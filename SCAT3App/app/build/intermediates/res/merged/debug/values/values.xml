@@ -558,9 +558,19 @@
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="five">5</string>
+    <string name="four">4</string>
+    <string name="lessSevere">Less Severe</string>
+    <string name="moreSevere">More Severe</string>
+    <string name="one">1</string>
     <string name="search_menu_title">Search</string>
+    <string name="six">6</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="text_to_change">Headache</string>
+    <string name="three">3</string>
     <string name="title_activity_first_question">FirstQuestion</string>
+    <string name="two">2</string>
+    <string name="zero">0</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

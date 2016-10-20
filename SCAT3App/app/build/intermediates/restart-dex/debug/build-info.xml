@@ -4,40 +4,33 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="1242312873184375"
-    token="2019974169149806808"
-    verifier="COLD_SWAP_REQUESTED" >
+    timestamp="566530218456895"
+    token="-1861146952999843192"
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="127" />
+        duration="750" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="22" />
+        duration="460" />
     <task
         name="verifier"
-        duration="6" />
+        duration="100" />
 
     <artifact
-        location="C:\Users\adambirosh-admin\AndroidStudioProjects\NewApplication\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
-        type="DEX" />
+        location="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="1242032729444908"
-        verifier="MANIFEST_FILE_CHANGE" >
+        timestamp="566530218456895"
+        verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\adambirosh-admin\AndroidStudioProjects\NewApplication\app\build\outputs\apk\app-debug.apk"
+            location="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="1242312873184375"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\adambirosh-admin\AndroidStudioProjects\NewApplication\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

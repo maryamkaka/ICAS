@@ -1,7 +1,7 @@
-#Tue Oct 11 21:22:40 EDT 2016
-base.0=C\:\\Users\\adambirosh-admin\\AndroidStudioProjects\\NewApplication\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_79c555652d262116602f5a8bd63baeb4f3c20e5f
+#Thu Oct 20 13:14:27 EDT 2016
+base.0=C\:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4e62ca23b1c951e7d76cafa799a69eaf824d4982
 renamed.1=classes.dex
 renamed.0=classes2.dex
-file.1=C\:\\Users\\adambirosh-admin\\AndroidStudioProjects\\NewApplication\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_02e65cd31fee1ee8a9eb3b59c7edae1ed8fa6593\\classes.dex
-base.1=C\:\\Users\\adambirosh-admin\\AndroidStudioProjects\\NewApplication\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_02e65cd31fee1ee8a9eb3b59c7edae1ed8fa6593
-file.0=C\:\\Users\\adambirosh-admin\\AndroidStudioProjects\\NewApplication\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_79c555652d262116602f5a8bd63baeb4f3c20e5f\\classes.dex
+file.1=C\:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_0502aa671a17cf4804e3643dbcd8a1fb6e981243\\classes.dex
+base.1=C\:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_0502aa671a17cf4804e3643dbcd8a1fb6e981243
+file.0=C\:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4e62ca23b1c951e7d76cafa799a69eaf824d4982\\classes.dex
