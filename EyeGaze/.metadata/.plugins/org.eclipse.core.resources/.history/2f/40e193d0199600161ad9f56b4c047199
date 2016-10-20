@@ -1,0 +1,16 @@
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
+
+
+
+public class mainmenu {
+	public static void main(String[] args){
+		
+		//New object
+		secondary bucky = new secondary();
+		//when x button is clicked, program terminates
+		bucky.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		bucky.setSize(500,500);
+		bucky.setVisible(true);
+	}
+}

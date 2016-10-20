@@ -1,0 +1,15 @@
+import javax.swing.JOptionPane;
+
+
+
+public class mainmenu {
+	public static void main(String[] args){
+	
+		//Collect input from subject
+		String fn = JOptionPane.showInputDialog("Enter Subject Name");
+		String sn = JOptionPane.showInputDialog("Enter date of collection");
+		
+		//Output Message to the user
+		JOptionPane.showMessageDialog(null, "Proceed to data collection");
+	}
+}
