@@ -16,6 +16,8 @@ p2 = plot(y)
 p3 = plot(z)
 legend('show')
 
+pause(1)
+
 while(1)
     [a, ~] = accellog(m);
     if(length(a)) > 1000
