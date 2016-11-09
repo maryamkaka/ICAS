@@ -1,0 +1,91 @@
+
+**** Clean-only build of configuration Debug for project SensorTag ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "SensorTag.out"  "configPkg\linker.cmd" "configPkg\compiler.opt"  "SensorTag.hex" 
+makefile:225: recipe for target 'clean' failed
+The system cannot find the file specified.
+gmake: [clean] Error 1 (ignored)
+RMDIR /S/Q  "configPkg\" 
+makefile:225: recipe for target 'clean' failed
+The system cannot find the file specified.
+gmake: [clean] Error 2 (ignored)
+DEL /F "Application\SensorTag.d" "Application\SensorTag_Bar.d" "Application\SensorTag_ConnCtrl.d" "Application\SensorTag_Hum.d" "Application\SensorTag_IO.d" "Application\SensorTag_Keys.d" "Application\SensorTag_Mov.d" "Application\SensorTag_Opt.d" "Application\SensorTag_Tmp.d" "Application\util.d" "Board\Devices\ext_flash.d" "Board\Devices\sensor_bmp280.d" "Board\Devices\sensor_hdc1000.d" "Board\Devices\sensor_mpu9250.d" "Board\Devices\sensor_opt3001.d" "Board\Devices\sensor_tmp007.d" "Board\Interfaces\bsp_i2c.d" "Board\Interfaces\bsp_spi.d" "Board\Interfaces\sensor.d" "Drivers\I2C\I2C.d" "Drivers\I2C\I2CCC26XX.d" "Drivers\PIN\PINCC26XX.d" "Drivers\SPI\SPI.d" "Drivers\SPI\SPICC26XXDMA.d" "Drivers\UDMA\UDMACC26XX.d" "ICall\ICall.d" "ICall\ICallCC2650.d" "ICallBLE\ICallBleAPI.d" "ICallBLE\bleUserConfig.d" "PROFILES\barometerservice.d" "PROFILES\ccservice.d" "PROFILES\devinfoservice.d" "PROFILES\gatt_uuid.d" "PROFILES\gattservapp_util.d" "PROFILES\humidityservice.d" "PROFILES\ioservice.d" "PROFILES\irtempservice.d" 
+DEL /F "PROFILES\movementservice.d" "PROFILES\oad.d" "PROFILES\oad_target_externalFlash.d" "PROFILES\opticservice.d" "PROFILES\peripheral.d" "PROFILES\registerservice.d" "PROFILES\simplekeys.d" "PROFILES\st_util.d" "Startup\Board.d" "Startup\ccfg_appBLE.d" "Startup\main.d" 
+DEL /F "Application\SensorTag.obj" "Application\SensorTag_Bar.obj" "Application\SensorTag_ConnCtrl.obj" "Application\SensorTag_Hum.obj" "Application\SensorTag_IO.obj" "Application\SensorTag_Keys.obj" "Application\SensorTag_Mov.obj" "Application\SensorTag_Opt.obj" "Application\SensorTag_Tmp.obj" "Application\util.obj" "Board\Devices\ext_flash.obj" "Board\Devices\sensor_bmp280.obj" "Board\Devices\sensor_hdc1000.obj" "Board\Devices\sensor_mpu9250.obj" "Board\Devices\sensor_opt3001.obj" "Board\Devices\sensor_tmp007.obj" "Board\Interfaces\bsp_i2c.obj" "Board\Interfaces\bsp_spi.obj" "Board\Interfaces\sensor.obj" "Drivers\I2C\I2C.obj" "Drivers\I2C\I2CCC26XX.obj" "Drivers\PIN\PINCC26XX.obj" "Drivers\SPI\SPI.obj" "Drivers\SPI\SPICC26XXDMA.obj" "Drivers\UDMA\UDMACC26XX.obj" "ICall\ICall.obj" "ICall\ICallCC2650.obj" "ICallBLE\ICallBleAPI.obj" "ICallBLE\bleUserConfig.obj" "PROFILES\barometerservice.obj" "PROFILES\ccservice.obj" "PROFILES\devinfoservice.obj" "PROFILES\gatt_uuid.obj" "PROFILES\gattservapp_util.obj" 
+DEL /F "PROFILES\humidityservice.obj" "PROFILES\ioservice.obj" "PROFILES\irtempservice.obj" "PROFILES\movementservice.obj" "PROFILES\oad.obj" "PROFILES\oad_target_externalFlash.obj" "PROFILES\opticservice.obj" "PROFILES\peripheral.obj" "PROFILES\registerservice.obj" "PROFILES\simplekeys.obj" "PROFILES\st_util.obj" "Startup\Board.obj" "Startup\ccfg_appBLE.obj" "Startup\main.obj" 
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Application\SensorTag.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Board\Devices\ext_flash.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Board\Interfaces\bsp_i2c.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\I2C\I2C.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\PIN\PINCC26XX.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\SPI\SPI.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\UDMA\UDMACC26XX.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\ICall\ICall.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\ICallBLE\ICallBleAPI.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\PROFILES\barometerservice.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\PROFILES\movementservice.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Startup\Board.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Application\SensorTag.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Board\Devices\ext_flash.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Board\Interfaces\bsp_i2c.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\I2C\I2C.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\PIN\PINCC26XX.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\SPI\SPI.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\UDMA\UDMACC26XX.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\ICall\ICall.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\ICallBLE\ICallBleAPI.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\PROFILES\barometerservice.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\PROFILES\humidityservice.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Startup\Board.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project SensorTag ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "SensorTag.out"  "configPkg\linker.cmd" "configPkg\compiler.opt"  "SensorTag.hex" 
+makefile:225: recipe for target 'clean' failed
+The system cannot find the file specified.
+gmake: [clean] Error 1 (ignored)
+RMDIR /S/Q  "configPkg\" 
+makefile:225: recipe for target 'clean' failed
+The system cannot find the file specified.
+gmake: [clean] Error 2 (ignored)
+DEL /F "Application\SensorTag.d" "Application\SensorTag_Bar.d" "Application\SensorTag_ConnCtrl.d" "Application\SensorTag_Hum.d" "Application\SensorTag_IO.d" "Application\SensorTag_Keys.d" "Application\SensorTag_Mov.d" "Application\SensorTag_Opt.d" "Application\SensorTag_Tmp.d" "Application\util.d" "Board\Devices\ext_flash.d" "Board\Devices\sensor_bmp280.d" "Board\Devices\sensor_hdc1000.d" "Board\Devices\sensor_mpu9250.d" "Board\Devices\sensor_opt3001.d" "Board\Devices\sensor_tmp007.d" "Board\Interfaces\bsp_i2c.d" "Board\Interfaces\bsp_spi.d" "Board\Interfaces\sensor.d" "Drivers\I2C\I2C.d" "Drivers\I2C\I2CCC26XX.d" "Drivers\PIN\PINCC26XX.d" "Drivers\SPI\SPI.d" "Drivers\SPI\SPICC26XXDMA.d" "Drivers\UDMA\UDMACC26XX.d" "ICall\ICall.d" "ICall\ICallCC2650.d" "ICallBLE\ICallBleAPI.d" "ICallBLE\bleUserConfig.d" "PROFILES\barometerservice.d" "PROFILES\ccservice.d" "PROFILES\devinfoservice.d" "PROFILES\gatt_uuid.d" "PROFILES\gattservapp_util.d" "PROFILES\humidityservice.d" "PROFILES\ioservice.d" "PROFILES\irtempservice.d" 
+DEL /F "PROFILES\movementservice.d" "PROFILES\oad.d" "PROFILES\oad_target_externalFlash.d" "PROFILES\opticservice.d" "PROFILES\peripheral.d" "PROFILES\registerservice.d" "PROFILES\simplekeys.d" "PROFILES\st_util.d" "Startup\Board.d" "Startup\ccfg_appBLE.d" "Startup\main.d" 
+DEL /F "Application\SensorTag.obj" "Application\SensorTag_Bar.obj" "Application\SensorTag_ConnCtrl.obj" "Application\SensorTag_Hum.obj" "Application\SensorTag_IO.obj" "Application\SensorTag_Keys.obj" "Application\SensorTag_Mov.obj" "Application\SensorTag_Opt.obj" "Application\SensorTag_Tmp.obj" "Application\util.obj" "Board\Devices\ext_flash.obj" "Board\Devices\sensor_bmp280.obj" "Board\Devices\sensor_hdc1000.obj" "Board\Devices\sensor_mpu9250.obj" "Board\Devices\sensor_opt3001.obj" "Board\Devices\sensor_tmp007.obj" "Board\Interfaces\bsp_i2c.obj" "Board\Interfaces\bsp_spi.obj" "Board\Interfaces\sensor.obj" "Drivers\I2C\I2C.obj" "Drivers\I2C\I2CCC26XX.obj" "Drivers\PIN\PINCC26XX.obj" "Drivers\SPI\SPI.obj" "Drivers\SPI\SPICC26XXDMA.obj" "Drivers\UDMA\UDMACC26XX.obj" "ICall\ICall.obj" "ICall\ICallCC2650.obj" "ICallBLE\ICallBleAPI.obj" "ICallBLE\bleUserConfig.obj" "PROFILES\barometerservice.obj" "PROFILES\ccservice.obj" "PROFILES\devinfoservice.obj" "PROFILES\gatt_uuid.obj" "PROFILES\gattservapp_util.obj" 
+DEL /F "PROFILES\humidityservice.obj" "PROFILES\ioservice.obj" "PROFILES\irtempservice.obj" "PROFILES\movementservice.obj" "PROFILES\oad.obj" "PROFILES\oad_target_externalFlash.obj" "PROFILES\opticservice.obj" "PROFILES\peripheral.obj" "PROFILES\registerservice.obj" "PROFILES\simplekeys.obj" "PROFILES\st_util.obj" "Startup\Board.obj" "Startup\ccfg_appBLE.obj" "Startup\main.obj" 
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Application\SensorTag.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Board\Devices\ext_flash.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Board\Interfaces\bsp_i2c.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\I2C\I2C.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\PIN\PINCC26XX.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\SPI\SPI.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\UDMA\UDMACC26XX.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\ICall\ICall.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\ICallBLE\ICallBleAPI.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\PROFILES\barometerservice.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\PROFILES\movementservice.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Startup\Board.d
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Application\SensorTag.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Board\Devices\ext_flash.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Board\Interfaces\bsp_i2c.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\I2C\I2C.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\PIN\PINCC26XX.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\SPI\SPI.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Drivers\UDMA\UDMACC26XX.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\ICall\ICall.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\ICallBLE\ICallBleAPI.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\PROFILES\barometerservice.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\PROFILES\humidityservice.obj
+Could Not Find C:\Users\mkaka\Desktop\ICAS\Posturography\SensorTag\SensorTag\Debug\Startup\Board.obj
+'Finished clean'
+' '
+
+**** Build Finished ****
+Buildfile generation error occurred..
+Referenced project 'SensorTagStack' does not exist in the workspace. Project 'SensorTag' may not build as expected.
+Build stopped..

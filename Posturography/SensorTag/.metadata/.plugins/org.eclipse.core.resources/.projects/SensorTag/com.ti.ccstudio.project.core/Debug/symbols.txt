@@ -1,0 +1,56 @@
+#define __unsigned_chars__ 1	/* Predefined */
+#define __DATE__ "Nov  9 2016"	/* Predefined */
+#define __TIME__ "00:13:47"	/* Predefined */
+#define __STDC__ 1	/* Predefined */
+#define __STDC_VERSION__ 199409L	/* Predefined */
+#define __TI_C99_COMPLEX_ENABLED__ 1	/* Predefined */
+#define __edg_front_end__ 1	/* Predefined */
+#define __EDG_VERSION__ 404	/* Predefined */
+#define __EDG_SIZE_TYPE__ unsigned int	/* Predefined */
+#define __EDG_PTRDIFF_TYPE__ int	/* Predefined */
+#define __GNUC_GNU_INLINE__ 1	/* Predefined */
+#define __GNUC_MINOR__ 3	/* Predefined */
+#define __GNUC_PATCHLEVEL__ 0	/* Predefined */
+#define __VERSION__ "EDG gcc 4.3 mode"	/* Predefined */
+#define __TI_COMPILER_VERSION__ 15012003	/* Predefined */
+#define __COMPILER_VERSION__ 15012003	/* Predefined */
+#define __TMS470__ 1	/* Predefined */
+#define __TI_ARM__ 1	/* Predefined */
+#define __16bis__ 1	/* Predefined */
+#define __eabi__ 1	/* Predefined */
+#define __TI_EABI_SUPPORT__ 1	/* Predefined */
+#define __TI_EABI__ 1	/* Predefined */
+#define __TI_VFPLIB_SUPPORT__ 1	/* Predefined */
+#define __TI_TMS470_V7__ 1	/* Predefined */
+#define __TI_ARM_V7__ 1	/* Predefined */
+#define __TI_TMS470_V7M3__ 1	/* Predefined */
+#define __TI_ARM_V7M3__ 1	/* Predefined */
+#define __SIZE_T_TYPE__ unsigned	/* Predefined */
+#define __PTRDIFF_T_TYPE__ int	/* Predefined */
+#define __WCHAR_T_TYPE__ unsigned short	/* Predefined */
+#define __little_endian__ 1	/* Predefined */
+#define __TI_STRICT_ANSI_MODE__ 0	/* Predefined */
+#define __TI_WCHAR_T_BITS__ 16	/* Predefined */
+#define __TI_GNU_ATTRIBUTE_SUPPORT__ 1	/* Predefined */
+#define __TI_STRICT_FP_MODE__ 1	/* Predefined */
+#define _OPTIMIZE_FOR_SPACE 1
+#define CC26XX 1
+#define CC26XXWARE 1
+#define USE_ICALL 1
+#define xdc_runtime_Assert_DISABLE_ALL 1
+#define xdc_runtime_Log_DISABLE_ALL 1
+#define POWER_SAVING 1
+#define FACTORY_IMAGE 1
+#define FEATURE_OAD 1
+#define FEATURE_REGISTER_SERVICE 1
+#define GAPROLE_TASK_STACK_SIZE 550
+#define GATT_TI_UUID_128_BIT 1
+#define HEAPMGR_SIZE 2872
+#define ICALL_MAX_NUM_ENTITIES 11
+#define ICALL_MAX_NUM_TASKS 8
+#define ICALL_RAM0_ADDR 0x20004460
+#define ICALL_STACK0_ADDR 0x0000F000
+#define TI_DRIVERS_I2C_INCLUDED 1
+#define TI_DRIVERS_PIN_INCLUDED 1
+#define TI_DRIVERS_SPI_INCLUDED 1
+#define _INLINE 1

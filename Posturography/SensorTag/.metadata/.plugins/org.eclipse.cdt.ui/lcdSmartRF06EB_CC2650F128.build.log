@@ -1,0 +1,46 @@
+
+**** Build of configuration Debug for project lcdSmartRF06EB_CC2650F128 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../lcdSmartRF06EB.cfg'
+'Invoking: XDCtools'
+"C:/ti/tirex-content/xdctools_3_31_01_33_core/xs" --xdcpath="C:/ti/tirex-content/tirtos_simplelink_2_13_00_06/packages;C:/ti/tirex-content/tirtos_simplelink_2_13_00_06/products/bios_6_42_00_08/packages;C:/ti/tirex-content/tirtos_simplelink_2_13_00_06/products/uia_2_00_02_39/packages;C:/ti/ccsv6/ccs_base;" xdc.tools.configuro -o configPkg -t ti.targets.arm.elf.M3 -p ti.platforms.simplelink:CC2650F128 -r release -c "C:/ti/ccsv6/tools/compiler/arm_15.12.3.LTS" --compileOptions "-mv7M3 --code_state=16 -me --include_path=\"C:/ti/tirex-content/tirtos_simplelink_2_13_00_06/products/cc26xxware_2_21_01_15600\" --include_path=\"C:/ti/ccsv6/tools/compiler/arm_15.12.3.LTS/include\" -g --gcc --diag_wrap=off --diag_warning=225 --diag_warning=255 --display_error_number --gen_func_subsections=on --abi=eabi  " "../lcdSmartRF06EB.cfg"
+making package.mak (because of package.bld) ...
+generating interfaces for package configPkg (because package/package.xdc.inc is older than package.xdc) ...
+configuring lcdSmartRF06EB.xem3 from package/cfg/lcdSmartRF06EB_pem3.cfg ...
+generating custom ROM library makefile ... 
+Starting build of library sources ...
+making C:/Users/mkaka/Desktop/ICAS/Posturography/SensorTag/lcdSmartRF06EB_CC2650F128/src/sysbios/sysbios.aem3 ...
+gmake[1]: Entering directory `C:/Users/mkaka/Desktop/ICAS/Posturography/SensorTag/lcdSmartRF06EB_CC2650F128/src/sysbios'
+Preprocessing library source files ...
+Creating the SYS/BIOS library that contains the APIs not included in the ROM ...
+Library build complete.
+gmake[1]: Leaving directory `C:/Users/mkaka/Desktop/ICAS/Posturography/SensorTag/lcdSmartRF06EB_CC2650F128/src/sysbios'
+Build of libraries done.
+clem3 package/cfg/lcdSmartRF06EB_pem3.c ...
+'Finished building: ../lcdSmartRF06EB.cfg'
+' '
+        1 file(s) copied.
+making ../src/sysbios/sysbios.aem3 ...
+gmake[1]: Entering directory 'C:/Users/mkaka/Desktop/ICAS/Posturography/SensorTag/lcdSmartRF06EB_CC2650F128/src/sysbios'
+Preprocessing library source files ...
+Library build complete.
+gmake[1]: Leaving directory 'C:/Users/mkaka/Desktop/ICAS/Posturography/SensorTag/lcdSmartRF06EB_CC2650F128/src/sysbios'
+'Building file: ../Board.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv6/tools/compiler/arm_15.12.3.LTS/bin/armcl" -mv7M3 --code_state=16 -me --include_path="C:/ti/tirex-content/tirtos_simplelink_2_13_00_06/products/cc26xxware_2_21_01_15600" --include_path="C:/ti/ccsv6/tools/compiler/arm_15.12.3.LTS/include" -g --gcc --diag_wrap=off --diag_warning=225 --diag_warning=255 --display_error_number --gen_func_subsections=on --abi=eabi --preproc_with_compile --preproc_dependency="Board.d" --cmd_file="configPkg/compiler.opt" "../Board.c"
+'Finished building: ../Board.c'
+' '
+'Building file: ../lcdSmartRF06EB.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv6/tools/compiler/arm_15.12.3.LTS/bin/armcl" -mv7M3 --code_state=16 -me --include_path="C:/ti/tirex-content/tirtos_simplelink_2_13_00_06/products/cc26xxware_2_21_01_15600" --include_path="C:/ti/ccsv6/tools/compiler/arm_15.12.3.LTS/include" -g --gcc --diag_wrap=off --diag_warning=225 --diag_warning=255 --display_error_number --gen_func_subsections=on --abi=eabi --preproc_with_compile --preproc_dependency="lcdSmartRF06EB.d" --cmd_file="configPkg/compiler.opt" "../lcdSmartRF06EB.c"
+'Finished building: ../lcdSmartRF06EB.c'
+' '
+'Building target: lcdSmartRF06EB_CC2650F128.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv6/tools/compiler/arm_15.12.3.LTS/bin/armcl" -mv7M3 --code_state=16 -me -g --gcc --diag_wrap=off --diag_warning=225 --diag_warning=255 --display_error_number --gen_func_subsections=on --abi=eabi -z -m"lcdSmartRF06EB_CC2650F128.map" --stack_size=256 --heap_size=0 -i"C:/ti/ccsv6/tools/compiler/arm_15.12.3.LTS/lib" -i"C:/ti/ccsv6/tools/compiler/arm_15.12.3.LTS/include" --reread_libs --display_error_number --warn_sections --diag_wrap=off --xml_link_info="lcdSmartRF06EB_CC2650F128_linkInfo.xml" --rom_model -o "lcdSmartRF06EB_CC2650F128.out" "./Board.obj" "./lcdSmartRF06EB.obj" "../CC2650DK.cmd" -l"configPkg/linker.cmd" -l"C:/ti/tirex-content/tirtos_simplelink_2_13_00_06/products/cc26xxware_2_21_01_15600/driverlib/bin/ccs/driverlib.lib" -llibc.a 
+<Linking>
+'Finished building target: lcdSmartRF06EB_CC2650F128.out'
+' '
+
+**** Build Finished ****

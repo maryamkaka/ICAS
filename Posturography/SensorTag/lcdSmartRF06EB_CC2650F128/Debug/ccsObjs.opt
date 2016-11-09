@@ -1,0 +1,1 @@
+"./Board.obj" "./lcdSmartRF06EB.obj" "../CC2650DK.cmd" -l"configPkg/linker.cmd" -l"C:/ti/tirex-content/tirtos_simplelink_2_13_00_06/products/cc26xxware_2_21_01_15600/driverlib/bin/ccs/driverlib.lib" -llibc.a 

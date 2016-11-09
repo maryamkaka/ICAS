@@ -1,0 +1,3 @@
+Buildfile generation error occurred..
+Referenced project 'SensorTagStack' does not exist in the workspace. Project 'SensorTag' may not build as expected.
+Build stopped..

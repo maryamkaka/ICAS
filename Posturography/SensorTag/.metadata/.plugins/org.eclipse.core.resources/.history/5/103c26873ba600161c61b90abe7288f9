@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//Debug/Application/subdir_rules.mk=UTF-8
+encoding//Debug/Application/subdir_vars.mk=UTF-8
+encoding//Debug/Board/Devices/subdir_rules.mk=UTF-8
+encoding//Debug/Board/Devices/subdir_vars.mk=UTF-8
+encoding//Debug/Board/Interfaces/subdir_rules.mk=UTF-8
+encoding//Debug/Board/Interfaces/subdir_vars.mk=UTF-8
+encoding//Debug/Drivers/I2C/subdir_rules.mk=UTF-8
+encoding//Debug/Drivers/I2C/subdir_vars.mk=UTF-8
+encoding//Debug/Drivers/PIN/subdir_rules.mk=UTF-8
+encoding//Debug/Drivers/PIN/subdir_vars.mk=UTF-8
+encoding//Debug/Drivers/SPI/subdir_vars.mk=UTF-8
+encoding//Debug/sources.mk=UTF-8
