@@ -19,7 +19,7 @@ legend('show')
 pause(1)
 
 while(1)
-    [a, ~] = accellog(m);
+    [a, t] = accellog(m);
     if(length(a)) > 1000
         x = a(end-999:end,1);
         y = a(end-999:end,2);
