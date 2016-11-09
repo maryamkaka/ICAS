@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">NewApplication</string>
     <string name="title_activity_first_question">FirstQuestion</string>
-    <string name="text_to_change">Headache</string>
+    <string name="text_to_change">Score yourself on the following symptoms based on how you feel right now.</string>
     <string name="lessSevere">Less Severe</string>
     <string name="moreSevere">More Severe</string>
     <string name="zero">0</string>

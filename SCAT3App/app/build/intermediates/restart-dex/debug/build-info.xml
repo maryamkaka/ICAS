@@ -4,22 +4,22 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="2236809083565580"
+    timestamp="2293018055850746"
     token="-1861146952999843192"
-    verifier="FIELD_REMOVED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="1479" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="105" />
+        duration="0" />
     <task
         name="verifier"
-        duration="11" />
+        duration="0" />
 
     <artifact
         location="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
@@ -33,8 +33,8 @@
             type="MAIN" />
     </build>
     <build
-        timestamp="2236809083565580"
-        verifier="FIELD_REMOVED" >
+        timestamp="2293018055850746"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
             type="DEX" />

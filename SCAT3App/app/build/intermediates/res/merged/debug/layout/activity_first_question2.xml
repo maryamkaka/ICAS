@@ -27,6 +27,7 @@
         android:layout_width= "86sp"
         android:layout_height="wrap_content"
         android:id="@+id/button0"
+        android:visibility="invisible"
         android:layout_alignBaseline="@+id/button1"
         android:layout_toLeftOf="@+id/button1"
         android:layout_toStartOf="@+id/button1" />
@@ -37,6 +38,7 @@
         android:layout_width= "86sp"
         android:layout_height="wrap_content"
         android:id="@+id/button1"
+        android:visibility="invisible"
         android:layout_marginTop="320dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -47,6 +49,7 @@
         android:layout_width= "86sp"
         android:layout_height="wrap_content"
         android:id="@+id/button2"
+        android:visibility="invisible"
         android:layout_alignBaseline="@+id/button1"
         android:layout_toRightOf="@+id/button1"
         android:layout_toEndOf="@+id/button1" />
@@ -57,10 +60,10 @@
         android:layout_width= "86sp"
         android:layout_height="wrap_content"
         android:id="@+id/button3"
-        android:layout_marginTop="435dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:visibility="invisible"
+        android:layout_below="@+id/button0"
+        android:layout_alignRight="@+id/lessSevere"
+        android:layout_alignEnd="@+id/lessSevere" />
 
     <Button
         android:text="@string/four"
@@ -68,9 +71,10 @@
         android:layout_width= "86sp"
         android:layout_height="wrap_content"
         android:id="@+id/button4"
+        android:visibility="invisible"
         android:layout_alignBaseline="@+id/button3"
-        android:layout_toRightOf="@+id/button3"
-        android:layout_toEndOf="@+id/button3" />
+        android:layout_alignBottom="@+id/button3"
+        android:layout_toRightOf="@+id/button3" />
 
     <Button
         android:text="@string/five"
@@ -78,7 +82,9 @@
         android:layout_width= "86sp"
         android:layout_height="wrap_content"
         android:id="@+id/button5"
-        android:layout_alignBaseline="@+id/button4"
+        android:visibility="invisible"
+        android:layout_alignBaseline="@+id/button6"
+        android:layout_alignBottom="@+id/button6"
         android:layout_toRightOf="@+id/button4"
         android:layout_toEndOf="@+id/button4" />
 
@@ -88,7 +94,8 @@
         android:layout_width= "86sp"
         android:layout_height="wrap_content"
         android:id="@+id/button6"
-        android:layout_alignBaseline="@+id/button5"
+        android:visibility="invisible"
+        android:layout_below="@+id/button2"
         android:layout_toRightOf="@+id/button5"
         android:layout_toEndOf="@+id/button5" />
 
@@ -98,6 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/moreSevere"
+        android:visibility="invisible"
         android:layout_below="@+id/button5"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -108,6 +116,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lessSevere"
+        android:visibility="invisible"
         android:layout_above="@+id/button0"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -261,20 +270,6 @@
         android:layout_alignParentEnd="true"/>
 
     <Button
-        android:text="@string/OK"
-        android:layout_width="wrap_content"
-        android:layout_height="200sp"
-        android:textSize="60sp"
-        android:layout_below="@+id/button1"
-        android:id="@+id/buttonOK"
-        android:visibility="invisible"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
         android:text="@string/Mon"
         android:layout_width="240sp"
         android:layout_height="wrap_content"
@@ -291,9 +286,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/buttonTue"
         android:textSize="18sp"
+        android:visibility="invisible"
         android:layout_below="@+id/buttonMon"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible"/>
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="@string/Wed"
@@ -321,9 +316,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/buttonFri"
         android:textSize="18sp"
+        android:visibility="invisible"
         android:layout_below="@+id/buttonThu"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="@string/Sat"
@@ -351,6 +346,7 @@
         android:inputType="text"
         android:ems="10"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:id="@+id/txtValue"
         android:selectAllOnFocus="false"
         android:visibility="invisible"
@@ -363,8 +359,23 @@
         android:ems="10"
         android:id="@+id/numValue"
         android:visibility="invisible"
-        android:layout_above="@+id/button0"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_alignBaseline="@+id/txtValue"
+        android:layout_alignBottom="@+id/txtValue"
+        android:layout_alignLeft="@+id/txtValue"
+        android:layout_alignStart="@+id/txtValue" />
 
+    <Button
+        android:text="@string/OK"
+        android:layout_width="wrap_content"
+        android:layout_height="200sp"
+        android:textSize="60sp"
+        android:id="@+id/buttonOK"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

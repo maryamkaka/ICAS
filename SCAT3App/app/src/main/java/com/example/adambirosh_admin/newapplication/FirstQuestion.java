@@ -21,29 +21,33 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
     int randomValueNew2 = 0;
     Random random = new Random();
     int QuestionNumber = 0;
-    String[] dataArray = new String[50];
+    String[] dataArray = new String[57];
     private EditText TextInput;
     private EditText NumInput;
-    String[] questionList = {"Pressure in head", "Neck pain", "Nausea or vomiting", "Dizziness", "Blurred vision", "Balance problems",
+    String[] questionList = {"Headache", "Pressure in head", "Neck pain", "Nausea or vomiting", "Dizziness", "Blurred vision", "Balance problems",
             "Sensitivity to light", "Sensitivity to noise", "Feeling slowed down", "Feeling like 'in a fog'", "Don't feel right",
             "Difficulty concentrating", "Difficulty remembering", "Fatigue or low energy", "Confusion", "Drowsiness", "Trouble falling asleep",
             "More emotional", "Irritability", "Sadness", "Nervous or anxious", "Please answer the following questions to the best of your ability.",
             "What month is it?", "What is the date today?", "What is the day of the week?", "What year is it?", "What time is it right now?",
             "You will be shown five words. Type as many as you can to remember, hitting OK after each one.", "Please type the words one at a time.",
             "Please type the words one at a time.", "Please type the words one at a time.", "Please type the words one at a time.",
-            "Please type the words one at a time.", "You will be shown five words. Type as many as you can to remember, hitting OK after each one.",
+            "Please type the words one at a time.", "You will be shown five words. Type as many as you can remember, hitting OK after each one.",
             "Please type the words one at a time.", "Please type the words one at a time.", "Please type the words one at a time.",
             "Please type the words one at a time.", "Please type the words one at a time.",
             "You will be shown five words. Type as many as you can to remember, hitting OK after each one.",
             "Please type the words one at a time.", "Please type the words one at a time.", "Please type the words one at a time.",
-            "Please type the words one at a time.", "Please type the words one at a time.", "Please type the following numbers in reverse order.",
-            "", "", "", ""};
+            "Please type the words one at a time.", "Please type the words one at a time.", "Please type the following numbers in reverse order."};
 
     String[] memoryList = {"elbow", "apple", "carpet", "saddle", "bubble", "candle", "paper", "sugar", "sandwich", "wagon", "baby", "monkey",
             "perfume", "sunset", "iron", "finger", "penny", "blanket", "lemon", "insect"};
 
-    String[] numberList = {"493", "3814", "62971", "718462", "629", "3279", "15286", "539148", "526", "1795", "38527", "831964", "415", "4968",
-            "61843", "724856"};
+    String[] numberList = {"493", "Please type the previous number backwards.", "3814", "Please type the previous number backwards.", "62971",
+            "Please type the previous number backwards.", "718462", "Please type the previous number backwards.", "629",
+            "Please type the previous number backwards.", "3279", "Please type the previous number backwards.", "15286",
+            "Please type the previous number backwards.", "539148", "Please type the previous number backwards.", "526", "Please type the previous number backwards.",
+            "1795", "Please type the previous number backwards.", "38527", "Please type the previous number backwards.", "831964",
+            "Please type the previous number backwards.", "415", "Please type the previous number backwards.", "4968", "Please type the previous number backwards.",
+            "61843", "Please type the previous number backwards.", "724856", "Please type the previous number backwards."};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +120,30 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
             e.printStackTrace();
         }
 
-        if (QuestionNumber == 21) {
+        if (QuestionNumber == 0) {
+            Button OK = (Button) findViewById(R.id.buttonOK);
+            OK.setVisibility(View.INVISIBLE);
+            Button zero = (Button) findViewById(R.id.button0);
+            zero.setVisibility(View.VISIBLE);
+            Button one = (Button) findViewById(R.id.button1);
+            one.setVisibility(View.VISIBLE);
+            Button two = (Button) findViewById(R.id.button2);
+            two.setVisibility(View.VISIBLE);
+            Button three = (Button) findViewById(R.id.button3);
+            three.setVisibility(View.VISIBLE);
+            Button four = (Button) findViewById(R.id.button4);
+            four.setVisibility(View.VISIBLE);
+            Button five = (Button) findViewById(R.id.button5);
+            five.setVisibility(View.VISIBLE);
+            Button six = (Button) findViewById(R.id.button6);
+            six.setVisibility(View.VISIBLE);
+            TextView LessSevere = (TextView) (findViewById(R.id.lessSevere));
+            LessSevere.setVisibility(View.VISIBLE);
+            TextView MoreSevere = (TextView) (findViewById(R.id.moreSevere));
+            MoreSevere.setVisibility(View.VISIBLE);
+        }
+
+        if (QuestionNumber == 22) {
             Button zero = (Button) findViewById(R.id.button0);
             zero.setVisibility(View.GONE);
             Button one = (Button) findViewById(R.id.button1);
@@ -139,7 +166,7 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
             gotIt.setVisibility(View.VISIBLE);
         }
 
-        if (QuestionNumber == 22) {
+        if (QuestionNumber == 23) {
             Button gotIt = (Button) findViewById(R.id.buttonGotIt);
             gotIt.setVisibility(View.GONE);
             Button Jan = (Button) findViewById(R.id.buttonJan);
@@ -168,7 +195,7 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
             Dec.setVisibility(View.VISIBLE);
         }
 
-        if (QuestionNumber == 23) {
+        if (QuestionNumber == 24) {
             NumInput = (EditText) findViewById(R.id.numValue);
             NumInput.setVisibility(View.VISIBLE);
             Button Jan = (Button) findViewById(R.id.buttonJan);
@@ -199,7 +226,7 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
             OK.setVisibility(View.VISIBLE);
         }
 
-        if (QuestionNumber == 24) {
+        if (QuestionNumber == 25) {
             NumInput = (EditText) findViewById(R.id.numValue);
             String myEditValue = NumInput.getText().toString();
             dataArray[23] = myEditValue;
@@ -222,7 +249,7 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
             Sun.setVisibility(View.VISIBLE);
         }
 
-        if (QuestionNumber == 25) {
+        if (QuestionNumber == 26) {
             NumInput = (EditText) findViewById(R.id.numValue);
             NumInput.setVisibility(View.VISIBLE);
             Button Mon = (Button) findViewById(R.id.buttonMon);
@@ -243,13 +270,13 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
             OK.setVisibility(View.VISIBLE);
         }
 
-        if (QuestionNumber == 26) {
+        if (QuestionNumber == 27) {
             NumInput = (EditText) findViewById(R.id.numValue);
             String myEditValue = NumInput.getText().toString();
             dataArray[25] = myEditValue;
         }
 
-        if (QuestionNumber == 27) {
+        if (QuestionNumber == 28) {
             NumInput = (EditText) findViewById(R.id.numValue);
             String myEditValue = NumInput.getText().toString();
             dataArray[26] = myEditValue;
@@ -261,14 +288,15 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
         //    OK.setVisibility(View.GONE);
         //}
 
-        if (QuestionNumber == 28) {
+        if (QuestionNumber == 29) {
             Button OK = (Button) findViewById(R.id.buttonOK);
             OK.setVisibility(View.INVISIBLE);
             randomValue = random.nextInt(4);
             for (i = 0; i < 5; i = i + 1) {
-                TextView changingText = (TextView) (findViewById(R.id.text_to_change));
-                changingText.setText(memoryList[i + randomValue * 5]);
-                changingText.invalidate();
+                //TextView changingText = (TextView) (findViewById(R.id.text_to_change));
+                //changingText.setText(memoryList[i + randomValue * 5]);
+                //changingText.invalidate();
+                textUpdate(randomValue);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -280,7 +308,7 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
             OK.setVisibility(View.VISIBLE);
         }
 
-        if (QuestionNumber > 28 && QuestionNumber < 34) {
+        if (QuestionNumber > 29 && QuestionNumber < 35) {
             TextInput = (EditText) findViewById(R.id.txtValue);
             String myEditValue = TextInput.getText().toString();
             dataArray[QuestionNumber] = myEditValue;
@@ -289,6 +317,9 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
         if (QuestionNumber == 34) {
             TextInput = (EditText) findViewById(R.id.txtValue);
             TextInput.setVisibility(View.INVISIBLE);
+        }
+
+        if (QuestionNumber == 35) {
             Button OK = (Button) findViewById(R.id.buttonOK);
             OK.setVisibility(View.INVISIBLE);
             randomValueNew = random.nextInt(4);
@@ -296,9 +327,10 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
                 randomValueNew = random.nextInt(4);
             }
             for (i = 0; i < 5; i = i + 1) {
-                TextView changingText = (TextView) (findViewById(R.id.text_to_change));
-                changingText.setText(memoryList[i + randomValueNew * 5]);
-                changingText.invalidate();
+                //TextView changingText = (TextView) (findViewById(R.id.text_to_change));
+                //changingText.setText(memoryList[i + randomValueNew * 5]);
+                //changingText.invalidate();
+                textUpdate(randomValueNew);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -310,9 +342,8 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
             OK.setVisibility(View.VISIBLE);
         }
 
-        if (QuestionNumber > 34 && QuestionNumber < 40) {
+        if (QuestionNumber > 35 && QuestionNumber < 41) {
             TextInput = (EditText) findViewById(R.id.txtValue);
-            TextInput.setVisibility(View.INVISIBLE);
             String myEditValue = TextInput.getText().toString();
             dataArray[QuestionNumber] = myEditValue;
         }
@@ -320,6 +351,9 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
         if (QuestionNumber == 40) {
             TextInput = (EditText) findViewById(R.id.txtValue);
             TextInput.setVisibility(View.INVISIBLE);
+        }
+
+        if (QuestionNumber == 41) {
             Button OK = (Button) findViewById(R.id.buttonOK);
             OK.setVisibility(View.INVISIBLE);
             randomValueNew2 = random.nextInt(4);
@@ -327,9 +361,10 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
                 randomValueNew2 = random.nextInt(4);
             }
             for (i = 0; i < 5; i = i + 1) {
-                TextView changingText = (TextView) (findViewById(R.id.text_to_change));
-                changingText.setText(memoryList[i + randomValueNew2 * 5]);
-                changingText.invalidate();
+                //TextView changingText = (TextView) (findViewById(R.id.text_to_change));
+                //changingText.setText(memoryList[i + randomValueNew2 * 5]);
+                //changingText.invalidate();
+                textUpdate(randomValueNew2);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -341,25 +376,49 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
             OK.setVisibility(View.VISIBLE);
         }
 
-        if (QuestionNumber > 40 && QuestionNumber < 46) {
+        if (QuestionNumber > 41 && QuestionNumber < 47) {
             TextInput = (EditText) findViewById(R.id.txtValue);
             String myEditValue = TextInput.getText().toString();
             dataArray[QuestionNumber] = myEditValue;
         }
 
-        if (QuestionNumber > 45 && QuestionNumber < 50) {
+        if (QuestionNumber == 46) {
+            TextInput = (EditText) findViewById(R.id.txtValue);
+            TextInput.setVisibility(View.INVISIBLE);
+            NumInput = (EditText) findViewById(R.id.numValue);
+            NumInput.setVisibility(View.INVISIBLE);
+        }
+
+        if (QuestionNumber == 49 || QuestionNumber == 51 || QuestionNumber == 53) {
+            NumInput = (EditText) findViewById(R.id.numValue);
+            NumInput.setVisibility(View.INVISIBLE);
+        }
+
+        if (QuestionNumber == 48 || QuestionNumber == 50 || QuestionNumber == 52 || QuestionNumber == 54) {
+            NumInput = (EditText) findViewById(R.id.numValue);
+            NumInput.setVisibility(View.VISIBLE);
+        }
+
+        if (QuestionNumber > 46 && QuestionNumber < 55) {
             randomValue = random.nextInt(3);
             TextView changingText = (TextView) (findViewById(R.id.text_to_change));
-            changingText.setText(numberList[(QuestionNumber - 46) + randomValue * 4]);
+            changingText.setText(numberList[(QuestionNumber - 47) + randomValue * 8]);
             NumInput = (EditText) findViewById(R.id.numValue);
             String myEditValue = NumInput.getText().toString();
-            String actualValue = numberList[(QuestionNumber - 46) + randomValue * 4];
+            String actualValue = numberList[(QuestionNumber - 47) + randomValue * 8];
             dataArray[QuestionNumber] = String.valueOf(myEditValue.equals(actualValue));
         }
 
         if (QuestionNumber < 47) {
             TextView changingText = (TextView) (findViewById(R.id.text_to_change));
             changingText.setText(questionList[QuestionNumber]);
+        }
+
+        if (QuestionNumber == 55) {
+            NumInput = (EditText) findViewById(R.id.numValue);
+            NumInput.setVisibility(View.INVISIBLE);
+            TextView changingText = (TextView) (findViewById(R.id.text_to_change));
+            changingText.setText("Thank you!");
         }
 
         switch (v.getId()) {
@@ -465,5 +524,9 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
 //            changingText.postDelayed(this,1000);
 //        }
 //    };
+    public void textUpdate(int randomValue) {
+        TextView changingText = (TextView) (findViewById(R.id.text_to_change));
+        changingText.setText(memoryList[i + randomValue * 5]);
+    }
 }
 
