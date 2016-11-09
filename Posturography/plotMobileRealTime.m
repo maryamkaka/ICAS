@@ -5,33 +5,34 @@ m = mobiledev;
 m.AccelerationSensorEnabled = 1;
 m.logging = 1; 
 
-x = zeros(1000, 1);
-y = zeros(1000, 1);
-z = zeros(1000, 1);
+ax = zeros(1000, 1);
+ay = zeros(1000, 1);
+az = zeros(1000, 1);
 
 figure(1)
-p1 = plot(x)
+p1 = plot(ax)
 hold on
-p2 = plot(y)
-p3 = plot(z)
+p2 = plot(ay)
+p3 = plot(az)
 legend('show')
 
 pause(1)
 
 while(1)
-    [a, ~] = accellog(m);
+    [a, t] = accellog(m);
     if(length(a)) > 1000
-        x = a(end-999:end,1);
-        y = a(end-999:end,2);
-        z = a(end-999:end,3);
+        ax = a(end-999:end,1);
+        ay = a(end-999:end,2);
+        az = a(end-999:end,3);
     else 
-        x = a(:,1);
-        y = a(:,2);
-        z = a(:,3);
+        ax = a(:,1);
+        ay = a(:,2);
+        az = a(:,3);
     end
     
-    p1.YData = x;
-    p2.YData = y;
-    p3.YData = z;
+    p1.YData = ax;
+    p2.YData = ay;
+    p3.YData = az;
+    
     drawnow
 end 
