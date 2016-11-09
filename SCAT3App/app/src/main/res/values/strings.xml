@@ -11,4 +11,25 @@
     <string name="four">4</string>
     <string name="five">5</string>
     <string name="six">6</string>
+    <string name="gotIt">Got it!</string>
+    <string name="Jan">January</string>
+    <string name="Feb">February</string>
+    <string name="Mar">March</string>
+    <string name="Apr">April</string>
+    <string name="May">May</string>
+    <string name="Jun">June</string>
+    <string name="Jul">July</string>
+    <string name="Aug">August</string>
+    <string name="Sep">September</string>
+    <string name="Oct">October</string>
+    <string name="Nov">November</string>
+    <string name="Dec">December</string>
+    <string name="OK">OK</string>
+    <string name="Mon">Monday</string>
+    <string name="Tue">Tuesday</string>
+    <string name="Wed">Wednesday</string>
+    <string name="Thu">Thursday</string>
+    <string name="Fri">Friday</string>
+    <string name="Sat">Saturday</string>
+    <string name="Sun">Sunday</string>
 </resources>

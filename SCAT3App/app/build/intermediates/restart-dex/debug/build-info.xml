@@ -4,33 +4,40 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="566530218456895"
+    timestamp="2236809083565580"
     token="-1861146952999843192"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="FIELD_REMOVED" >
 
     <task
         name="javac"
-        duration="750" />
+        duration="1479" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="460" />
+        duration="105" />
     <task
         name="verifier"
-        duration="100" />
+        duration="11" />
 
     <artifact
-        location="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
+        location="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="566530218456895"
+        timestamp="2047100268237466"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="2236809083565580"
+        verifier="FIELD_REMOVED" >
+        <artifact
+            location="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

@@ -1,4 +1,4 @@
-#Thu Oct 20 13:14:27 EDT 2016
+#Sun Nov 06 15:30:55 EST 2016
 base.0=C\:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4e62ca23b1c951e7d76cafa799a69eaf824d4982
 renamed.1=classes.dex
 renamed.0=classes2.dex
