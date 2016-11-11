@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\src\\main\\res\\layout\\activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
         "source": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
@@ -24,12 +24,12 @@
         "source": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_part_chronometer.xml"
-    },
-    {
         "merged": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
         "source": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
         "merged": "C:\\Users\\adambirosh-admin\\Desktop\\ICAS\\SCAT3App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
