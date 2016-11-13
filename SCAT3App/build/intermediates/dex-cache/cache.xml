@@ -12,39 +12,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_f3cba0bc0c9208ff422591d0d3d26793622dd2ac\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
         <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_77810dd89bcae6fff6b556bdce0e974af4a17f3e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_1d4fa9f1ec4bb9b4005333ddff0b94e83282ecd1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_aa9a1b67d877192772dedee4e1e2e90c95cc3e95\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -63,6 +36,51 @@
         revision="24.0.3"
         sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
         <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_0e94e9a8b6395b71bb009faa767680d5a0aa4146\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_b108af93cc7ee0382ace86b9b6638863b680101a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_d3cee03911111af492f34af3923a98776060610f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_f3cba0bc0c9208ff422591d0d3d26793622dd2ac\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_1d4fa9f1ec4bb9b4005333ddff0b94e83282ecd1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_aa9a1b67d877192772dedee4e1e2e90c95cc3e95\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -93,30 +111,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_b108af93cc7ee0382ace86b9b6638863b680101a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="e09dc18ff79deb0d66c2988a866a304614812e3f">
+        sha1="1d736a1b87bbd914fe573aa23a1a2be5f127b80f">
         <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_0502aa671a17cf4804e3643dbcd8a1fb6e981243\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_d3cee03911111af492f34af3923a98776060610f\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -151,7 +151,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="ec64fce9b00eb3b10b2717c1a71ed3610753385f">
+        sha1="98813b1efdbf5b6ad020f54b5a190498e597f799">
         <dex dex="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_4e62ca23b1c951e7d76cafa799a69eaf824d4982\classes.dex" />
     </item>
     <item

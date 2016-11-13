@@ -296,7 +296,7 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
                 //TextView changingText = (TextView) (findViewById(R.id.text_to_change));
                 //changingText.setText(memoryList[i + randomValue * 5]);
                 //changingText.invalidate();
-                textUpdate(randomValue);
+                //textUpdate(randomValue);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -330,7 +330,7 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
                 //TextView changingText = (TextView) (findViewById(R.id.text_to_change));
                 //changingText.setText(memoryList[i + randomValueNew * 5]);
                 //changingText.invalidate();
-                textUpdate(randomValueNew);
+                //textUpdate(randomValueNew);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -364,7 +364,7 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
                 //TextView changingText = (TextView) (findViewById(R.id.text_to_change));
                 //changingText.setText(memoryList[i + randomValueNew2 * 5]);
                 //changingText.invalidate();
-                textUpdate(randomValueNew2);
+                //textUpdate(randomValueNew2);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -524,9 +524,9 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
 //            changingText.postDelayed(this,1000);
 //        }
 //    };
-    public void textUpdate(int randomValue) {
-        TextView changingText = (TextView) (findViewById(R.id.text_to_change));
-        changingText.setText(memoryList[i + randomValue * 5]);
-    }
+//    public void textUpdate(int randomValue) {
+//        TextView changingText = (TextView) (findViewById(R.id.text_to_change));
+//        changingText.setText(memoryList[i + randomValue * 5]);
+//    }
 }
 
