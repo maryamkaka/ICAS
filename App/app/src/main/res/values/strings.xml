@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Integrated Concussion Assessment System</string>
+    <string name="Question"> </string>
+    <string name="callingActMsg">The calling activity is:</string>
 </resources>

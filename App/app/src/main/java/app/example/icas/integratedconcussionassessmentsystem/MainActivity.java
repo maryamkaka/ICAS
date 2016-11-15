@@ -1,5 +1,6 @@
 package app.example.icas.integratedconcussionassessmentsystem;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onSCAT3Click(View view) {
         //toast - popup windows
-
         Toast.makeText(this, "You clicked SCAT3", Toast.LENGTH_SHORT).show();
+
+        //use intents to go to new activity
+        Intent getScat3Screen = new Intent(this, Scat3.class);
+        getScat3Screen.putExtra("callingAct", "Main Activity");
+        startActivity(getScat3Screen);
     }
 }

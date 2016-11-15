@@ -15,6 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".Scat3" android:theme="@style/AppTheme" android:label="SCAT 3">
+        </activity>
     </application>
 
 </manifest>
