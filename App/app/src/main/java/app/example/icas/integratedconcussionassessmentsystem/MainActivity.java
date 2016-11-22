@@ -1,8 +1,11 @@
 package app.example.icas.integratedconcussionassessmentsystem;
 
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,6 +14,27 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     //define objects
     private Button scat3, posture, eyeGaze, EEG;
+
+    //Menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if (id == R.id.action_setting){
+            Toast.makeText(this, "Clicked Settings", Toast.LENGTH_SHORT).show();
+            return true;
+
+        } else if(id == R.id.exit){
+            finish();
+            return true;
+        }
+        return super .onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {    //Bundle - used to pass info btwn activities

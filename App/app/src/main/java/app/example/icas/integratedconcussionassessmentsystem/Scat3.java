@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 /**
- * Created by mkaka on 2016-11-15.
+ * SCAT 3 Activity
+ *
  */
 
 public class Scat3 extends Activity{

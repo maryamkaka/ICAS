@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello"
+        android:text="@string/welcomeScreenTxt"
         android:id="@+id/welcomeTxt"
         android:textAlignment = "center"
         android:textSize="50sp"/>
