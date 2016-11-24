@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="de.codecrafters.tableviewexample.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        custom:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        custom:title="@string/title_activity_main"/>
+
+    <de.codecrafters.tableviewexample.SortableCarTableView
+        android:id="@+id/tableView"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        custom:tableView_columnCount="4"
+        custom:tableView_headerColor="@color/primary"
+        custom:tableView_headerElevation="10"/>
+
+</RelativeLayout>
+
+

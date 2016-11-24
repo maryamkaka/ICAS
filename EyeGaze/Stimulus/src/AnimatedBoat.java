@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -56,7 +55,7 @@ public class AnimatedBoat {
             	//read in image
                 boat = ImageIO.read(new File("adam.jpg"));
                 //Define a swing timer to fire multiple action events after a specified delay
-                //10 is the speed, ActionListener is the ISR
+                //10 is the speed in ms, ActionListener is the ISR
                 Timer timer = new Timer(10, new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -84,7 +83,7 @@ public class AnimatedBoat {
 
         @Override
         public Dimension getPreferredSize() {
-            return boat == null ? super.getPreferredSize() : new Dimension(boat.getWidth() * 4, boat.getHeight());
+            return boat == null ? super.getPreferredSize() : new Dimension(boat.getWidth()* 4, 500);
         }
 
         @Override
@@ -92,8 +91,14 @@ public class AnimatedBoat {
             super.paintComponent(g);
 
             int y = getHeight() - boat.getHeight();
-            g.drawImage(boat, xPos, y, this);
-
+            //Get the screen dimensions
+            Dimension s = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+            
+            //Take eighth of screen size and modify s dimensions
+            s.width = (int) Math.sqrt((s.width*s.height)/8);
+            s.height = s.width;
+            //g.drawImage(boat, xPos, y, this);
+            g.drawImage(boat, xPos, y, s.width, s.height, this);
         }
 
     }

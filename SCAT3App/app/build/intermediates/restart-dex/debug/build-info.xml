@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
+    abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="24"
     density="560dpi"
     format="8"
-    plugin-version="2.2.0"
-    timestamp="2294162963349240"
-    token="-1861146952999843192"
+    plugin-version="2.2.2"
+    timestamp="211380064628876"
+    token="-3086346710242860198"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="1066" />
+        duration="25064" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="198" />
+        duration="811" />
     <task
         name="verifier"
-        duration="85" />
+        duration="417" />
 
     <artifact
-        location="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\outputs\apk\app-debug.apk"
+        location="G:\OneDrive\School\Year IV\4th Year Project\Code\ICAS\SCAT3App\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="2294162963349240"
+        timestamp="211380064628876"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\adambirosh-admin\Desktop\ICAS\SCAT3App\app\build\outputs\apk\app-debug.apk"
+            location="G:\OneDrive\School\Year IV\4th Year Project\Code\ICAS\SCAT3App\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
 
