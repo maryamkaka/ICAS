@@ -584,6 +584,7 @@
     <string name="lessSevere">Less Severe</string>
     <string name="moreSevere">More Severe</string>
     <string name="one">1</string>
+    <string name="options_exit_txt">Exit</string>
     <string name="search_menu_title">Search</string>
     <string name="six">6</string>
     <string name="status_bar_notification_info_overflow">999+</string>
@@ -591,6 +592,7 @@
     <string name="three">3</string>
     <string name="title_activity_first_question">FirstQuestion</string>
     <string name="two">2</string>
+    <string name="welcomeScreenTxt">Hello</string>
     <string name="zero">0</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>

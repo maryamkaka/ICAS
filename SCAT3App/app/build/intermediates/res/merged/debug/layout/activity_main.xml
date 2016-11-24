@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -11,43 +10,106 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.adambirosh_admin.newapplication.MainActivity">
 
-    <Button
-        android:text="Begin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_marginLeft="31dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginBottom="44dp"
-        android:id="@+id/BeginButton" />
-
-    <Button
-        android:text="Enter Info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/BeginButton"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView"
-        android:layout_marginRight="30dp"
-        android:layout_marginEnd="30dp"
-        android:id="@+id/button2" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/icas"
-        android:id="@+id/imageView"
-        android:layout_above="@+id/BeginButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="90dp" />
-
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome to ICAS!"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp" />
+        android:text="@string/welcomeScreenTxt"
+        android:id="@+id/welcomeTxt"
+        android:textAlignment = "center"
+        android:textSize="50sp"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/welcomeTxt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp">
+
+        <Button
+            android:text="SCAT 3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scat3"
+            android:textSize="24sp"
+            android:layout_weight="1"
+            android:onClick="onSCAT3Click"/>
+
+        <Button
+            android:text="Posturography"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/posture"
+            android:textSize="24sp"
+            android:layout_weight="1" />
+        <Button
+            android:text="Eye Gaze"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/eyeGaze"
+            android:textSize="24sp"
+            android:layout_weight="1" />
+        <Button
+            android:text="EEG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/EEG"
+            android:textSize="24sp"
+            android:layout_weight="1" />
+    </LinearLayout>
 </RelativeLayout>
+
+    <!-- ?xml version="1.0" encoding="utf-8"? >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.adambirosh_admin.newapplication.MainActivity">
+
+        <Button
+            android:text="Begin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/imageView"
+            android:layout_alignStart="@+id/imageView"
+            android:layout_marginLeft="31dp"
+            android:layout_marginStart="31dp"
+            android:layout_marginBottom="44dp"
+            android:id="@+id/BeginButton" />
+
+        <Button
+            android:text="Enter Info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/BeginButton"
+            android:layout_alignRight="@+id/imageView"
+            android:layout_alignEnd="@+id/imageView"
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
+            android:id="@+id/button2" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/icas"
+            android:id="@+id/imageView"
+            android:layout_above="@+id/BeginButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="90dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to ICAS!"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="51dp" />
+    </RelativeLayout -->

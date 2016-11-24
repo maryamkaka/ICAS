@@ -32,4 +32,6 @@
     <string name="Fri">Friday</string>
     <string name="Sat">Saturday</string>
     <string name="Sun">Sunday</string>
+    <string name="welcomeScreenTxt">Hello</string>
+    <string name="options_exit_txt">Exit</string>
 </resources>
