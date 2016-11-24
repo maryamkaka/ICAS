@@ -7,8 +7,8 @@ import android.widget.TextView;
 
 /**
  * SCAT 3 Activity
- *
  */
+
 
 public class Scat3 extends Activity{
     @Override

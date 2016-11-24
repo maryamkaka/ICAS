@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="237d8fdcc3c98b46903b53286d4f374a27a005cd">
+        sha1="19c090c0efa67ff8b1ccca8e6ad631a0d274256f">
         <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_9702ae43c37b53157aa04fb9aca04637130233d7\classes.dex" />
     </item>
     <item
@@ -169,7 +169,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="595af771131289bfb999471ab416637ade9315fb">
+        sha1="3e0fdfe2246d238ef1a2da853c9e884b88908b02">
         <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8301990565abbe37a7f10085858abec097364aa4\classes.dex" />
     </item>
 
