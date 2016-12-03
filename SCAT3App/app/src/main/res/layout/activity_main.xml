@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:text="@string/welcomeScreenTxt"
         android:id="@+id/welcomeTxt"
-        android:textAlignment = "center"
         android:textSize="50sp"/>
 
     <LinearLayout
@@ -49,7 +48,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/eyeGaze"
             android:textSize="24sp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="onEyeGazeClick"/>
         <Button
             android:text="EEG"
             android:layout_width="match_parent"

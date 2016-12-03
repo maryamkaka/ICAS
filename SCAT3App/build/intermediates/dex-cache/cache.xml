@@ -3,39 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_6dedfc75c8bcf4e1da8aa7150827f476509b58e9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_458d8584eb7e08174245fa8ab9bd4c4ef2ee0820\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_642cc3b2416170424d4e92c13bc7c5bc7f46ee4b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_c6a276594bcbc7c54b15bdf8a5b571d892994eca\classes.dex" />
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-8.4.0_5160f2a0dfbdb9e7369b22516b357720e44a3083\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -43,8 +16,17 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="561d84fc002100ba645871756312d52acd3cb6ba">
+        sha1="34307617f9c33ed73da30d8cd008fd15e74ef3e9">
         <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_9702ae43c37b53157aa04fb9aca04637130233d7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_52c3c452ceccf1530f43b2cf2ae50211cdc5374d\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -57,39 +39,48 @@
     </item>
     <item
         is-multidex="true"
-        jar="D:\Android\SDK\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_82406f0cc4f3674c39b53ef128ac0aed6ce51735\classes.dex" />
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.1_1f87fd508f6b2a4bbeb90ebc3166e6ba5dabbe69\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_ea4ea7ef97d50ffbd1e371664d40be3dce297758\classes.dex" />
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-8.4.0_b64eb0e2f072434890bf61912a401068a65e4179\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jar="D:\Android\SDK\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_4507a698c8a5e527850f13372c279c6c0373e2e9\classes.dex" />
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_20de65e241e919dae78063c278244a49b89e03fc\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_2dbfe0a8b446d4aca75880f845617e854fd6ed03\classes.dex" />
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.1_41fb6d309dd4abef154b71b87962386234f56fb7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.1_7ac4454ea0b554b7b7d52630944ef2e120c27c8b\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -102,66 +93,93 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_a1abc493d8c0793abd87d419ed77ad5c9070b4d0\classes.dex" />
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_923af015033a72f267c8d11cc3a3eeb938076b15\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_4ea149a72b13dfa414ce10da1131a527c7850a44\classes.dex" />
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.1_2274d829e5d0e0064961a921fd4ce81a679db76c\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_cb66c6a50f941a506ea7b34eed063bb04d70911e\classes.dex" />
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.1_9c35f5cf3eda9b8a1784953639b3e4829e34ea21\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_67ba4c54295355747926102c1072265aaa59f3a0\classes.dex" />
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_31d9c8e2f162a4df86cf1aeb1a92a515c119d089\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_5267595e7b4b4f38a45830e0df4ba13dc8075a25\classes.dex" />
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.1_74cbf11b570d3c9de41cf9fba34c28837222c8fa\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_8f4b271da36d147ef62e8534a35c0233f17218d2\classes.dex" />
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.1_d4db1afdc223edfb7a17f92f5f276b50473b10b7\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_f0de6bec46ef12e0e8b683b97ffce8eb16602635\classes.dex" />
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_54ba2e6051a628f3e19d007edfd927ae5299389c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-8.4.0_090f555958b58cd6e402aff641a4aed286ee2b41\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_9e9e537bac882aebe8b522785aa47ccfc53f8224\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.1_a5b3ea69162c01d86db8e360dac1a36dc4598878\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -169,8 +187,17 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="96687d8310bb5a0a0ee6cabb408b5077bbee2e7f">
+        sha1="4d9c18d3c6159e072da0b4334a904f0bcfdfa72e">
         <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8301990565abbe37a7f10085858abec097364aa4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="C:\Users\mkaka\Desktop\ICAS\SCAT3App\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.1_ff7b842c5ed8ec5b7e547070e0252d8c6240d0bf\classes.dex" />
     </item>
 
 </items>

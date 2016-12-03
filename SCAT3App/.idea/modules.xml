@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EyeGaze/EyeGaze.iml" filepath="$PROJECT_DIR$/EyeGaze/EyeGaze.iml" />
       <module fileurl="file://$PROJECT_DIR$/SCAT3App.iml" filepath="$PROJECT_DIR$/SCAT3App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sortabletable/sortabletable.iml" filepath="$PROJECT_DIR$/sortabletable/sortabletable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tableview/tableview.iml" filepath="$PROJECT_DIR$/tableview/tableview.iml" />
     </modules>
   </component>
 </project>
