@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="50sp"
-        android:text="@string/Question"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -17,4 +12,12 @@
         android:text="@string/callingActMsg"
         android:padding="20dp" />
 
-</LinearLayout>
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/symptom_eval"
+        android:name="app.example.icas.integratedconcussionassessmentsystem.symptomEvalFrag"
+        tools:layout="@layout/symptom_eval"
+        android:layout_below="@+id/callingActivityTxt" />
+
+</RelativeLayout>
