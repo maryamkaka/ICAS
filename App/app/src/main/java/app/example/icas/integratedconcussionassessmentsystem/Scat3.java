@@ -23,8 +23,8 @@ public class Scat3 extends FragmentActivity{
         Intent actCalled = getIntent();
         String prevAct = actCalled.getExtras().getString("callingAct");
 
-        TextView callTxt = (TextView) findViewById(R.id.callingActivityTxt);
-        callTxt.append(" " + prevAct);
+        //TextView callTxt = (TextView) findViewById(R.id.callingActivityTxt);
+        //callTxt.append(" " + prevAct);
 
         //Fragment manager
         FragmentManager fragmentManager = getFragmentManager();
