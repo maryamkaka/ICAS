@@ -7,7 +7,9 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * SCAT 3 Activity
@@ -29,7 +31,18 @@ public class Scat3 extends FragmentActivity{
         //Fragment manager
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        //symptomEvalFrag symptomEvalFrag = new symptomEvalFrag();
-        //fragmentTransaction.commit();
+        symptomEvalFrag symptomEvalFrag = new symptomEvalFrag();
+        fragmentTransaction.commit();
+    }
+
+    public void onNextClick(View view){
+        Toast.makeText(this, "You clicked Next", Toast.LENGTH_SHORT).show();
+
+        
+
+    }
+
+    public void onPrevClick(View view){
+        Toast.makeText(this, "You clicked Prev", Toast.LENGTH_SHORT).show();
     }
 }
