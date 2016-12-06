@@ -25,13 +25,31 @@ public class symptomEvaluationQuestions {
                             "More emotional",
                             "Irritability Sadness",
                             "Nervous or Anxious"};
-    int index;
+    int index, max;
 
     /* Constructor */
     public symptomEvaluationQuestions() {
         this.index = 0;
+        this.max = 19;
     }
 
+    public String getCurrentQuestion(){
+        return questions[this.index];
+    }
+
+    public void incrementIndex(){
+        if(this.index < this.max) {
+            this.index++;
+        }
+    }
+
+    public void decrementIndex(){
+        if(this.index > 0){
+            this.index --;
+        }
+    }
+
+    /* getters and setters */
     public int getIndex() {
         return index;
     }
@@ -40,15 +58,8 @@ public class symptomEvaluationQuestions {
         this.index = index;
     }
 
-    public String getCurrentQuestion(){
-        return questions[this.index];
+    public int getMaxIndex(){
+        return this.max;
     }
 
-    public void incrementIndex(){
-        this.index ++;
-    }
-
-    public void decrementIndex(){
-        this.index --;
-    }
 }

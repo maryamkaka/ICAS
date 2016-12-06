@@ -17,13 +17,15 @@ import android.widget.Toast;
 
 
 public class Scat3 extends FragmentActivity{
+    symptomEvalFrag symptomEvalFrag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scat3);
 
-        Intent actCalled = getIntent();
-        String prevAct = actCalled.getExtras().getString("callingAct");
+        //Intent actCalled = getIntent();
+        //String prevAct = actCalled.getExtras().getString("callingAct");
 
         //TextView callTxt = (TextView) findViewById(R.id.callingActivityTxt);
         //callTxt.append(" " + prevAct);
@@ -31,18 +33,16 @@ public class Scat3 extends FragmentActivity{
         //Fragment manager
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        symptomEvalFrag symptomEvalFrag = new symptomEvalFrag();
+        symptomEvalFrag = (app.example.icas.integratedconcussionassessmentsystem.symptomEvalFrag) fragmentManager.findFragmentById(R.id.symptom_eval);
+
         fragmentTransaction.commit();
     }
 
     public void onNextClick(View view){
-        Toast.makeText(this, "You clicked Next", Toast.LENGTH_SHORT).show();
-
-        
-
+        symptomEvalFrag.nextQuestion(view);
     }
 
     public void onPrevClick(View view){
-        Toast.makeText(this, "You clicked Prev", Toast.LENGTH_SHORT).show();
+        symptomEvalFrag.prevQuestion(view);
     }
 }

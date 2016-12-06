@@ -33,7 +33,7 @@ public class symptomEvalFrag extends Fragment{
         scoreTxt = (TextView) getView().findViewById(R.id.score);
 
         scoreTxt.setText("0");
-        questionTxt.setText(questions.getCurrentQuestion());
+        updateScreen();
         answer.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
@@ -53,7 +53,22 @@ public class symptomEvalFrag extends Fragment{
         });
     }
 
-    public void updateQuestion(View view){
+    public void nextQuestion(View view){
+        questions.incrementIndex();
+        updateScreen();
+    }
 
+    public void prevQuestion(View view){
+        questions.decrementIndex();
+        updateScreen();
+    }
+
+    private void updateScreen(){
+        if(questions.getIndex() >= questions.getMaxIndex()){
+        } else if(questions.getIndex() < 0) {
+        } else {
+            questionTxt.setText(questions.getCurrentQuestion());
+            answer.setProgress(0);
+        }
     }
 }
