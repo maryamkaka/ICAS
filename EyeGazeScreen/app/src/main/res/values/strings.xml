@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">EyeGazeScreen</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="Date">Date</string>
+    <string name="Disconjugacy">Disconjugacy</string>
+    <string name="NextDate">NextDate</string>
+</resources>

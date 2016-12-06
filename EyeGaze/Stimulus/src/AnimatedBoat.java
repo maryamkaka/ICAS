@@ -83,7 +83,7 @@ public class AnimatedBoat {
 
         @Override
         public Dimension getPreferredSize() {
-            return boat == null ? super.getPreferredSize() : new Dimension(boat.getWidth()* 4, 500);
+            return boat == null ? super.getPreferredSize() : new Dimension(boat.getWidth()*4, 500);
         }
 
         @Override
