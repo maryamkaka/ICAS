@@ -23,7 +23,7 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
     int QuestionNumber = 0;
     String[] dataArray = new String[57];
     private EditText TextInput;
-    private EditText NumInput;
+    
     String[] questionList = {"Headache", "Pressure in head", "Neck pain", "Nausea or vomiting", "Dizziness", "Blurred vision", "Balance problems",
             "Sensitivity to light", "Sensitivity to noise", "Feeling slowed down", "Feeling like 'in a fog'", "Don't feel right",
             "Difficulty concentrating", "Difficulty remembering", "Fatigue or low energy", "Confusion", "Drowsiness", "Trouble falling asleep",
@@ -48,6 +48,7 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
             "1795", "Please type the previous number backwards.", "38527", "Please type the previous number backwards.", "831964",
             "Please type the previous number backwards.", "415", "Please type the previous number backwards.", "4968", "Please type the previous number backwards.",
             "61843", "Please type the previous number backwards.", "724856", "Please type the previous number backwards."};
+    private EditText NumInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -277,10 +278,37 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
         }
 
         if (QuestionNumber == 28) {
-            NumInput = (EditText) findViewById(R.id.numValue);
-            String myEditValue = NumInput.getText().toString();
-            dataArray[26] = myEditValue;
-            NumInput.setVisibility(View.INVISIBLE);
+            Button OK = (Button) findViewById(R.id.buttonOK);
+            OK.setVisibility(View.INVISIBLE);
+            randomValue = random.nextInt(4);
+            final TextView changingText = (TextView) (findViewById(R.id.text_to_change));
+            // Creating a NEW Thread, t, thus not freezing the main U/I thread.
+            Thread t = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        // For loop has now been moved into the thread
+                        for (i = 0; i < 5; i = i + 1) {
+                            Thread.sleep(1000);
+                            //Forcing the textView text change to take place on the main thread
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    // Printing to console for debugging purposes
+                                    System.out.println("i+randomValue*5 = " + i + randomValue * 5);
+                                    changingText.setText(memoryList[i + randomValue * 5]);
+                                }
+                            });
+                        }
+                    } catch (InterruptedException e) {
+                    }
+                }
+            };
+            // Calling the thread to execute
+            t.start();
+            TextInput = (EditText) findViewById(R.id.txtValue);
+            TextInput.setVisibility(View.VISIBLE);
+            OK.setVisibility(View.VISIBLE);
         }
 
         //if (QuestionNumber == 27) {
@@ -292,17 +320,31 @@ public class FirstQuestion extends Activity implements View.OnClickListener{
             Button OK = (Button) findViewById(R.id.buttonOK);
             OK.setVisibility(View.INVISIBLE);
             randomValue = random.nextInt(4);
-            for (i = 0; i < 5; i = i + 1) {
-                //TextView changingText = (TextView) (findViewById(R.id.text_to_change));
-                //changingText.setText(memoryList[i + randomValue * 5]);
-                //changingText.invalidate();
-                //textUpdate(randomValue);
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+            final TextView changingText = (TextView) (findViewById(R.id.text_to_change));
+            // Creating a NEW Thread, t, thus not freezing the main U/I thread.
+            Thread t = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        // For loop has now been moved into the thread
+                        for (i = 0; i < 5; i = i + 1) {
+                            Thread.sleep(1000);
+                            //Forcing the textView text change to take place on the main thread
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    // Printing to console for debugging purposes
+                                    System.out.println("i+randomValue*5 = " + i + randomValue * 5);
+                                    changingText.setText(memoryList[i + randomValue * 5]);
+                                }
+                            });
+                        }
+                    } catch (InterruptedException e) {
+                    }
                 }
-            }
+            };
+            // Calling the thread to execute
+            t.start();
             TextInput = (EditText) findViewById(R.id.txtValue);
             TextInput.setVisibility(View.VISIBLE);
             OK.setVisibility(View.VISIBLE);
