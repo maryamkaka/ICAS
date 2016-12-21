@@ -21,45 +21,22 @@
         android:textAlignment = "center"
         android:textSize="50sp"/>
 
-    <LinearLayout
-        android:orientation="vertical"
+    <GridView
+        android:id="@+id/gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/welcomeTxt"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="40dp">
+        android:columnWidth="90dp"
+        android:numColumns="2"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:layout_below="@id/welcomeTxt"
+        android:paddingTop="40dp"
+        />
 
-        <Button
-            android:text="SCAT 3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/scat3"
-            android:textSize="24sp"
-            android:layout_weight="1"
-            android:onClick="onSCAT3Click"/>
 
-        <Button
-            android:text="Posturography"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/posture"
-            android:textSize="24sp"
-            android:layout_weight="1" />
-        <Button
-            android:text="Eye Gaze"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/eyeGaze"
-            android:textSize="24sp"
-            android:layout_weight="1" />
-        <Button
-            android:text="EEG"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/EEG"
-            android:textSize="24sp"
-            android:layout_weight="1" />
-    </LinearLayout>
+
+
 
 </RelativeLayout>

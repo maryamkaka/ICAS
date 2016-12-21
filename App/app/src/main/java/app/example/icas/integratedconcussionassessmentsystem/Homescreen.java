@@ -1,5 +1,6 @@
 package app.example.icas.integratedconcussionassessmentsystem;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,7 +14,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,15 +36,34 @@ public class Homescreen extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        //Gridview for ICAS Test options
+        final GridView gridView = (GridView) findViewById(R.id.gridview);
+        gridView.setAdapter(new ImageAdapter(this));
+        gridView.setDrawSelectorOnTop(true);
+
+        //Makes Images Interactive to access each test
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                //Toast.makeText(Homescreen.this, "" + position, Toast.LENGTH_SHORT).show();
+                switch (position){
+                    case 0:{
+                        //use intents to go to new activity
+                        Intent getScat3Screen = new Intent(view.getContext(), Scat3.class);
+                        getScat3Screen.putExtra("callingAct", "Main Activity");
+                        startActivity(getScat3Screen);
+                        break;
+                    }
+                    //ADD MORE CASES HERE FOR OTHER GRID ELEMENTS (TESTS)
+                    default:{
+                        Toast.makeText(getApplicationContext(),"No action associated with this button",Toast.LENGTH_LONG).show();
+                        break;
+                    }
+                }
             }
         });
 
+        //Navigation Drawer Stuff
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -50,10 +75,7 @@ public class Homescreen extends AppCompatActivity
 
         //create widgets
         final TextView welcomeTxt = (TextView) findViewById(R.id.welcomeTxt);
-        scat3 = (Button) findViewById(R.id.scat3);
-        posture = (Button) findViewById(R.id.posture);
-        eyeGaze = (Button) findViewById(R.id.eyeGaze);
-        EEG = (Button) findViewById(R.id.EEG);
+
     }
 
     @Override
@@ -88,16 +110,6 @@ public class Homescreen extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public void onSCAT3Click(View view) {
-        //toast - popup windows
-        Toast.makeText(this, "You clicked SCAT3", Toast.LENGTH_SHORT).show();
-
-        //use intents to go to new activity
-        Intent getScat3Screen = new Intent(this, Scat3.class);
-        getScat3Screen.putExtra("callingAct", "Main Activity");
-        startActivity(getScat3Screen);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -121,5 +133,38 @@ public class Homescreen extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    //Image Adapter for Gridview
+    public class ImageAdapter extends BaseAdapter{
+        private Context mContext;
+        public ImageAdapter(Context c){
+            mContext = c;
+        }
+
+        public int getCount(){
+            return mThumbsIds.length;
+
+        }
+        public Object getItem(int position){
+            return null;
+        }
+
+        public long getItemId(int position){
+            return 0;
+        }
+
+        public View getView (int position, View convertView, ViewGroup parent){
+            ImageView imageView = new ImageView(mContext);
+            imageView.setImageResource(mThumbsIds[position]);
+            return imageView;
+        }
+        //Array of Grid images (SCAT3, Eye Gaze ...)
+        private Integer[] mThumbsIds = {
+                R.drawable.menu_button,
+                R.drawable.posturography_menubutton,
+                R.drawable.eyegaze_menubutton,
+                R.drawable.eeg_menubutton
+        };
     }
 }
