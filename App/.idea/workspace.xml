@@ -3,15 +3,35 @@
   <component name="AndroidLayouts">
     <shared>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <config />
 =======
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+      <config />
+||||||| merged common ancestors
+      <config>
+        <devices>
+          <device id="Nexus 5" />
+        </devices>
+      </config>
+=======
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       <config>
         <devices>
           <device id="Nexus 5X" />
           <device id="Nexus 5" />
         </devices>
+<<<<<<< HEAD
       </config>
 >>>>>>> linkScat3
+||||||| merged common ancestors
+      </config>
+>>>>>>> Temporary merge branch 2
+=======
+      <config />
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     </shared>
   </component>
   <component name="AndroidLogFilters">
@@ -19,8 +39,14 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <list default="true" id="70187c17-6ecb-4b67-b211-c8f2d64588b0" name="Default" comment="" />
     <ignored path="App.iws" />
+<<<<<<< HEAD
 =======
     <list default="true" id="1fddf842-bb26-4390-9375-58fe2ec97f72" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/android_android_25.xml" afterPath="" />
@@ -52,6 +78,160 @@
     </list>
     <ignored path="Integrated Concussion Assessment System.iws" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+    <list default="true" id="1fddf842-bb26-4390-9375-58fe2ec97f72" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/android_android_25.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_integration_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_library_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javawriter_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javax_annotation_api_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javax_inject_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jsr305_2_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_compat_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_ui_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_utils_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_fragment_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_media_compat_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/MainActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/MainActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/MainActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/MainActivity$1.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/android/support/design/R$id.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/android/support/design/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/FirstQuestion.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/FirstQuestion.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/MainActivity.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$id.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$integer.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$layout.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$mipmap.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$mipmap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$string.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$style.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$styleable.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/classes/debug/com/example/adambirosh_admin/newapplication/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/android/support/design/R$id.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/android/support/design/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/FirstQuestion.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/FirstQuestion.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/MainActivity.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$id.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$integer.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$layout.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$mipmap.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$mipmap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$string.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$style.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$styleable.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental-verifier/debug/com/example/adambirosh_admin/newapplication/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/instant-run-support/debug/instant-run.zip" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/instant-run-support/debug/instant-run.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_16dp.png" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_16dp.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_ic_star_black_16dp.png" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_ic_star_black_16dp.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_ic_star_black_36dp.png" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_ic_star_black_36dp.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/design/R$id.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/design/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/android/support/v7/appcompat/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/FirstQuestion.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/FirstQuestion.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/MainActivity.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$id.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$integer.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$layout.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$mipmap.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$mipmap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$string.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$style.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$styleable.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/adambirosh_admin/newapplication/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_0/android/support/design/R$id.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_0/android/support/design/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/android/support/v7/appcompat/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/FirstQuestion.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/FirstQuestion.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/MainActivity.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$id.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$integer.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$layout.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$mipmap.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$mipmap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$string.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$style.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$styleable.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R.class" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_9/com/example/adambirosh_admin/newapplication/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/outputs/apk/app-debug.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Scat3.java" afterPath="$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Scat3.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../SCAT3App/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/app.iml" afterPath="$PROJECT_DIR$/../SCAT3App/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/generated/source/r/androidTest/debug/com/example/adambirosh_admin/newapplication/test/R.java" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/generated/source/r/androidTest/debug/com/example/adambirosh_admin/newapplication/test/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/generated/source/r/debug/android/support/design/R.java" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/generated/source/r/debug/android/support/design/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/generated/source/r/debug/com/example/adambirosh_admin/newapplication/R.java" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/generated/source/r/debug/com/example/adambirosh_admin/newapplication/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/blame/res/debug/multi/values.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/packageDebug/file-input-save-data.txt" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/packageDebug/file-input-save-data.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/packageInstantRunResourcesDebug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/packageInstantRunResourcesDebug/dex-renamer-state.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/packageInstantRunResourcesDebug/file-input-save-data.txt" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/incremental/packageInstantRunResourcesDebug/file-input-save-data.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/layout/activity_main.xml" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/res/merged/debug/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/restart-dex/debug/build-info.xml" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/restart-dex/debug/build-info.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/../SCAT3App/app/build/intermediates/symbols/debug/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/src/main/java/com/example/adambirosh_admin/newapplication/MainActivity.java" afterPath="$PROJECT_DIR$/../SCAT3App/app/src/main/java/com/example/adambirosh_admin/newapplication/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/../SCAT3App/app/src/main/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../SCAT3App/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SCAT3App/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/../SCAT3App/build/intermediates/dex-cache/cache.xml" />
+    </list>
+    <ignored path="Integrated Concussion Assessment System.iws" />
+=======
+    <list default="true" id="1fddf842-bb26-4390-9375-58fe2ec97f72" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/android_android_25.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_integration_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_library_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javawriter_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javax_annotation_api_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javax_inject_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jsr305_2_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_compat_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_ui_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_utils_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_fragment_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_media_compat_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_25_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_25_0_1.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+    </list>
+    <ignored path="Integrated Concussion Assessment System.iws" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,6 +266,11 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Homescreen.java">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
             <state relative-caret-position="2224">
               <caret line="166" column="26" selection-start-line="166" selection-start-column="26" selection-end-line="166" selection-end-column="26" />
               <folding>
@@ -98,11 +283,24 @@
                 <element signature="e#5386#5387#0" expanded="true" />
                 <element signature="e#5418#5419#0" expanded="true" />
               </folding>
+<<<<<<< HEAD
 =======
             <state relative-caret-position="789">
               <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
               <folding />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+            <state relative-caret-position="418">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+=======
+            <state relative-caret-position="789">
+              <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+              <folding />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
             </state>
           </provider>
         </entry>
@@ -111,21 +309,44 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Scat3.java">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
             <state relative-caret-position="204">
               <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+<<<<<<< HEAD
 =======
             <state relative-caret-position="286">
               <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+            <state relative-caret-position="484">
+              <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+              <folding />
+=======
+            <state relative-caret-position="286">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
             </state>
           </provider>
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       <file leaf-file-name="nav_header_homescreen.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_homescreen.xml">
           <provider selected="true" editor-type-id="android-designer2">
@@ -134,6 +355,7 @@
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
 =======
       <file leaf-file-name="main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
@@ -154,6 +376,35 @@
             <state relative-caret-position="880">
               <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="31" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+=======
+      <file leaf-file-name="main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="880">
+              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
               <folding />
             </state>
           </provider>
@@ -166,20 +417,42 @@
           </provider>
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
             <state relative-caret-position="425">
               <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+<<<<<<< HEAD
 =======
             <state relative-caret-position="154">
               <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+            <state relative-caret-position="484">
+              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+=======
+            <state relative-caret-position="154">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
               <folding />
             </state>
           </provider>
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       <file leaf-file-name="content_homescreen.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_homescreen.xml">
+<<<<<<< HEAD
 =======
       <file leaf-file-name="scat3.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml">
@@ -192,6 +465,30 @@
             </state>
           </provider>
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+      <file leaf-file-name="scat3.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+=======
+      <file leaf-file-name="scat3.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+              <folding>
+                <marker date="1480974080705" expanded="true" signature="455:478" ph="&quot;The calling activity is:&quot;" />
+              </folding>
+            </state>
+          </provider>
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
@@ -206,12 +503,18 @@
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       <file leaf-file-name="menu_button.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/menu_button.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
               <folding />
+<<<<<<< HEAD
 =======
       <file leaf-file-name="symptomEvalFrag.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/symptomEvalFrag.java">
@@ -222,16 +525,36 @@
                 <element signature="imports" expanded="true" />
               </folding>
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+            <state relative-caret-position="132">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+=======
+            <state relative-caret-position="1012">
+              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
             </state>
           </provider>
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       <file leaf-file-name="drawables.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/drawables.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
 =======
       <file leaf-file-name="symptomEvaluationQuestions.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/symptomEvaluationQuestions.java">
@@ -239,6 +562,16 @@
             <state relative-caret-position="1056">
               <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+            <state relative-caret-position="242">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+=======
+            <state relative-caret-position="1056">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
               <folding />
             </state>
           </provider>
@@ -251,7 +584,23 @@
       <list>
         <option value="resourceFile" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+||||||| merged common ancestors
+        <option value="ASClass" />
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Maryam" />
+=======
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         <option value="layoutResourceFile" />
         <option value="ASClass" />
       </list>
@@ -261,7 +610,12 @@
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
         <option value="Maryam" />
+<<<<<<< HEAD
 >>>>>>> linkScat3
+||||||| merged common ancestors
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       </list>
     </option>
   </component>
@@ -1696,10 +2050,24 @@
     <option name="modificationStamps">
       <map>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <entry key="G:\OneDrive\School\Year IV\4th Year Project\Code\ICAS\App" value="4446610979695" />
 =======
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+        <entry key="G:\OneDrive\School\Year IV\4th Year Project\Code\ICAS\App" value="4446610979695" />
+||||||| merged common ancestors
+        <entry key="C:\Users\mkaka\Desktop\ICAS\App" value="4439300113693" />
+=======
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         <entry key="C:\Users\mkaka\Desktop\ICAS\App" value="4443841495647" />
+<<<<<<< HEAD
 >>>>>>> linkScat3
+||||||| merged common ancestors
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1968,12 +2336,18 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_homescreen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/app_bar_homescreen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_homescreen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/menu_button.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Homescreen.java" />
+<<<<<<< HEAD
 =======
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
@@ -1993,21 +2367,68 @@
         <option value="$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/symptomEvaluationQuestions.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/symptomEvalFrag.java" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+        <option value="$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_first_question2.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_first_question.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_first_question.xml" />
+        <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/content_first_question.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Scat3.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/nav_drawer.xml" />
+=======
+        <option value="$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_first_question2.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_first_question.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_first_question.xml" />
+        <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/content_first_question.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/nav_drawer.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/scat3.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/symptom_eval.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Scat3.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/symptomEvaluationQuestions.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/symptomEvalFrag.java" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
+<<<<<<< HEAD
 =======
     <option name="x" value="504" />
     <option name="y" value="-1359" />
     <option name="width" value="2418" />
     <option name="height" value="1368" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+    <option name="x" value="1360" />
+    <option name="width" value="1384" />
+    <option name="height" value="1832" />
+=======
+    <option name="x" value="504" />
+    <option name="y" value="-1359" />
+    <option name="width" value="2418" />
+    <option name="height" value="1368" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -2035,17 +2456,30 @@
     </navigator>
     <panes>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="AndroidView">
         <subPane />
       </pane>
       <pane id="PackagesPane" />
+<<<<<<< HEAD
 =======
       <pane id="AndroidView">
         <subPane />
       </pane>
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+      <pane id="Scope" />
+=======
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2065,6 +2499,11 @@
             </PATH_ELEMENT>
           </PATH>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="App" />
@@ -2357,6 +2796,7 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
 =======
         </subPane>
       </pane>
@@ -2364,6 +2804,17 @@
       <pane id="PackagesPane" />
       <pane id="Scratches" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+||||||| merged common ancestors
+      <pane id="PackagesPane" />
+=======
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2696,6 +3147,11 @@
   </component>
   <component name="ToolWindowManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
@@ -2703,6 +3159,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
 =======
     <frame x="504" y="-1359" width="2418" height="1368" extended-state="6" />
     <editor active="false" />
@@ -2712,13 +3169,42 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21909633" sideWeight="0.5187874" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2855925" sideWeight="0.49658412" order="12" side_tool="false" content_ui="tabs" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22541234" sideWeight="0.51024765" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21909633" sideWeight="0.5187874" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2855925" sideWeight="0.49658412" order="12" side_tool="false" content_ui="tabs" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
 <<<<<<< HEAD
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+||||||| merged common ancestors
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< Temporary merge branch 1
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+||||||| merged common ancestors
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27726027" sideWeight="0.5021381" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2771136" sideWeight="0.5021381" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28900257" sideWeight="0.49487618" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> Temporary merge branch 2
+=======
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2735,6 +3221,7 @@
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
 =======
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2771136" sideWeight="0.5021381" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28900257" sideWeight="0.49487618" order="3" side_tool="false" content_ui="tabs" />
@@ -2754,6 +3241,40 @@
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22591646" sideWeight="0.48975235" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21605465" sideWeight="0.49786195" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20801364" sideWeight="0.49188727" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24978651" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329863" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+=======
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21909633" sideWeight="0.48121265" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29632792" sideWeight="0.49786195" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21568628" sideWeight="0.49829206" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20801364" sideWeight="0.49017933" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24978651" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16353545" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2762,7 +3283,48 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+||||||| merged common ancestors
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22541234" sideWeight="0.51024765" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27726027" sideWeight="0.5021381" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22591646" sideWeight="0.48975235" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21605465" sideWeight="0.49786195" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20801364" sideWeight="0.49188727" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13962425" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329863" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+=======
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2797,7 +3359,12 @@
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
+<<<<<<< HEAD
 >>>>>>> linkScat3
+||||||| merged common ancestors
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -2851,8 +3418,46 @@
         <state />
       </provider>
       <provider editor-type-id="text-editor">
+<<<<<<< HEAD
 =======
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -2860,6 +3465,11 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_homescreen.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
@@ -2868,6 +3478,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+<<<<<<< HEAD
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Scat3.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2883,6 +3494,49 @@
         <state relative-caret-position="44">
           <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Scat3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Scat3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         </state>
       </provider>
     </entry>
@@ -2891,12 +3545,18 @@
         <state />
       </provider>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#903#929#0" expanded="true" />
           </folding>
+<<<<<<< HEAD
 =======
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
@@ -2920,6 +3580,55 @@
           <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding />
+=======
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         </state>
       </provider>
     </entry>
@@ -2942,6 +3651,11 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -2949,6 +3663,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png">
       <provider selected="true" editor-type-id="images">
+<<<<<<< HEAD
         <state />
       </provider>
     </entry>
@@ -2972,7 +3687,68 @@
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
+||||||| merged common ancestors
+||||||| merged common ancestors
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+>>>>>>> Temporary merge branch 2
+        <state />
+      </provider>
+    </entry>
+<<<<<<< Temporary merge branch 1
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images">
+=======
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images">
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
+        <state />
+<<<<<<< HEAD
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
@@ -2989,6 +3765,39 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/ic_launcher-web.png">
@@ -3005,6 +3814,11 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
@@ -3013,6 +3827,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+<<<<<<< HEAD
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
@@ -3020,6 +3835,33 @@
         <state relative-caret-position="44">
           <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         </state>
       </provider>
     </entry>
@@ -3029,13 +3871,30 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         <state relative-caret-position="17">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
+<<<<<<< HEAD
 =======
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         </state>
       </provider>
     </entry>
@@ -3056,6 +3915,11 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest">
         <state />
@@ -3074,6 +3938,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="408">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
@@ -3084,6 +3949,39 @@
         <state relative-caret-position="44">
           <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+        <state relative-caret-position="330">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+>>>>>>> Temporary merge branch 2
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Temporary merge branch 1
+        <state relative-caret-position="408">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+||||||| merged common ancestors
+        <state relative-caret-position="44">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding />
+=======
+        <state relative-caret-position="44">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+>>>>>>> Temporary merge branch 2
+=======
+        <state relative-caret-position="408">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         </state>
       </provider>
     </entry>
@@ -3098,9 +3996,15 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_homescreen.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
+<<<<<<< HEAD
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/person.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu.xml" />
@@ -3118,6 +4022,43 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/person.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/dialogFragment.java" />
+    <entry file="file://$PROJECT_DIR$/../SCAT3App/app/build/generated/source/r/debug/com/example/adambirosh_admin/newapplication/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="3341" column="60" selection-start-line="3341" selection-start-column="60" selection-end-line="3341" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/person.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/dialogFragment.java" />
+    <entry file="file://$PROJECT_DIR$/../SCAT3App/app/build/generated/source/r/debug/com/example/adambirosh_admin/newapplication/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="3341" column="60" selection-start-line="3341" selection-start-column="60" selection-end-line="3341" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3126,10 +4067,16 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_homescreen.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
@@ -3149,7 +4096,38 @@
           </folding>
 =======
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
+||||||| merged common ancestors
+||||||| merged common ancestors
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/content_first_question.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_first_question.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_first_question2.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_first_question.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+=======
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="418">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
@@ -3171,9 +4149,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+||||||| merged common ancestors
+        <state relative-caret-position="418">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/content_first_question.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_first_question.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_first_question2.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_first_question.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_drawer.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+>>>>>>> Temporary merge branch 2
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Temporary merge branch 1
+        <state relative-caret-position="425">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+||||||| merged common ancestors
+        <state relative-caret-position="132">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+=======
+        <state relative-caret-position="44">
+          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+>>>>>>> Temporary merge branch 2
+=======
+        <state relative-caret-position="425">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -3183,13 +4200,77 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_homescreen.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+||||||| merged common ancestors
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding />
+        </state>
+>>>>>>> Temporary merge branch 2
       </provider>
+<<<<<<< Temporary merge branch 1
+||||||| merged common ancestors
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_drawer.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Scat3.java">
+=======
+      <provider editor-type-id="android-designer2">
+        <state />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_homescreen.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
+      </provider>
+<<<<<<< HEAD
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/symptom_eval.xml">
+||||||| merged common ancestors
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/symptom_eval.xml">
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="352">
           <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+        <state relative-caret-position="367">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#903#929#0" expanded="true" />
+          </folding>
+||||||| merged common ancestors
+        <state relative-caret-position="484">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding />
+=======
+        <state relative-caret-position="352">
+          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+>>>>>>> Temporary merge branch 2
+=======
+        <state relative-caret-position="367">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#903#929#0" expanded="true" />
+          </folding>
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3199,21 +4280,43 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/side_nav_bar.xml">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
 =======
         <state relative-caret-position="880">
           <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+        <state relative-caret-position="506">
+          <caret line="31" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+=======
+        <state relative-caret-position="880">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
           <folding />
         </state>
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/menu_button.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+<<<<<<< HEAD
           <folding />
         </state>
       </provider>
@@ -3230,10 +4333,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1056">
           <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+||||||| merged common ancestors
+||||||| merged common ancestors
+        <state relative-caret-position="286">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+=======
+        <state relative-caret-position="1056">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -3247,8 +4361,34 @@
         <state />
       </provider>
     </entry>
+||||||| merged common ancestors
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/scat3.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding>
+            <marker date="1480974080705" expanded="true" signature="455:478" ph="&quot;The calling activity is:&quot;" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+>>>>>>> Temporary merge branch 2
+    </entry>
+<<<<<<< Temporary merge branch 1
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Scat3.java">
+||||||| merged common ancestors
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+=======
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Scat3.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="154">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
@@ -3274,12 +4414,62 @@
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+        <state relative-caret-position="154">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/symptomEvalFrag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+>>>>>>> Temporary merge branch 2
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Temporary merge branch 1
+        <state relative-caret-position="204">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+||||||| merged common ancestors
+        <state relative-caret-position="484">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding />
+=======
+        <state relative-caret-position="286">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+>>>>>>> Temporary merge branch 2
+=======
+        <state relative-caret-position="204">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/example/icas/integratedconcussionassessmentsystem/Homescreen.java">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         <state relative-caret-position="2224">
           <caret line="166" column="26" selection-start-line="166" selection-start-column="26" selection-end-line="166" selection-end-column="26" />
           <folding>
@@ -3292,11 +4482,24 @@
             <element signature="e#5386#5387#0" expanded="true" />
             <element signature="e#5418#5419#0" expanded="true" />
           </folding>
+<<<<<<< HEAD
 =======
         <state relative-caret-position="789">
           <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
           <folding />
 >>>>>>> linkScat3
+||||||| merged common ancestors
+||||||| merged common ancestors
+        <state relative-caret-position="418">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+=======
+        <state relative-caret-position="789">
+          <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+          <folding />
+>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
         </state>
       </provider>
     </entry>
