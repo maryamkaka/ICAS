@@ -1,10 +1,4 @@
 <resources>
-<<<<<<< HEAD
-<<<<<<< HEAD
-||||||| merged common ancestors
-<<<<<<< Temporary merge branch 1
-=======
->>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
     <string name="app_name">I-CAS</string>
     <string name="Question"> </string>
     <string name="callingActMsg">The calling activity is:</string>
@@ -16,20 +10,5 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-<<<<<<< HEAD
-=======
-    <string name="app_name">Integrated Concussion Assessment System</string>
-    <string name="Question"> Insert Question here </string>
-    <string name="callingActMsg">The calling activity is:</string>
-    <string name="options_exit_txt">Exit</string>
-    <string name="welcomeScreenTxt">Hello</string>
     <string name="score" />
->>>>>>> linkScat3
-||||||| merged common ancestors
-||||||| merged common ancestors
-=======
-    <string name="score" />
->>>>>>> Temporary merge branch 2
-=======
->>>>>>> 637e6443efd51497fe4e1a6b95074a76d82f8dd7
 </resources>
