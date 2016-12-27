@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 public class Scat3 extends FragmentActivity{
     symptomEvalFrag symptomEvalFrag;
+    private boolean updateStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -39,10 +40,10 @@ public class Scat3 extends FragmentActivity{
     }
 
     public void onNextClick(View view){
-        symptomEvalFrag.nextQuestion(view);
+        updateStatus = symptomEvalFrag.nextQuestion(view);
     }
 
     public void onPrevClick(View view){
-        symptomEvalFrag.prevQuestion(view);
+        updateStatus = symptomEvalFrag.prevQuestion(view);
     }
 }
