@@ -12,13 +12,21 @@
         android:text="@string/callingActMsg"
         android:padding="20dp" /-->
 
-    <fragment
+    <!--fragment
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/fragment"
         android:name="app.example.icas.integratedconcussionassessmentsystem.symptomEvalFrag"
         tools:layout="@layout/symptom_eval"
-        android:layout_above="@+id/relativeLayout" />
+        android:layout_above="@+id/relativeLayout" /-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/fragment">
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

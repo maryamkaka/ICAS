@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 
 public class Scat3 extends FragmentActivity{
-    private symptomEvalFrag symptomEvalFrag;
+    private symptomEvalFrag symptomEvalFrag = new symptomEvalFrag();
     private cogAssessmentFrag cogAssessmentFrag = new cogAssessmentFrag();
     private boolean updateStatus;
     private final FragmentManager fragmentManager = getFragmentManager();
@@ -27,25 +27,16 @@ public class Scat3 extends FragmentActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scat3);
 
-        //*Fragment manager Initialization
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-        //Initialize fragments
-        symptomEvalFrag = (app.example.icas.integratedconcussionassessmentsystem.symptomEvalFrag) fragmentManager.findFragmentById(R.id.fragment);
-
-        //Create and add symptom evaluation fragment
-        transaction.commit();
+        //Initialize fragment
+        fragmentManager.beginTransaction().add(R.id.fragment, symptomEvalFrag).commit();
     }
 
     public void onNextClick(View view){
         updateStatus = symptomEvalFrag.nextQuestion(view);
 
+        //set next test fragment
         if(!updateStatus){
-            System.out.println("New frag");
-
-            FragmentTransaction transaction = fragmentManager.beginTransaction();
-            transaction.replace(R.id.fragment, cogAssessmentFrag);
-            transaction.commit();
+            fragmentManager.beginTransaction().replace(R.id.fragment, cogAssessmentFrag).commit();
         }
     }
 
