@@ -73,7 +73,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@id/scale"
-        android:paddingBottom="40dp">
+        android:paddingBottom="50dp">
 
         <TextView
             android:layout_weight="1"

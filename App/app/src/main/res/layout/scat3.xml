@@ -22,20 +22,20 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:id="@+id/fragment">
-
+        android:id="@+id/fragment"
+        android:layout_above="@+id/buttons"
+        android:layout_height="wrap_content">
     </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/relativeLayout"
+        android:id="@+id/buttons"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:paddingTop="10dp">
+        android:paddingTop="40dp">
 
         <Button
             android:layout_weight="1"
