@@ -57,6 +57,12 @@ public class cogAssessmentFrag extends Fragment {
         hr.setMaxValue(12);
         min.setMinValue(00);
         min.setMaxValue(60);
+        min.setFormatter(new NumberPicker.Formatter() {
+            @Override
+            public String format(int i) {
+                return String.format("%02d", i);
+            }
+        });
         AMPM.setMinValue(0);
         AMPM.setMaxValue(1);
         AMPM.setDisplayedValues(AMPMString);
