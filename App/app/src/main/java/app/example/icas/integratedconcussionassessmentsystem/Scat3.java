@@ -17,32 +17,36 @@ import android.widget.Toast;
 
 
 public class Scat3 extends FragmentActivity{
-    symptomEvalFrag symptomEvalFrag;
+    private symptomEvalFrag symptomEvalFrag = new symptomEvalFrag();
+    private cogAssessmentFrag cogAssessmentFrag = new cogAssessmentFrag();
+    private boolean updateStatus;
+    private int currentFrag = 0;
+    private final FragmentManager fragmentManager = getFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scat3);
 
-        //Intent actCalled = getIntent();
-        //String prevAct = actCalled.getExtras().getString("callingAct");
-
-        //TextView callTxt = (TextView) findViewById(R.id.callingActivityTxt);
-        //callTxt.append(" " + prevAct);
-
-        //Fragment manager
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        symptomEvalFrag = (app.example.icas.integratedconcussionassessmentsystem.symptomEvalFrag) fragmentManager.findFragmentById(R.id.symptom_eval);
-
-        fragmentTransaction.commit();
+        //Initialize fragment
+        fragmentManager.beginTransaction().add(R.id.fragment, symptomEvalFrag).commit();
     }
 
     public void onNextClick(View view){
-        symptomEvalFrag.nextQuestion(view);
+        if(currentFrag == 0){
+            updateStatus = symptomEvalFrag.nextQuestion(view);
+        } else {
+            updateStatus = cogAssessmentFrag.nextQuestion(view);
+        }
+
+        //set next test fragment
+        if(!updateStatus){
+            fragmentManager.beginTransaction().replace(R.id.fragment, cogAssessmentFrag).commit();
+            currentFrag += 1;
+        }
     }
 
     public void onPrevClick(View view){
-        symptomEvalFrag.prevQuestion(view);
+        updateStatus = symptomEvalFrag.prevQuestion(view);
     }
 }

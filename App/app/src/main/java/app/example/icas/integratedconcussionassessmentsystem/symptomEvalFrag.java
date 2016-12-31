@@ -53,22 +53,30 @@ public class symptomEvalFrag extends Fragment{
         });
     }
 
-    public void nextQuestion(View view){
+    public boolean nextQuestion(View view){
         questions.incrementIndex();
+
+        if(questions.getIndex() >= questions.getMaxIndex()){
+            return false;
+        }
+
         updateScreen();
+        return true;
     }
 
-    public void prevQuestion(View view){
+    public boolean prevQuestion(View view){
         questions.decrementIndex();
+
+        if(questions.getIndex() < 0){
+            return false;
+        }
+
         updateScreen();
+        return true;
     }
 
     private void updateScreen(){
-        if(questions.getIndex() >= questions.getMaxIndex()){
-        } else if(questions.getIndex() < 0) {
-        } else {
-            questionTxt.setText(questions.getCurrentQuestion());
-            answer.setProgress(0);
-        }
+        questionTxt.setText(questions.getCurrentQuestion());
+        answer.setProgress(0);
     }
 }
