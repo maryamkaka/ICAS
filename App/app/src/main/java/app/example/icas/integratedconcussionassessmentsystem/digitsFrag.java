@@ -26,8 +26,7 @@ public class digitsFrag extends Fragment {
             {{4,1,5}, {4,9,6,8}, {6,1,8,4,3}, {7,2,4,8,5,6}},
     };
     private int trial = 0,
-            currentList,
-            i;
+            currentList, score, i;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -102,20 +101,22 @@ public class digitsFrag extends Fragment {
             displayNumbers = false;
             displayNumbers();
         } else {
-            System.out.println("Score: " + validateInput());
-
-            if (trial == 4){
+            if (trial == numberList[currentList].length - 1){
                 return false;
-            } else if (!validateInput()){
+            }
+
+            if (!validateInput()){
                 if(error){
                     return false;
                 } else {
                     error = true;
                     setCurrentList();
                 }
+            } else {
+                trial++;
+                score++;
             }
 
-            trial++;
             question.setText("Trial #" + (trial+1) + "\n You will be shown a string of numbers. When completed input the numbers in reverse order");
             numInput.setVisibility(View.INVISIBLE);
             numInput.setText("");
