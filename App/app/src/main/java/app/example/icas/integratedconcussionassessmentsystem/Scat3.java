@@ -60,6 +60,11 @@ public class Scat3 extends FragmentActivity{
                 fragmentManager.beginTransaction().replace(R.id.fragment, digitsFrag).commit();
             } else if (currentFrag == 4){
                 fragmentManager.beginTransaction().replace(R.id.fragment, monthsFrag).commit();
+            } else {
+                //use intents to go to new activity
+                Intent getHomeScreen = new Intent(view.getContext(), Homescreen.class);
+                getHomeScreen.putExtra("callingAct", "Main Activity");
+                startActivity(getHomeScreen);
             }
         }
     }
