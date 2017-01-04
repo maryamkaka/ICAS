@@ -30,8 +30,7 @@ public class memoryFrag extends Fragment {
             {"baby", "monkey", "perfume", "sunset", "iron"},
             {"finger", "penny", "blanket", "lemon", "insect"}
     };
-    private int dropList = new Random().nextInt(wordList.length);
-    private int currentList = 0;
+    private int currentList = new Random().nextInt(wordList.length);
     private int i;
 
     @Override
@@ -55,10 +54,6 @@ public class memoryFrag extends Fragment {
     }
 
     private void displayWords(){
-        if(currentList == dropList){
-            currentList++;
-        }
-
         textInput.setVisibility(View.INVISIBLE);
         question.setText(wordList[currentList][0]);
 
@@ -119,8 +114,7 @@ public class memoryFrag extends Fragment {
             }
 
             trial++;
-            currentList++;
-            question.setText("Trial #" + trial + "\n You will be shown five words. Try to remember as many as you can");
+            question.setText("Trial #" + trial + "\n " + "You will be shown the same list of words. Repeat as many back as possible even if you have listed them before");
             textInput.setVisibility(View.INVISIBLE);
             wordOne.setText(""); wordTwo.setText(""); wordThree.setText(""); wordFour.setText(""); wordFive.setText("");
             displayWords = true;
