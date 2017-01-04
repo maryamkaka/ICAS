@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import java.util.Random;
 import java.util.Timer;
@@ -18,6 +19,7 @@ import java.util.logging.LogRecord;
 
 public class memoryFrag extends Fragment {
     private TextView question;
+    private EditText wordOne, wordTwo, wordThree, wordFour, wordFive;
     private int trial = 1;
     private boolean displayWords = true;
     private final String[][] wordList = {
@@ -40,7 +42,13 @@ public class memoryFrag extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         question = (TextView) getView().findViewById(R.id.question);
-        question.setText("You will be shown five words. Enter as many as you can to remember.");
+        question.setText("You will be shown five words. Try to remember as many as you can");
+
+        wordOne = (EditText) getView().findViewById(R.id.word1);
+        wordTwo = (EditText) getView().findViewById(R.id.word2);
+        wordThree = (EditText) getView().findViewById(R.id.word3);
+        wordFour = (EditText) getView().findViewById(R.id.word4);
+        wordFive = (EditText) getView().findViewById(R.id.word5);
     }
 
     private void displayWords(){
@@ -53,10 +61,8 @@ public class memoryFrag extends Fragment {
             @Override
             public void run() {
                 try {
-                    // For loop has now been moved into the thread
                     for (i = 0; i < wordList[currentList].length - 1; i++) {
                         Thread.sleep(1000);
-                        //Forcing the textView text change to take place on the main thread
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -65,6 +71,13 @@ public class memoryFrag extends Fragment {
                             }
                         });
                     }
+                    Thread.sleep(1000);
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            question.setText("Enter the words you remember below");
+                        }
+                    });
                 } catch (InterruptedException e) {
                 }
             }
@@ -73,14 +86,39 @@ public class memoryFrag extends Fragment {
         t.start();
     }
 
+    private int validateList(){
+        int score = 0;
+
+        for(int i = 0; i < wordList[currentList].length; i++) {
+            if (wordOne.getText().toString().equals(wordList[currentList][i]) ||
+                    wordTwo.getText().toString().equals(wordList[currentList][i]) ||
+                    wordThree.getText().toString().equals(wordList[currentList][i]) ||
+                    wordFour.getText().toString().equals(wordList[currentList][i]) ||
+                    wordFive.getText().toString().equals(wordList[currentList][i])) {
+                score++;
+            }
+        }
+        return score;
+    }
+
     public boolean nextQuestion(View view) {
         System.out.println("Next");
         if(displayWords){
             displayWords = false;
             displayWords();
         } else {
+            System.out.println("Score: " + validateList());
 
+            if (trial == 3){
+                return false;
+            }
+
+            question.setText("You will be shown five words. Try to remember as many as you can");
+            trial++;
+            currentList++;
+            wordOne.setText(""); wordTwo.setText(""); wordThree.setText(""); wordFour.setText(""); wordFive.setText("");
+            displayWords = true;
         }
-        return false;
+        return true;
     }
 }

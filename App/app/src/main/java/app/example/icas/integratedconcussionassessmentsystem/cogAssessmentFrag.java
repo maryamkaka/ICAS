@@ -84,6 +84,7 @@ public class cogAssessmentFrag extends Fragment {
             date.setVisibility(View.INVISIBLE);
             time.setVisibility(View.VISIBLE);
             goNext = false;
+            return true;
         }
         return false;
     }
