@@ -107,6 +107,7 @@ public class digitsFrag extends Fragment {
 
             if (!validateInput()){
                 if(error){
+                    System.out.println("Return False");
                     return false;
                 } else {
                     error = true;
