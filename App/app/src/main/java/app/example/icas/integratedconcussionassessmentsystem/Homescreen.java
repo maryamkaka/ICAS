@@ -23,6 +23,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mikepenz.materialdrawer.DrawerBuilder;
+
 public class Homescreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -63,7 +65,9 @@ public class Homescreen extends AppCompatActivity
             }
         });
 
-        //Navigation Drawer Stuff
+        //(TO BE CONTINUED) Navigation Drawer Stuff
+        //new DrawerBuilder().withActivity(this).build();
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
