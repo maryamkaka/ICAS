@@ -19,6 +19,7 @@ import android.widget.Toast;
 public class Scat3 extends FragmentActivity{
     private symptomEvalFrag symptomEvalFrag = new symptomEvalFrag();
     private cogAssessmentFrag cogAssessmentFrag = new cogAssessmentFrag();
+    private memoryFrag memoryFrag = new memoryFrag();
     private boolean updateStatus;
     private int currentFrag = 0;
     private final FragmentManager fragmentManager = getFragmentManager();
@@ -35,14 +36,21 @@ public class Scat3 extends FragmentActivity{
     public void onNextClick(View view){
         if(currentFrag == 0){
             updateStatus = symptomEvalFrag.nextQuestion(view);
-        } else {
+        } else if (currentFrag == 1) {
             updateStatus = cogAssessmentFrag.nextQuestion(view);
+        } else if (currentFrag == 2){
+            updateStatus = memoryFrag.nextQuestion(view);
         }
 
         //set next test fragment
         if(!updateStatus){
-            fragmentManager.beginTransaction().replace(R.id.fragment, cogAssessmentFrag).commit();
             currentFrag += 1;
+
+            if(currentFrag == 1) {
+                fragmentManager.beginTransaction().replace(R.id.fragment, cogAssessmentFrag).commit();
+            } else if (currentFrag == 2){
+                fragmentManager.beginTransaction().replace(R.id.fragment, memoryFrag).commit();
+            }
         }
     }
 
