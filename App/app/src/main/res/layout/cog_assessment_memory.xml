@@ -22,7 +22,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:orientation="vertical"
-        android:id="@+id/linearLayout2">
+        android:id="@+id/textInput">
 
 
         <EditText

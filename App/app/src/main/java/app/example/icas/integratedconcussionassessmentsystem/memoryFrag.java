@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.Random;
 import java.util.Timer;
@@ -20,6 +21,7 @@ import java.util.logging.LogRecord;
 public class memoryFrag extends Fragment {
     private TextView question;
     private EditText wordOne, wordTwo, wordThree, wordFour, wordFive;
+    private LinearLayout textInput;
     private int trial = 1;
     private boolean displayWords = true;
     private final String[][] wordList = {
@@ -31,8 +33,6 @@ public class memoryFrag extends Fragment {
     private int dropList = new Random().nextInt(wordList.length);
     private int currentList = 0;
     private int i;
-    private Timer timer = new Timer();
-    private TimerTask timerTask;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,13 +42,16 @@ public class memoryFrag extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         question = (TextView) getView().findViewById(R.id.question);
-        question.setText("You will be shown five words. Try to remember as many as you can");
+        question.setText("Trial #" + trial + " \n You will be shown five words. Try to remember as many as you can");
 
         wordOne = (EditText) getView().findViewById(R.id.word1);
         wordTwo = (EditText) getView().findViewById(R.id.word2);
         wordThree = (EditText) getView().findViewById(R.id.word3);
         wordFour = (EditText) getView().findViewById(R.id.word4);
         wordFive = (EditText) getView().findViewById(R.id.word5);
+
+        textInput = (LinearLayout) getView().findViewById(R.id.textInput);
+        textInput.setVisibility(View.INVISIBLE);
     }
 
     private void displayWords(){
@@ -56,7 +59,9 @@ public class memoryFrag extends Fragment {
             currentList++;
         }
 
+        textInput.setVisibility(View.INVISIBLE);
         question.setText(wordList[currentList][0]);
+
         Thread t = new Thread() {
             @Override
             public void run() {
@@ -67,7 +72,6 @@ public class memoryFrag extends Fragment {
                             @Override
                             public void run() {
                                 question.setText(wordList[currentList][i]);
-                                System.out.println(wordList[currentList][i]);
                             }
                         });
                     }
@@ -76,6 +80,7 @@ public class memoryFrag extends Fragment {
                         @Override
                         public void run() {
                             question.setText("Enter the words you remember below");
+                            textInput.setVisibility(View.VISIBLE);
                         }
                     });
                 } catch (InterruptedException e) {
@@ -113,9 +118,10 @@ public class memoryFrag extends Fragment {
                 return false;
             }
 
-            question.setText("You will be shown five words. Try to remember as many as you can");
             trial++;
             currentList++;
+            question.setText("Trial #" + trial + "\n You will be shown five words. Try to remember as many as you can");
+            textInput.setVisibility(View.INVISIBLE);
             wordOne.setText(""); wordTwo.setText(""); wordThree.setText(""); wordFour.setText(""); wordFive.setText("");
             displayWords = true;
         }
