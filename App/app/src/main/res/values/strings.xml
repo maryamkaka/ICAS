@@ -13,9 +13,9 @@
     <string name="score" />
     <!-- Temporary User Options, To be removed once user database is created -->
     <string-array name="User_Options">
-        <item name  = "Adam">Adam</item>
-        <item name  = "George">George</item>
-        <item name  = "Maryam">Maryam</item>
-        <item name  = "Victoria">Victoria</item>
+        <item name="Adam">Adam</item>
+        <item name="George">George</item>
+        <item name="Maryam">Maryam</item>
+        <item name="Victoria">Victoria</item>
     </string-array>
 </resources>
