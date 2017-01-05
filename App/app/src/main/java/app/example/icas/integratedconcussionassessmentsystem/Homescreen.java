@@ -23,7 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mikepenz.materialdrawer.DrawerBuilder;
+//import com.mikepenz.materialdrawer.DrawerBuilder;
 
 public class Homescreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -54,6 +54,13 @@ public class Homescreen extends AppCompatActivity
                         Intent getScat3Screen = new Intent(view.getContext(), Scat3.class);
                         getScat3Screen.putExtra("callingAct", "Main Activity");
                         startActivity(getScat3Screen);
+                        break;
+                    }
+                    case 1:{
+                        //use intents to go to new activity
+                        Intent getPosturagraphyScreen = new Intent(view.getContext(), Posturagraphy.class);
+                        getPosturagraphyScreen.putExtra("callingAct", "Main Activity");
+                        startActivity(getPosturagraphyScreen);
                         break;
                     }
                     //ADD MORE CASES HERE FOR OTHER GRID ELEMENTS (TESTS)
