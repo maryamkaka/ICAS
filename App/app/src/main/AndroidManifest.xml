@@ -15,9 +15,7 @@
         <activity
             android:name=".Homescreen"
             android:label="@string/title_activity_homescreen"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -26,6 +24,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Posturagraphy" />
+        <activity android:name=".postureTest"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
