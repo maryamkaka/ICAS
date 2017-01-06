@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -27,11 +28,12 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
 
         setContentView(R.layout.activity_login);
 
+        //Initialize Database
         db = new dbHelper(this);
         users = db.getUsers();
 
-        //Find User Options array from String resources (To be removed when Database is created)
-        adapter = ArrayAdapter.createFromResource(this,R.array.User_Options,android.R.layout.simple_spinner_item);
+        //Setup user selection spinner
+        adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, users);
 
         spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setAdapter(adapter);
