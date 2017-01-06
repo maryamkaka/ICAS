@@ -18,7 +18,7 @@ public class Posturagraphy extends AppCompatActivity {
         StartPost.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(Posturagraphy.this,postureTest.class);
+                Intent intent = new Intent(Posturagraphy.this,Posture_test2.class);
                 startActivity(intent);
             }
         });
