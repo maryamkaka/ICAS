@@ -41,9 +41,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Create new user"
+                android:text=""
+                android:hint="Create new user"
                 android:ems="10"
-                android:id="@+id/editText" />
+                android:id="@+id/newUserName" />
 
             <Spinner
                 android:layout_width="match_parent"

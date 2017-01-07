@@ -21,6 +21,7 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
     ArrayAdapter  adapter;
     private dbHelper db;
     private ArrayList<String> users;
+    private TextView userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         //Initialize Database
         db = new dbHelper(this);
         users = db.getUsers();
+        users.add("New User");
 
         //Setup user selection spinner
         adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, users);
@@ -39,10 +41,15 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(LoginActivity.this);
 
+        userName = (TextView) findViewById(R.id.newUserName);
+
         final ImageButton LoadProfile = (ImageButton) findViewById(R.id.loadprofile);
         LoadProfile.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                if(spinner.getSelectedItem().toString() == "New User"){
+                    db.addUser(userName.getText().toString());
+                }
                 Intent intent = new Intent(LoginActivity.this,Homescreen.class);
                 startActivity(intent);
             }

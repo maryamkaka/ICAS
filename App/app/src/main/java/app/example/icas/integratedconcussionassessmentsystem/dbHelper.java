@@ -19,7 +19,10 @@ public class dbHelper extends SQLiteOpenHelper{
     private Context context;
     private SQLiteDatabase db;
     private String[][] tables = {   //{tableName, Col1, Col2, ... }
-            {"users", "id", "name"}
+            {"users", "id", "name"},
+            {"SCAT3", "test_id", "user_id", "date", "SymptomEvaluationKey", "CognativeAssessmentKey"},
+            {"SymptomEval", "q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19"}
+
     };
 
     public dbHelper(Context context) {
@@ -30,15 +33,7 @@ public class dbHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        /*try{
-            //db = SQLiteDatabase.openOrCreateDatabase(DATABASE_NAME, null, null);
-            db.execSQL("CREATE TABLE IF NOT EXISTS " + tables[0][0] + "(" + tables[0][1] + " integer primary key, " + tables[0][2] + " VARCHAR);");
-            System.out.println("CREATE TABLE IF NOT EXISTS " + tables[0][0] + "(" + tables[0][1] + " integer primary key, " + tables[0][2] + " VARCHAR);");
-        } catch (Exception e) {
-            Log.e("DATABASE ERROR", "Error creating database");
-        }*/
-
-        db.execSQL("CREATE TABLE IF NOT EXISTS users (id integer primary key, name VARCHAR);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + tables[0][0] + " (" + tables[0][1] + " integer primary key, " +tables[0][2]+ " VARCHAR);");
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
