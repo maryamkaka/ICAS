@@ -13,6 +13,11 @@
             android:label="SCAT 3"
             android:theme="@style/AppTheme" />
         <activity
+            android:name=".Posture_test2"
+            android:screenOrientation="portrait"
+            android:label="Posture Test"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name=".Homescreen"
             android:label="@string/title_activity_homescreen"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -26,9 +31,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Posturagraphy" />
-        <activity android:name=".postureTest"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+
     </application>
 
 </manifest>

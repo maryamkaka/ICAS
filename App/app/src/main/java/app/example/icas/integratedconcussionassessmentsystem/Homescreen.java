@@ -3,8 +3,6 @@ package app.example.icas.integratedconcussionassessmentsystem;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -172,10 +170,10 @@ public class Homescreen extends AppCompatActivity
         }
         //Array of Grid images (SCAT3, Eye Gaze ...)
         private Integer[] mThumbsIds = {
-                R.drawable.menu_button,
-                R.drawable.posturography_menubutton,
-                R.drawable.eyegaze_menubutton,
-                R.drawable.eeg_menubutton
+                R.drawable.scat3logo,
+                R.drawable.posturelogo,
+                R.drawable.eyegazelogo,
+                R.drawable.eeglogo
         };
     }
 }
