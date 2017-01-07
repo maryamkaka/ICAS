@@ -14,14 +14,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.animation.ValueAnimator;
+
+import com.wang.avi.AVLoadingIndicatorView;
+import com.wang.avi.Indicator;
 
 import static android.view.View.GONE;
-import static app.example.icas.integratedconcussionassessmentsystem.R.id.next;
 
 
-public class postureTest_instructions extends Fragment implements SensorEventListener {
+public class postureTest_instructions extends Fragment implements SensorEventListener   {
     //Button next,skip;
     private int[] word_instructions;
     private int[] image_instructions;
@@ -30,6 +33,8 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     private int image_index =0,click_index =1;
     private Sensor mySensor;
     private SensorManager SM;
+    private AVLoadingIndicatorView avi;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -68,6 +73,13 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         Z = (TextView) getView().findViewById(R.id.Z);
         Z.setVisibility(GONE);
 
+        //Create Loading Animation
+        avi = (AVLoadingIndicatorView) getView().findViewById(R.id.avi);
+        avi.setVisibility(GONE);
+        //avi.setIndicator(indicator);
+
+
+
     }
 
 
@@ -83,10 +95,15 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
             X.setVisibility(View.VISIBLE);
             Y.setVisibility(View.VISIBLE);
             Z.setVisibility(View.VISIBLE);
+            avi.setVisibility(View.VISIBLE);
+            startAnim();
             click_index++;
+
+
         }else{
             instr_pic.setVisibility(View.VISIBLE);
             instr_word.setVisibility(View.VISIBLE);
+            avi.setVisibility(GONE);
             X.setVisibility(GONE);
             Y.setVisibility(GONE);
             Z.setVisibility(GONE);
@@ -107,6 +124,14 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     private void updateScreen(){
     }
 
+
+    void startAnim(){
+        avi.show();
+    }
+
+    void stopAnim(){
+        avi.hide();
+    }
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {

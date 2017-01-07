@@ -1,24 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/posturelayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!--TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/callingActivityTxt"
-        android:text="@string/callingActMsg"
-        android:padding="20dp" /-->
-
-    <!--fragment
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/fragment"
-        android:name="app.example.icas.integratedconcussionassessmentsystem.symptomEvalFrag"
-        tools:layout="@layout/symptom_eval"
-        android:layout_above="@+id/relativeLayout" /-->
 
     <FrameLayout
         android:layout_width="match_parent"

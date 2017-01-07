@@ -9,7 +9,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="app.example.icas.integratedconcussionassessmentsystem.Posture_test2">
+    tools:context="app.example.icas.integratedconcussionassessmentsystem.Posture_test2"
+    android:gravity="center">
 
     <TextView
         android:text="X"
@@ -29,6 +30,25 @@
         android:layout_height="wrap_content"
         android:id="@+id/Z"
         android:layout_below="@+id/Y" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_height="wrap_content"
+            android:id="@+id/avi"
+            app:indicatorName="BallPulseIndicator"
+            android:layout_alignBottom="@+id/Z"
+            android:layout_toRightOf="@+id/Z"
+            app:indicatorColor="@android:color/holo_red_dark"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:scaleX="2"
+            android:scaleY="2" />
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
