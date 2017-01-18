@@ -14,8 +14,8 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Posture_test2"
-            android:screenOrientation="portrait"
             android:label="Posture Test"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Homescreen"
@@ -30,8 +30,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Posturagraphy" />
-
+        <activity
+            android:name=".Posturography"
+            android:label="Posture Test"
+            android:parentActivityName=".Homescreen"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="app.example.icas.integratedconcussionassessmentsystem.Homescreen" />
+        </activity>
+        <activity
+            android:name=".Scat3_landing"
+            android:label="SCAT3 Test"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -26,7 +26,7 @@ class Emotiv(object):
     # TODO: Add a calibration mechanism, get a "noise average" per sensor or even a "noise pattern" to filter
     #       sensor values when processing packets received. Ideally this would be done not on someone's head.
     # TODO: Add filters for facial expressions, muscle contractions.
-    def __init__(self, display_output=False, serial_number=None, is_research=True, write=False,
+    def __init__(self, display_output=False, serial_number=None, is_research=False, write=False,
                  write_encrypted=False, write_decrypted=False, write_values=True, input_source="emotiv",
                  sys_platform=system_platform, verbose=False, output_path=None, chunk_writes=True, chunk_size=32):
         """

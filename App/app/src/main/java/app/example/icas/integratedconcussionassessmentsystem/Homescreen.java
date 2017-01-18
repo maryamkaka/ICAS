@@ -49,14 +49,14 @@ public class Homescreen extends AppCompatActivity
                 switch (position){
                     case 0:{
                         //use intents to go to new activity
-                        Intent getScat3Screen = new Intent(view.getContext(), Scat3.class);
+                        Intent getScat3Screen = new Intent(view.getContext(), Scat3_landing.class);
                         getScat3Screen.putExtra("callingAct", "Main Activity");
                         startActivity(getScat3Screen);
                         break;
                     }
                     case 1:{
                         //use intents to go to new activity
-                        Intent getPosturagraphyScreen = new Intent(view.getContext(), Posturagraphy.class);
+                        Intent getPosturagraphyScreen = new Intent(view.getContext(), Posturography.class);
                         getPosturagraphyScreen.putExtra("callingAct", "Main Activity");
                         startActivity(getPosturagraphyScreen);
                         break;
@@ -77,6 +77,7 @@ public class Homescreen extends AppCompatActivity
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
+        drawer.setBackgroundColor(212121);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);

@@ -36,7 +36,7 @@ public class Posture_test2 extends FragmentActivity{
 
             updateStatus = postureTest_instructions.nextQuestion(view);
         } else if (currentFrag == 2){
-            Intent intent = new Intent(Posture_test2.this,Posturagraphy.class);
+            Intent intent = new Intent(Posture_test2.this,Posturography.class);
             startActivity(intent);
         }
 
@@ -47,7 +47,7 @@ public class Posture_test2 extends FragmentActivity{
             if(currentFrag == 1) {
                 fragmentManager.beginTransaction().replace(R.id.fragment, postureTest_instructions).commit();
             } else if (currentFrag == 2){
-                Intent intent = new Intent(Posture_test2.this,Posturagraphy.class);
+                Intent intent = new Intent(Posture_test2.this,Posturography.class);
                 startActivity(intent);
             }
         }
