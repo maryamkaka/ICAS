@@ -55,14 +55,14 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.70"
             android:id="@+id/buttoncontainer"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:layout_width="wrap_content">
 
             <ImageButton
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/loadprofile"
                 android:id="@+id/loadprofile"
