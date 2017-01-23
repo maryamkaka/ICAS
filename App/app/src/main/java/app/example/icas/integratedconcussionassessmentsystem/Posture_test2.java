@@ -54,6 +54,7 @@ public class Posture_test2 extends FragmentActivity{
     }
 
     public void onPrevClick(View view){
+
         updateStatus = Pre_posture_questions.prevQuestion(view);
     }
 }
