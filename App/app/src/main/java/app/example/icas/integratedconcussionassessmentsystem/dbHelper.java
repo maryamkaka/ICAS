@@ -8,6 +8,7 @@ import android.provider.Settings;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by mkaka on 2017-01-05.
@@ -47,6 +48,12 @@ public class dbHelper extends SQLiteOpenHelper{
         Cursor cursor = db.rawQuery("SELECT * FROM "+ table, null);
 
         int idCol  = cursor.getColumnIndex(tables[0][1]);
+    }
+
+    public void saveSypmtomEvalScore(int[] score){
+        System.out.println("HELLLLLLLOOOOO!  NOTICE MEEEEEEE");
+        System.out.println("Scores: " + Arrays.toString(score));
+
     }
 
     public ArrayList<String> getUsers(){

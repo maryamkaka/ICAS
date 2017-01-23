@@ -70,6 +70,6 @@ public class Scat3 extends FragmentActivity{
     }
 
     public void onPrevClick(View view){
-        updateStatus = symptomEvalFrag.prevQuestion(view);
+        updateStatus = symptomEvalFrag.prevQuestion();
     }
 }

@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         LoadProfile.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                String name = userName.getText().toString();
                 if(spinner.getSelectedItem().toString() == "New User"){
                     db.addUser(userName.getText().toString());
                 }
