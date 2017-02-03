@@ -13,6 +13,10 @@
             android:label="SCAT 3"
             android:theme="@style/AppTheme" />
         <activity
+            android:name=".scat3_instructions"
+            android:label="SCAT 3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".Posture_test2"
             android:label="Posture Test"
             android:screenOrientation="portrait"

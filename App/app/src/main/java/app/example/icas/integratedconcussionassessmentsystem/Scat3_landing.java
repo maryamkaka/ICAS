@@ -59,7 +59,7 @@ public class Scat3_landing extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Scat3_landing.this,Scat3.class);
+                Intent intent = new Intent(Scat3_landing.this,scat3_instructions.class);
                 startActivity(intent);
             }
         });
