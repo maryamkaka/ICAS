@@ -20,26 +20,62 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:paddingBottom="50dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="false"
             android:orientation="vertical"
             android:id="@+id/textInput"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="false"
+            android:gravity="center">
 
 
-            <EditText
+            <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:text=""
-                android:ems="10"
-                android:textSize="15pt"
-                android:id="@+id/word1"
-                android:imeOptions="actionNext"/>
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/Q1"
+                android:gravity="center"
+                android:visibility="invisible">
+
+                <RadioButton
+                    android:text="RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/op1"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/op2"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/op3"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/op4"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/op5"
+                    android:layout_weight="1" />
+            </RadioGroup>
 
         </LinearLayout>
+
     </LinearLayout>
 
 

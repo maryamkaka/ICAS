@@ -7,6 +7,8 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -15,6 +17,7 @@ public class Pre_posture_questions extends Fragment {
 
     BESSEvaluationQuestions questions;
     TextView questionTxt, scoreTxt;
+    RadioGroup Q1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,6 +31,16 @@ public class Pre_posture_questions extends Fragment {
         questions = new BESSEvaluationQuestions();
 
         questionTxt = (TextView) getView().findViewById(R.id.question);
+        Q1  = (RadioGroup) view.findViewById(R.id.Q1);
+
+        //First Posture Question
+        Q1.setVisibility(view.VISIBLE);
+        ((RadioButton) Q1.getChildAt(0)).setText("None");
+        ((RadioButton) Q1.getChildAt(1)).setText("Shoes");
+        ((RadioButton) Q1.getChildAt(2)).setText("Sandals");
+        ((RadioButton) Q1.getChildAt(3)).setText("Flip-flops");
+        ((RadioButton) Q1.getChildAt(4)).setText("Cleats");
+
         updateScreen();
 
 
@@ -40,6 +53,28 @@ public class Pre_posture_questions extends Fragment {
             return false;
         }
 
+        if (questions.getIndex()==1){
+            (Q1.getChildAt(2)).setVisibility(view.INVISIBLE);
+            (Q1.getChildAt(3)).setVisibility(view.INVISIBLE);
+            (Q1.getChildAt(4)).setVisibility(view.INVISIBLE);
+
+            ((RadioButton) Q1.getChildAt(0)).setText("Right");
+            ((RadioButton) Q1.getChildAt(1)).setText("Left");
+
+
+        } else if(questions.getIndex()==2){
+            //Re-enable hidden buttons
+            (Q1.getChildAt(2)).setVisibility(view.VISIBLE);
+            (Q1.getChildAt(3)).setVisibility(view.VISIBLE);
+            (Q1.getChildAt(4)).setVisibility(view.VISIBLE);
+
+            //Update Text
+            ((RadioButton) Q1.getChildAt(0)).setText("Hardwood");
+            ((RadioButton) Q1.getChildAt(1)).setText("Grass");
+            ((RadioButton) Q1.getChildAt(2)).setText("Asphalt");
+            ((RadioButton) Q1.getChildAt(3)).setText("Tiles");
+            ((RadioButton) Q1.getChildAt(4)).setText("Rug");
+        }
         updateScreen();
         return true;
     }
@@ -50,7 +85,39 @@ public class Pre_posture_questions extends Fragment {
         if(questions.getIndex() < 0){
             return false;
         }
+        if (questions.getIndex()==0) {
+            (Q1.getChildAt(2)).setVisibility(view.VISIBLE);
+            (Q1.getChildAt(3)).setVisibility(view.VISIBLE);
+            (Q1.getChildAt(4)).setVisibility(view.VISIBLE);
 
+            ((RadioButton) Q1.getChildAt(0)).setText("None");
+            ((RadioButton) Q1.getChildAt(1)).setText("Shoes");
+            ((RadioButton) Q1.getChildAt(2)).setText("Sandals");
+            ((RadioButton) Q1.getChildAt(3)).setText("Flip-flops");
+            ((RadioButton) Q1.getChildAt(4)).setText("Cleats");
+
+        }else if(questions.getIndex()==1){
+            (Q1.getChildAt(2)).setVisibility(view.INVISIBLE);
+            (Q1.getChildAt(3)).setVisibility(view.INVISIBLE);
+            (Q1.getChildAt(4)).setVisibility(view.INVISIBLE);
+
+            ((RadioButton) Q1.getChildAt(0)).setText("Right");
+            ((RadioButton) Q1.getChildAt(1)).setText("Left");
+
+
+        } else if(questions.getIndex()==2){
+            //Re-enable hidden buttons
+            (Q1.getChildAt(2)).setVisibility(view.VISIBLE);
+            (Q1.getChildAt(3)).setVisibility(view.VISIBLE);
+            (Q1.getChildAt(4)).setVisibility(view.VISIBLE);
+
+            //Update Text
+            ((RadioButton) Q1.getChildAt(0)).setText("Hardwood");
+            ((RadioButton) Q1.getChildAt(1)).setText("Grass");
+            ((RadioButton) Q1.getChildAt(2)).setText("Asphalt");
+            ((RadioButton) Q1.getChildAt(3)).setText("Tiles");
+            ((RadioButton) Q1.getChildAt(4)).setText("Rug");
+        }
         updateScreen();
         return true;
     }
