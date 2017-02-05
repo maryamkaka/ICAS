@@ -6,15 +6,19 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
+import com.gc.materialdesign.views.ButtonRectangle;
+
+import static android.view.View.GONE;
+
 /**
- * SCAT 3 Activity
+ * Posturagraphy Activity
  */
 
 
 public class Posture_test2 extends FragmentActivity{
     private postureTest_instructions postureTest_instructions = new postureTest_instructions();
     private Pre_posture_questions Pre_posture_questions = new Pre_posture_questions();
-
+    private ButtonRectangle next,prev;
     private boolean updateStatus;
     private int currentFrag = 0;
     private final FragmentManager fragmentManager = getFragmentManager();
@@ -23,6 +27,10 @@ public class Posture_test2 extends FragmentActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.posture_test2);
+        next = (ButtonRectangle) findViewById(R.id.next);
+        prev = (ButtonRectangle) findViewById(R.id.prev);
+        prev.setVisibility(GONE);
+
 
         //Initialize fragment
         fragmentManager.beginTransaction().add(R.id.fragment, Pre_posture_questions).commit();
@@ -31,6 +39,7 @@ public class Posture_test2 extends FragmentActivity{
     public void onNextClick(View view){
         if(currentFrag == 0){
             updateStatus = Pre_posture_questions.nextQuestion(view);
+            prev.setVisibility(View.VISIBLE);
         } else if (currentFrag == 1) {
             //updateStatus = Pre_posture_questions.nextQuestion(view);
 

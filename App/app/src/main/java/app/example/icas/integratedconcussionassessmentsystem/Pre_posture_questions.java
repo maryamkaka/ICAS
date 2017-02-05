@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class Pre_posture_questions extends Fragment {
 
     BESSEvaluationQuestions questions;
-    TextView questionTxt, scoreTxt;
+    TextView questionTxt;
     RadioGroup Q1;
 
     @Override
@@ -32,6 +32,16 @@ public class Pre_posture_questions extends Fragment {
 
         questionTxt = (TextView) getView().findViewById(R.id.question);
         Q1  = (RadioGroup) view.findViewById(R.id.Q1);
+
+        //TO-DO: STORE RADIOBUTTON ANSWERS
+        Q1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+            @Override
+            public void onCheckedChanged(RadioGroup Q1, int selectedId){
+
+                selectedId = Q1.getCheckedRadioButtonId();
+            }
+        });
+
 
         //First Posture Question
         Q1.setVisibility(view.VISIBLE);
