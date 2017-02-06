@@ -46,6 +46,10 @@ public class dbHelper extends SQLiteOpenHelper{
         db.execSQL("INSERT INTO " + tables[0][0] + "(" + tables [0][2] + ") VALUES ('" + name + "')");
     }
 
+    public void addAccelData(int timestamp, int testID, float x, float y, float z){
+        db.execSQL("INSERT INTO AccelData (timestamp, TestID, x, y, z) VALUES ("+ timestamp + "," + testID + "," + x + "," + y + "," + z + ")");
+    }
+
     public void getData(String table, String id){
         Cursor cursor = db.rawQuery("SELECT * FROM "+ table, null);
 
