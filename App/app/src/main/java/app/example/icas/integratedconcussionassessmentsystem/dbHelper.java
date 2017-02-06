@@ -35,6 +35,8 @@ public class dbHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db){
         db.execSQL("CREATE TABLE IF NOT EXISTS " + tables[0][0] + " (" + tables[0][1] + " integer primary key, " +tables[0][2]+ " VARCHAR);");
+        db.execSQL("CREATE TABLE Posturography (TestID binary PRIMARY KEY AUTOINCREMENT, UserID integer, Date datetime, TestingSurface string, Footware string, Foot binary);");
+        db.execSQL("CREATE TABLE AccelData (timestamp timestamp, TestID integer, x float,y float, z float);");
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
