@@ -28,7 +28,7 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     //Button next,skip;
     private int[] word_instructions;
     private int[] image_instructions;
-    private TextView X,Y,Z;
+    private TextView X,Y,Z,Statusmsg;
     ImageView   instr_pic,instr_word;
     private int image_index =0,click_index =1;
     private Sensor mySensor;
@@ -44,7 +44,6 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
-        //next = (Button) getView().findViewById(R.id.next);
         word_instructions = new int[]{R.drawable.postinstr1,R.drawable.postinstr2,R.drawable.postinstr3};
         image_instructions = new int[]{R.drawable.postinstpic1,R.drawable.postinstpic2,R.drawable.postinstpic3};
 
@@ -72,6 +71,8 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         Y.setVisibility(GONE);
         Z = (TextView) getView().findViewById(R.id.Z);
         Z.setVisibility(GONE);
+        Statusmsg = (TextView) getView().findViewById(R.id.statusmsg);
+        Statusmsg.setVisibility(GONE);
 
         //Create Loading Animation
         avi = (AVLoadingIndicatorView) getView().findViewById(R.id.avi);
@@ -92,10 +93,12 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         if(!(click_index%2==0)) {
             instr_pic.setVisibility(GONE);
             instr_word.setVisibility(GONE);
-            X.setVisibility(View.VISIBLE);
-            Y.setVisibility(View.VISIBLE);
-            Z.setVisibility(View.VISIBLE);
+            X.setVisibility(View.GONE);
+            Y.setVisibility(View.GONE);
+            Z.setVisibility(View.GONE);
+            Statusmsg.setVisibility(view.VISIBLE);
             avi.setVisibility(View.VISIBLE);
+
             startAnim();
             click_index++;
 
@@ -107,6 +110,7 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
             X.setVisibility(GONE);
             Y.setVisibility(GONE);
             Z.setVisibility(GONE);
+            Statusmsg.setVisibility(view.GONE);
             instr_pic.setImageResource(image_instructions[image_index]);
             instr_word.setImageResource(word_instructions[image_index]);
             image_index++;

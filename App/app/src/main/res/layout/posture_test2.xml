@@ -22,36 +22,37 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:orientation="horizontal"> </LinearLayout>
+        android:orientation="horizontal"
+        android:visibility="invisible"> </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:alpha=".5"
         android:layout_above="@id/layoutDots"
-        android:background="@android:color/black"/>
+        android:background="@android:color/black"
+        android:visibility="invisible" />
 
-    <Button
-        android:id="@+id/next"
-        android:onClick="onNextClick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:background="@null"
-        android:text="NEXT"
-        android:textColor="@android:color/black" />
-
-    <Button
-        android:id="@+id/prev"
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:text="BACK"
         android:onClick="onPrevClick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:background="@null"
-        android:text="BACK"
-        android:textColor="@android:color/black" />
+        android:layout_width="100dp"
+        android:id="@+id/prev"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50px"
+        android:background="@color/colorAccent" />
 
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:text="NEXT"
+        android:onClick="onNextClick"
+        android:layout_width="100dp"
+        android:id="@+id/next"
+        android:layout_height="50dp"
+        android:layout_marginRight="50px"
+        android:background="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

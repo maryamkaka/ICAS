@@ -1,6 +1,7 @@
 package app.example.icas.integratedconcussionassessmentsystem;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,10 +12,10 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class LoginActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class LoginActivity extends AppCompatActivity {
 
-    Spinner spinner;
-    ArrayAdapter  adapter;
+    //Splash Screen Timer (I know its not good UI practice...buts its pretty)
+    private static int SPLASH_TIME_OUT = 1500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,31 +23,16 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
 
         setContentView(R.layout.activity_login);
 
-        //Find User Options array from String resources (To be removed when Database is created)
-        adapter = ArrayAdapter.createFromResource(this,R.array.User_Options,android.R.layout.simple_spinner_item);
-
-        spinner = (Spinner) findViewById(R.id.spinner);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(LoginActivity.this);
-
-        final ImageButton LoadProfile = (ImageButton) findViewById(R.id.loadprofile);
-        LoadProfile.setOnClickListener(new View.OnClickListener(){
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View view){
+            public void run() {
                 Intent intent = new Intent(LoginActivity.this,Homescreen.class);
                 startActivity(intent);
+                finish();
             }
-        });
-    }
+        }, SPLASH_TIME_OUT);
 
-     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
-         TextView spinnertext = (TextView) view;
-
-     }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
 }

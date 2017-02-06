@@ -3,6 +3,7 @@ package app.example.icas.integratedconcussionassessmentsystem;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +29,7 @@ public class Homescreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     //define objects
-    private Button scat3, posture, eyeGaze, EEG;
+    private ImageButton scat3, posture, eyeGaze, EEG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,36 +39,37 @@ public class Homescreen extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         //Gridview for ICAS Test options
-        final GridView gridView = (GridView) findViewById(R.id.gridview);
-        gridView.setAdapter(new ImageAdapter(this));
-        gridView.setDrawSelectorOnTop(true);
+        final ImageButton scat3 = (ImageButton) findViewById(R.id.scat3);
+        final ImageButton posture = (ImageButton) findViewById(R.id.posture);
+        final ImageButton eeg = (ImageButton) findViewById(R.id.eeg);
+        final ImageButton eyegaze = (ImageButton) findViewById(R.id.eyegaze);
+        scat3.setVisibility(View.VISIBLE);
+        posture.setVisibility(View.VISIBLE);
+        eeg.setVisibility(View.VISIBLE);
+        eyegaze.setVisibility(View.VISIBLE);
 
         //Makes Images Interactive to access each test
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        scat3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                //Toast.makeText(Homescreen.this, "" + position, Toast.LENGTH_SHORT).show();
-                switch (position){
-                    case 0:{
-                        //use intents to go to new activity
-                        Intent getScat3Screen = new Intent(view.getContext(), Scat3.class);
-                        getScat3Screen.putExtra("callingAct", "Main Activity");
-                        startActivity(getScat3Screen);
-                        break;
-                    }
-                    case 1:{
-                        //use intents to go to new activity
-                        Intent getPosturagraphyScreen = new Intent(view.getContext(), Posturagraphy.class);
-                        getPosturagraphyScreen.putExtra("callingAct", "Main Activity");
-                        startActivity(getPosturagraphyScreen);
-                        break;
-                    }
-                    //ADD MORE CASES HERE FOR OTHER GRID ELEMENTS (TESTS)
-                    default:{
-                        Toast.makeText(getApplicationContext(),"No action associated with this button",Toast.LENGTH_LONG).show();
-                        break;
-                    }
-                }
+            public void onClick(View v) {
+                v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+                //use intents to go to new activity
+                Intent getScat3Screen = new Intent(v.getContext(), Scat3_landing.class);
+                getScat3Screen.putExtra("callingAct", "Main Activity");
+                startActivity(getScat3Screen);
+
+            }
+        });
+
+        //Makes Images Interactive to access each test
+        posture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+                Intent getPosturagraphyScreen = new Intent(v.getContext(), Posturography.class);
+                getPosturagraphyScreen.putExtra("callingAct", "Main Activity");
+                startActivity(getPosturagraphyScreen);
+
             }
         });
 
@@ -144,36 +147,5 @@ public class Homescreen extends AppCompatActivity
         return true;
     }
 
-    //Image Adapter for Gridview
-    public class ImageAdapter extends BaseAdapter{
-        private Context mContext;
-        public ImageAdapter(Context c){
-            mContext = c;
-        }
 
-        public int getCount(){
-            return mThumbsIds.length;
-
-        }
-        public Object getItem(int position){
-            return null;
-        }
-
-        public long getItemId(int position){
-            return 0;
-        }
-
-        public View getView (int position, View convertView, ViewGroup parent){
-            ImageView imageView = new ImageView(mContext);
-            imageView.setImageResource(mThumbsIds[position]);
-            return imageView;
-        }
-        //Array of Grid images (SCAT3, Eye Gaze ...)
-        private Integer[] mThumbsIds = {
-                R.drawable.scat3logo,
-                R.drawable.posturelogo,
-                R.drawable.eyegazelogo,
-                R.drawable.eeglogo
-        };
-    }
 }

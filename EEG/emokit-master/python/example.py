@@ -12,7 +12,7 @@ if __name__ == "__main__":
         while True:
             packet = headset.dequeue()
             if packet is not None:
-                print("Gyro - X:{x_position} Y:{y_position}".format(x_position=packet.sensors['X']['value'],
-                                                                     y_position=packet.sensors['Y']['value']))
+                #print("Gyro - X:{x_position} Y:{y_position}".format(x_position=packet.sensors['X']['value'],
+                                                                     #y_position=packet.sensors['Y']['value']))
                 pass
             time.sleep(0.001)

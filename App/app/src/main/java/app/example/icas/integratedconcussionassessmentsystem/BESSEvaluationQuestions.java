@@ -6,9 +6,13 @@ package app.example.icas.integratedconcussionassessmentsystem;
 
 public class BESSEvaluationQuestions {
 
-    String questions[] = {  "Footwear",
-                            "Dominant Foot",
-                            "Testing Surface"};
+    String questions[] = {  "What footwear are you wearing?",
+                            "Which is your dominant foot?",
+                            "What surface are you standing on?"};
+
+    String optionsQ1[] = { "None", "Shoes", "Sandals", "Flip-flops", "Cleats"};
+
+
     int index, max;
 
     /* Constructor */

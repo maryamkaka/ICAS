@@ -20,7 +20,7 @@
         android:id="@+id/welcomeTxt"
         android:textAlignment = "center"
         android:textSize="50sp"/>
-
+<!---
     <GridView
         android:id="@+id/gridview"
         android:layout_width="match_parent"
@@ -33,7 +33,87 @@
         android:gravity="center"
         android:layout_below="@id/welcomeTxt"
         android:paddingTop="40dp"
-        />
+        > -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/welcomeTxt">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="0.66"
+            android:paddingTop="20dp">
+
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/scat3menu_button"
+                    android:id="@+id/scat3"
+                android:layout_weight="0.33"
+                android:background="@android:color/background_light"
+                android:paddingRight="40dp"
+                android:paddingLeft="40dp"
+                android:scaleX="0.90"
+                android:scaleY="0.90"
+                android:src="@drawable/scat3menu_button"
+                android:hapticFeedbackEnabled="true" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/postmenu_button"
+                android:id="@+id/posture"
+                android:layout_weight="0.333"
+                android:background="@android:color/background_light"
+                android:hapticFeedbackEnabled="true"
+                android:layout_gravity="right"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:scaleX="0.90"
+                android:scaleY="0.90"
+                android:src="@drawable/postmenu_button" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/eegmenu_button"
+                android:id="@+id/eeg"
+                android:layout_weight="0.33"
+                android:background="@android:color/background_light"
+                android:paddingRight="40dp"
+                android:paddingLeft="40dp"
+                android:scaleX="0.90"
+                android:scaleY="0.90"
+                android:src="@drawable/eegmenu_button" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/eyegazemenu_button"
+                android:id="@+id/eyegaze"
+                android:layout_weight="0.33"
+                android:background="@android:color/background_light"
+                android:paddingRight="40dp"
+                android:paddingLeft="40dp"
+                android:scaleX="0.90"
+                android:scaleY="0.90"
+                android:src="@drawable/eyegazemenu_button" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 
 
 
