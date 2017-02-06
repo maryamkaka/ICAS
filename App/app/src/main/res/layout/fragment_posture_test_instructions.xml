@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/Y"
         android:layout_below="@+id/X" />
+
     <TextView
         android:text="Z"
         android:layout_width="wrap_content"
@@ -34,8 +35,24 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/graphic">
+
+        <TextView
+            android:text="Collecting your posture data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/statusmsg"
+            android:layout_above="@+id/graphic"
+            android:layout_centerVertical="false"
+            android:layout_centerHorizontal="false"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:visibility="visible" />
 
         <com.wang.avi.AVLoadingIndicatorView
             android:layout_height="wrap_content"

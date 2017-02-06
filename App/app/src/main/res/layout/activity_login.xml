@@ -16,58 +16,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:gravity="center">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_width="wrap_content"
             app:srcCompat="@drawable/icaslogo"
             android:id="@+id/imageView2"
-            android:layout_weight="0.70" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            app:srcCompat="@drawable/icastitle"
-            android:id="@+id/imageView4"
-            android:layout_height="wrap_content" />
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="206dp"
-            android:id="@+id/textFieldHolder">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text=""
-                android:hint="Create new user"
-                android:ems="10"
-                android:id="@+id/newUserName" />
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/spinner" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.70"
-            android:id="@+id/buttoncontainer"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content">
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/loadprofile"
-                android:id="@+id/loadprofile"
-                android:background="#00ffffff" />
-        </LinearLayout>
+            android:layout_weight="0.45"
+            android:layout_height="1dp" />
 
     </LinearLayout>
 </RelativeLayout>
