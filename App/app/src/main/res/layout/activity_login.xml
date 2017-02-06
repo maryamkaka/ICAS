@@ -26,5 +26,5 @@
             android:layout_weight="0.45"
             android:layout_height="1dp" />
 
-     </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
