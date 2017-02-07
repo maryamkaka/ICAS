@@ -3,6 +3,7 @@ package app.example.icas.integratedconcussionassessmentsystem;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -23,6 +24,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 //import com.mikepenz.materialdrawer.DrawerBuilder;
 
 public class Homescreen extends AppCompatActivity
@@ -30,6 +36,10 @@ public class Homescreen extends AppCompatActivity
 
     //define objects
     private ImageButton scat3, posture, eyeGaze, EEG;
+    File file;
+    private String content = "Hello world!";
+    FileOutputStream outputStream;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +98,7 @@ public class Homescreen extends AppCompatActivity
         //create widgets
         final TextView welcomeTxt = (TextView) findViewById(R.id.welcomeTxt);
 
+
     }
 
     @Override
@@ -140,12 +151,74 @@ public class Homescreen extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
+        } else if (id == R.id.savedata){
+
+            String state;
+            state = Environment.getExternalStorageState();
+            if(Environment.MEDIA_MOUNTED.equals(state)) {
+                File Root = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+                File Dir = new File(Root.getAbsolutePath());
+                if(!Dir.exists()) {
+                    Dir.mkdir();
+                }
+                File file = new File (Dir, "MyMessage.txt");
+                String Message = "yo";
+                try {
+                    FileOutputStream fileOutputStream = new FileOutputStream(file);
+                    fileOutputStream.write(Message.getBytes());
+                    fileOutputStream.close();
+                    Toast.makeText(getApplicationContext(),"Done",Toast.LENGTH_LONG).show();
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }else{
+                Toast.makeText(getApplicationContext(),"External Storage not found",Toast.LENGTH_LONG).show();
+            }
+
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public static void Save(File file, String[] data)
+    {
+        FileOutputStream fos = null;
+        try
+        {
+            fos = new FileOutputStream(file);
+        }
+        catch (FileNotFoundException e) {e.printStackTrace();}
+        try
+        {
+            try
+            {
+                for (int i = 0; i<data.length; i++)
+                {
+                    fos.write(data[i].getBytes());
+                    if (i < data.length-1)
+                    {
+                        fos.write("\n".getBytes());
+                    }
+                }
+            }
+            catch (IOException e) {e.printStackTrace();}
+        }
+        finally
+        {
+            try
+            {
+                fos.close();
+            }
+            catch (IOException e) {e.printStackTrace();}
+        }
+    }
+
 
 
 }

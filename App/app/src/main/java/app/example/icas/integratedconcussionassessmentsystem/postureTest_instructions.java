@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,8 @@ import android.animation.ValueAnimator;
 
 import com.wang.avi.AVLoadingIndicatorView;
 import com.wang.avi.Indicator;
+
+import java.io.File;
 
 import static android.view.View.GONE;
 
@@ -34,6 +37,7 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     private Sensor mySensor;
     private SensorManager SM;
     private AVLoadingIndicatorView avi;
+    public String path = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/ICAS/Posture";
 
 
     @Override
@@ -78,6 +82,10 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         avi = (AVLoadingIndicatorView) getView().findViewById(R.id.avi);
         avi.setVisibility(GONE);
         //avi.setIndicator(indicator);
+
+        //Create File directory
+        File dir = new File(path);
+        dir.mkdirs();
 
 
 
