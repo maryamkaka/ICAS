@@ -49,7 +49,15 @@ public class dbHelper extends SQLiteOpenHelper{
     }
 
     public void addAccelData(int timestamp, int testID, float x, float y, float z){
-        db.execSQL("INSERT INTO AccelData (timestamp, TestID, x, y, z) VALUES ("+ timestamp + "," + testID + "," + x + "," + y + "," + z + ")");
+        ContentValues values = new ContentValues();
+
+        values.put("TestID", testID);
+        values.put("timestamp", timestamp);
+        values.put("x", x);
+        values.put("y", y);
+        values.put("z", z);
+
+        db.insert("AccelData", null, values);
     }
 
     /* addPostureTest
@@ -70,7 +78,7 @@ public class dbHelper extends SQLiteOpenHelper{
         return db.insert("Posturography", null, values);
     }
 
-    public void getAccelData(){}
+    public void getAccelData(int TestID, long timestamp, float x, float y, float z){}
 
     public void getData(String table, String id){
         Cursor cursor = db.rawQuery("SELECT * FROM "+ table, null);
