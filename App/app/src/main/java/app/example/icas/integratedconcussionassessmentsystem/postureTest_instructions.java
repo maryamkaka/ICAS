@@ -34,7 +34,8 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     private Sensor mySensor;
     private SensorManager SM;
     private AVLoadingIndicatorView avi;
-
+    private dbHelper db;
+    long testID;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,6 +44,8 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        //initialize database
+        db = new dbHelper(getContext());
 
         word_instructions = new int[]{R.drawable.postinstr1,R.drawable.postinstr2,R.drawable.postinstr3};
         image_instructions = new int[]{R.drawable.postinstpic1,R.drawable.postinstpic2,R.drawable.postinstpic3};
@@ -78,9 +81,6 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         avi = (AVLoadingIndicatorView) getView().findViewById(R.id.avi);
         avi.setVisibility(GONE);
         //avi.setIndicator(indicator);
-
-
-
     }
 
 
@@ -121,7 +121,6 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     }
 
     public boolean prevQuestion(View view){
-
             return false;
 
     }
@@ -142,6 +141,8 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         X.setText("X: "+ sensorEvent.values[0]);
         Y.setText("Y: "+ sensorEvent.values[1]);
         Z.setText("Z: "+ sensorEvent.values[2]);
+
+        db.addAccelData(sensorEvent.timestamp, testID, sensorEvent.values[0], sensorEvent.values[1], sensorEvent.values[2]);
     }
 
     @Override
