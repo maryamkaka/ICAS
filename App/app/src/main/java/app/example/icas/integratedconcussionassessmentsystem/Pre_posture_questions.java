@@ -62,8 +62,10 @@ public class Pre_posture_questions extends Fragment {
         questions.incrementIndex();
 
         if(questions.getIndex() >= questions.getMaxIndex()){
+            long testID;
+
             //store final results in database
-            db.addPostureTest(answers[0][response[0]],answers[1][response[1]],answers[2][response[2]]);
+            testID = db.addPostureTest(answers[0][response[0]],answers[1][response[1]],answers[2][response[2]]);
 
             return false;
         }
