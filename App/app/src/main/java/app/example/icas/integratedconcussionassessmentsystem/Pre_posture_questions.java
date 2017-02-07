@@ -1,6 +1,7 @@
 package app.example.icas.integratedconcussionassessmentsystem;
 
 import android.content.Context;
+import android.icu.text.SimpleDateFormat;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -24,7 +25,7 @@ public class Pre_posture_questions extends Fragment {
             {"Right", "Left", "", "", ""},
             {"Hardwood", "Grass", "Asphalt", "Tiles", "Rug"}
     };
-
+    int[] response  =  new int[3];
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,6 +62,9 @@ public class Pre_posture_questions extends Fragment {
         questions.incrementIndex();
 
         if(questions.getIndex() >= questions.getMaxIndex()){
+            //store final results in database
+            db.addPostureTest(answers[0][response[0]],answers[1][response[1]],answers[2][response[2]]);
+
             return false;
         }
 
@@ -100,7 +104,7 @@ public class Pre_posture_questions extends Fragment {
         ((RadioButton) Q1.getChildAt(4)).setText(answers[i][4]);
 
         //save result
-        int selected = Q1.getCheckedRadioButtonId();
+        response[i] = Q1.getCheckedRadioButtonId();
     }
 
 }

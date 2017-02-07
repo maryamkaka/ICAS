@@ -65,12 +65,12 @@ public class dbHelper extends SQLiteOpenHelper{
     * Input: Date, TestingSurface, Focotware, DominantFoot
     * Output: TestID
     * */
-    public long addPostureTest(String date, String surface, String footware, int foot){
+    public long addPostureTest(String surface, String foot, String footware){
         ContentValues values = new ContentValues();
         int testID;
 
         values.put("UserID", 1);
-        values.put("datetime", date);
+        values.put("Date", "now");
         values.put("TestingSurface", surface);
         values.put("Footware", footware);
         values.put("Foot", foot);
