@@ -1,9 +1,12 @@
 package app.example.icas.integratedconcussionassessmentsystem;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.PermissionChecker;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -27,19 +30,21 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
 
 //import com.mikepenz.materialdrawer.DrawerBuilder;
 
 public class Homescreen extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, ActivityCompat.OnRequestPermissionsResultCallback {
 
     //define objects
     private ImageButton scat3, posture, eyeGaze, EEG;
     File file;
     private String content = "Hello world!";
     FileOutputStream outputStream;
-
+    String h;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,14 +158,19 @@ public class Homescreen extends AppCompatActivity
 
         } else if (id == R.id.savedata){
 
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},112);
+
             String state;
             state = Environment.getExternalStorageState();
             if(Environment.MEDIA_MOUNTED.equals(state)) {
-                File Root = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-                File Dir = new File(Root.getAbsolutePath());
+                File Dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+                //File Root = new File(Environment.getExternalStorageDirectory(),"Notes");
+
+                //File Dir = new File(Root.getAbsolutePath());
                 if(!Dir.exists()) {
-                    Dir.mkdir();
+                    Dir.mkdirs();
                 }
+
                 File file = new File (Dir, "MyMessage.txt");
                 String Message = "yo";
                 try {
@@ -185,40 +195,5 @@ public class Homescreen extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    public static void Save(File file, String[] data)
-    {
-        FileOutputStream fos = null;
-        try
-        {
-            fos = new FileOutputStream(file);
-        }
-        catch (FileNotFoundException e) {e.printStackTrace();}
-        try
-        {
-            try
-            {
-                for (int i = 0; i<data.length; i++)
-                {
-                    fos.write(data[i].getBytes());
-                    if (i < data.length-1)
-                    {
-                        fos.write("\n".getBytes());
-                    }
-                }
-            }
-            catch (IOException e) {e.printStackTrace();}
-        }
-        finally
-        {
-            try
-            {
-                fos.close();
-            }
-            catch (IOException e) {e.printStackTrace();}
-        }
-    }
-
-
 
 }
