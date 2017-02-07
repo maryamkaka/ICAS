@@ -1,5 +1,6 @@
 package app.example.icas.integratedconcussionassessmentsystem;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,6 +10,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 /**
  * Created by mkaka on 2017-01-05.
@@ -35,7 +37,7 @@ public class dbHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db){
         db.execSQL("CREATE TABLE IF NOT EXISTS " + tables[0][0] + " (" + tables[0][1] + " integer primary key, " +tables[0][2]+ " VARCHAR);");
-        db.execSQL("CREATE TABLE Posturography (TestID binary PRIMARY KEY AUTOINCREMENT, UserID integer, Date datetime, TestingSurface string, Footware string, Foot binary);");
+        db.execSQL("CREATE TABLE Posturography (TestID integer PRIMARY KEY AUTOINCREMENT, UserID integer, Date datetime, TestingSurface string, Footware string, Foot string);");
         db.execSQL("CREATE TABLE AccelData (timestamp timestamp, TestID integer, x float,y float, z float);");
     }
 
@@ -49,6 +51,26 @@ public class dbHelper extends SQLiteOpenHelper{
     public void addAccelData(int timestamp, int testID, float x, float y, float z){
         db.execSQL("INSERT INTO AccelData (timestamp, TestID, x, y, z) VALUES ("+ timestamp + "," + testID + "," + x + "," + y + "," + z + ")");
     }
+
+    /* addPostureTest
+    * Adds PrePosture Test Information to Posturography table
+    * Input: Date, TestingSurface, Focotware, DominantFoot
+    * Output: TestID
+    * */
+    public long addPostureTest(String date, String surface, String footware, int foot){
+        ContentValues values = new ContentValues();
+        int testID;
+
+        values.put("UserID", 1);
+        values.put("datetime", date);
+        values.put("TestingSurface", surface);
+        values.put("Footware", footware);
+        values.put("Foot", foot);
+
+        return db.insert("Posturography", null, values);
+    }
+
+    public void getAccelData(){}
 
     public void getData(String table, String id){
         Cursor cursor = db.rawQuery("SELECT * FROM "+ table, null);
