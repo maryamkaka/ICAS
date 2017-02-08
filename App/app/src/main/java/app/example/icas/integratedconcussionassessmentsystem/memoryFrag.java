@@ -21,6 +21,7 @@ import java.util.logging.LogRecord;
 
 public class memoryFrag extends Fragment {
     private TextView question;
+    public Scat3 parentActivity;
     private EditText wordOne, wordTwo, wordThree, wordFour, wordFive;
     private LinearLayout textInput;
     private int trial = 1;
@@ -68,7 +69,7 @@ public class memoryFrag extends Fragment {
 
         textInput.setVisibility(View.INVISIBLE);
         question.setText(wordList[currentList][0]);
-
+        parentActivity.disableBtns(getView());
         countDownTimer.start();
         timerHasStarted = true;
 
@@ -155,6 +156,7 @@ public class memoryFrag extends Fragment {
         public void onFinish() {
             question.setText("Enter the words you remember below");
             textInput.setVisibility(View.VISIBLE);
+            parentActivity.enableBtns(getView());
 
         }
 
