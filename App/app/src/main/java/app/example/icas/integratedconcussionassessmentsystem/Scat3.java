@@ -24,6 +24,7 @@ public class Scat3 extends FragmentActivity{
     private cogAssessmentFrag cogAssessmentFrag = new cogAssessmentFrag();
     private digitsFrag digitsFrag = new digitsFrag();
     private memoryFrag memoryFrag = new memoryFrag();
+    private monthsFrag monthsFrag = new monthsFrag();
     private boolean updateStatus;
     private int currentFrag = 0;
     private final FragmentManager fragmentManager = getFragmentManager();
@@ -50,6 +51,8 @@ public class Scat3 extends FragmentActivity{
             updateStatus = memoryFrag.nextQuestion(view);
         } else if (currentFrag == 3) {
             updateStatus = digitsFrag.nextQuestion(view);
+        } else if (currentFrag == 4) {
+            updateStatus = monthsFrag.nextQuestion(view);
         }
 
         //set next test fragment
@@ -63,12 +66,19 @@ public class Scat3 extends FragmentActivity{
                 fragmentManager.beginTransaction().replace(R.id.fragment, memoryFrag).commit();
             } else if (currentFrag == 3){
                 fragmentManager.beginTransaction().replace(R.id.fragment, digitsFrag).commit();
+            } else if (currentFrag == 4){
+                fragmentManager.beginTransaction().replace(R.id.fragment, monthsFrag).commit();
+            } else {
+                //use intents to go to new activity
+                Intent getHomeScreen = new Intent(view.getContext(), Homescreen.class);
+                getHomeScreen.putExtra("callingAct", "Main Activity");
+                startActivity(getHomeScreen);
             }
         }
     }
 
     public void onPrevClick(View view){
-        updateStatus = symptomEvalFrag.prevQuestion(view);
+        updateStatus = symptomEvalFrag.prevQuestion();
     }
 
     public void disableBtns(View view){

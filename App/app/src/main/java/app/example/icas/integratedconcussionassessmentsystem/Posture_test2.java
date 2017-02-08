@@ -42,7 +42,6 @@ public class Posture_test2 extends FragmentActivity{
             prev.setVisibility(View.VISIBLE);
         } else if (currentFrag == 1) {
             //updateStatus = Pre_posture_questions.nextQuestion(view);
-
             updateStatus = postureTest_instructions.nextQuestion(view);
         } else if (currentFrag == 2){
             Intent intent = new Intent(Posture_test2.this,Posturography.class);
@@ -52,9 +51,13 @@ public class Posture_test2 extends FragmentActivity{
         //set next test fragment
         if(!updateStatus){
             currentFrag += 1;
-
             if(currentFrag == 1) {
+                long id = Pre_posture_questions.getTestID();
+
                 fragmentManager.beginTransaction().replace(R.id.fragment, postureTest_instructions).commit();
+
+                postureTest_instructions.setTestID(id);
+
             } else if (currentFrag == 2){
                 Intent intent = new Intent(Posture_test2.this,Posturography.class);
                 startActivity(intent);
