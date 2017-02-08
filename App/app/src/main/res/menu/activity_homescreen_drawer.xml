@@ -18,6 +18,10 @@
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="Settings" />
+        <item android:title="Export"
+            android:id="@+id/savedata"
+            android:icon="@android:drawable/ic_menu_save"
+            android:visible="true" />
     </group>
 
     <item android:title="Communicate">

@@ -9,22 +9,22 @@ public class symptomEvaluationQuestions {
     String questions[] = {  "Headache",
                             "Pressure in head",
                             "Neck Pain",
-                            "Nausea or vomiting Dizziness",
+                            "Nausea or vomiting dizziness",
                             "Blurred vision",
-                            "balance problems",
+                            "Balance problems",
                             "Sensitivity to light",
                             "Sensitivity to noise",
                             "Feeling slowed down",
                             "Feeling like “in a fog“",
                             "“Don’t feel right”",
-                            "Difficulty concentrating",
-                            "Difficulty remembering",
+                            "Difficulty \nconcentrating",
+                            "Difficulty \nremembering",
                             "Fatigue or low energy",
-                            "Confusion Drowsiness",
+                            "Confusion drowsiness",
                             "Trouble falling asleep",
                             "More emotional",
-                            "Irritability Sadness",
-                            "Nervous or Anxious"};
+                            "Irritability sadness",
+                            "Nervous or anxious"};
     int index, max;
 
     /* Constructor */
