@@ -86,7 +86,7 @@ public class digitsFrag extends Fragment {
         int numLen = numberList[currentList][trial].length;
 
         for(int i = 0; i < numLen; i++){
-            System.out.println("User: " + num.charAt(i) + " Value: " + numberList[currentList][trial][numLen - 1 - i]);
+//            System.out.println("User: " + num.charAt(i) + " Value: " + numberList[currentList][trial][numLen - 1 - i]);
             if( Character.getNumericValue(num.charAt(i)) != numberList[currentList][trial][numLen - 1 - i]){
                 return false;
             }

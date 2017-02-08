@@ -11,6 +11,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Pre_posture_questions extends Fragment {
@@ -18,6 +19,7 @@ public class Pre_posture_questions extends Fragment {
     BESSEvaluationQuestions questions;
     TextView questionTxt;
     RadioGroup Q1;
+    private RadioButton radiobooty;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,6 +41,8 @@ public class Pre_posture_questions extends Fragment {
             public void onCheckedChanged(RadioGroup Q1, int selectedId){
 
                 selectedId = Q1.getCheckedRadioButtonId();
+                radiobooty = (RadioButton) getView().findViewById(selectedId);
+                Toast.makeText(getContext(),radiobooty.getText(),Toast.LENGTH_SHORT).show();
             }
         });
 

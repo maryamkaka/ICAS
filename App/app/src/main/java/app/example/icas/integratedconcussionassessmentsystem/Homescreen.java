@@ -163,8 +163,8 @@ public class Homescreen extends AppCompatActivity
             String state;
             state = Environment.getExternalStorageState();
             if(Environment.MEDIA_MOUNTED.equals(state)) {
-                File Dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
-                //File Root = new File(Environment.getExternalStorageDirectory(),"Notes");
+                File Dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+                        //File Root = new File(Environment.getExternalStorageDirectory(),"Notes");
 
                 //File Dir = new File(Root.getAbsolutePath());
                 if(!Dir.exists()) {
