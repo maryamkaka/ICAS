@@ -35,7 +35,7 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     private SensorManager SM;
     private AVLoadingIndicatorView avi;
     private dbHelper db;
-    long testID;
+    private long testID;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -83,6 +83,7 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         //avi.setIndicator(indicator);
     }
 
+    public void setTestID(long id){ testID = id; }
 
     public boolean nextQuestion(View view){
         //If BESS test is complete return to main page

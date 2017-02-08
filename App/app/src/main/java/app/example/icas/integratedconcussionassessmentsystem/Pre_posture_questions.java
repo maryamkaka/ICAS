@@ -12,6 +12,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Pre_posture_questions extends Fragment {
@@ -19,13 +20,16 @@ public class Pre_posture_questions extends Fragment {
     BESSEvaluationQuestions questions;
     TextView questionTxt;
     RadioGroup Q1;
+    RadioButton r;
     private dbHelper db;
-    String answers[][] = {
+    private String answers[][] = {
             {"None", "Shoes", "Sandals", "Flip-Flops", "Cleats"},
             {"Right", "Left", "", "", ""},
             {"Hardwood", "Grass", "Asphalt", "Tiles", "Rug"}
     };
-    int[] response  =  new int[3];
+    private String[] response  =  new String[3];
+    private long testID;
+    private int i;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,6 +53,8 @@ public class Pre_posture_questions extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup Q1, int selectedId){
                 selectedId = Q1.getCheckedRadioButtonId();
+                r = (RadioButton) getView().findViewById(selectedId);
+                response[i] = r.getText().toString();
             }
         });
 
@@ -58,14 +64,12 @@ public class Pre_posture_questions extends Fragment {
         updateScreen(view);
     }
 
-       public boolean nextQuestion(View view){
+    public boolean nextQuestion(View view){
         questions.incrementIndex();
 
         if(questions.getIndex() >= questions.getMaxIndex()){
-            long testID;
-
             //store final results in database
-            testID = db.addPostureTest(answers[0][response[0]],answers[1][response[1]],answers[2][response[2]]);
+            testID = db.addPostureTest(response[0],response[1],response[2]);
 
             return false;
         }
@@ -83,9 +87,11 @@ public class Pre_posture_questions extends Fragment {
         return true;
     }
 
+    public long getTestID(){ return testID; }
+
     private void updateScreen(View view){
         //set questions
-        int i = questions.getIndex();
+        i = questions.getIndex();
         questionTxt.setText(questions.getCurrentQuestion());
 
         if (i == 1) {
@@ -105,8 +111,6 @@ public class Pre_posture_questions extends Fragment {
         ((RadioButton) Q1.getChildAt(3)).setText(answers[i][3]);
         ((RadioButton) Q1.getChildAt(4)).setText(answers[i][4]);
 
-        //save result
-        response[i] = Q1.getCheckedRadioButtonId();
     }
 
 }
