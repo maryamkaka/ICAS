@@ -1,8 +1,12 @@
 package app.example.icas.integratedconcussionassessmentsystem;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.PermissionChecker;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -23,13 +27,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.DateFormat;
+
 //import com.mikepenz.materialdrawer.DrawerBuilder;
 
 public class Homescreen extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, ActivityCompat.OnRequestPermissionsResultCallback {
 
     //define objects
     private ImageButton scat3, posture, eyeGaze, EEG;
+    File file;
+    private String content = "Hello world!";
+    FileOutputStream outputStream;
+    String h;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +103,7 @@ public class Homescreen extends AppCompatActivity
         //create widgets
         final TextView welcomeTxt = (TextView) findViewById(R.id.welcomeTxt);
 
+
     }
 
     @Override
@@ -140,12 +156,44 @@ public class Homescreen extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
+        } else if (id == R.id.savedata){
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},112);
+
+            String state;
+            state = Environment.getExternalStorageState();
+            if(Environment.MEDIA_MOUNTED.equals(state)) {
+                File Dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+                //File Root = new File(Environment.getExternalStorageDirectory(),"Notes");
+
+                //File Dir = new File(Root.getAbsolutePath());
+                if(!Dir.exists()) {
+                    Dir.mkdirs();
+                }
+
+                File file = new File (Dir, "MyMessage.txt");
+                String Message = "yo";
+                try {
+                    FileOutputStream fileOutputStream = new FileOutputStream(file);
+                    fileOutputStream.write(Message.getBytes());
+                    fileOutputStream.close();
+                    Toast.makeText(getApplicationContext(),"Done",Toast.LENGTH_LONG).show();
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }else{
+                Toast.makeText(getApplicationContext(),"External Storage not found",Toast.LENGTH_LONG).show();
+            }
+
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 
 }

@@ -48,7 +48,7 @@
             android:paddingRight="0px"
             android:paddingStart="0px"
             android:paddingTop="0px"
-            android:background="@drawable/scat3inst"
+            android:background="@drawable/scat3inst1"
             android:layout_alignParentEnd="false"
             android:layout_alignParentLeft="false"
             android:layout_alignParentBottom="false"

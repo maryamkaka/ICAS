@@ -26,32 +26,33 @@
         android:id="@+id/fragment"
         android:layout_above="@+id/buttons"
         android:layout_height="wrap_content">
+
     </FrameLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttons"
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:text="NEXT"
+        android:onClick="onNextClick"
+        android:layout_width="100dp"
+        android:id="@+id/next"
+        android:layout_height="50dp"
+        android:layout_marginRight="50px"
+        android:background="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="right"
+        android:layout_marginBottom="10px" />
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:text="BACK"
+        android:onClick="onPrevClick"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:paddingTop="40dp">
-
-        <Button
-            android:layout_weight="1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/prev"
-            android:text="Previous"
-            android:onClick="onPrevClick"/>
-
-        <Button
-            android:layout_weight="1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Next"
-            android:id="@+id/next"
-            android:onClick="onNextClick"/>
-    </LinearLayout>
+        android:layout_width="100dp"
+        android:id="@+id/prev"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50px"
+        android:background="@color/colorAccent"
+        android:layout_gravity="left"
+        android:layout_marginBottom="10px" />
 
 </RelativeLayout>

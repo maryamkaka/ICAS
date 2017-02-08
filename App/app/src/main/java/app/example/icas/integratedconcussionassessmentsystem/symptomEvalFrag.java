@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -22,7 +23,7 @@ public class symptomEvalFrag extends Fragment{
     SeekBar answer;
     int[] scores = new int[questions.getMaxIndex()];
     private dbHelper db;
-
+    ImageView questionHeader;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class symptomEvalFrag extends Fragment{
         questionTxt = (TextView) getView().findViewById(R.id.question);
         answer = (SeekBar) getView().findViewById(R.id.answer);
         scoreTxt = (TextView) getView().findViewById(R.id.score);
+        questionHeader = (ImageView) getView().findViewById(R.id.imageView4);
 
         scoreTxt.setText("0");
         updateScreen();
