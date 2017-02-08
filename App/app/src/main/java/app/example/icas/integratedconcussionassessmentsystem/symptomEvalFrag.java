@@ -11,14 +11,18 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.Arrays;
+
 /**
  * Created by mkaka on 2016-12-05.
  */
 
 public class symptomEvalFrag extends Fragment{
-    symptomEvaluationQuestions questions;
+    symptomEvaluationQuestions questions = new symptomEvaluationQuestions();
     TextView questionTxt, scoreTxt;
     SeekBar answer;
+    int[] scores = new int[questions.getMaxIndex()];
+    private dbHelper db;
     ImageView questionHeader;
 
     @Override
@@ -28,8 +32,9 @@ public class symptomEvalFrag extends Fragment{
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        questions = new symptomEvaluationQuestions();
+        System.out.println("Sympton Eval");
 
+        db = new dbHelper(getContext());
         questionTxt = (TextView) getView().findViewById(R.id.question);
         answer = (SeekBar) getView().findViewById(R.id.answer);
         scoreTxt = (TextView) getView().findViewById(R.id.score);
@@ -42,6 +47,7 @@ public class symptomEvalFrag extends Fragment{
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 scoreTxt.setText(Integer.toString(i));
+                scores[questions.getIndex()] = i;
             }
 
             @Override
@@ -67,10 +73,11 @@ public class symptomEvalFrag extends Fragment{
         return true;
     }
 
-    public boolean prevQuestion(View view){
+    public boolean prevQuestion(){
         questions.decrementIndex();
 
         if(questions.getIndex() < 0){
+            db.saveSypmtomEvalScore(scores);
             return false;
         }
 
