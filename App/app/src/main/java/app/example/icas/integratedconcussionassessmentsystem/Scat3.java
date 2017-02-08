@@ -63,9 +63,6 @@ public class Scat3 extends FragmentActivity{
                 fragmentManager.beginTransaction().replace(R.id.fragment, memoryFrag).commit();
             } else if (currentFrag == 3){
                 fragmentManager.beginTransaction().replace(R.id.fragment, digitsFrag).commit();
-            } else {
-                Intent intent = new Intent(Scat3.this,Scat3_landing.class);
-                startActivity(intent);
             }
         }
     }
