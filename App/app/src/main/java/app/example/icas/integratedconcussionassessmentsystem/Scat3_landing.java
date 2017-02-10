@@ -1,9 +1,11 @@
 package app.example.icas.integratedconcussionassessmentsystem;
 
 import android.content.Intent;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -18,6 +20,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class Scat3_landing extends AppCompatActivity {
@@ -59,9 +63,25 @@ public class Scat3_landing extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Scat3_landing.this,scat3_instructions.class);
-                startActivity(intent);
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(Scat3_landing.this);
+                View mView = getLayoutInflater().inflate(R.layout.scat3dialogoptions,null);
+                final RadioGroup scat3options = (RadioGroup) mView.findViewById(R.id.scat3options);
+                Button starttest = (Button) mView.findViewById(R.id.scat3startbutton);
+
+                starttest.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        //Default is do all
+                        Intent intent = new Intent(Scat3_landing.this,scat3_instructions.class);
+                        startActivity(intent);
+                    }
+                });
+
+                mBuilder.setView(mView);
+                AlertDialog dialog = mBuilder.create();
+                dialog.show();;
             }
+
         });
 
     }
