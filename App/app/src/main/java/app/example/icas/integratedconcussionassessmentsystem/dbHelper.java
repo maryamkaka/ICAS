@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.icu.text.SimpleDateFormat;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -21,12 +22,6 @@ public class dbHelper extends SQLiteOpenHelper{
     private static final String DATABASE_NAME = "ICAS.db";
     private Context context;
     private SQLiteDatabase db;
-    private String[][] tables = {   //{tableName, Col1, Col2, ... }
-            {"users", "id", "name"},
-            {"SCAT3", "test_id", "user_id", "date", "SymptomEvaluationKey", "CognativeAssessmentKey"},
-            {"SymptomEval", "q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19"}
-
-    };
 
     public dbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -36,23 +31,52 @@ public class dbHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + tables[0][0] + " (" + tables[0][1] + " integer primary key, " +tables[0][2]+ " VARCHAR);");
-        db.execSQL("CREATE TABLE Posturography (TestID integer PRIMARY KEY AUTOINCREMENT, UserID integer, Date datetime, TestingSurface string, Footware string, Foot string);");
-        db.execSQL("CREATE TABLE AccelData (timestamp timestamp, TestID integer, x float,y float, z float);");
+        db.execSQL("CREATE TABLE Users(UserID integer PRIMARY KEY AUTOINCREMENT, Name text);" +
+                "INSERT INTO Users(Name) VALUES('Mr.Headache');"
+        );
+        db.execSQL("CREATE TABLE Posturography(" +
+                "TestID integer PRIMARY KEY AUTOINCREMENT, " +
+                "UserID integer, " +
+                "Date datetime, " +
+                "TestingSurface string, " +
+                "Footwear string, " +
+                "Foot string," +
+                "FOREIGN KEY (UserID)" +
+                    "REFERENCES Users(UserID)" +
+                    "ON DELETE CASCADE " +
+                    "ON UPDATE CASCADE);"
+
+        );
+        db.execSQL("CREATE TABLE AccelData(" +
+                "Timestamp timestamp NOT NULL, " +
+                "TestID integer NOT NULL, " +
+                "x float, " +
+                "y float, " +
+                "z float, " +
+                "FOREIGN KEY(TestID) " +
+                    "REFERENCES Posturography(TestID) " +
+                    "ON DELETE CASCADE " +
+                    "ON UPDATE CASCADE);"
+        );
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
+        db.execSQL("DROP TABLE IF EXISTS Users");
+        db.execSQL("DROP TABLE IF EXISTS Posturography");
+        db.execSQL("DROP TABLE IF EXISTS AccelData");
+
+        onCreate(db);
     }
 
     public void addUser(String name){
-        db.execSQL("INSERT INTO " + tables[0][0] + "(" + tables [0][2] + ") VALUES ('" + name + "')");
+        db.execSQL("INSERT INTO Users(Name) VALUES('" + name + "')");
     }
 
     public void addAccelData(long timestamp, long testID, float x, float y, float z){
         ContentValues values = new ContentValues();
 
         values.put("TestID", testID);
-        values.put("timestamp", timestamp);
+        values.put("Timestamp", timestamp);
         values.put("x", x);
         values.put("y", y);
         values.put("z", z);
@@ -66,23 +90,26 @@ public class dbHelper extends SQLiteOpenHelper{
     * Output: TestID
     * */
     public long addPostureTest(String surface, String foot, String footware){
+        long TestID;
+        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date today = new Date();
+        String d = date.format(today);
         ContentValues values = new ContentValues();
 
         values.put("UserID", 1);
-        values.put("Date", "now");
+        values.put("Date", d);
         values.put("TestingSurface", surface);
-        values.put("Footware", footware);
+        values.put("Footwear", footware);
         values.put("Foot", foot);
 
-        return db.insert("Posturography", null, values);
+        TestID = db.insert("Posturography", null, values);
+        return TestID;
     }
-
-    public void getAccelData(long TestID, long timestamp, float x, float y, float z){}
 
     public void getData(String table, String id){
         Cursor cursor = db.rawQuery("SELECT * FROM "+ table, null);
 
-        int idCol  = cursor.getColumnIndex(tables[0][1]);
+        int idCol  = cursor.getColumnIndex("Name");
     }
 
     public void saveSypmtomEvalScore(int[] score){
@@ -92,13 +119,13 @@ public class dbHelper extends SQLiteOpenHelper{
     }
 
     public ArrayList<String> getUsers(){
-        ArrayList<String> users = new ArrayList<String>();
-        Cursor cursor = db.rawQuery("SELECT name from users", null);
+        ArrayList<String> users = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT name from Users", null);
 
         cursor.moveToFirst();
 
         while(cursor.isAfterLast() == false){
-            users.add(cursor.getString(cursor.getColumnIndex("name")));
+            users.add(cursor.getString(cursor.getColumnIndex("Name")));
             cursor.moveToNext();
         }
 
