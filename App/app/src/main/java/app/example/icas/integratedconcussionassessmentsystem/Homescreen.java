@@ -3,10 +3,13 @@ package app.example.icas.integratedconcussionassessmentsystem;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.PermissionChecker;
+import android.util.Log;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -184,6 +187,16 @@ public class Homescreen extends AppCompatActivity
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+                // Tell the media scanner about the new file so that it is
+                // immediately available to the user.
+                MediaScannerConnection.scanFile(this, new String[] { file.toString() }, null,
+                        new MediaScannerConnection.OnScanCompletedListener() {
+                            public void onScanCompleted(String path, Uri uri) {
+                                Log.i("ExternalStorage", "Scanned " + path + ":");
+                                Log.i("ExternalStorage", "-> uri=" + uri);
+                            }
+                        });
             }else{
                 Toast.makeText(getApplicationContext(),"External Storage not found",Toast.LENGTH_LONG).show();
             }
