@@ -52,6 +52,7 @@ public class Homescreen extends AppCompatActivity
     private String content = "Hello world!";
     FileOutputStream outputStream;
     String h;
+    Fragment fragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,7 @@ public class Homescreen extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       /* //Gridview for ICAS Test options
+              /* //Gridview for ICAS Test options
         final ImageButton scat3 = (ImageButton) findViewById(R.id.scat3);
         final ImageButton posture = (ImageButton) findViewById(R.id.posture);
         final ImageButton eeg = (ImageButton) findViewById(R.id.eeg);
@@ -120,6 +121,8 @@ public class Homescreen extends AppCompatActivity
                         .enableWebKitInspector(
                                 Stetho.defaultInspectorModulesProvider(this))
                         .build());
+
+        displaySelectedScreen(R.id.abouticas);
     }
 
     @Override
@@ -155,9 +158,11 @@ public class Homescreen extends AppCompatActivity
     }
 
     private void displaySelectedScreen(int id){
-        Fragment fragment = null;
 
         switch (id){
+            case R.id.mainmenu:
+                fragment = new mainmenu();
+                break;
             case R.id.my_profile:
                 fragment = new myprofile();
                 break;
