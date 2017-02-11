@@ -6,12 +6,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 /**
  * Created by George on 2017-02-10.
  */
 
 public class mainmenu extends Fragment {
+    private ImageButton scat3, posture, eyeGaze, EEG;
 
 
     @Nullable
@@ -24,5 +26,41 @@ public class mainmenu extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Main Menu");
+
+                /* //Gridview for ICAS Test options
+        final ImageButton scat3 = (ImageButton) findViewById(R.id.scat3);
+        final ImageButton posture = (ImageButton) findViewById(R.id.posture);
+        final ImageButton eeg = (ImageButton) findViewById(R.id.eeg);
+        final ImageButton eyegaze = (ImageButton) findViewById(R.id.eyegaze);
+        scat3.setVisibility(View.VISIBLE);
+        posture.setVisibility(View.VISIBLE);
+        eeg.setVisibility(View.VISIBLE);
+        eyegaze.setVisibility(View.VISIBLE);
+
+        //Makes Images Interactive to access each test
+        scat3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+                //use intents to go to new activity
+                Intent getScat3Screen = new Intent(v.getContext(), Scat3_landing.class);
+                getScat3Screen.putExtra("callingAct", "Main Activity");
+                startActivity(getScat3Screen);
+
+            }
+        });
+
+        //Makes Images Interactive to access each test
+        posture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+                Intent getPosturagraphyScreen = new Intent(v.getContext(), Posturography.class);
+                getPosturagraphyScreen.putExtra("callingAct", "Main Activity");
+                startActivity(getPosturagraphyScreen);
+
+            }
+        });
+*/
     }
 }
