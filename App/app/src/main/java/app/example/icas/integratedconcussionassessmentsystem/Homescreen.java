@@ -1,8 +1,6 @@
 package app.example.icas.integratedconcussionassessmentsystem;
 
 import android.Manifest;
-import android.content.Context;
-import android.content.Intent;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,8 +10,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
-import android.view.HapticFeedbackConstants;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -31,23 +27,16 @@ import com.facebook.stetho.Stetho;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.text.DateFormat;
 
-//import com.mikepenz.materialdrawer.DrawerBuilder;
+
 
 public class Homescreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, ActivityCompat.OnRequestPermissionsResultCallback {
 
     //define objects
-    File file;
-    private String content = "Hello world!";
-    FileOutputStream outputStream;
-    String h;
     Fragment fragment = null;
     DrawerLayout drawer;
-    private MenuItem initial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
