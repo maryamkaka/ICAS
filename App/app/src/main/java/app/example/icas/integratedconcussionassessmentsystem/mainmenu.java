@@ -1,8 +1,10 @@
 package app.example.icas.integratedconcussionassessmentsystem;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.HapticFeedbackConstants;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,13 +27,13 @@ public class mainmenu extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getActivity().setTitle("Main Menu");
+        getActivity().setTitle("Home");
 
-                /* //Gridview for ICAS Test options
-        final ImageButton scat3 = (ImageButton) findViewById(R.id.scat3);
-        final ImageButton posture = (ImageButton) findViewById(R.id.posture);
-        final ImageButton eeg = (ImageButton) findViewById(R.id.eeg);
-        final ImageButton eyegaze = (ImageButton) findViewById(R.id.eyegaze);
+        //Gridview for ICAS Test options
+        final ImageButton scat3 = (ImageButton) view.findViewById(R.id.scat3);
+        final ImageButton posture = (ImageButton) view.findViewById(R.id.posture);
+        final ImageButton eeg = (ImageButton) view.findViewById(R.id.eeg);
+        final ImageButton eyegaze = (ImageButton) view.findViewById(R.id.eyegaze);
         scat3.setVisibility(View.VISIBLE);
         posture.setVisibility(View.VISIBLE);
         eeg.setVisibility(View.VISIBLE);
@@ -61,6 +63,6 @@ public class mainmenu extends Fragment {
 
             }
         });
-*/
+
     }
 }

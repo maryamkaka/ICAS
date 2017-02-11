@@ -47,6 +47,7 @@ public class Homescreen extends AppCompatActivity
     String h;
     Fragment fragment = null;
     DrawerLayout drawer;
+    private MenuItem initial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +66,16 @@ public class Homescreen extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         setupDrawerContent(navigationView);
+
+        //START Main Menu by DEFAULT (COULD BE DONE CLEANER BY CALLING selectDrawerItem)
+        try {
+            fragment = (Fragment) (mainmenu.class).newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+
 
         //create widgets
         final TextView welcomeTxt = (TextView) findViewById(R.id.welcomeTxt);

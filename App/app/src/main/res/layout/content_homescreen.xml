@@ -10,13 +10,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="app.example.icas.integratedconcussionassessmentsystem.Homescreen"
-    tools:showIn="@layout/app_bar_homescreen">
+    tools:context="app.example.icas.integratedconcussionassessmentsystem.Homescreen">
 
-    <FrameLayout
-        android:id="@+id/flContent"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <TextView
             android:layout_width="match_parent"
@@ -103,7 +99,7 @@
             </LinearLayout>
 
         </LinearLayout>
-    </FrameLayout>
+
 
 
 </RelativeLayout>
