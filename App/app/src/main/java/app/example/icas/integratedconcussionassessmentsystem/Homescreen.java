@@ -8,6 +8,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.PermissionChecker;
 import android.util.Log;
 import android.view.HapticFeedbackConstants;
@@ -58,7 +60,7 @@ public class Homescreen extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Gridview for ICAS Test options
+       /* //Gridview for ICAS Test options
         final ImageButton scat3 = (ImageButton) findViewById(R.id.scat3);
         final ImageButton posture = (ImageButton) findViewById(R.id.posture);
         final ImageButton eeg = (ImageButton) findViewById(R.id.eeg);
@@ -92,7 +94,7 @@ public class Homescreen extends AppCompatActivity
 
             }
         });
-
+*/
         //(TO BE CONTINUED) Navigation Drawer Stuff
         //new DrawerBuilder().withActivity(this).build();
 
@@ -152,23 +154,48 @@ public class Homescreen extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    private void displaySelectedScreen(int id){
+        Fragment fragment = null;
+
+        switch (id){
+            case R.id.my_profile:
+                fragment = new myprofile();
+                break;
+            case R.id.abouticas:
+                fragment = new abouticas();
+
+
+        }
+
+        if(fragment!=null){
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_homescreen,fragment);
+            ft.commit();
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+    }
+
+
+
+
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        displaySelectedScreen(id);
+
+        if (id == R.id.my_profile) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.help) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.abouticas) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.settings) {
 
         } else if (id == R.id.savedata){
 
@@ -215,8 +242,7 @@ public class Homescreen extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
 
