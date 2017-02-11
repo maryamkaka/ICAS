@@ -24,4 +24,6 @@
     <string name="title_activity_posturography">Posturography</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_scat3_landing">Scat3_landing</string>
+    <string name="aboutIcasIntro">The Integrated Concussion Assessment System is an android application that brings together four popular concussion assessment
+         techniques, allowing for more objective tracking of patient recovery. </string>
 </resources>
