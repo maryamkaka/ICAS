@@ -73,35 +73,7 @@ public class memoryFrag extends Fragment {
         countDownTimer.start();
         timerHasStarted = true;
 
-               /*
-        Thread t = new Thread() {
-            @Override
-            public void run() {
-                try {
-                    for (i = 0; i < wordList[currentList].length - 1; i++) {
-                        Thread.sleep(1000);
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                question.setText(wordList[currentList][i]);
-                            }
-                        });
-                    }
-                    Thread.sleep(1000);
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            question.setText("Enter the words you remember below");
-                            textInput.setVisibility(View.VISIBLE);
-                        }
-                    });
-                } catch (InterruptedException e) {
-                }
-            }
-        };*/
 
-        // Calling the thread to execute
-       // t.start();
     }
 
     private int validateList(){

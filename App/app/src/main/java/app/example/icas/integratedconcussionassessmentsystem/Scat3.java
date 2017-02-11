@@ -33,7 +33,12 @@ public class Scat3 extends FragmentActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
         setContentView(R.layout.scat3);
+
+
 
         next = (ButtonRectangle) findViewById(R.id.next);
         prev = (ButtonRectangle) findViewById(R.id.prev);
@@ -65,6 +70,7 @@ public class Scat3 extends FragmentActivity{
                 memoryFrag.parentActivity = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, memoryFrag).commit();
             } else if (currentFrag == 3){
+                digitsFrag.parentActivity1 = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, digitsFrag).commit();
             } else if (currentFrag == 4){
                 fragmentManager.beginTransaction().replace(R.id.fragment, monthsFrag).commit();

@@ -2,6 +2,7 @@ package app.example.icas.integratedconcussionassessmentsystem;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +17,15 @@ import java.util.Random;
  */
 
 public class digitsFrag extends Fragment {
+    private CountDownTimer countDownTimer;
     private TextView question;
     private EditText numInput;
+    public Scat3 parentActivity1;
+    private boolean timerHasStarted = false;
+    private final long interval = 1*1000;
+    private long startTime;
+    private int i=0;
+
     private boolean displayNumbers = true, error = false;
     private final int[][][] numberList = {
             {{4,9,3}, {2,8,1,4}, {6,2,9,7,1}, {7,1,8,4,6,2}},
@@ -26,7 +34,7 @@ public class digitsFrag extends Fragment {
             {{4,1,5}, {4,9,6,8}, {6,1,8,4,3}, {7,2,4,8,5,6}},
     };
     private int trial = 0,
-            currentList, score, i;
+            currentList, score, j;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,6 +50,7 @@ public class digitsFrag extends Fragment {
         numInput.setVisibility(View.INVISIBLE);
 
         setCurrentList();
+
     }
 
     private void setCurrentList(){
@@ -51,43 +60,27 @@ public class digitsFrag extends Fragment {
     private void displayNumbers(){
         numInput.setVisibility(View.INVISIBLE);
         question.setText(""+numberList[currentList][trial][0]);
+        startTime = (numberList[currentList][trial].length+1)*1000;
 
-        Thread t = new Thread() {
-            @Override
-            public void run() {
-                try {
-                    for (i = 0; i < numberList[currentList][trial].length - 1; i++) {
-                        Thread.sleep(1000);
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                question.setText(""+numberList[currentList][trial][i]);
-                            }
-                        });
-                    }
-                    Thread.sleep(1000);
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            question.setText("Enter the digits in reverse order");
-                            numInput.setVisibility(View.VISIBLE);
-                        }
-                    });
-                } catch (InterruptedException e) {
-                }
-            }
-        };
-        // Calling the thread to execute
-        t.start();
+        countDownTimer = new digitsFrag.MyCountDownTimer(startTime, interval);
+
+        countDownTimer.start();
+        timerHasStarted = true;
     }
 
     private boolean validateInput(){
+
         String num = numInput.getText().toString();
         int numLen = numberList[currentList][trial].length;
 
-        for(int i = 0; i < numLen; i++){
+        //Prevents empty answer from crashing app
+        if(num.isEmpty()){
+            return false;
+        }
+
+        for(int j = 0; j < numLen; j++){
 //            System.out.println("User: " + num.charAt(i) + " Value: " + numberList[currentList][trial][numLen - 1 - i]);
-            if( Character.getNumericValue(num.charAt(i)) != numberList[currentList][trial][numLen - 1 - i]){
+            if( Character.getNumericValue(num.charAt(j)) != numberList[currentList][trial][numLen - 1 - j]){
                 return false;
             }
         }
@@ -99,7 +92,10 @@ public class digitsFrag extends Fragment {
         System.out.println("Next");
         if(displayNumbers){
             displayNumbers = false;
+            parentActivity1.disableBtns(view);
+            i = 0; // resets array index to start from beginning of number set
             displayNumbers();
+
         } else {
             if (trial == numberList[currentList].length - 1){
                 return false;
@@ -124,5 +120,26 @@ public class digitsFrag extends Fragment {
             displayNumbers = true;
         }
         return true;
+    }
+
+    public class MyCountDownTimer extends CountDownTimer {
+        public MyCountDownTimer (long startTime, long interval){
+            super(startTime,interval);
+        }
+
+        @Override
+        public void onTick(long l) {
+            question.setText(""+numberList[currentList][trial][i++]);
+
+        }
+
+        @Override
+        public void onFinish() {
+            question.setText("Enter the digits in reverse order");
+            numInput.setVisibility(View.VISIBLE);
+            parentActivity1.enableBtns(getView());
+
+        }
+
     }
 }
