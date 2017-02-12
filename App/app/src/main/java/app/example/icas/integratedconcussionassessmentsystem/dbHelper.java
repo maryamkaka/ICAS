@@ -41,10 +41,8 @@ public class dbHelper extends SQLiteOpenHelper{
                 "TestingSurface string, " +
                 "Footwear string, " +
                 "Foot string," +
-                "FOREIGN KEY (UserID)" +
-                    "REFERENCES Users(UserID)" +
-                    "ON DELETE CASCADE " +
-                    "ON UPDATE CASCADE);"
+                "FOREIGN KEY (UserID) REFERENCES Users(UserID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
 
         );
         db.execSQL("CREATE TABLE AccelData(" +
@@ -53,11 +51,34 @@ public class dbHelper extends SQLiteOpenHelper{
                 "x float, " +
                 "y float, " +
                 "z float, " +
-                "FOREIGN KEY(TestID) " +
-                    "REFERENCES Posturography(TestID) " +
-                    "ON DELETE CASCADE " +
-                    "ON UPDATE CASCADE);"
+                "FOREIGN KEY(TestID) REFERENCES Posturography(TestID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
         );
+        db.execSQL("CREATE TABLE SCAT3 (" +
+                "UserID integer," +
+                "TestID integer PRIMARY KEY AUTOINCREMENT," +
+                "Date datetime," +
+                "SymptomEvalKey integer," +
+                "OrientationKey integer," +
+                "MemoryKey integer," +
+                "ConcentrationKey integer" +
+                "FOREIGN KEY (UserID) REFERENCES Users(UserID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE," +
+                "FOREIGN KEY(SymptomEvalKey) REFERENCES SymptomEvaluation(SymptomEvalID)" +
+                        "ON DELETE CASCADE ON UPDATE CASCADE, " +
+                "FOREIGN KEY(OrientationKey) REFERENCES Orientation(OrientationID)" +
+                        "ON DELETE CASCADE ON UPDATE CASCADE," +
+                "FOREIGN KEY(TestID) REFERENCES Memory(MemoryKey)" +
+                        "ON DELETE CASCADE ON UPDATE CASCADE);"
+        );
+        db.execSQL("CREATE TABLE SymptomEvaluation (" +
+                "SymptomEvalID integer PRIMARY KEY AUTOINCREMENT," +
+                "Q1 integer, Q2 integer, Q3 integer, Q4 integer, Q5 integer, Q6 integer," +
+                "Q7 integer, Q8 integer, Q9 integer, Q10 integer, Q12 integer, Q13 integer, " +
+                "Q14 integer, Q15 integer, Q16 integer, Q17 integer, Q18 integer, Q19 integer, " +
+                "Q20 integer, Q21 integer, Q22 integer);"
+        );
+        db.execSQL("");
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
