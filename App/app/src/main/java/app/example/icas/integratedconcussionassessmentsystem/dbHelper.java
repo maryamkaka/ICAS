@@ -43,7 +43,6 @@ public class dbHelper extends SQLiteOpenHelper{
                 "Foot string," +
                 "FOREIGN KEY (UserID) REFERENCES Users(UserID)" +
                     "ON DELETE CASCADE ON UPDATE CASCADE);"
-
         );
         db.execSQL("CREATE TABLE AccelData(" +
                 "Timestamp timestamp NOT NULL, " +
@@ -54,31 +53,48 @@ public class dbHelper extends SQLiteOpenHelper{
                 "FOREIGN KEY(TestID) REFERENCES Posturography(TestID)" +
                     "ON DELETE CASCADE ON UPDATE CASCADE);"
         );
-        db.execSQL("CREATE TABLE SCAT3 (" +
+        db.execSQL("CREATE TABLE SCAT3(" +
                 "UserID integer," +
                 "TestID integer PRIMARY KEY AUTOINCREMENT," +
                 "Date datetime," +
                 "SymptomEvalKey integer," +
                 "OrientationKey integer," +
                 "MemoryKey integer," +
-                "ConcentrationKey integer" +
+                "ConcentrationKey integer, " +
                 "FOREIGN KEY (UserID) REFERENCES Users(UserID)" +
-                    "ON DELETE CASCADE ON UPDATE CASCADE," +
-                "FOREIGN KEY(SymptomEvalKey) REFERENCES SymptomEvaluation(SymptomEvalID)" +
-                        "ON DELETE CASCADE ON UPDATE CASCADE, " +
-                "FOREIGN KEY(OrientationKey) REFERENCES Orientation(OrientationID)" +
-                        "ON DELETE CASCADE ON UPDATE CASCADE," +
-                "FOREIGN KEY(TestID) REFERENCES Memory(MemoryKey)" +
-                        "ON DELETE CASCADE ON UPDATE CASCADE);"
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
         );
-        db.execSQL("CREATE TABLE SymptomEvaluation (" +
-                "SymptomEvalID integer PRIMARY KEY AUTOINCREMENT," +
+        db.execSQL("CREATE TABLE SymptomEvaluation(" +
+                "TestID integer," +
                 "Q1 integer, Q2 integer, Q3 integer, Q4 integer, Q5 integer, Q6 integer," +
                 "Q7 integer, Q8 integer, Q9 integer, Q10 integer, Q12 integer, Q13 integer, " +
                 "Q14 integer, Q15 integer, Q16 integer, Q17 integer, Q18 integer, Q19 integer, " +
-                "Q20 integer, Q21 integer, Q22 integer);"
+                "Q20 integer, Q21 integer, Q22 integer, " +
+                "FOREIGN KEY(TestID) REFERENCES SCAT3(TestID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
         );
-        db.execSQL("");
+        db.execSQL("CREATE TABLE Orientation(" +
+                "TestID integer, " +
+                "Date datetime, " +
+                "OrientationScore integer, " +
+                "FOREIGN KEY(TestID) REFERENCES SCAT3(TestID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
+        );
+        db.execSQL("CREATE TABLE Memory( " +
+                "TestID integer, " +
+                "Trial1 integer, Trial2 integer, Trial3 integer, " +
+                "MemoryScore integer, " +
+                "FOREIGN KEY(TestID) REFERENCES SCAT3(TestID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
+        );
+        db.execSQL("CREATE TABLE Concentration( " +
+                "TestID integer, " +
+                "Trial1 integer, Trial2 integer, Trial3 integer, Trial4 integer, " +
+                "Months integer, " +
+                "ConcentrationScore integer, " +
+                "FOREIGN KEY(TestID) REFERENCES SCAT3(TestID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
+        );
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){

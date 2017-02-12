@@ -18,12 +18,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.facebook.stetho.Stetho;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -79,7 +76,6 @@ public class Homescreen extends AppCompatActivity
                         .enableWebKitInspector(
                                 Stetho.defaultInspectorModulesProvider(this))
                         .build());
-
     }
 
     private void setupDrawerContent(NavigationView navigationview){
