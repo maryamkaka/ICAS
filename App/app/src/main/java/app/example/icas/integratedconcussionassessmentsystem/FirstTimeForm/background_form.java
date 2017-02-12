@@ -25,6 +25,7 @@ public class background_form extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
+    public String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,10 +80,13 @@ public class background_form extends AppCompatActivity {
             //Returning the current tabs
             switch (position){
                 case 0:
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("example",1);
                     typingpart tab1 = new typingpart();
+                    tab1.setArguments(bundle);
                     return tab1;
                 case 1:
-                    Visualize_frag tab2 = new Visualize_frag();
+                    typingpart tab2 = new typingpart();
                     return tab2;
                 default:
                     return null;
