@@ -17,7 +17,7 @@
         <activity
             android:name=".Scat3"
             android:label="SCAT 3"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen" />
         <activity
             android:name=".scat3_instructions"
             android:label="SCAT 3"

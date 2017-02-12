@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:paddingTop="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/aboutIcasIntro"
+                    android:id="@+id/aboutIcas"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:textSize="16sp"
+                    android:textAlignment="textStart"
+                    android:elegantTextHeight="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:paddingTop="10dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/icaslogo"
+                    android:id="@+id/imageView5"
+                    android:layout_weight="1.5"
+                    android:padding="5dp" />
+            </LinearLayout>
+
+            <TextView
+                android:text="MEET THE TEAM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:paddingTop="50dp"
+                android:gravity="center"
+                android:elevation="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"
+                android:textStyle="normal|bold" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/george_photo"
+                        android:id="@+id/imageView6"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:text="George Hanna"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/teammember1"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textStyle="normal|italic"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingTop="5dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/maryam_photo"
+                        android:id="@+id/imageView7"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:text="Maryam Kaka"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView4"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingTop="5dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="normal|italic" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="10dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/vicky_photo"
+                        android:id="@+id/imageView9"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:text="Vicky Madge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView5"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingTop="5dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="normal|italic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/adam_photo"
+                    android:id="@+id/imageView8"
+                    android:layout_weight="1"
+                    android:paddingTop="2dp"
+                    android:layout_marginTop="1dp" />
+
+                    <TextView
+                        android:text="Adam Birosh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView6"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingTop="5dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="normal|italic" />
+                    </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:text="UNDER THE SUPERVISION OF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/supervisor"
+                android:paddingTop="50dp"
+                android:gravity="center"
+                android:elevation="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"
+                android:textStyle="normal|bold" />
+
+            <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/adrian_chan1"
+                android:id="@+id/imageView11"
+                android:layout_weight="1"
+                android:paddingTop="2dp"
+                android:layout_marginTop="1dp"/>
+
+                    <TextView
+                        android:text="Dr. Adrian Chan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/chan"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingTop="5dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="normal|italic" />
+
+                    </LinearLayout>
+
+            </LinearLayout>
+
+        <TextView
+            android:text="IN COLLABORATION WITH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/collaborator"
+            android:paddingTop="50dp"
+            android:gravity="center"
+            android:elevation="5dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="normal|bold" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/lindsay_bradley"
+                    android:id="@+id/imageView10"
+                    android:layout_weight="1"
+                    android:paddingTop="2dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:text="Dr. Lindsay Bradley"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bradley"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="normal|italic" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</FrameLayout>

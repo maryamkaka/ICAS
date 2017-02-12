@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Select Test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialogTitle"
+        android:gravity="left"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingBottom="20dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="24dp"
+        android:paddingTop="24dp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/scat3options"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp">
+
+        <CheckBox
+            android:text="Symptom Evaluation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox"
+            android:textSize="18sp"
+            android:textColor="?attr/editTextColor"
+            android:paddingBottom="10dp"
+            android:gravity="center|start"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp" />
+
+        <CheckBox
+            android:text="Orientation Test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox2"
+            android:gravity="center_vertical|center|start"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingBottom="10dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp" />
+        <CheckBox
+            android:text="Immediate Memory Test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox3"
+            android:gravity="center_vertical|center|start"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:paddingLeft="8dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" />
+
+        <CheckBox
+            android:text="Backwards Digits Test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox4"
+            android:gravity="center_vertical|center|start"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:paddingLeft="8dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" />
+
+        <CheckBox
+            android:text="Months in Reverse Test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox5"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:paddingLeft="8dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+
+        <CheckBox
+            android:text="Do all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox6"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:paddingLeft="8dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" />
+    </RadioGroup>
+
+    <Button
+        android:text="Begin"
+        android:layout_width="match_parent"
+        android:id="@+id/scat3startbutton"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorAccent"
+        android:gravity="right|center_vertical|center_horizontal"
+        android:paddingRight="20dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:textAllCaps="false"/>
+
+
+</LinearLayout>

@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gc.materialdesign.views.Button;
+import com.gc.materialdesign.views.ButtonRectangle;
+
 /**
  * SCAT 3 Activity
  */
@@ -25,11 +28,20 @@ public class Scat3 extends FragmentActivity{
     private boolean updateStatus;
     private int currentFrag = 0;
     private final FragmentManager fragmentManager = getFragmentManager();
+    private ButtonRectangle next,prev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
         setContentView(R.layout.scat3);
+
+
+
+        next = (ButtonRectangle) findViewById(R.id.next);
+        prev = (ButtonRectangle) findViewById(R.id.prev);
 
         //Initialize fragment
         fragmentManager.beginTransaction().add(R.id.fragment, symptomEvalFrag).commit();
@@ -55,8 +67,10 @@ public class Scat3 extends FragmentActivity{
             if(currentFrag == 1) {
                 fragmentManager.beginTransaction().replace(R.id.fragment, cogAssessmentFrag).commit();
             } else if (currentFrag == 2){
+                memoryFrag.parentActivity = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, memoryFrag).commit();
             } else if (currentFrag == 3){
+                digitsFrag.parentActivity1 = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, digitsFrag).commit();
             } else if (currentFrag == 4){
                 fragmentManager.beginTransaction().replace(R.id.fragment, monthsFrag).commit();
@@ -71,5 +85,15 @@ public class Scat3 extends FragmentActivity{
 
     public void onPrevClick(View view){
         updateStatus = symptomEvalFrag.prevQuestion();
+    }
+
+    public void disableBtns(View view){
+        next.setVisibility(View.INVISIBLE);
+        prev.setVisibility(View.INVISIBLE);
+    }
+
+    public void enableBtns(View view){
+        next.setVisibility(View.VISIBLE);
+        prev.setVisibility(View.VISIBLE);
     }
 }
