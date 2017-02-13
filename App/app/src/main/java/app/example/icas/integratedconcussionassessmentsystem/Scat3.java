@@ -29,6 +29,8 @@ public class Scat3 extends FragmentActivity{
     private int currentFrag = 0;
     private final FragmentManager fragmentManager = getFragmentManager();
     private ButtonRectangle next,prev;
+    private dbHelper db;
+    private long TestID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -38,7 +40,9 @@ public class Scat3 extends FragmentActivity{
         decorView.setSystemUiVisibility(uiOptions);
         setContentView(R.layout.scat3);
 
-
+        //initialize database
+        db = new dbHelper(this);
+        TestID = db.addSCAT3Test();
 
         next = (ButtonRectangle) findViewById(R.id.next);
         prev = (ButtonRectangle) findViewById(R.id.prev);

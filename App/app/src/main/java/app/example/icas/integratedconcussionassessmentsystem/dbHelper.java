@@ -57,10 +57,6 @@ public class dbHelper extends SQLiteOpenHelper{
                 "UserID integer," +
                 "TestID integer PRIMARY KEY AUTOINCREMENT," +
                 "Date datetime," +
-                "SymptomEvalKey integer," +
-                "OrientationKey integer," +
-                "MemoryKey integer," +
-                "ConcentrationKey integer, " +
                 "FOREIGN KEY (UserID) REFERENCES Users(UserID)" +
                     "ON DELETE CASCADE ON UPDATE CASCADE);"
         );
@@ -107,6 +103,25 @@ public class dbHelper extends SQLiteOpenHelper{
 
     public void addUser(String name){
         db.execSQL("INSERT INTO Users(Name) VALUES('" + name + "')");
+    }
+
+    /* addSCAT3Test
+    * Adds SCAT3 Test
+    * Output: TestID
+    * */
+    public long addSCAT3Test(){
+        long TestID;
+        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date today = new Date();
+        String d = date.format(today);
+        ContentValues values = new ContentValues();
+
+        values.put("UserID", 1);
+        values.put("Date", d);
+
+        TestID = db.insert("SCAT3", null, values);
+
+        return TestID;
     }
 
     public void addAccelData(long timestamp, long testID, float x, float y, float z){
