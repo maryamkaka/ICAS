@@ -26,6 +26,7 @@ public class background_form extends AppCompatActivity {
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
     public String key;
+    Bundle bundle = new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,14 +81,29 @@ public class background_form extends AppCompatActivity {
             //Returning the current tabs
             switch (position){
                 case 0:
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("example",1);
-                    typingpart tab1 = new typingpart();
-                    tab1.setArguments(bundle);
+                    Fragment tab1 = typingpart.newInstance(0);
                     return tab1;
                 case 1:
-                    typingpart tab2 = new typingpart();
+                    Fragment tab2 = typingpart.newInstance(1);
                     return tab2;
+                case 2:
+                    Fragment tab3 = typingpart.newInstance(2);
+                    return tab3;
+                case 3:
+                    Fragment tab4 = typingpart.newInstance(3);
+                    return tab4;
+                case 4:
+                    Fragment tab5 = typingpart.newInstance(4);
+                    return tab5;
+                case 5:
+                    Fragment tab6 = typingpart.newInstance(5);
+                    return tab6;
+                case 6:
+                    Fragment tab7 = typingpart.newInstance(6);
+                    return tab7;
+                case 7:
+                    Fragment tab8 = typingpart.newInstance(7);
+                    return tab8;
                 default:
                     return null;
             }        }
@@ -95,7 +111,7 @@ public class background_form extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 2;
+            return 8;
         }
 
         @Override

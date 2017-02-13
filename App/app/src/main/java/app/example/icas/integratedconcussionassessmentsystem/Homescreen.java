@@ -87,7 +87,7 @@ public class Homescreen extends AppCompatActivity
                 new NavigationView.OnNavigationItemSelectedListener(){
 
                     @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    public boolean onNavigationItemSelected(MenuItem item) {
                         selectDrawerItem(item);
                         return true;
                     }

@@ -37,26 +37,47 @@ public class typingpart extends Fragment {
     };
     private TextView question;
 
+    public static typingpart newInstance(int i){
+        Bundle bundle = new Bundle ();
+        bundle.putInt("index",i);
+
+        typingpart fragment = new typingpart();
+        fragment.setArguments(bundle);
+
+        return fragment;
+
+    }
+
+    private void readBundle (Bundle bundle){
+        if(bundle != null){
+            i = bundle.getInt("index");
+        }
+    }
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_typingpart, container, false);
-        question = (TextView) getActivity().findViewById(R.id.question);
-        Bundle bundle = this.getArguments();
-        if(bundle != null){
-            i = bundle.getInt("example",-1);
-        }
+        question = (TextView) rootView.findViewById(R.id.questionintro);
+
+        readBundle(getArguments());
+
         System.out.println(questionlist[i]);
         question.setText(questionlist[i]);
         System.out.println(i);
-
         return rootView;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
 
     }
 
