@@ -76,6 +76,7 @@ public class Scat3 extends FragmentActivity{
                 memoryFrag.parentActivity = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, memoryFrag).commit();
             } else if (currentFrag == 3){
+                db.addMemoryScore(TestID, memoryFrag.getScores());
                 digitsFrag.parentActivity1 = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, digitsFrag).commit();
             } else if (currentFrag == 4){

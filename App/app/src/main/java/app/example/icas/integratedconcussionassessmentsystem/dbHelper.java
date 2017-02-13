@@ -78,9 +78,8 @@ public class dbHelper extends SQLiteOpenHelper{
                     "ON DELETE CASCADE ON UPDATE CASCADE);"
         );
         db.execSQL("CREATE TABLE Memory( " +
-                "TestID integer, " +
+                "TestID integer NOT NULL, " +
                 "Trial1 integer, Trial2 integer, Trial3 integer, " +
-                "MemoryScore integer, " +
                 "FOREIGN KEY(TestID) REFERENCES SCAT3(TestID)" +
                     "ON DELETE CASCADE ON UPDATE CASCADE);"
         );
@@ -147,6 +146,18 @@ public class dbHelper extends SQLiteOpenHelper{
         values.put("UserDate", d);
 
         db.insert("Orientation", null, values);
+    }
+
+    public void addMemoryScore(long TestID, int[] scores){
+        ContentValues values = new ContentValues();
+
+        values.put("TestID", TestID);
+
+        for(int i = 0; i <scores.length; i++){
+            values.put("Trial"+Integer.toString(i+1), scores[i]);
+        }
+
+        db.insert("Memory", null, values);
     }
 
     public void addAccelData(long timestamp, long testID, float x, float y, float z){
