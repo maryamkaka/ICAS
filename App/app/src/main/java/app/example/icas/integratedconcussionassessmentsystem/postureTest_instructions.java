@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
+import android.icu.util.Calendar;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import com.wang.avi.AVLoadingIndicatorView;
 import com.wang.avi.Indicator;
 
 import java.io.File;
+import java.util.Date;
 
 import static android.view.View.GONE;
 
@@ -40,6 +42,7 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     private dbHelper db;
     private long testID;
     public String path = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/ICAS/Posture";
+    private Boolean collectData = Boolean.FALSE;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -107,10 +110,9 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
             Z.setVisibility(View.GONE);
             Statusmsg.setVisibility(view.VISIBLE);
             avi.setVisibility(View.VISIBLE);
-
             startAnim();
             click_index++;
-
+            collectData = Boolean.TRUE;
 
         }else{
             instr_pic.setVisibility(View.VISIBLE);
@@ -124,6 +126,7 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
             instr_word.setImageResource(word_instructions[image_index]);
             image_index++;
             click_index++;
+            collectData = Boolean.FALSE;
         }
 
         return true;
@@ -151,7 +154,11 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         Y.setText("Y: "+ sensorEvent.values[1]);
         Z.setText("Z: "+ sensorEvent.values[2]);
 
-        db.addAccelData(sensorEvent.timestamp, testID, sensorEvent.values[0], sensorEvent.values[1], sensorEvent.values[2]);
+        if(collectData){
+            long timestamp = (new Date()).getTime() + (sensorEvent.timestamp - System.nanoTime()) / 1000000L; // Convert to UNIX Time
+            db.addAccelData(timestamp, testID, sensorEvent.values[0], sensorEvent.values[1], sensorEvent.values[2]);
+        }
+
     }
 
     @Override

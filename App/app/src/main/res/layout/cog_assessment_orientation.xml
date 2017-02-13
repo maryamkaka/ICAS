@@ -30,13 +30,13 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/date"
+        android:id="@+id/dateLayout"
         android:visibility="visible">
 
         <NumberPicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:textSize="40sp"
             android:id="@+id/day" />
         <NumberPicker
@@ -45,6 +45,12 @@
             android:layout_weight="3"
             android:textSize="40sp"
             android:id="@+id/month" />
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="40sp"
+            android:id="@+id/date" />
         <NumberPicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -44,7 +44,8 @@ public class digitsFrag extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         question = (TextView) getView().findViewById(R.id.question);
-        question.setText("Trial #" + (trial+1) + " \n You will be shown a string of numbers. When completed input the numbers in reverse order");
+        question.setText("Trial #" + (trial+1) + " \n You will be shown a string of numbers. " +
+                "When completed input the numbers in reverse order");
 
         numInput = (EditText) getView().findViewById(R.id.number);
         numInput.setVisibility(View.INVISIBLE);
@@ -114,7 +115,8 @@ public class digitsFrag extends Fragment {
                 score++;
             }
 
-            question.setText("Trial #" + (trial+1) + "\n You will be shown a string of numbers. When completed input the numbers in reverse order");
+            question.setText("Trial #" + (trial+1) + "\n You will be shown a string of numbers. " +
+                    "When completed input the numbers in reverse order");
             numInput.setVisibility(View.INVISIBLE);
             numInput.setText("");
             displayNumbers = true;
@@ -141,5 +143,9 @@ public class digitsFrag extends Fragment {
 
         }
 
+    }
+
+    public int getScore() {
+        return trial + 1;
     }
 }
