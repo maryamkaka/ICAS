@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.icu.text.SimpleDateFormat;
+import android.icu.util.Calendar;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -71,7 +72,7 @@ public class dbHelper extends SQLiteOpenHelper{
         );
         db.execSQL("CREATE TABLE Orientation(" +
                 "TestID integer NOT NULL, " +
-                "Date datetime, " +
+                "UserDate datetime, " +
                 "OrientationScore integer, " +
                 "FOREIGN KEY(TestID) REFERENCES SCAT3(TestID)" +
                     "ON DELETE CASCADE ON UPDATE CASCADE);"
@@ -134,6 +135,18 @@ public class dbHelper extends SQLiteOpenHelper{
         }
 
         db.insert("SymptomEvaluation", null, values);
+    }
+
+    public void addOrientationScore(long TestID, int score, Calendar userDate){
+        ContentValues values = new ContentValues();
+        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        String d = date.format(userDate);
+
+        values.put("TestID", TestID);
+        values.put("OrientationScore", score);
+        values.put("UserDate", d);
+
+        db.insert("Orientation", null, values);
     }
 
     public void addAccelData(long timestamp, long testID, float x, float y, float z){

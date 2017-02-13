@@ -1,6 +1,7 @@
 package app.example.icas.integratedconcussionassessmentsystem;
 
 import android.app.Fragment;
+import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,20 +15,22 @@ import org.w3c.dom.Text;
 
 import java.sql.Time;
 
+import static java.lang.Math.abs;
+
 /**
  * Created by mkaka on 2016-12-27.
  */
 
 public class cogAssessmentFrag extends Fragment {
     private Boolean goNext = true;
-    private Calendar currentDate = Calendar.getInstance();
+    private Calendar currentDate = Calendar.getInstance(), userDate = Calendar.getInstance();
     private final String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "June", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"};
-    private final String[] days = {"Sat", "Sun", "Mon", "Tues", "Wed", "Thurs", "Fri"};
+    private final String[] days = {"Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"};
     private final String[] AMPMString = {"AM", "PM"};
     private TextView questionTxt;
     private NumberPicker day, date, month, year, hr, min, AMPM;
     private LinearLayout dateLayout, time;
-    private int score;
+    private int score = 0 ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -87,7 +90,7 @@ public class cogAssessmentFrag extends Fragment {
 
     public boolean nextQuestion(View view) {
         if(goNext){
-            //calculate
+            //set up time question
             questionTxt.setText("What is the time?");
             dateLayout.setVisibility(View.INVISIBLE);
             time.setVisibility(View.VISIBLE);
@@ -99,7 +102,37 @@ public class cogAssessmentFrag extends Fragment {
     }
 
     private void calculateScore(){
+        userDate.set(Calendar.YEAR, year.getValue());
+        userDate.set(Calendar.MONTH, month.getValue());
+        userDate.set(Calendar.DATE, date.getValue());
+        userDate.set(Calendar.DAY_OF_WEEK, day.getValue()+1);
+
+        //calculate date score
+        if(currentDate.get(Calendar.MONTH) == month.getValue()){
+            score++;
+        }
+        if(currentDate.get(Calendar.DATE) == date.getValue()){
+            score++;
+        }
+        if(currentDate.get(Calendar.DAY_OF_WEEK)-1 == day.getValue()){
+            score++;
+        }
+        if(currentDate.get(Calendar.YEAR) == year.getValue()){
+            score++;
+        }
+
+        //calculate time score
+        userDate.set(Calendar.HOUR, hr.getValue());
+        userDate.set(Calendar.MINUTE, min.getValue());
+        userDate.set(Calendar.AM_PM, AMPM.getValue());
+
+        long diff = abs(userDate.getTime().getTime() - currentDate.getTime().getTime());
+        if(diff < 3600000){ //time diff less than 1 hr
+            score++;
+        }
+
     }
 
-    private int getScore(){ return score; }
+    public int getScore(){ return score; }
+    public Calendar getUserDate(){ return userDate; }
 }
