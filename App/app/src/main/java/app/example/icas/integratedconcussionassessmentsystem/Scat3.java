@@ -82,6 +82,7 @@ public class Scat3 extends FragmentActivity{
             } else if (currentFrag == 4){
                 fragmentManager.beginTransaction().replace(R.id.fragment, monthsFrag).commit();
             } else {
+                db.addConcentrationScore(TestID, digitsFrag.getScore(), monthsFrag.getScore());
                 //use intents to go to new activity
                 Intent getHomeScreen = new Intent(view.getContext(), Homescreen.class);
                 getHomeScreen.putExtra("callingAct", "Main Activity");

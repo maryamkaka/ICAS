@@ -85,9 +85,8 @@ public class dbHelper extends SQLiteOpenHelper{
         );
         db.execSQL("CREATE TABLE Concentration( " +
                 "TestID integer NOT NULL, " +
-                "Trial1 integer, Trial2 integer, Trial3 integer, Trial4 integer, " +
+                "digitsScore integer, " +
                 "Months integer, " +
-                "ConcentrationScore integer, " +
                 "FOREIGN KEY(TestID) REFERENCES SCAT3(TestID)" +
                     "ON DELETE CASCADE ON UPDATE CASCADE);"
         );
@@ -158,6 +157,16 @@ public class dbHelper extends SQLiteOpenHelper{
         }
 
         db.insert("Memory", null, values);
+    }
+
+    public void addConcentrationScore(long TestID, int digitsScore, int monthsScore){
+        ContentValues values = new ContentValues();
+
+        values.put("TestID", TestID);
+        values.put("digitsScore", digitsScore);
+        values.put("Months", monthsScore);
+
+        db.insert("Concentration", null, values);
     }
 
     public void addAccelData(long timestamp, long testID, float x, float y, float z){
