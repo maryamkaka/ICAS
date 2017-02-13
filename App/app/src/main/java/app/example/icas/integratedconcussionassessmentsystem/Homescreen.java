@@ -42,6 +42,22 @@ public class Homescreen extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        /* Initialize Stetho for Chrome Debugging
+         * http://facebook.github.io/stetho/
+         */
+        /*Stetho.initialize(
+                Stetho.newInitializerBuilder(this)
+                        .enableDumpapp(
+                                Stetho.defaultDumperPluginsProvider(this))
+                        .enableWebKitInspector(
+                                Stetho.defaultInspectorModulesProvider(this))
+                        .build());*/
+        Stetho.initializeWithDefaults(this);
+        /*Stetho.initialize(
+                Stetho.newInitializerBuilder(this)
+                        .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
+                        .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
+                        .build());*/
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -65,17 +81,6 @@ public class Homescreen extends AppCompatActivity
 
         //create widgets
         final TextView welcomeTxt = (TextView) findViewById(R.id.welcomeTxt);
-
-        /* Initialize Stetho for Chrome Debugging
-         * http://facebook.github.io/stetho/
-         */
-        Stetho.initialize(
-                Stetho.newInitializerBuilder(this)
-                        .enableDumpapp(
-                                Stetho.defaultDumperPluginsProvider(this))
-                        .enableWebKitInspector(
-                                Stetho.defaultInspectorModulesProvider(this))
-                        .build());
     }
 
     private void setupDrawerContent(NavigationView navigationview){
