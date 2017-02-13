@@ -26,4 +26,5 @@
     <string name="title_activity_scat3_landing">Scat3_landing</string>
     <string name="aboutIcasIntro">The Integrated Concussion Assessment System is an android application that brings together four popular concussion assessment
          techniques, allowing for more objective tracking of patient recovery. </string>
+    <string name="title_activity_background_form">background_form</string>
 </resources>

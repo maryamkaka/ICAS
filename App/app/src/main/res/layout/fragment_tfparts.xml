@@ -1,0 +1,75 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.example.icas.integratedconcussionassessmentsystem.History_frag">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="100dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:layout_height="50dp"
+        android:id="@+id/toapplay">
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:text="DONE"
+            android:layout_width="wrap_content"
+            android:id="@+id/toapp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50px"
+            android:background="@color/colorAccent"
+            android:layout_gravity="bottom|end"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What's your name?"
+            android:textSize="30sp"
+            android:gravity="center_vertical|center_horizontal"
+            android:id="@+id/questionintro"
+            android:layout_margin="10dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/options">
+
+                <RadioButton
+                    android:text="Yes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioButton2"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="No"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioButton"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
