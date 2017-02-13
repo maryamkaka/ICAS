@@ -22,10 +22,12 @@ public class cogAssessmentFrag extends Fragment {
     private Boolean goNext = true;
     private Calendar currentDate = Calendar.getInstance();
     private final String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "June", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"};
+    private final String[] days = {"Sat", "Sun", "Mon", "Tues", "Wed", "Thurs", "Fri"};
     private final String[] AMPMString = {"AM", "PM"};
     private TextView questionTxt;
-    private NumberPicker day, month, year, hr, min, AMPM;
-    private LinearLayout date, time;
+    private NumberPicker day, date, month, year, hr, min, AMPM;
+    private LinearLayout dateLayout, time;
+    private int score;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,8 +38,9 @@ public class cogAssessmentFrag extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         //initialize views/variables
         questionTxt = (TextView) getView().findViewById(R.id.question);
-        date = (LinearLayout) getView().findViewById(R.id.date);
+        dateLayout = (LinearLayout) getView().findViewById(R.id.dateLayout);
         time = (LinearLayout) getView().findViewById(R.id.time);
+        date = (NumberPicker) getView().findViewById(R.id.date);
         day = (NumberPicker) getView().findViewById(R.id.day);
         month = (NumberPicker) getView().findViewById(R.id.month);
         year = (NumberPicker) getView().findViewById(R.id.year);
@@ -46,13 +49,16 @@ public class cogAssessmentFrag extends Fragment {
         AMPM = (NumberPicker)getView().findViewById(R.id.AMPM);
 
         //set up
-        day.setMinValue(1);
-        day.setMaxValue(31);
+        date.setMinValue(1);
+        date.setMaxValue(31);
         year.setMinValue(currentDate.get(Calendar.YEAR) - 30);
         year.setMaxValue(currentDate.get(Calendar.YEAR) + 30);
         month.setMaxValue(0);
         month.setMaxValue(months.length - 1);
         month.setDisplayedValues(months);
+        day.setMaxValue(0);
+        day.setMaxValue(days.length - 1);
+        day.setDisplayedValues(days);
         hr.setMinValue(1);
         hr.setMaxValue(12);
         min.setMinValue(00);
@@ -69,6 +75,7 @@ public class cogAssessmentFrag extends Fragment {
 
         day.setWrapSelectorWheel(true);
         month.setWrapSelectorWheel(true);
+        date.setWrapSelectorWheel(true);
         year.setWrapSelectorWheel(false);
         hr.setWrapSelectorWheel(true);
         min.setWrapSelectorWheel(true);
@@ -80,12 +87,19 @@ public class cogAssessmentFrag extends Fragment {
 
     public boolean nextQuestion(View view) {
         if(goNext){
+            //calculate
             questionTxt.setText("What is the time?");
-            date.setVisibility(View.INVISIBLE);
+            dateLayout.setVisibility(View.INVISIBLE);
             time.setVisibility(View.VISIBLE);
             goNext = false;
             return true;
         }
+        calculateScore();
         return false;
     }
+
+    private void calculateScore(){
+    }
+
+    private int getScore(){ return score; }
 }
