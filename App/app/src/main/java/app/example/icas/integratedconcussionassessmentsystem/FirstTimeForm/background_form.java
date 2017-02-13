@@ -79,39 +79,23 @@ public class background_form extends AppCompatActivity {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
             //Returning the current tabs
-            switch (position){
-                case 0:
-                    Fragment tab1 = typingpart.newInstance(0);
-                    return tab1;
-                case 1:
-                    Fragment tab2 = typingpart.newInstance(1);
-                    return tab2;
-                case 2:
-                    Fragment tab3 = typingpart.newInstance(2);
-                    return tab3;
-                case 3:
-                    Fragment tab4 = typingpart.newInstance(3);
-                    return tab4;
-                case 4:
-                    Fragment tab5 = typingpart.newInstance(4);
-                    return tab5;
-                case 5:
-                    Fragment tab6 = typingpart.newInstance(5);
-                    return tab6;
-                case 6:
-                    Fragment tab7 = typingpart.newInstance(6);
-                    return tab7;
-                case 7:
-                    Fragment tab8 = typingpart.newInstance(7);
-                    return tab8;
-                default:
-                    return null;
-            }        }
+            //TO BE CLEANED UP
+            if (position < 8 && position >= 0) {
+                return typingpart.newInstance(position,false);
+            }else if(position>=8 && position < 15) {
+                return tfparts.newInstance(position - 8, false);
+            }else if(position==15){
+                return tfparts.newInstance(position-8,true);
+            }else{
+                return null;
+            }
+
+        }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 8;
+            return 16;
         }
 
         @Override

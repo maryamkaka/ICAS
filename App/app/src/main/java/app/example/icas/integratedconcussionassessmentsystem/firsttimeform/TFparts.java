@@ -1,53 +1,54 @@
 package app.example.icas.integratedconcussionassessmentsystem.firsttimeform;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
-import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.gc.materialdesign.views.ButtonRectangle;
+
+import app.example.icas.integratedconcussionassessmentsystem.Homescreen;
+import app.example.icas.integratedconcussionassessmentsystem.LoginActivity;
 import app.example.icas.integratedconcussionassessmentsystem.R;
-import de.codecrafters.tableview.TableView;
-import de.codecrafters.tableview.toolkit.SimpleTableDataAdapter;
-import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter;
-
-import static android.R.attr.defaultValue;
 
 
-public class typingpart extends Fragment {
+public class tfparts extends Fragment {
 
     private String key;
     private int i;
     private boolean end;
+
     /**
      * The fragment argument representing the section number for this
      * fragment.
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
     private final String[] questionlist = {
-            "Hi there, \nWhat's your name?",
-            "Sport/team/school:",
-            "Date/Time of injury:",
-            "Age",
-            "Years of education completed",
-            "How many concussions do you think you have had in the past?",
-            "When was the most recent concussion?",
-            "How long did its recovery take?"
+            "Gender:",
+            "Dominant Hand:",
+            "Have you ever been hospitalized or had medical imaging done for a head injury?",
+            "Have you ever been diagnosed with headaches or mirgraines?",
+            "Do you have a learning disability, dyslexia, ADD/ADHD?",
+            "Have you ever been diagnosed with depression, anxiety, or other psychiatric disorder?",
+            "Has anyone in your family ever been diagnosed with any of these problems?",
+            "Are you on any medications? If yes, please list"
     };
-    private TextView question;
-    private EditText NameInput;
 
-    public static typingpart newInstance(int i,boolean end){
+    private TextView question;
+    private RadioGroup options;
+    private ButtonRectangle toapp;
+
+    public static tfparts newInstance(int i,boolean end){
         Bundle bundle = new Bundle ();
         bundle.putBoolean("ending",end);
         bundle.putInt("index",i);
 
-        typingpart fragment = new typingpart();
+        tfparts fragment = new tfparts();
         fragment.setArguments(bundle);
 
         return fragment;
@@ -66,11 +67,19 @@ public class typingpart extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_typingpart, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_tfparts, container, false);
         question = (TextView) rootView.findViewById(R.id.questionintro);
-        NameInput = (EditText) rootView.findViewById(R.id.Nameinput);
+        options = (RadioGroup) rootView.findViewById(R.id.options);
+        toapp = (ButtonRectangle) rootView.findViewById(R.id.toapp);
+        toapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),Homescreen.class);
+                startActivity(intent);
+            }
+        });
 
-        /*//METHOD I
+        /*//METHOD I for getting answer
         NameInput.setOnEditorActionListener(new EditText.OnEditorActionListener(){
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -86,8 +95,10 @@ public class typingpart extends Fragment {
         });*/
 
         readBundle(getArguments());
+        if (end) {
+            toapp.setVisibility(View.VISIBLE);
+        }
 
-        System.out.println(questionlist[i]);
         question.setText(questionlist[i]);
         System.out.println(i);
         return rootView;
@@ -97,8 +108,8 @@ public class typingpart extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        String answer = NameInput.getText().toString();
-        System.out.println(answer);
+        //String answer = NameInput.getText().toString();
+        //System.out.println(answer);
     }
 
     @Override
