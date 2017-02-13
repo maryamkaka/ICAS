@@ -102,11 +102,6 @@ public class cogAssessmentFrag extends Fragment {
     }
 
     private void calculateScore(){
-        userDate.set(Calendar.YEAR, year.getValue());
-        userDate.set(Calendar.MONTH, month.getValue());
-        userDate.set(Calendar.DATE, date.getValue());
-        userDate.set(Calendar.DAY_OF_WEEK, day.getValue()+1);
-
         //calculate date score
         if(currentDate.get(Calendar.MONTH) == month.getValue()){
             score++;
@@ -130,6 +125,12 @@ public class cogAssessmentFrag extends Fragment {
         if(diff < 3600000){ //time diff less than 1 hr
             score++;
         }
+
+        // set UserDate
+        userDate.set(Calendar.YEAR, year.getValue());
+        userDate.set(Calendar.MONTH, month.getValue());
+        userDate.set(Calendar.DATE, date.getValue());
+        userDate.set(Calendar.DAY_OF_WEEK, day.getValue()+1);
 
     }
 
