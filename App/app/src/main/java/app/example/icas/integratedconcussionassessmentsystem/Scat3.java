@@ -69,6 +69,7 @@ public class Scat3 extends FragmentActivity{
             currentFrag += 1;
 
             if(currentFrag == 1) {
+                db.addSymptomEvalScores(TestID, symptomEvalFrag.getScores());
                 fragmentManager.beginTransaction().replace(R.id.fragment, cogAssessmentFrag).commit();
             } else if (currentFrag == 2){
                 memoryFrag.parentActivity = this;
