@@ -67,8 +67,14 @@ public class typingpart extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_typingpart, container, false);
-        question = (TextView) rootView.findViewById(R.id.questionintro);
-        NameInput = (EditText) rootView.findViewById(R.id.Nameinput);
+        return rootView;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        question = (TextView) view.findViewById(R.id.questionintro);
+        NameInput = (EditText) view.findViewById(R.id.Nameinput);
 
         /*//METHOD I
         NameInput.setOnEditorActionListener(new EditText.OnEditorActionListener(){
@@ -90,13 +96,6 @@ public class typingpart extends Fragment {
         System.out.println(questionlist[i]);
         question.setText(questionlist[i]);
         System.out.println(i);
-        return rootView;
-    }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
         String answer = NameInput.getText().toString();
         System.out.println(answer);
     }

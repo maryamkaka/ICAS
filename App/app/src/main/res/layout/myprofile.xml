@@ -1,16 +1,455 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="myprofile"
-        android:id="@+id/my_profile"/>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Personal Information"
+                        android:textSize="22sp"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        android:textColor="@color/cardview_light_background"
+                        android:background="@color/colorAccent" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:text="Name:"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/name"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="Name"
+                            android:ems="10"
+                            android:id="@+id/namein"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:textSize="14sp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:text="Dominant Hand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/domhand"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="L/R"
+                            android:ems="10"
+                            android:id="@+id/domhandin"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:layout_marginRight="10dp"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:text="Years of Education Completed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/yrseducation"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="####"
+                            android:ems="10"
+                            android:id="@+id/educatein"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:textSize="14sp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:text="Age:"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/age"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="Age"
+                            android:ems="10"
+                            android:id="@+id/agein"
+                            android:layout_weight="0.91"
+                            android:background="@color/thumbColor"
+                            android:textSize="14sp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:text="Gender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/Gender"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="Male/Female"
+                            android:ems="10"
+                            android:id="@+id/genderin"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:textSize="14sp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="20dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Concussion Information"
+                        android:textSize="22sp"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        android:textColor="@color/cardview_light_background"
+                        android:background="@color/colorAccent" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:text="Date/Time of injury:"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/dateinjury"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="##"
+                            android:ems="10"
+                            android:id="@+id/numconcin"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:textSize="14sp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:text="Number of past concussions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/pastconc"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
 
 
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="DD - MM - YYYY"
+                            android:ems="10"
+                            android:id="@+id/recentconcin"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:textSize="14sp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:text="Most Recent Concussion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/sps"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="DD - MM - YYYY"
+                            android:ems="10"
+                            android:id="@+id/dateinjuryin"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:textSize="14sp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginRight="10dp">
+
+                        <TextView
+                            android:text="Previous Hospitalization/Imaging"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/hospt"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="Y/N"
+                            android:ems="10"
+                            android:id="@+id/hosptin"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginRight="10dp">
+
+                        <TextView
+                            android:text="Previous Headaches/Migraines"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/headaches"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="Y/N"
+                            android:ems="10"
+                            android:id="@+id/headin"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:text="Learning Disabilities/Dyslexia/ADD/ADHD"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/learndisa"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="Y/N"
+                            android:ems="10"
+                            android:id="@+id/LDin"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:textSize="14sp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:text="Previous Depression, Anxiety, Psychiateric Disorder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/depression"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="Y/N"
+                            android:ems="10"
+                            android:id="@+id/depressionin"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:textSize="14sp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:text="Family History"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/famhist"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="Y/N"
+                            android:ems="10"
+                            android:id="@+id/famhistin"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:textSize="14sp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:text="Medications:"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/meds"
+                            android:layout_weight="1"
+                            android:textSize="14sp"
+                            android:padding="10dp" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:text="Y(+specify)/N"
+                            android:ems="10"
+                            android:id="@+id/medsin"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:textSize="14sp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView8" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>
