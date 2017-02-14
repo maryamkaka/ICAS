@@ -32,8 +32,25 @@ public class dbHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        db.execSQL("CREATE TABLE Users(UserID integer PRIMARY KEY AUTOINCREMENT, Name text);" +
-                "INSERT INTO Users(Name) VALUES('Mr.Headache');"
+        db.execSQL("CREATE TABLE Users(" +
+                "UserID integer PRIMARY KEY AUTOINCREMENT, " +
+                "Name text, " +
+                "Team text, " +
+                "DateInjury datetime, " +
+                "Age integer, " +
+                "Education integer, " +
+                "PastConcussions integer, " +
+                "RecentConcussion datetime, " +
+                "RecoveryLength text, " +
+                "Gender text, " +
+                "DominantHand text, " +
+                "Hospitalized boolean, " +
+                "Headeaches boolean, " +
+                "ADD boolean, " +
+                "Psych boolean, " +
+                "PsychFam boolean, " +
+                "Medication boolean " +
+                ");"
         );
         db.execSQL("CREATE TABLE Posturography(" +
                 "TestID integer PRIMARY KEY AUTOINCREMENT, " +
