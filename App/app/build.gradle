@@ -5,7 +5,8 @@ android {
     buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "app.example.icas.integratedconcussionassessmentsystem"
-        minSdkVersion 24
+        minSdkVersion 23
+        multiDexEnabled true
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"

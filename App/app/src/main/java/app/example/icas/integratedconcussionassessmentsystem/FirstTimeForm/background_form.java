@@ -81,8 +81,10 @@ public class background_form extends AppCompatActivity {
             //Returning the current tabs
             //TO BE CLEANED UP
             if (position < 8 && position >= 0) {
+                //typingpart.parentActivity = this;
                 return typingpart.newInstance(position,false);
             }else if(position>=8 && position < 15) {
+               // tfparts.parentActivity = this;
                 return tfparts.newInstance(position - 8, false);
             }else if(position==15){
                 return tfparts.newInstance(position-8,true);
@@ -109,5 +111,9 @@ public class background_form extends AppCompatActivity {
             }
             return null;
         }
+
+        //public int changeposition(position){
+
+        //}
     }
 }

@@ -9,26 +9,57 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
+        android:weightSum="1"
+        android:gravity="center_vertical|center_horizontal">
 
-        <TextView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="What's your name?"
-            android:textSize="30sp"
-            android:gravity="center_vertical|center_horizontal"
-            android:id="@+id/questionintro"
-            android:layout_margin="10dp" />
+            android:gravity="center_vertical|center"
+            android:weightSum="0.5"
+            android:layout_gravity="center_vertical|center_horizontal|center">
 
-        <EditText
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What's your name?"
+                android:textSize="30sp"
+                android:gravity="center_vertical|center_horizontal"
+                android:id="@+id/questionintro"
+                android:layout_margin="10dp" />
+
+            <EditText
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/Nameinput"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_margin="20dp"
+                android:textSize="24sp"
+                android:layout_width="200dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/Nameinput"
-            android:gravity="center_vertical|center_horizontal"
-            android:layout_margin="20dp"
-            android:textSize="24sp" />
+            android:gravity="left">
+
+            <com.gc.materialdesign.views.ButtonRectangle
+                android:text="NEXT"
+                android:onClick="onNextClick"
+                android:layout_width="wrap_content"
+                android:id="@+id/nextbackquest"
+                android:layout_marginRight="50px"
+                android:background="@color/colorAccent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:paddingTop="50dp"
+                android:layout_marginTop="50px"
+                android:layout_gravity="right"
+                android:layout_height="50dp" />
+        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>

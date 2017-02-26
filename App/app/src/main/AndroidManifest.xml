@@ -19,9 +19,11 @@
         <activity
             android:name=".Scat3"
             android:label="SCAT 3"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.Fullscreen" />
         <activity
             android:name=".scat3_instructions"
+            android:screenOrientation="portrait"
             android:label="SCAT 3"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -35,6 +37,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LoginActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,6 +57,7 @@
         <activity
             android:name=".Scat3_landing"
             android:label="SCAT3 Test"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".firsttimeform.background_form"

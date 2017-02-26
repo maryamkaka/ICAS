@@ -1,5 +1,6 @@
 package app.example.icas.integratedconcussionassessmentsystem.firsttimeform;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,9 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.gc.materialdesign.views.ButtonRectangle;
+
+import app.example.icas.integratedconcussionassessmentsystem.Homescreen;
 import app.example.icas.integratedconcussionassessmentsystem.R;
 import de.codecrafters.tableview.TableView;
 import de.codecrafters.tableview.toolkit.SimpleTableDataAdapter;
@@ -24,6 +29,8 @@ public class typingpart extends Fragment {
     private String key;
     private int i;
     private boolean end;
+    public background_form parentActivity;
+
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -41,6 +48,7 @@ public class typingpart extends Fragment {
     };
     private TextView question;
     private EditText NameInput;
+    private ButtonRectangle nextbackquest;
 
     public static typingpart newInstance(int i,boolean end){
         Bundle bundle = new Bundle ();
@@ -75,6 +83,14 @@ public class typingpart extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         question = (TextView) view.findViewById(R.id.questionintro);
         NameInput = (EditText) view.findViewById(R.id.Nameinput);
+        nextbackquest = (ButtonRectangle) view.findViewById(R.id.nextbackquest);
+        nextbackquest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Intent intent = new Intent(getActivity(),Homescreen.class);
+                //startActivity(intent);
+            }
+        });
 
         /*//METHOD I
         NameInput.setOnEditorActionListener(new EditText.OnEditorActionListener(){
