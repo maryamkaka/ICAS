@@ -29,6 +29,8 @@ public class Scat3 extends FragmentActivity{
     private int currentFrag = 0;
     private final FragmentManager fragmentManager = getFragmentManager();
     private ButtonRectangle next,prev;
+    private dbHelper db;
+    private long TestID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -38,7 +40,9 @@ public class Scat3 extends FragmentActivity{
         decorView.setSystemUiVisibility(uiOptions);
         setContentView(R.layout.scat3);
 
-
+        //initialize database
+        db = new dbHelper(this);
+        TestID = db.addSCAT3Test();
 
         next = (ButtonRectangle) findViewById(R.id.next);
         prev = (ButtonRectangle) findViewById(R.id.prev);
@@ -65,16 +69,20 @@ public class Scat3 extends FragmentActivity{
             currentFrag += 1;
 
             if(currentFrag == 1) {
+                db.addSymptomEvalScores(TestID, symptomEvalFrag.getScores());
                 fragmentManager.beginTransaction().replace(R.id.fragment, cogAssessmentFrag).commit();
             } else if (currentFrag == 2){
+                db.addOrientationScore(TestID, cogAssessmentFrag.getScore(), cogAssessmentFrag.getUserDate());
                 memoryFrag.parentActivity = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, memoryFrag).commit();
             } else if (currentFrag == 3){
+                db.addMemoryScore(TestID, memoryFrag.getScores());
                 digitsFrag.parentActivity1 = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, digitsFrag).commit();
             } else if (currentFrag == 4){
                 fragmentManager.beginTransaction().replace(R.id.fragment, monthsFrag).commit();
             } else {
+                db.addConcentrationScore(TestID, digitsFrag.getScore(), monthsFrag.getScore());
                 //use intents to go to new activity
                 Intent getHomeScreen = new Intent(view.getContext(), Homescreen.class);
                 getHomeScreen.putExtra("callingAct", "Main Activity");

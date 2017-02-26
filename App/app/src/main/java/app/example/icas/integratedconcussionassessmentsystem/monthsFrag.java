@@ -80,4 +80,8 @@ public class monthsFrag extends Fragment {
         System.out.println("Score: " + score);
         return false;
     }
+
+    public int getScore() {
+        return score;
+    }
 }

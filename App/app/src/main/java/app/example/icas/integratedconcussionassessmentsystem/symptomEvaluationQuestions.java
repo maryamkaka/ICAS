@@ -6,31 +6,36 @@ package app.example.icas.integratedconcussionassessmentsystem;
 
 public class symptomEvaluationQuestions {
 
-    String questions[] = {  "Headache",
-                            "Pressure in head",
-                            "Neck Pain",
-                            "Nausea or vomiting dizziness",
-                            "Blurred vision",
-                            "Balance problems",
-                            "Sensitivity to light",
-                            "Sensitivity to noise",
-                            "Feeling slowed down",
-                            "Feeling like “in a fog“",
-                            "“Don’t feel right”",
-                            "Difficulty \nconcentrating",
-                            "Difficulty \nremembering",
-                            "Fatigue or low energy",
-                            "Confusion drowsiness",
-                            "Trouble falling asleep",
-                            "More emotional",
-                            "Irritability sadness",
-                            "Nervous or anxious"};
+    String questions[] = {
+            "Headache",
+            "Pressure in head",
+            "Neck Pain",
+            "Nausea or vomiting",
+            "Dizziness",
+            "Blurred vision",
+            "Balance problems",
+            "Sensitivity to light",
+            "Sensitivity to noise",
+            "Feeling slowed down",
+            "Feeling like “in a fog“",
+            "“Don’t feel right”",
+            "Difficulty \nconcentrating",
+            "Difficulty \nremembering",
+            "Fatigue or low energy",
+            "Confusion",
+            "Drowsiness",
+            "Trouble falling asleep",
+            "More emotional",
+            "Irritability",
+            "Sadness",
+            "Nervous or anxious"
+    };
     int index, max;
 
     /* Constructor */
     public symptomEvaluationQuestions() {
         this.index = 0;
-        this.max = 19;
+        this.max = questions.length;
     }
 
     public String getCurrentQuestion(){

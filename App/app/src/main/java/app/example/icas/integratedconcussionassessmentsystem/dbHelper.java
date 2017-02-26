@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.icu.text.SimpleDateFormat;
+import android.icu.util.Calendar;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -41,11 +42,8 @@ public class dbHelper extends SQLiteOpenHelper{
                 "TestingSurface string, " +
                 "Footwear string, " +
                 "Foot string," +
-                "FOREIGN KEY (UserID)" +
-                    "REFERENCES Users(UserID)" +
-                    "ON DELETE CASCADE " +
-                    "ON UPDATE CASCADE);"
-
+                "FOREIGN KEY (UserID) REFERENCES Users(UserID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
         );
         db.execSQL("CREATE TABLE AccelData(" +
                 "Timestamp timestamp NOT NULL, " +
@@ -53,10 +51,44 @@ public class dbHelper extends SQLiteOpenHelper{
                 "x float, " +
                 "y float, " +
                 "z float, " +
-                "FOREIGN KEY(TestID) " +
-                    "REFERENCES Posturography(TestID) " +
-                    "ON DELETE CASCADE " +
-                    "ON UPDATE CASCADE);"
+                "FOREIGN KEY(TestID) REFERENCES Posturography(TestID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
+        );
+        db.execSQL("CREATE TABLE SCAT3(" +
+                "UserID integer," +
+                "TestID integer PRIMARY KEY AUTOINCREMENT," +
+                "Date datetime," +
+                "FOREIGN KEY (UserID) REFERENCES Users(UserID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
+        );
+        db.execSQL("CREATE TABLE SymptomEvaluation(" +
+                "TestID integer NOT NULL," +
+                "Q1 integer, Q2 integer, Q3 integer, Q4 integer, Q5 integer, Q6 integer," +
+                "Q7 integer, Q8 integer, Q9 integer, Q10 integer, Q11 integer, Q12 integer, " +
+                "Q13 integer, Q14 integer, Q15 integer, Q16 integer, Q17 integer, Q18 integer, " +
+                "Q19 integer, Q20 integer, Q21 integer, Q22 integer, " +
+                "FOREIGN KEY(TestID) REFERENCES SCAT3(TestID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
+        );
+        db.execSQL("CREATE TABLE Orientation(" +
+                "TestID integer NOT NULL, " +
+                "UserDate datetime, " +
+                "OrientationScore integer, " +
+                "FOREIGN KEY(TestID) REFERENCES SCAT3(TestID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
+        );
+        db.execSQL("CREATE TABLE Memory( " +
+                "TestID integer NOT NULL, " +
+                "Trial1 integer, Trial2 integer, Trial3 integer, " +
+                "FOREIGN KEY(TestID) REFERENCES SCAT3(TestID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
+        );
+        db.execSQL("CREATE TABLE Concentration( " +
+                "TestID integer NOT NULL, " +
+                "digitsScore integer, " +
+                "Months integer, " +
+                "FOREIGN KEY(TestID) REFERENCES SCAT3(TestID)" +
+                    "ON DELETE CASCADE ON UPDATE CASCADE);"
         );
     }
 
@@ -70,6 +102,71 @@ public class dbHelper extends SQLiteOpenHelper{
 
     public void addUser(String name){
         db.execSQL("INSERT INTO Users(Name) VALUES('" + name + "')");
+    }
+
+    /* addSCAT3Test
+    * Adds SCAT3 Test
+    * Output: TestID
+    * */
+    public long addSCAT3Test(){
+        long TestID;
+        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date today = new Date();
+        String d = date.format(today);
+        ContentValues values = new ContentValues();
+
+        values.put("UserID", 1);
+        values.put("Date", d);
+
+        TestID = db.insert("SCAT3", null, values);
+
+        return TestID;
+    }
+
+    public void addSymptomEvalScores(long TestID, int[] scores){
+        ContentValues values = new ContentValues();
+
+        values.put("TestID", TestID);
+
+        for(int i = 0; i <scores.length; i++){
+            values.put("Q"+Integer.toString(i+1), scores[i]);
+        }
+
+        db.insert("SymptomEvaluation", null, values);
+    }
+
+    public void addOrientationScore(long TestID, int score, Calendar userDate){
+        ContentValues values = new ContentValues();
+        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        String d = date.format(userDate);
+
+        values.put("TestID", TestID);
+        values.put("OrientationScore", score);
+        values.put("UserDate", d);
+
+        db.insert("Orientation", null, values);
+    }
+
+    public void addMemoryScore(long TestID, int[] scores){
+        ContentValues values = new ContentValues();
+
+        values.put("TestID", TestID);
+
+        for(int i = 0; i <scores.length; i++){
+            values.put("Trial"+Integer.toString(i+1), scores[i]);
+        }
+
+        db.insert("Memory", null, values);
+    }
+
+    public void addConcentrationScore(long TestID, int digitsScore, int monthsScore){
+        ContentValues values = new ContentValues();
+
+        values.put("TestID", TestID);
+        values.put("digitsScore", digitsScore);
+        values.put("Months", monthsScore);
+
+        db.insert("Concentration", null, values);
     }
 
     public void addAccelData(long timestamp, long testID, float x, float y, float z){
@@ -110,12 +207,6 @@ public class dbHelper extends SQLiteOpenHelper{
         Cursor cursor = db.rawQuery("SELECT * FROM "+ table, null);
 
         int idCol  = cursor.getColumnIndex("Name");
-    }
-
-    public void saveSypmtomEvalScore(int[] score){
-        System.out.println("HELLLLLLLOOOOO!  NOTICE MEEEEEEE");
-        System.out.println("Scores: " + Arrays.toString(score));
-
     }
 
     public ArrayList<String> getUsers(){

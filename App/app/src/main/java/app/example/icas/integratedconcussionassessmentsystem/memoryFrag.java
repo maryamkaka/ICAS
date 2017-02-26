@@ -34,6 +34,7 @@ public class memoryFrag extends Fragment {
     };
     private int currentList = new Random().nextInt(wordList.length);
     private int i=0;
+    private int[] scores = new int[3];
 
     //George's attempt
     private CountDownTimer countDownTimer;
@@ -98,6 +99,7 @@ public class memoryFrag extends Fragment {
             displayWords();
         } else {
             System.out.println("Score: " + validateList());
+            scores[trial-1] = validateList();
 
             if (trial == 3){
                 return false;
@@ -105,7 +107,8 @@ public class memoryFrag extends Fragment {
 
             trial++;
             i=0;
-            question.setText("Trial #" + trial + "\n " + "You will be shown the same list of words. Repeat as many back as possible even if you have listed them before");
+            question.setText("Trial #" + trial + "\n" + "You will be shown the same list of words." +
+                    " Repeat as many back as possible even if you have listed them before");
             textInput.setVisibility(View.INVISIBLE);
             wordOne.setText(""); wordTwo.setText(""); wordThree.setText(""); wordFour.setText(""); wordFive.setText("");
             displayWords = true;
@@ -133,4 +136,6 @@ public class memoryFrag extends Fragment {
         }
 
     }
+
+    public int[] getScores(){ return scores; }
 }

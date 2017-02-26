@@ -77,7 +77,6 @@ public class symptomEvalFrag extends Fragment{
         questions.decrementIndex();
 
         if(questions.getIndex() < 0){
-            db.saveSypmtomEvalScore(scores);
             return false;
         }
 
@@ -88,5 +87,9 @@ public class symptomEvalFrag extends Fragment{
     private void updateScreen(){
         questionTxt.setText(questions.getCurrentQuestion());
         answer.setProgress(0);
+    }
+
+    public int[] getScores(){
+        return scores;
     }
 }
