@@ -48,24 +48,38 @@
             android:paddingTop="20dp">
 
             <RadioGroup
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/options">
+                android:id="@+id/options"
+                android:gravity="left"
+                android:visibility="visible">>
 
                 <RadioButton
-                    android:text="Yes"
-                    android:layout_width="match_parent"
+                    android:text="RadioButton"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/radioButton2"
-                    android:layout_weight="1" />
+                    android:id="@+id/op3"
+                    android:layout_weight="1"
+                    android:textSize="18sp" />
 
                 <RadioButton
-                    android:text="No"
-                    android:layout_width="match_parent"
+                    android:text="RadioButton"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/radioButton"
-                    android:layout_weight="1" />
+                    android:id="@+id/op2"
+                    android:layout_weight="1"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:text="RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/op1"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:checked="false" />
             </RadioGroup>
 
         </LinearLayout>

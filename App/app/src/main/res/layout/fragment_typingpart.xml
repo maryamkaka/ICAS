@@ -35,7 +35,7 @@
                 android:ems="10"
                 android:id="@+id/Nameinput"
                 android:gravity="center_vertical|center_horizontal"
-                android:layout_margin="20dp"
+                android:layout_margin="10dp"
                 android:textSize="24sp"
                 android:layout_width="200dp" />
         </LinearLayout>

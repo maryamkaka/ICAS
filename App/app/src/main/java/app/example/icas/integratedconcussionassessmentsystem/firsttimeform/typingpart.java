@@ -44,7 +44,8 @@ public class typingpart extends Fragment {
             "Years of education completed",
             "How many concussions do you think you have had in the past?",
             "When was the most recent concussion?",
-            "How long did its recovery take?"
+            "How long did its recovery take?",
+            "Gender"
     };
     private TextView question;
     private EditText NameInput;
@@ -87,25 +88,10 @@ public class typingpart extends Fragment {
         nextbackquest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(getActivity(),Homescreen.class);
-                //startActivity(intent);
+                parentActivity.changeposition(i);
             }
         });
 
-        /*//METHOD I
-        NameInput.setOnEditorActionListener(new EditText.OnEditorActionListener(){
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE || event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-
-                    if (!event.isShiftPressed()) {
-                        // the user is done typing.
-                        return true;
-                    }
-                }
-                return false; //Pass on to the other listeners
-            }
-        });*/
 
         readBundle(getArguments());
 

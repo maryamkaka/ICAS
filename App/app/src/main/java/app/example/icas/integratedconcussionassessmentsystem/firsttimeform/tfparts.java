@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -21,7 +22,8 @@ public class tfparts extends Fragment {
 
     private String key;
     private int i;
-    private boolean end;
+    RadioGroup options;
+    private boolean end_of_form;
 
     /**
      * The fragment argument representing the section number for this
@@ -29,23 +31,26 @@ public class tfparts extends Fragment {
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
     private final String[] questionlist = {
-            "Gender:",
             "Dominant Hand:",
-            "Have you ever been hospitalized or had medical imaging done for a head injury?",
+            "Have you ever been \nhospitalized or had medical imaging done for a head injury?",
             "Have you ever been diagnosed with headaches or mirgraines?",
             "Do you have a learning disability, dyslexia, ADD/ADHD?",
             "Have you ever been diagnosed with depression, anxiety, or other psychiatric disorder?",
             "Has anyone in your family ever been diagnosed with any of these problems?",
             "Are you on any medications? If yes, please list"
     };
+    private final String[][] answeroptions = {
+            {"Right",
+            "Left",
+            "Neither"},{"Yes","No"}
+    };
 
     private TextView question;
-    private RadioGroup options;
     private ButtonRectangle toapp;
 
-    public static tfparts newInstance(int i,boolean end){
+    public static tfparts newInstance(int i,boolean end_of_form){
         Bundle bundle = new Bundle ();
-        bundle.putBoolean("ending",end);
+        bundle.putBoolean("ending",end_of_form);
         bundle.putInt("index",i);
 
         tfparts fragment = new tfparts();
@@ -58,19 +63,25 @@ public class tfparts extends Fragment {
     private void readBundle (Bundle bundle){
         if(bundle != null){
             i = bundle.getInt("index");
-            end = bundle.getBoolean("ending");
+            end_of_form = bundle.getBoolean("ending");
         }
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_tfparts, container, false);
-        question = (TextView) rootView.findViewById(R.id.questionintro);
-        options = (RadioGroup) rootView.findViewById(R.id.options);
-        toapp = (ButtonRectangle) rootView.findViewById(R.id.toapp);
+        return rootView;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        question = (TextView) view.findViewById(R.id.questionintro);
+        options = (RadioGroup) view.findViewById(R.id.options);
+
+        toapp = (ButtonRectangle) view.findViewById(R.id.toapp);
         toapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,35 +90,19 @@ public class tfparts extends Fragment {
             }
         });
 
-        /*//METHOD I for getting answer
-        NameInput.setOnEditorActionListener(new EditText.OnEditorActionListener(){
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE || event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-
-                    if (!event.isShiftPressed()) {
-                        // the user is done typing.
-                        return true;
-                    }
-                }
-                return false; //Pass on to the other listeners
-            }
-        });*/
-
         readBundle(getArguments());
-        if (end) {
+        if (end_of_form) {
             toapp.setVisibility(View.VISIBLE);
         }
 
         question.setText(questionlist[i]);
-        System.out.println(i);
-        return rootView;
-    }
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        //Dynamically Change radiobutton text depending on question asked.
 
+
+        updateScreen(view);
+        //((RadioButton)options.getChildAt(0)).setText(answeroptions[0]);
+        //((RadioButton)options.getChildAt(1)).setText(answeroptions[1]);
         //String answer = NameInput.getText().toString();
         //System.out.println(answer);
     }
@@ -116,6 +111,20 @@ public class tfparts extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+    }
+
+    private void updateScreen(View view){
+         //Update Text
+        if (i==0) {
+            ((RadioButton) options.getChildAt(0)).setText(answeroptions[0][0]);
+            ((RadioButton) options.getChildAt(1)).setText(answeroptions[0][1]);
+            ((RadioButton) options.getChildAt(2)).setText(answeroptions[0][2]);
+        }else{
+            ((RadioButton) options.getChildAt(0)).setText(answeroptions[1][0]);
+            ((RadioButton) options.getChildAt(1)).setText(answeroptions[1][1]);
+            ((RadioButton) options.getChildAt(2)).setVisibility(view.GONE);
+
+        }
     }
 
 
