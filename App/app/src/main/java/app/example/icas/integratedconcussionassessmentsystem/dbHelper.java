@@ -46,7 +46,7 @@ public class dbHelper extends SQLiteOpenHelper{
                 "DominantHand text, " +
                 "Hospitalized boolean, " +
                 "Headeaches boolean, " +
-                "ADD boolean, " +
+                "Disability boolean, " +
                 "Psych boolean, " +
                 "PsychFam boolean, " +
                 "Medication boolean " +
@@ -238,5 +238,13 @@ public class dbHelper extends SQLiteOpenHelper{
         }
 
         return users;
+    }
+
+    public ArrayList<String> getSCAT3Test(){
+        ArrayList<String> SCAT3Tests = new ArrayList<>();
+
+        //Cursor cursor = db.rawQuery("SELECT * FROM ", null);
+
+        return SCAT3Tests;
     }
 }

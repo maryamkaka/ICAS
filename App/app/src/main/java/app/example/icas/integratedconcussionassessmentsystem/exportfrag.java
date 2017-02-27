@@ -73,6 +73,7 @@ public class exportfrag extends Fragment {
                     try {
                         FileOutputStream fileOutputStream = new FileOutputStream(file);
                         fileOutputStream.write(Message.getBytes());
+                        fileOutputStream.write(("More tests and what not").getBytes());
                         fileOutputStream.close();
                         Toast.makeText(getContext(),"Done",Toast.LENGTH_LONG).show();
 
