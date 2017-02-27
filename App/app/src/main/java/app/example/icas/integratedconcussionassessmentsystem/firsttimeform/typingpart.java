@@ -1,5 +1,6 @@
 package app.example.icas.integratedconcussionassessmentsystem.firsttimeform;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -22,6 +23,7 @@ import de.codecrafters.tableview.toolkit.SimpleTableDataAdapter;
 import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter;
 
 import static android.R.attr.defaultValue;
+import static android.R.attr.parentActivityName;
 
 
 public class typingpart extends Fragment {
@@ -51,7 +53,7 @@ public class typingpart extends Fragment {
     private EditText NameInput;
     private ButtonRectangle nextbackquest;
 
-    public static typingpart newInstance(int i,boolean end){
+    public static typingpart newInstance(int i,boolean end, background_form r){
         Bundle bundle = new Bundle ();
         bundle.putBoolean("ending",end);
         bundle.putInt("index",i);
@@ -76,6 +78,7 @@ public class typingpart extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_typingpart, container, false);
+        parentActivity = ((background_form)getActivity());
         return rootView;
     }
 

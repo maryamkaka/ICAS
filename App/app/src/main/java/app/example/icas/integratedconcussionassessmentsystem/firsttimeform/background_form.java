@@ -24,8 +24,7 @@ public class background_form extends AppCompatActivity {
 
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
-    private typingpart typingpart = new typingpart();
-
+    private background_form r;
     public ViewPager mViewPager;
     public String key;
     Bundle bundle = new Bundle();
@@ -42,8 +41,9 @@ public class background_form extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        typingpart typingpart = new typingpart();
+        r = this;
         typingpart.parentActivity = this;
-        
     }
 
 
@@ -84,7 +84,7 @@ public class background_form extends AppCompatActivity {
             //TO BE CLEANED UP
             if (position < 9 && position >= 0) {
 
-                return typingpart.newInstance(position,false);
+                return typingpart.newInstance(position,false,r);
             }else if(position>=9 && position < 15) {
                // tfparts.parentActivity = this;
                 return tfparts.newInstance(position - 9, false);
