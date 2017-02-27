@@ -24,6 +24,8 @@ public class tfparts extends Fragment {
     private int i;
     RadioGroup options;
     private boolean end_of_form;
+    public background_form parentActivity;
+
 
     /**
      * The fragment argument representing the section number for this
@@ -46,7 +48,7 @@ public class tfparts extends Fragment {
     };
 
     private TextView question;
-    private ButtonRectangle toapp;
+    private ButtonRectangle toapp,next;
 
     public static tfparts newInstance(int i,boolean end_of_form){
         Bundle bundle = new Bundle ();
@@ -71,6 +73,10 @@ public class tfparts extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_tfparts, container, false);
+
+        //Pass Background activity context to fragment to call changeposition method later
+        parentActivity = ((background_form)getActivity());
+
         return rootView;
     }
 
@@ -92,20 +98,28 @@ public class tfparts extends Fragment {
 
         readBundle(getArguments());
         if (end_of_form) {
+            //next.setVisibility(View.GONE);
             toapp.setVisibility(View.VISIBLE);
         }
 
         question.setText(questionlist[i]);
+        System.out.println(i);
 
+        next = (ButtonRectangle) view.findViewById(R.id.nextbackquest);
+        next.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                if (i+9<14) {
+                    parentActivity.changeposition(i + 9);
+                }else{
+                    parentActivity.changeposition(13);
+                    //next.setVisibility(View.GONE);
+                }
+            }
+        });
         //Dynamically Change radiobutton text depending on question asked.
-
-
         updateScreen(view);
-        //((RadioButton)options.getChildAt(0)).setText(answeroptions[0]);
-        //((RadioButton)options.getChildAt(1)).setText(answeroptions[1]);
-        //String answer = NameInput.getText().toString();
-        //System.out.println(answer);
-    }
+     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

@@ -53,7 +53,7 @@ public class typingpart extends Fragment {
     private EditText NameInput;
     private ButtonRectangle nextbackquest;
 
-    public static typingpart newInstance(int i,boolean end, background_form r){
+    public static typingpart newInstance(int i,boolean end){
         Bundle bundle = new Bundle ();
         bundle.putBoolean("ending",end);
         bundle.putInt("index",i);
@@ -78,6 +78,8 @@ public class typingpart extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_typingpart, container, false);
+
+        //Pass Background activity context to fragment to call changeposition method later
         parentActivity = ((background_form)getActivity());
         return rootView;
     }
