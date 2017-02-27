@@ -41,6 +41,7 @@ public class typingpart extends Fragment {
     };
     private TextView question;
     private EditText NameInput;
+    private String answer;
 
     public static typingpart newInstance(int i,boolean end){
         Bundle bundle = new Bundle ();
@@ -96,7 +97,7 @@ public class typingpart extends Fragment {
         System.out.println(questionlist[i]);
         question.setText(questionlist[i]);
         System.out.println(i);
-        String answer = NameInput.getText().toString();
+        answer = NameInput.getText().toString();
         System.out.println(answer);
     }
 
@@ -106,5 +107,8 @@ public class typingpart extends Fragment {
 
     }
 
+    public String getAnswer(){
+        return answer;
+    }
 
 }
