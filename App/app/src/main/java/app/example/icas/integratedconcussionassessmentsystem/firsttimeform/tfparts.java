@@ -112,7 +112,7 @@ public class tfparts extends Fragment {
                 if (i+9<14) {
                     parentActivity.changeposition(i + 9);
                 }else{
-                    parentActivity.changeposition(13);
+                    parentActivity.changeposition(14);
                     //next.setVisibility(View.GONE);
                 }
             }

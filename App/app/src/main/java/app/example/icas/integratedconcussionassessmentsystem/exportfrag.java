@@ -58,7 +58,7 @@ public class exportfrag extends Fragment {
                 String state;
                 state = Environment.getExternalStorageState();
                 if(Environment.MEDIA_MOUNTED.equals(state)) {
-                    File Dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+                    File Dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/ICAS/");
                     //File Root = new File(Environment.getExternalStorageDirectory(),"Notes");
 
                     //File Dir = new File(Root.getAbsolutePath());
