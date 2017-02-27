@@ -47,17 +47,10 @@ public class Homescreen extends AppCompatActivity
          */
         /*Stetho.initialize(
                 Stetho.newInitializerBuilder(this)
-                        .enableDumpapp(
-                                Stetho.defaultDumperPluginsProvider(this))
-                        .enableWebKitInspector(
-                                Stetho.defaultInspectorModulesProvider(this))
-                        .build());*/
-        Stetho.initializeWithDefaults(this);
-        /*Stetho.initialize(
-                Stetho.newInitializerBuilder(this)
                         .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
                         .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
                         .build());*/
+        Stetho.initializeWithDefaults(this);
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
