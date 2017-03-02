@@ -117,7 +117,8 @@ public class Homescreen extends AppCompatActivity
                 fragmentClass = helpfrag.class;
                 break;
             case R.id.settings:
-
+                fragmentClass = settingsfrag.class;
+                break;
             default:
                 fragmentClass = mainmenu.class;
         }
