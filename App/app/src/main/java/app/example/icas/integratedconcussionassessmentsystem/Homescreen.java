@@ -113,7 +113,9 @@ public class Homescreen extends AppCompatActivity
             case R.id.savedata:
                 fragmentClass = exportfrag.class;
                 break;
-
+            case R.id.help:
+                fragmentClass = helpfrag.class;
+                break;
             default:
                 fragmentClass = mainmenu.class;
         }

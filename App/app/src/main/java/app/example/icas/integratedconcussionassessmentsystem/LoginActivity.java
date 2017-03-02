@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
             public void run() {
 
                 //User !isFirstTime() to debug start form
-                if (!isFirstTime()) {
+                if (isFirstTime()) {
                     Intent intent = new Intent(LoginActivity.this, background_form.class);
                     startActivity(intent);
                     finish();
