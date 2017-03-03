@@ -21,6 +21,9 @@ public class scat3_instructions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scat3_instructions);
 
+        final int[] array = getIntent().getIntArrayExtra("SelectedTests");
+        final int numones = getIntent().getIntExtra("NbOnes",1);
+
         final ButtonRectangle scat3start = (ButtonRectangle) findViewById(R.id.toscat3);
         scat3start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,7 +31,8 @@ public class scat3_instructions extends AppCompatActivity {
                 v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
                 //use intents to go to new activity
                 Intent getScat3Screen = new Intent(v.getContext(), Scat3.class);
-                getScat3Screen.putExtra("callingAct", "Main Activity");
+                getScat3Screen.putExtra("SelectedTests", array);
+                getScat3Screen.putExtra("NbOnes",numones);
                 startActivity(getScat3Screen);
 
             }
