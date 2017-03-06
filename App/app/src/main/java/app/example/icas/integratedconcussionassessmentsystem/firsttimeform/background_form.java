@@ -27,6 +27,7 @@ public class background_form extends AppCompatActivity {
     public ViewPager mViewPager;
     public String key;
     Bundle bundle = new Bundle();
+    private String[] answers = new String[14];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +82,6 @@ public class background_form extends AppCompatActivity {
             //Returning the current tabs
             //TO BE CLEANED UP
             if (position < 9 && position >= 0) {
-
                 return typingpart.newInstance(position,false);
             }else if(position>=9 && position < 15) {
                // tfparts.parentActivity = this;
