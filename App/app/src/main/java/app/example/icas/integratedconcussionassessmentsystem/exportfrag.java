@@ -59,7 +59,7 @@ public class exportfrag extends Fragment {
                     }
 
                     pathtext.setText(dir.getAbsolutePath());
-                    
+
                     File file = new File (dir, "SCAT3.csv");
                     writeFile(file, db.getSCAT3Data(2));
 

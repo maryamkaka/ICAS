@@ -306,42 +306,6 @@ public class dbHelper extends SQLiteOpenHelper{
             c.moveToNext();
         }
 
-        /*Cursor c = db.rawQuery("SELECT * FROM symptomEvaluation " +
-                "WHERE TestID = " + Integer.toString(testID), null);
-        c.moveToFirst();
-        while(c.isAfterLast() == false) {
-            for (int i = 0; i < 22; i++) {
-                symptomEval[i] = c.getString(c.getColumnIndex("Q" + Integer.toString(i + 1)));
-            }
-        }
-
-        c = db.rawQuery("SELECT * FROM Orientation " +
-                "WHERE TestID = " + Integer.toString(testID), null);
-        while(c.isAfterLast() == false) {
-            orintationScore[0] = c.getString(c.getColumnIndex("Date"));
-            orintationScore[1] = c.getString(c.getColumnIndex("UserDate"));
-            orintationScore[2] = c.getString(c.getColumnIndex("OrientationScore"));
-        }
-
-        c = db.rawQuery("SELECT * FROM Memory " +
-                "WHERE TestID = " + Integer.toString(testID), null);
-        while(c.isAfterLast() == false) {
-            for(int i = 0; i < 3; i++){
-                memory[i] = c.getString(c.getColumnIndex("Trial" + Integer.toString(i+1)));
-            }
-        }
-
-        c = db.rawQuery("SELECT * FROM Memory " +
-                "WHERE TestID = " + Integer.toString(testID), null);
-        while(c.isAfterLast() == false) {
-            concentration[0] = c.getString(c.getColumnIndex("digitsScore"));
-            concentration[1] = c.getString(c.getColumnIndex("Months"));
-        }
-
-        SCAT3Data.add(symptomEval);
-        SCAT3Data.add(orintationScore);
-        SCAT3Data.add(memory);
-        SCAT3Data.add(concentration);*/
         return SCAT3Data;
     }
 }
