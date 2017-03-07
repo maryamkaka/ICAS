@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 /**
  * Created by George on 2017-02-10.
@@ -64,5 +65,25 @@ public class mainmenu extends Fragment {
             }
         });
 
+
+        eeg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+                Toast toast = Toast.makeText(getActivity(), "Under Construction", Toast.LENGTH_SHORT);
+                toast.show();
+
+            }
+        });
+
+        eyegaze.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+                Toast toast = Toast.makeText(getActivity(), "Under Construction", Toast.LENGTH_SHORT);
+                toast.show();
+
+            }
+        });
     }
 }
