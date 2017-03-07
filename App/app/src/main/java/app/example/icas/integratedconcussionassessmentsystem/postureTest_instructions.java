@@ -119,7 +119,7 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
             collectData = Boolean.TRUE;
 
             //timer stuff
-            new CountDownTimer(20000, 1000){
+            new CountDownTimer(30000, 1000){
                 public void onTick(long reminaingTime){
 
                 }
