@@ -7,9 +7,16 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
+import android.os.Environment;
 import android.provider.Settings;
 import android.util.Log;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -250,7 +257,7 @@ public class dbHelper extends SQLiteOpenHelper{
             users.add(cursor.getString(cursor.getColumnIndex("Name")));
             cursor.moveToNext();
         }
-
+        cursor.close();
         return users;
     }
 
@@ -267,7 +274,7 @@ public class dbHelper extends SQLiteOpenHelper{
             SCAT3Tests.add(data);
             c.moveToNext();
         }
-
+        c.close();
         return SCAT3Tests;
     }
 
@@ -305,27 +312,67 @@ public class dbHelper extends SQLiteOpenHelper{
 
             c.moveToNext();
         }
-
+        c.close();
         return SCAT3Data;
     }
 
-    public ArrayList<String[]> getPostureTests(){
-        ArrayList<String[]> postureTests = new ArrayList<>();
-        Cursor c = db.rawQuery("SELECT * FROM Posturography", null);
+    public ArrayList<String[]> getPostureTests() {
+        ArrayList<String[]> postureData = new ArrayList<>();
         String[] testInfo = new String[4];
-
+        Cursor c = db.rawQuery("SELECT * FROM Posturography", null);
         c.moveToFirst();
 
-        while(c.isAfterLast() && c.getCount() > 0){
+        while (c.isAfterLast() == false && c.getCount() > 0) {
             testInfo[0] = c.getString(c.getColumnIndex("Date"));
             testInfo[1] = c.getString(c.getColumnIndex("TestingSurface"));
-            testInfo[2] = c.getString(c.getColumnIndex("Footware"));
+            testInfo[2] = c.getString(c.getColumnIndex("Footwear"));
             testInfo[3] = c.getString(c.getColumnIndex("Foot"));
 
-            postureTests.add(testInfo);
+            postureData.add(testInfo);
+
+            c.moveToNext();
+        }
+        c.close();
+        return postureData;
+    }
+
+    public void exportAccelData(int testID){
+        String[] data = new String[4];
+        Cursor c = db.rawQuery("SELECT * FROM AccelData WHERE TestID = " + Integer.toString(testID)
+                ,null);
+        c.moveToFirst();
+        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/ICAS/");
+        File file = new File(dir, "Posturography_"+testID+".csv");
+
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            while (c.isAfterLast() == false && c.getCount() > 0) {
+                data[0] = c.getString(c.getColumnIndex("Timestamp"));
+                data[1] = c.getString(c.getColumnIndex("x"));
+                data[2] = c.getString(c.getColumnIndex("y"));
+                data[3] = c.getString(c.getColumnIndex("z"));
+
+                fileOutputStream.write(formatLine(data).getBytes());
+
+                c.moveToNext();
+            }
+            System.out.println("Wrote file");
+            fileOutputStream.close();
+            c.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        return postureTests;
+        MediaScannerConnection.scanFile(context, new String[] { file.toString() }, null,
+                new MediaScannerConnection.OnScanCompletedListener() {
+                    public void onScanCompleted(String path, Uri uri) {
+                        Log.i("ExternalStorage", "Scanned " + path + ":");
+                        Log.i("ExternalStorage", "-> uri=" + uri);
+                    }
+                });
     }
 
     public ArrayList<String[]> getAccelData(int testID){
@@ -345,6 +392,23 @@ public class dbHelper extends SQLiteOpenHelper{
             accelData.add(dataPoint);
         }
 
+        c.close();
+
         return accelData;
+    }
+
+    private String formatLine(String[] data){
+        String line = "";
+
+        for(int i = 0; i < data.length; i++){
+            line += data[i];
+
+            if(i == data.length-1){
+                line += "\n";
+            } else {
+                line += ",";
+            }
+        }
+        return line;
     }
 }

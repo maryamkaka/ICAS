@@ -50,6 +50,8 @@ public class exportfrag extends Fragment {
             public void onClick(View view) {
                 ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},112);
                 String state = Environment.getExternalStorageState();
+                ArrayList<String[]> data;
+                String[] info;
 
                 if(Environment.MEDIA_MOUNTED.equals(state)) {
                     File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/ICAS/");
@@ -63,6 +65,14 @@ public class exportfrag extends Fragment {
                     File file = new File (dir, "SCAT3.csv");
                     writeFile(file, db.getSCAT3Data(2));
 
+                    //write posture data
+                    data = db.getPostureTests();
+                    /*for(int i = 0; i < data.size(); i++){
+                        info = data.get(i);
+                        file = new File(dir, "Posturography_"+info[0]+".csv");
+                        writeFile(file, db.getAccelData(i+1));
+                    }*/
+                    db.exportAccelData(1);
 
                     // Tell the media scanner about the new file so that it is
                     // immediately available to the user.
@@ -73,6 +83,10 @@ public class exportfrag extends Fragment {
                                     Log.i("ExternalStorage", "-> uri=" + uri);
                                 }
                             });
+
+                    //Notify User export is complete
+                    Toast.makeText(getContext(),"Done", Toast.LENGTH_LONG).show();
+
                 } else {
                     Toast.makeText(getContext(), "External Storage not found", Toast.LENGTH_LONG).show();
                 }
@@ -104,7 +118,6 @@ public class exportfrag extends Fragment {
                 fileOutputStream.write(formatLine(data.get(i)).getBytes());
             }
             fileOutputStream.close();
-            Toast.makeText(getContext(),"Done", Toast.LENGTH_LONG).show();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
