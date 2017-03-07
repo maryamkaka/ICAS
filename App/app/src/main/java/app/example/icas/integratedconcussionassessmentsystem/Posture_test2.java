@@ -42,7 +42,7 @@ public class Posture_test2 extends FragmentActivity{
             prev.setVisibility(View.VISIBLE);
         } else if (currentFrag == 1) {
             //updateStatus = Pre_posture_questions.nextQuestion(view);
-            updateStatus = postureTest_instructions.nextQuestion(view);
+            updateStatus = postureTest_instructions.nextQuestion();
         } else if (currentFrag == 2){
             Intent intent = new Intent(Posture_test2.this,Posturography.class);
             startActivity(intent);

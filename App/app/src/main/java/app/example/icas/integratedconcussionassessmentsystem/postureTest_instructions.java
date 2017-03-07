@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.os.CountDownTimer;
 import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -96,24 +97,39 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
 
     public void setTestID(long id){ testID = id; }
 
-    public boolean nextQuestion(View view){
+    public boolean nextQuestion(){
         //If BESS test is complete return to main page
         if (click_index == 6){
             return false;
         }
 
+        //show data collection
         if(!(click_index%2==0)) {
             instr_pic.setVisibility(GONE);
             instr_word.setVisibility(GONE);
             X.setVisibility(View.GONE);
             Y.setVisibility(View.GONE);
             Z.setVisibility(View.GONE);
-            Statusmsg.setVisibility(view.VISIBLE);
+
+            Statusmsg.setVisibility(View.VISIBLE);
             avi.setVisibility(View.VISIBLE);
             startAnim();
+
             click_index++;
             collectData = Boolean.TRUE;
 
+            //timer stuff
+            new CountDownTimer(30000, 1000){
+                public void onTick(long reminaingTime){
+
+                }
+
+                public void onFinish(){
+                    nextQuestion();
+                }
+            }.start();
+
+        //show instruction screen
         }else{
             instr_pic.setVisibility(View.VISIBLE);
             instr_word.setVisibility(View.VISIBLE);
@@ -121,7 +137,7 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
             X.setVisibility(GONE);
             Y.setVisibility(GONE);
             Z.setVisibility(GONE);
-            Statusmsg.setVisibility(view.GONE);
+            Statusmsg.setVisibility(View.GONE);
             instr_pic.setImageResource(image_instructions[image_index]);
             instr_word.setImageResource(word_instructions[image_index]);
             image_index++;
