@@ -309,6 +309,25 @@ public class dbHelper extends SQLiteOpenHelper{
         return SCAT3Data;
     }
 
+    public ArrayList<String[]> getPostureTests(){
+        ArrayList<String[]> postureTests = new ArrayList<>();
+        Cursor c = db.rawQuery("SELECT * FROM Posturography", null);
+        String[] testInfo = new String[4];
+
+        c.moveToFirst();
+
+        while(c.isAfterLast() && c.getCount() > 0){
+            testInfo[0] = c.getString(c.getColumnIndex("Date"));
+            testInfo[1] = c.getString(c.getColumnIndex("TestingSurface"));
+            testInfo[2] = c.getString(c.getColumnIndex("Footware"));
+            testInfo[3] = c.getString(c.getColumnIndex("Foot"));
+
+            postureTests.add(testInfo);
+        }
+
+        return postureTests;
+    }
+
     public ArrayList<String[]> getAccelData(int testID){
         ArrayList<String[]> accelData = new ArrayList<>();
         String[] dataPoint = new String[4];
