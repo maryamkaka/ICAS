@@ -261,13 +261,14 @@ public class dbHelper extends SQLiteOpenHelper{
         return users;
     }
 
-    public ArrayList<String[]> getSCAT3TestID(){
+    public ArrayList<String[]> getSCAT3Test(){
         ArrayList<String[]> SCAT3Tests = new ArrayList<>();
         String[] data = new String[2];
         Cursor c = db.rawQuery("SELECT * FROM SCAT3", null);
 
+        c.moveToFirst();
 
-        while(c.isAfterLast() == false){
+        while (c.isAfterLast() == false && c.getCount() > 0) {
             data[0] = c.getString(c.getColumnIndex("TestID"));
             data[1] = c.getString(c.getColumnIndex("Date"));
 
@@ -364,8 +365,10 @@ public class dbHelper extends SQLiteOpenHelper{
         Cursor c = db.rawQuery("SELECT * FROM AccelData WHERE TestID = " + Integer.toString(testID)
                 ,null);
         c.moveToFirst();
-        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/ICAS/");
+        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/ICAS/Posturography/");
         File file = new File(dir, "Posturography_"+testInfo[0]+".csv");
+
+        if(!dir.exists()) { dir.mkdirs(); }
 
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(file);

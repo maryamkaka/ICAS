@@ -52,18 +52,23 @@ public class exportfrag extends Fragment {
                 String state = Environment.getExternalStorageState();
                 ArrayList<String[]> data;
                 String[] info;
+                File dir, file;
 
                 if(Environment.MEDIA_MOUNTED.equals(state)) {
-                    File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/ICAS/");
-
-                    if(!dir.exists()) {
-                        dir.mkdirs();
-                    }
+                    dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/ICAS/");
+                    if(!dir.exists()) { dir.mkdirs(); }
 
                     pathtext.setText(dir.getAbsolutePath());
 
-                    File file = new File (dir, "SCAT3.csv");
-                    writeFile(file, db.getSCAT3Data(2));
+                    //write SCAT3 Data
+                    dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/ICAS/SCAT3/");
+                    if(!dir.exists()) { dir.mkdirs(); }
+                    data = db.getSCAT3Test();
+                    for(int i = 0; i < data.size(); i++){
+                        info = data.get(i);
+                        file = new File (dir, "SCAT3_"+info[1]+".csv");
+                        writeFile(file, db.getSCAT3Data(Integer.parseInt(info[0])));
+                    }
 
                     //write posture data
                     data = db.getPostureTests();
@@ -71,16 +76,6 @@ public class exportfrag extends Fragment {
                         db.exportAccelData(i+1);
 
                     }
-
-                    // Tell the media scanner about the new file so that it is
-                    // immediately available to the user.
-                    MediaScannerConnection.scanFile(getActivity(), new String[] { file.toString() }, null,
-                            new MediaScannerConnection.OnScanCompletedListener() {
-                                public void onScanCompleted(String path, Uri uri) {
-                                    Log.i("ExternalStorage", "Scanned " + path + ":");
-                                    Log.i("ExternalStorage", "-> uri=" + uri);
-                                }
-                            });
 
                     //Notify User export is complete
                     Toast.makeText(getContext(),"Done", Toast.LENGTH_LONG).show();
@@ -92,6 +87,18 @@ public class exportfrag extends Fragment {
         });
 
         return view;
+    }
+
+    private void callMediaScanner(File file){
+        // Tell the media scanner about the new file so that it is
+        // immediately available to the user.
+        MediaScannerConnection.scanFile(getActivity(), new String[] { file.toString() }, null,
+                new MediaScannerConnection.OnScanCompletedListener() {
+                    public void onScanCompleted(String path, Uri uri) {
+                        Log.i("ExternalStorage", "Scanned " + path + ":");
+                        Log.i("ExternalStorage", "-> uri=" + uri);
+                    }
+                });
     }
 
     private String formatLine(String[] data){
@@ -122,5 +129,6 @@ public class exportfrag extends Fragment {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        callMediaScanner(file);
     }
 }
