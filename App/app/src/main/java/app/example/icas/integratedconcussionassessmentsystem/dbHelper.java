@@ -336,16 +336,43 @@ public class dbHelper extends SQLiteOpenHelper{
         return postureData;
     }
 
+    private String[] getPostureTests(int testID){
+        String[] testInfo = new String[4];
+        Cursor c = db.rawQuery("SELECT * FROM Posturography WHERE TestID = " +
+                Integer.toString(testID), null);
+        c.moveToFirst();
+
+        while (c.isAfterLast() == false && c.getCount() > 0) {
+            testInfo[0] = c.getString(c.getColumnIndex("Date"));
+            testInfo[1] = c.getString(c.getColumnIndex("TestingSurface"));
+            testInfo[2] = c.getString(c.getColumnIndex("Footwear"));
+            testInfo[3] = c.getString(c.getColumnIndex("Foot"));
+            c.moveToNext();
+        }
+        c.close();
+
+        return testInfo;
+    }
+
     public void exportAccelData(int testID){
         String[] data = new String[4];
+        String[] testInfo = getPostureTests(testID);
+        String[][] headings = {
+                {"Date", "TestingSurface", "Footwear", "Foot"},
+                {"Timestamp", "x", "y", "z"}
+        };
         Cursor c = db.rawQuery("SELECT * FROM AccelData WHERE TestID = " + Integer.toString(testID)
                 ,null);
         c.moveToFirst();
         File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/ICAS/");
-        File file = new File(dir, "Posturography_"+testID+".csv");
+        File file = new File(dir, "Posturography_"+testInfo[0]+".csv");
 
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
+            fileOutputStream.write(formatLine(headings[0]).getBytes());
+            fileOutputStream.write(formatLine(testInfo).getBytes());
+            fileOutputStream.write(formatLine(headings[1]).getBytes());
+
             while (c.isAfterLast() == false && c.getCount() > 0) {
                 data[0] = c.getString(c.getColumnIndex("Timestamp"));
                 data[1] = c.getString(c.getColumnIndex("x"));
