@@ -10,6 +10,7 @@ import android.icu.util.Calendar;
 import android.provider.Settings;
 import android.util.Log;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -46,7 +47,7 @@ public class dbHelper extends SQLiteOpenHelper{
                 "DominantHand text, " +
                 "Hospitalized boolean, " +
                 "Headeaches boolean, " +
-                "ADD boolean, " +
+                "Disability boolean, " +
                 "Psych boolean, " +
                 "PsychFam boolean, " +
                 "Medication boolean " +
@@ -113,6 +114,19 @@ public class dbHelper extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS Users");
         db.execSQL("DROP TABLE IF EXISTS Posturography");
         db.execSQL("DROP TABLE IF EXISTS AccelData");
+
+        onCreate(db);
+    }
+
+    public void deleteDatabase(){
+        db.execSQL("DROP TABLE IF EXISTS Users");
+        db.execSQL("DROP TABLE IF EXISTS Posturography");
+        db.execSQL("DROP TABLE IF EXISTS AccelData");
+        db.execSQL("DROP TABLE IF EXISTS SCAT3");
+        db.execSQL("DROP TABLE IF EXISTS SymptomEvaluation");
+        db.execSQL("DROP TABLE IF EXISTS Orientation");
+        db.execSQL("DROP TABLE IF EXISTS Memory");
+        db.execSQL("DROP TABLE IF EXISTS Concentration");
 
         onCreate(db);
     }
@@ -238,5 +252,60 @@ public class dbHelper extends SQLiteOpenHelper{
         }
 
         return users;
+    }
+
+    public ArrayList<String[]> getSCAT3TestID(){
+        ArrayList<String[]> SCAT3Tests = new ArrayList<>();
+        String[] data = new String[2];
+        Cursor c = db.rawQuery("SELECT * FROM SCAT3", null);
+
+
+        while(c.isAfterLast() == false){
+            data[0] = c.getString(c.getColumnIndex("TestID"));
+            data[1] = c.getString(c.getColumnIndex("Date"));
+
+            SCAT3Tests.add(data);
+            c.moveToNext();
+        }
+
+        return SCAT3Tests;
+    }
+
+    public ArrayList<String[]> getSCAT3Data(int testID){
+        ArrayList<String[]> SCAT3Data = new ArrayList<>();
+        String[] symptomEval = new String[22];
+        String[] orintationScore = new String[3];
+        String[] memory = new String[3];
+        String[] concentration = new String[2];
+
+        Cursor c = db.rawQuery("SELECT * FROM " +
+                "(SELECT * FROM SCAT3 LEFT JOIN Memory, Orientation, SymptomEvaluation, Concentration USING (TestID))" +
+                " WHERE TestID = " + Integer.toString(testID), null);
+        c.moveToFirst();
+
+        while(c.isAfterLast() == false && c.getCount() > 0){
+            for(int i = 0; i < 22; i++){
+                symptomEval[i] = c.getString(c.getColumnIndex("Q" + Integer.toString(i+1)));
+            }
+            SCAT3Data.add(symptomEval);
+
+            orintationScore[0] = c.getString(c.getColumnIndex("Date"));
+            orintationScore[1] = c.getString(c.getColumnIndex("UserDate"));
+            orintationScore[2] = c.getString(c.getColumnIndex("OrientationScore"));
+            SCAT3Data.add(orintationScore);
+
+            for(int i = 0; i < 3; i++){
+                memory[i] = c.getString(c.getColumnIndex("Trial" + Integer.toString(i+1)));
+            }
+            SCAT3Data.add(memory);
+
+            concentration[0] = c.getString(c.getColumnIndex("digitsScore"));
+            concentration[1] = c.getString(c.getColumnIndex("Months"));
+            SCAT3Data.add(concentration);
+
+            c.moveToNext();
+        }
+
+        return SCAT3Data;
     }
 }

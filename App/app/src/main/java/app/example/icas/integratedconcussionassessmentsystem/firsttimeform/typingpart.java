@@ -1,5 +1,7 @@
 package app.example.icas.integratedconcussionassessmentsystem.firsttimeform;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,15 +10,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.gc.materialdesign.views.ButtonRectangle;
+
+import app.example.icas.integratedconcussionassessmentsystem.Homescreen;
 import app.example.icas.integratedconcussionassessmentsystem.R;
 import de.codecrafters.tableview.TableView;
 import de.codecrafters.tableview.toolkit.SimpleTableDataAdapter;
 import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter;
 
 import static android.R.attr.defaultValue;
+import static android.R.attr.parentActivityName;
 
 
 public class typingpart extends Fragment {
@@ -24,6 +31,8 @@ public class typingpart extends Fragment {
     private String key;
     private int i;
     private boolean end;
+    public background_form parentActivity;
+
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -37,11 +46,13 @@ public class typingpart extends Fragment {
             "Years of education completed",
             "How many concussions do you think you have had in the past?",
             "When was the most recent concussion?",
-            "How long did its recovery take?"
+            "How long did its recovery take?",
+            "Gender"
     };
     private TextView question;
     private EditText NameInput;
     private String answer;
+    private ButtonRectangle nextbackquest;
 
     public static typingpart newInstance(int i,boolean end){
         Bundle bundle = new Bundle ();
@@ -68,6 +79,9 @@ public class typingpart extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_typingpart, container, false);
+
+        //Pass Background activity context to fragment to call changeposition method later
+        parentActivity = ((background_form)getActivity());
         return rootView;
     }
 
@@ -76,21 +90,14 @@ public class typingpart extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         question = (TextView) view.findViewById(R.id.questionintro);
         NameInput = (EditText) view.findViewById(R.id.Nameinput);
-
-        /*//METHOD I
-        NameInput.setOnEditorActionListener(new EditText.OnEditorActionListener(){
+        nextbackquest = (ButtonRectangle) view.findViewById(R.id.nextbackquest);
+        nextbackquest.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE || event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-
-                    if (!event.isShiftPressed()) {
-                        // the user is done typing.
-                        return true;
-                    }
-                }
-                return false; //Pass on to the other listeners
+            public void onClick(View view) {
+                parentActivity.changeposition(i);
             }
-        });*/
+        });
+
 
         readBundle(getArguments());
 

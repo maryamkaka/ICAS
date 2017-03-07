@@ -47,17 +47,10 @@ public class Homescreen extends AppCompatActivity
          */
         /*Stetho.initialize(
                 Stetho.newInitializerBuilder(this)
-                        .enableDumpapp(
-                                Stetho.defaultDumperPluginsProvider(this))
-                        .enableWebKitInspector(
-                                Stetho.defaultInspectorModulesProvider(this))
-                        .build());*/
-        Stetho.initializeWithDefaults(this);
-        /*Stetho.initialize(
-                Stetho.newInitializerBuilder(this)
                         .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
                         .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
                         .build());*/
+        Stetho.initializeWithDefaults(this);
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -111,46 +104,14 @@ public class Homescreen extends AppCompatActivity
                 fragmentClass = abouticas.class;
                 break;
             case R.id.savedata:
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},112);
-
-                String state;
-                state = Environment.getExternalStorageState();
-                if(Environment.MEDIA_MOUNTED.equals(state)) {
-                    File Dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-                    //File Root = new File(Environment.getExternalStorageDirectory(),"Notes");
-
-                    //File Dir = new File(Root.getAbsolutePath());
-                    if(!Dir.exists()) {
-                        Dir.mkdirs();
-                    }
-
-                    File file = new File (Dir, "MyMessage.txt");
-                    String Message = "yo";
-                    try {
-                        FileOutputStream fileOutputStream = new FileOutputStream(file);
-                        fileOutputStream.write(Message.getBytes());
-                        fileOutputStream.close();
-                        Toast.makeText(getApplicationContext(),"Done",Toast.LENGTH_LONG).show();
-
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    // Tell the media scanner about the new file so that it is
-                    // immediately available to the user.
-                    MediaScannerConnection.scanFile(this, new String[] { file.toString() }, null,
-                            new MediaScannerConnection.OnScanCompletedListener() {
-                                public void onScanCompleted(String path, Uri uri) {
-                                    Log.i("ExternalStorage", "Scanned " + path + ":");
-                                    Log.i("ExternalStorage", "-> uri=" + uri);
-                                }
-                            });
-                }else{
-                    Toast.makeText(getApplicationContext(),"External Storage not found",Toast.LENGTH_LONG).show();
-                }
-
+                fragmentClass = exportfrag.class;
+                break;
+            case R.id.help:
+                fragmentClass = helpfrag.class;
+                break;
+            case R.id.settings:
+                fragmentClass = settingsfrag.class;
+                break;
             default:
                 fragmentClass = mainmenu.class;
         }
