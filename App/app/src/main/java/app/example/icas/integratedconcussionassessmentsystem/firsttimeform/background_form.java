@@ -24,9 +24,10 @@ public class background_form extends AppCompatActivity {
 
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
-    private ViewPager mViewPager;
+    public ViewPager mViewPager;
     public String key;
     Bundle bundle = new Bundle();
+    private String[] answers = new String[14];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +41,8 @@ public class background_form extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
-
+        typingpart typingpart = new typingpart();
+        typingpart.parentActivity = this;
     }
 
 
@@ -80,12 +81,13 @@ public class background_form extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             //Returning the current tabs
             //TO BE CLEANED UP
-            if (position < 8 && position >= 0) {
+            if (position < 9 && position >= 0) {
                 return typingpart.newInstance(position,false);
-            }else if(position>=8 && position < 15) {
-                return tfparts.newInstance(position - 8, false);
+            }else if(position>=9 && position < 15) {
+               // tfparts.parentActivity = this;
+                return tfparts.newInstance(position - 9, false);
             }else if(position==15){
-                return tfparts.newInstance(position-8,true);
+                return tfparts.newInstance(position-9,true);
             }else{
                 return null;
             }
@@ -109,5 +111,10 @@ public class background_form extends AppCompatActivity {
             }
             return null;
         }
+
+
+    }
+    void changeposition(int position){
+        mViewPager.setCurrentItem(position+1);
     }
 }

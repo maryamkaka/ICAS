@@ -7,9 +7,17 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
+import android.os.Environment;
 import android.provider.Settings;
 import android.util.Log;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -46,7 +54,7 @@ public class dbHelper extends SQLiteOpenHelper{
                 "DominantHand text, " +
                 "Hospitalized boolean, " +
                 "Headeaches boolean, " +
-                "ADD boolean, " +
+                "Disability boolean, " +
                 "Psych boolean, " +
                 "PsychFam boolean, " +
                 "Medication boolean " +
@@ -113,6 +121,19 @@ public class dbHelper extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS Users");
         db.execSQL("DROP TABLE IF EXISTS Posturography");
         db.execSQL("DROP TABLE IF EXISTS AccelData");
+
+        onCreate(db);
+    }
+
+    public void deleteDatabase(){
+        db.execSQL("DROP TABLE IF EXISTS Users");
+        db.execSQL("DROP TABLE IF EXISTS Posturography");
+        db.execSQL("DROP TABLE IF EXISTS AccelData");
+        db.execSQL("DROP TABLE IF EXISTS SCAT3");
+        db.execSQL("DROP TABLE IF EXISTS SymptomEvaluation");
+        db.execSQL("DROP TABLE IF EXISTS Orientation");
+        db.execSQL("DROP TABLE IF EXISTS Memory");
+        db.execSQL("DROP TABLE IF EXISTS Concentration");
 
         onCreate(db);
     }
@@ -236,7 +257,188 @@ public class dbHelper extends SQLiteOpenHelper{
             users.add(cursor.getString(cursor.getColumnIndex("Name")));
             cursor.moveToNext();
         }
-
+        cursor.close();
         return users;
+    }
+
+    public ArrayList<String[]> getSCAT3Test(){
+        ArrayList<String[]> SCAT3Tests = new ArrayList<>();
+        String[] data = new String[2];
+        Cursor c = db.rawQuery("SELECT * FROM SCAT3", null);
+
+        c.moveToFirst();
+
+        while (c.isAfterLast() == false && c.getCount() > 0) {
+            data[0] = c.getString(c.getColumnIndex("TestID"));
+            data[1] = c.getString(c.getColumnIndex("Date"));
+
+            SCAT3Tests.add(data);
+            c.moveToNext();
+        }
+        c.close();
+        return SCAT3Tests;
+    }
+
+    public ArrayList<String[]> getSCAT3Data(int testID){
+        ArrayList<String[]> SCAT3Data = new ArrayList<>();
+        String[] symptomEval = new String[22];
+        String[] orintationScore = new String[3];
+        String[] memory = new String[3];
+        String[] concentration = new String[2];
+
+        Cursor c = db.rawQuery("SELECT * FROM " +
+                "(SELECT * FROM SCAT3 LEFT JOIN Memory, Orientation, SymptomEvaluation, Concentration USING (TestID))" +
+                " WHERE TestID = " + Integer.toString(testID), null);
+        c.moveToFirst();
+
+        while(c.isAfterLast() == false && c.getCount() > 0){
+            for(int i = 0; i < 22; i++){
+                symptomEval[i] = c.getString(c.getColumnIndex("Q" + Integer.toString(i+1)));
+            }
+            SCAT3Data.add(symptomEval);
+
+            orintationScore[0] = c.getString(c.getColumnIndex("Date"));
+            orintationScore[1] = c.getString(c.getColumnIndex("UserDate"));
+            orintationScore[2] = c.getString(c.getColumnIndex("OrientationScore"));
+            SCAT3Data.add(orintationScore);
+
+            for(int i = 0; i < 3; i++){
+                memory[i] = c.getString(c.getColumnIndex("Trial" + Integer.toString(i+1)));
+            }
+            SCAT3Data.add(memory);
+
+            concentration[0] = c.getString(c.getColumnIndex("digitsScore"));
+            concentration[1] = c.getString(c.getColumnIndex("Months"));
+            SCAT3Data.add(concentration);
+
+            c.moveToNext();
+        }
+        c.close();
+        return SCAT3Data;
+    }
+
+    public ArrayList<String[]> getPostureTests() {
+        ArrayList<String[]> postureData = new ArrayList<>();
+        String[] testInfo = new String[4];
+        Cursor c = db.rawQuery("SELECT * FROM Posturography", null);
+        c.moveToFirst();
+
+        while (c.isAfterLast() == false && c.getCount() > 0) {
+            testInfo[0] = c.getString(c.getColumnIndex("Date"));
+            testInfo[1] = c.getString(c.getColumnIndex("TestingSurface"));
+            testInfo[2] = c.getString(c.getColumnIndex("Footwear"));
+            testInfo[3] = c.getString(c.getColumnIndex("Foot"));
+
+            postureData.add(testInfo);
+
+            c.moveToNext();
+        }
+        c.close();
+        return postureData;
+    }
+
+    private String[] getPostureTests(int testID){
+        String[] testInfo = new String[4];
+        Cursor c = db.rawQuery("SELECT * FROM Posturography WHERE TestID = " +
+                Integer.toString(testID), null);
+        c.moveToFirst();
+
+        while (c.isAfterLast() == false && c.getCount() > 0) {
+            testInfo[0] = c.getString(c.getColumnIndex("Date"));
+            testInfo[1] = c.getString(c.getColumnIndex("TestingSurface"));
+            testInfo[2] = c.getString(c.getColumnIndex("Footwear"));
+            testInfo[3] = c.getString(c.getColumnIndex("Foot"));
+            c.moveToNext();
+        }
+        c.close();
+
+        return testInfo;
+    }
+
+    public void exportAccelData(int testID){
+        String[] data = new String[4];
+        String[] testInfo = getPostureTests(testID);
+        String[][] headings = {
+                {"Date", "TestingSurface", "Footwear", "Foot"},
+                {"Timestamp", "x", "y", "z"}
+        };
+        Cursor c = db.rawQuery("SELECT * FROM AccelData WHERE TestID = " + Integer.toString(testID)
+                ,null);
+        c.moveToFirst();
+        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/ICAS/Posturography/");
+        File file = new File(dir, "Posturography_"+testInfo[0]+".csv");
+
+        if(!dir.exists()) { dir.mkdirs(); }
+
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            fileOutputStream.write(formatLine(headings[0]).getBytes());
+            fileOutputStream.write(formatLine(testInfo).getBytes());
+            fileOutputStream.write(formatLine(headings[1]).getBytes());
+
+            while (c.isAfterLast() == false && c.getCount() > 0) {
+                data[0] = c.getString(c.getColumnIndex("Timestamp"));
+                data[1] = c.getString(c.getColumnIndex("x"));
+                data[2] = c.getString(c.getColumnIndex("y"));
+                data[3] = c.getString(c.getColumnIndex("z"));
+
+                fileOutputStream.write(formatLine(data).getBytes());
+
+                c.moveToNext();
+            }
+            System.out.println("Wrote file");
+            fileOutputStream.close();
+            c.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        MediaScannerConnection.scanFile(context, new String[] { file.toString() }, null,
+                new MediaScannerConnection.OnScanCompletedListener() {
+                    public void onScanCompleted(String path, Uri uri) {
+                        Log.i("ExternalStorage", "Scanned " + path + ":");
+                        Log.i("ExternalStorage", "-> uri=" + uri);
+                    }
+                });
+    }
+
+    public ArrayList<String[]> getAccelData(int testID){
+        ArrayList<String[]> accelData = new ArrayList<>();
+        String[] dataPoint = new String[4];
+
+        Cursor c = db.rawQuery("SELECT * FROM AccelData WHERE TestID = " + Integer.toString(testID)
+                ,null);
+        c.moveToFirst();
+
+        while(c.isAfterLast() == false && c.getCount() > 0){
+            dataPoint[0] = c.getString(c.getColumnIndex("Timestamp"));
+            dataPoint[1] = c.getString(c.getColumnIndex("x"));
+            dataPoint[2] = c.getString(c.getColumnIndex("y"));
+            dataPoint[3] = c.getString(c.getColumnIndex("z"));
+
+            accelData.add(dataPoint);
+        }
+
+        c.close();
+
+        return accelData;
+    }
+
+    private String formatLine(String[] data){
+        String line = "";
+
+        for(int i = 0; i < data.length; i++){
+            line += data[i];
+
+            if(i == data.length-1){
+                line += "\n";
+            } else {
+                line += ",";
+            }
+        }
+        return line;
     }
 }
