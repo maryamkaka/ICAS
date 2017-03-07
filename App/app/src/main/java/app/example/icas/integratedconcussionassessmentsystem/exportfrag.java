@@ -67,12 +67,10 @@ public class exportfrag extends Fragment {
 
                     //write posture data
                     data = db.getPostureTests();
-                    /*for(int i = 0; i < data.size(); i++){
-                        info = data.get(i);
-                        file = new File(dir, "Posturography_"+info[0]+".csv");
-                        writeFile(file, db.getAccelData(i+1));
-                    }*/
-                    db.exportAccelData(1);
+                    for(int i = 0; i < data.size(); i++){
+                        db.exportAccelData(i+1);
+
+                    }
 
                     // Tell the media scanner about the new file so that it is
                     // immediately available to the user.
