@@ -308,4 +308,24 @@ public class dbHelper extends SQLiteOpenHelper{
 
         return SCAT3Data;
     }
+
+    public ArrayList<String[]> getAccelData(int testID){
+        ArrayList<String[]> accelData = new ArrayList<>();
+        String[] dataPoint = new String[4];
+
+        Cursor c = db.rawQuery("SELECT * FROM AccelData WHERE TestID = " + Integer.toString(testID)
+                ,null);
+        c.moveToFirst();
+
+        while(c.isAfterLast() == false && c.getCount() > 0){
+            dataPoint[0] = c.getString(c.getColumnIndex("Timestamp"));
+            dataPoint[1] = c.getString(c.getColumnIndex("x"));
+            dataPoint[2] = c.getString(c.getColumnIndex("y"));
+            dataPoint[3] = c.getString(c.getColumnIndex("z"));
+
+            accelData.add(dataPoint);
+        }
+
+        return accelData;
+    }
 }
