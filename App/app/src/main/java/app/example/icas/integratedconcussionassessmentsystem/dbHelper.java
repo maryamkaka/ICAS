@@ -139,7 +139,7 @@ public class dbHelper extends SQLiteOpenHelper{
     }
 
     public long addUser(String[] data){
-        long TestID;c
+        long TestID;
         ContentValues values = new ContentValues();
 
         values.put("Team", data[0]);
