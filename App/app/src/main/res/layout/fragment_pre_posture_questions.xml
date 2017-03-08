@@ -37,55 +37,83 @@
 
 
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:id="@+id/Q1"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/Q1"
                 android:gravity="left"
                 android:visibility="visible">
 
                 <RadioButton
-                    android:text="RadioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/op1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="18sp"
+                    android:checked="false"
+                    android:text="RadioButton"
                     android:textColor="@color/colorPrimary"
-                    android:checked="false" />
+                    android:textSize="18sp" />
 
                 <RadioButton
-                    android:text="RadioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/op2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:text="RadioButton"
                     android:textSize="18sp" />
 
                 <RadioButton
-                    android:text="RadioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/op3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:text="RadioButton"
                     android:textSize="18sp" />
 
                 <RadioButton
-                    android:text="RadioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/op4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:text="RadioButton"
                     android:textSize="18sp" />
 
                 <RadioButton
-                    android:text="RadioButton"
+                    android:id="@+id/op5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/op5"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
+                    android:text="RadioButton"
                     android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/op6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="RadioButton"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/otherfield"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Other footwear"
+                        android:inputType="textPersonName" />
+
+                </LinearLayout>
+
             </RadioGroup>
 
         </LinearLayout>

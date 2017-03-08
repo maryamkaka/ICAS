@@ -29,19 +29,18 @@ public class Posture_test2 extends FragmentActivity{
         setContentView(R.layout.posture_test2);
         next = (ButtonRectangle) findViewById(R.id.next);
         prev = (ButtonRectangle) findViewById(R.id.prev);
-        prev.setVisibility(GONE);
-
 
         //Initialize fragment
+        Pre_posture_questions.ParentActivity = this;
         fragmentManager.beginTransaction().add(R.id.fragment, Pre_posture_questions).commit();
     }
 
     public void onNextClick(View view){
         if(currentFrag == 0){
             updateStatus = Pre_posture_questions.nextQuestion(view);
-            prev.setVisibility(View.VISIBLE);
         } else if (currentFrag == 1) {
             //updateStatus = Pre_posture_questions.nextQuestion(view);
+            prev.setVisibility(View.VISIBLE);
             updateStatus = postureTest_instructions.nextQuestion(view);
         } else if (currentFrag == 2){
             Intent intent = new Intent(Posture_test2.this,Posturography.class);
@@ -68,5 +67,14 @@ public class Posture_test2 extends FragmentActivity{
     public void onPrevClick(View view){
 
         updateStatus = Pre_posture_questions.prevQuestion(view);
+    }
+
+    public void disableBtns(View view){
+        prev.setVisibility(View.GONE);
+    }
+
+    public void enableBtns(View view){
+        next.setVisibility(View.VISIBLE);
+        prev.setVisibility(View.VISIBLE);
     }
 }
