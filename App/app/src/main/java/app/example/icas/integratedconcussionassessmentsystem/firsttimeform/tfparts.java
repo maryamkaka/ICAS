@@ -20,12 +20,12 @@ import app.example.icas.integratedconcussionassessmentsystem.R;
 
 public class tfparts extends Fragment {
 
-    private String key;
+    private String key, answer;
     private int i;
     RadioGroup options;
     private boolean end_of_form;
     public background_form parentActivity;
-
+    private RadioButton r;
 
     /**
      * The fragment argument representing the section number for this
@@ -112,11 +112,21 @@ public class tfparts extends Fragment {
                 if (i+9<14) {
                     parentActivity.changeposition(i + 9);
                 }else{
-                    parentActivity.changeposition(13);
+                    parentActivity.changeposition(14);
                     //next.setVisibility(View.GONE);
                 }
             }
         });
+
+        options.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+            @Override
+            public void onCheckedChanged(RadioGroup options, int selectedId){
+                selectedId = options.getCheckedRadioButtonId();
+                r = (RadioButton) getView().findViewById(selectedId);
+                answer = r.getText().toString();
+            }
+        });
+
         //Dynamically Change radiobutton text depending on question asked.
         updateScreen(view);
      }
@@ -141,5 +151,7 @@ public class tfparts extends Fragment {
         }
     }
 
-
+    public String getAnswer(){
+        return answer;
+    }
 }

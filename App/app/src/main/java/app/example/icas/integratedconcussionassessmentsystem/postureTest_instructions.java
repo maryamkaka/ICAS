@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.os.CountDownTimer;
 import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +21,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.animation.ValueAnimator;
 
-import com.wang.avi.AVLoadingIndicatorView;
-import com.wang.avi.Indicator;
+//import com.wang.avi.AVLoadingIndicatorView;
+//import com.wang.avi.Indicator;
 
 import java.io.File;
 import java.util.Date;
@@ -38,7 +39,7 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     private int image_index =0,click_index =1;
     private Sensor mySensor;
     private SensorManager SM;
-    private AVLoadingIndicatorView avi;
+    //private AVLoadingIndicatorView avi;
     private dbHelper db;
     private long testID;
     public String path = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/ICAS/Posture";
@@ -85,8 +86,8 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         Statusmsg.setVisibility(GONE);
 
         //Create Loading Animation
-        avi = (AVLoadingIndicatorView) getView().findViewById(R.id.avi);
-        avi.setVisibility(GONE);
+        //avi = (AVLoadingIndicatorView) getView().findViewById(R.id.avi);
+        //avi.setVisibility(GONE);
         //avi.setIndicator(indicator);
 
         //Create File directory
@@ -96,32 +97,47 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
 
     public void setTestID(long id){ testID = id; }
 
-    public boolean nextQuestion(View view){
+    public boolean nextQuestion(){
         //If BESS test is complete return to main page
         if (click_index == 6){
             return false;
         }
 
+        //show data collection
         if(!(click_index%2==0)) {
             instr_pic.setVisibility(GONE);
             instr_word.setVisibility(GONE);
             X.setVisibility(View.GONE);
             Y.setVisibility(View.GONE);
             Z.setVisibility(View.GONE);
-            Statusmsg.setVisibility(view.VISIBLE);
-            avi.setVisibility(View.VISIBLE);
-            startAnim();
+
+            Statusmsg.setVisibility(View.VISIBLE);
+           // avi.setVisibility(View.VISIBLE);
+           // startAnim();
+
             click_index++;
             collectData = Boolean.TRUE;
 
+            //timer stuff
+            new CountDownTimer(30000, 1000){
+                public void onTick(long reminaingTime){
+
+                }
+
+                public void onFinish(){
+                    nextQuestion();
+                }
+            }.start();
+
+        //show instruction screen
         }else{
             instr_pic.setVisibility(View.VISIBLE);
             instr_word.setVisibility(View.VISIBLE);
-            avi.setVisibility(GONE);
+           // avi.setVisibility(GONE);
             X.setVisibility(GONE);
             Y.setVisibility(GONE);
             Z.setVisibility(GONE);
-            Statusmsg.setVisibility(view.GONE);
+            Statusmsg.setVisibility(View.GONE);
             instr_pic.setImageResource(image_instructions[image_index]);
             instr_word.setImageResource(word_instructions[image_index]);
             image_index++;
@@ -140,13 +156,13 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     }
 
 
-    void startAnim(){
-        avi.show();
-    }
+    //void startAnim(){
+      //  avi.show();
+    //}
 
-    void stopAnim(){
-        avi.hide();
-    }
+   // void stopAnim(){
+       // avi.hide();
+    //}
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
