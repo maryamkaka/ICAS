@@ -138,8 +138,28 @@ public class dbHelper extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-    public void addUser(String name){
-        db.execSQL("INSERT INTO Users(Name) VALUES('" + name + "')");
+    public long addUser(String[] data){
+        long TestID;
+        ContentValues values = new ContentValues();
+
+        values.put("Team", data[0]);
+        values.put("DateInjury", data[1]);
+        values.put("Age", data[2]);
+        values.put("Education", data[3]);
+        values.put("PastConcussions", data[4]);
+        values.put("RecoveryLength", data[5]);
+        values.put("Gender", data[6]);
+        values.put("DominantHand", data[7]);
+        values.put("Hospitalized", data[8]);
+        values.put("Headeaches", data[9]);
+        values.put("Disability", data[10]);
+        values.put("Psych", data[11]);
+        values.put("PsychFam", data[12]);
+        values.put("Medication", data[13]);
+
+        TestID = db.insert("Users", null, values);
+
+        return TestID;
     }
 
     /* addSCAT3Test
