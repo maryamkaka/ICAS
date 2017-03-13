@@ -43,14 +43,14 @@ public class dbHelper extends SQLiteOpenHelper{
         db.execSQL("CREATE TABLE Users(" +
                 "UserID integer PRIMARY KEY AUTOINCREMENT, " +
                 "Name text, " +
+                "Gender text, " +
                 "Team text, " +
                 "DateInjury datetime, " +
+                "PastConcussionDate datetime, " +
+                "RecoveryLength text, " +
                 "Age integer, " +
                 "Education integer, " +
-                "PastConcussions integer, " +
-                "RecentConcussion datetime, " +
-                "RecoveryLength text, " +
-                "Gender text, " +
+                "PastConcussionCount integer, " +
                 "DominantHand text, " +
                 "Hospitalized boolean, " +
                 "Headeaches boolean, " +
@@ -138,24 +138,28 @@ public class dbHelper extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-    public long addUser(String[] data){
+    public long addUser(String[] typedData, String[] datetime, String[] dfData){
         long TestID;
         ContentValues values = new ContentValues();
 
-        values.put("Team", data[0]);
-        values.put("DateInjury", data[1]);
-        values.put("Age", data[2]);
-        values.put("Education", data[3]);
-        values.put("PastConcussions", data[4]);
-        values.put("RecoveryLength", data[5]);
-        values.put("Gender", data[6]);
-        values.put("DominantHand", data[7]);
-        values.put("Hospitalized", data[8]);
-        values.put("Headeaches", data[9]);
-        values.put("Disability", data[10]);
-        values.put("Psych", data[11]);
-        values.put("PsychFam", data[12]);
-        values.put("Medication", data[13]);
+        values.put("Name", typedData[0]);
+        values.put("Gender", typedData[1]);
+        values.put("Team", typedData[2]);
+
+        values.put("DateInjury", datetime[0]);
+        values.put("PastConcussionDate", datetime[1]);
+        values.put("RecoveryLength", datetime[2]);
+        values.put("Age", datetime[3]);
+        values.put("Education", datetime[4]);
+        values.put("PastConcussionCount", datetime[5]);
+
+        values.put("DominantHand", dfData[0]);
+        values.put("Hospitalized", dfData[1]);
+        values.put("Headeaches", dfData[2]);
+        values.put("Disability", dfData[3]);
+        values.put("Psych", dfData[4]);
+        values.put("PsychFam", dfData[5]);
+        values.put("Medication", dfData[6]);
 
         TestID = db.insert("Users", null, values);
 
