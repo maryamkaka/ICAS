@@ -62,6 +62,9 @@
         <activity
             android:name=".firsttimeform.background_form"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".firsttimeform.background_form2"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

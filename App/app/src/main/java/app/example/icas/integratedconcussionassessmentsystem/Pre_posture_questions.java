@@ -8,6 +8,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
@@ -18,14 +19,16 @@ import android.widget.Toast;
 public class Pre_posture_questions extends Fragment {
 
     BESSEvaluationQuestions questions;
+    public Posture_test2 ParentActivity;
     TextView questionTxt;
     RadioGroup Q1;
     RadioButton r;
+    EditText other;
     private dbHelper db;
     private String answers[][] = {
-            {"None", "Shoes", "Sandals", "Flip-Flops", "Cleats"},
-            {"Right", "Left", "", "", ""},
-            {"Hardwood", "Grass", "Asphalt", "Tiles", "Rug"}
+            {"None", "Shoes", "Sandals", "Flip-Flops", "Cleats", "Other"},
+            {"Right", "Left", "", "", "",""},
+            {"Hardwood", "Grass", "Asphalt", "Tiles", "Rug",""}
     };
     private String[] response  =  new String[3];
     private long testID;
@@ -47,20 +50,31 @@ public class Pre_posture_questions extends Fragment {
 
         questionTxt = (TextView) getView().findViewById(R.id.question);
         Q1  = (RadioGroup) view.findViewById(R.id.Q1);
+        other = (EditText) view.findViewById(R.id.otherfield);
+        other.setVisibility(View.GONE);
+        //Hide "Previous Button"
 
-        //TO-DO: STORE RADIOBUTTON ANSWERS
+        //TODO: STORE OTHER ANSWERS
         Q1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(RadioGroup Q1, int selectedId){
+                if (((RadioButton) Q1.getChildAt(5)).isChecked()){
+                    other.setVisibility(View.VISIBLE);
+                }else{
+                    other.setVisibility(View.GONE);
+                }
                 selectedId = Q1.getCheckedRadioButtonId();
                 r = (RadioButton) getView().findViewById(selectedId);
                 response[i] = r.getText().toString();
+
+
             }
         });
 
 
         //First Posture Question
         Q1.setVisibility(view.VISIBLE);
+        ParentActivity.disablePrev(view);
         updateScreen(view);
     }
 
@@ -73,6 +87,14 @@ public class Pre_posture_questions extends Fragment {
 
             return false;
         }
+
+        //Clear button selection
+        ((RadioButton) Q1.getChildAt(0)).setChecked(false);
+        ((RadioButton) Q1.getChildAt(1)).setChecked(false);
+        ((RadioButton) Q1.getChildAt(2)).setChecked(false);
+        ((RadioButton) Q1.getChildAt(3)).setChecked(false);
+        ((RadioButton) Q1.getChildAt(4)).setChecked(false);
+        ((RadioButton) Q1.getChildAt(5)).setChecked(false);
 
         updateScreen(view);
         return true;
@@ -94,14 +116,31 @@ public class Pre_posture_questions extends Fragment {
         i = questions.getIndex();
         questionTxt.setText(questions.getCurrentQuestion());
 
+
+        ParentActivity.enableBtns(view);
+
+        //Adjust questions display according to question
         if (i == 1) {
             (Q1.getChildAt(2)).setVisibility(view.INVISIBLE);
             (Q1.getChildAt(3)).setVisibility(view.INVISIBLE);
             (Q1.getChildAt(4)).setVisibility(view.INVISIBLE);
-        } else {
+            (Q1.getChildAt(5)).setVisibility(view.INVISIBLE);
+        } else if(i==2) {
             (Q1.getChildAt(2)).setVisibility(view.VISIBLE);
             (Q1.getChildAt(3)).setVisibility(view.VISIBLE);
             (Q1.getChildAt(4)).setVisibility(view.VISIBLE);
+        }else{
+            (Q1.getChildAt(2)).setVisibility(view.VISIBLE);
+            (Q1.getChildAt(3)).setVisibility(view.VISIBLE);
+            (Q1.getChildAt(4)).setVisibility(view.VISIBLE);
+            (Q1.getChildAt(5)).setVisibility(view.VISIBLE);
+
+        }
+
+        //If first question, hide previous button
+        if(i == 0){
+            ParentActivity.disablePrev(view);
+
         }
 
         //Update Text
@@ -110,6 +149,7 @@ public class Pre_posture_questions extends Fragment {
         ((RadioButton) Q1.getChildAt(2)).setText(answers[i][2]);
         ((RadioButton) Q1.getChildAt(3)).setText(answers[i][3]);
         ((RadioButton) Q1.getChildAt(4)).setText(answers[i][4]);
+        ((RadioButton) Q1.getChildAt(5)).setText(answers[i][5]);
 
     }
 

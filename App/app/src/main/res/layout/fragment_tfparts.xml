@@ -83,26 +83,6 @@
             </RadioGroup>
 
         </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left">
-
-            <com.gc.materialdesign.views.ButtonRectangle
-                android:text="NEXT"
-                android:onClick="onNextClick"
-                android:layout_width="wrap_content"
-                android:id="@+id/nextbackquest"
-                android:layout_marginRight="50px"
-                android:background="@color/colorAccent"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:paddingTop="50dp"
-                android:layout_marginTop="50px"
-                android:layout_gravity="right"
-                android:layout_height="50dp" />
-        </LinearLayout>
 
     </LinearLayout>
 

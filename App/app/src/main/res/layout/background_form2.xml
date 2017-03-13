@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/callingActivityTxt"
+        android:text="@string/callingActMsg"
+        android:padding="20dp" /-->
+
+    <!--fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment"
+        android:name="app.example.icas.integratedconcussionassessmentsystem.symptomEvalFrag"
+        tools:layout="@layout/symptom_eval"
+        android:layout_above="@+id/relativeLayout" /-->
+
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttons"
+        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/next">
+
+    </FrameLayout>
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:text="NEXT"
+        android:onClick="onNextClick"
+        android:layout_width="100dp"
+        android:id="@+id/next"
+        android:layout_height="50dp"
+        android:layout_marginRight="50px"
+        android:background="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="right"
+        android:layout_marginBottom="10px" />
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:text="BACK"
+        android:onClick="onPrevClick"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="100dp"
+        android:id="@+id/prev"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50px"
+        android:background="@color/colorAccent"
+        android:layout_gravity="left"
+        android:layout_marginBottom="10px" />
+
+</RelativeLayout>

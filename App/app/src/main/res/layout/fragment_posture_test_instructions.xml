@@ -12,25 +12,7 @@
     tools:context="app.example.icas.integratedconcussionassessmentsystem.Posture_test2"
     android:gravity="center">
 
-    <TextView
-        android:text="X"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/X" />
 
-    <TextView
-        android:text="Y"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Y"
-        android:layout_below="@+id/X" />
-
-    <TextView
-        android:text="Z"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Z"
-        android:layout_below="@+id/Y" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -54,7 +36,7 @@
             android:textSize="24sp"
             android:visibility="visible" />
 
-        <com.wang.avi.AVLoadingIndicatorView
+       <!-- <com.wang.avi.AVLoadingIndicatorView
             android:layout_height="wrap_content"
             android:id="@+id/avi"
             app:indicatorName="BallPulseIndicator"
@@ -64,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_centerVertical="true"
             android:scaleX="2"
-            android:scaleY="2" />
+            android:scaleY="2" />-->
     </LinearLayout>
 
     <LinearLayout

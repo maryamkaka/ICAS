@@ -42,8 +42,7 @@ public class background_form extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         typingpart typingpart = new typingpart();
-        typingpart.parentActivity = this;
-    }
+  }
 
 
     @Override
@@ -82,22 +81,23 @@ public class background_form extends AppCompatActivity {
             //Returning the current tabs
             //TO BE CLEANED UP
             if (position < 9 && position >= 0) {
-                return typingpart.newInstance(position,false);
-            }else if(position>=9 && position < 15) {
+               // return typingpart.newInstance(position,false);
+            }else if(position>=9 && position < 17) {
                // tfparts.parentActivity = this;
-                return tfparts.newInstance(position - 9, false);
-            }else if(position==15){
-                return tfparts.newInstance(position-9,true);
+                //return tfparts.newInstance(position - 9, false);
+            //}else if(position==15){
+              //  return tfparts.newInstance(position-9,true);
             }else{
                 return null;
             }
+            return null;
 
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 16;
+            return 17;
         }
 
         @Override
