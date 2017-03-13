@@ -10,12 +10,7 @@ import com.gc.materialdesign.views.ButtonRectangle;
 
 import app.example.icas.integratedconcussionassessmentsystem.Homescreen;
 import app.example.icas.integratedconcussionassessmentsystem.R;
-import app.example.icas.integratedconcussionassessmentsystem.cogAssessmentFrag;
 import app.example.icas.integratedconcussionassessmentsystem.dbHelper;
-import app.example.icas.integratedconcussionassessmentsystem.digitsFrag;
-import app.example.icas.integratedconcussionassessmentsystem.memoryFrag;
-import app.example.icas.integratedconcussionassessmentsystem.monthsFrag;
-import app.example.icas.integratedconcussionassessmentsystem.symptomEvalFrag;
 
 /**
  * SCAT 3 Test, Fragment Manager
@@ -25,12 +20,15 @@ import app.example.icas.integratedconcussionassessmentsystem.symptomEvalFrag;
 public class background_form2 extends FragmentActivity{
     private tfparts tfparts = new tfparts();
     private typingpart typingpart = new typingpart();
+    private datetimequestions datetimeQuestions = new datetimequestions();
+    private nbinputquestions nbinputquestions = new nbinputquestions();
+
 
     private boolean updateStatus;
     private int currentFrag = 0;
     private int fragcount = 0;
     private final FragmentManager fragmentManager = getFragmentManager();
-    private ButtonRectangle next,prev;
+    private ButtonRectangle next,prev,done;
     private dbHelper db;
     private long TestID;
 
@@ -53,6 +51,7 @@ public class background_form2 extends FragmentActivity{
 
         next = (ButtonRectangle) findViewById(R.id.next);
         prev = (ButtonRectangle) findViewById(R.id.prev);
+        done = (ButtonRectangle) findViewById(R.id.done);
 
         //Select first Test to initialize
         typingpart.parentActivity = this;
@@ -66,17 +65,27 @@ public class background_form2 extends FragmentActivity{
         if(currentFrag == 0){
             updateStatus = typingpart.nextQuestion(view);
         } else if (currentFrag == 1) {
+            updateStatus = datetimeQuestions.nextQuestion(view);
+        } else if (currentFrag == 2) {
+            updateStatus = nbinputquestions.nextQuestion(view);
+        } else if (currentFrag == 3) {
             updateStatus = tfparts.nextQuestion(view);
         }
 
         //set next test fragment
-        if(!updateStatus){
+        if(!updateStatus) {
             currentFrag += 1;
-            if(currentFrag == 1) {
+            if (currentFrag == 1) {
                 //db.addSymptomEvalScores(TestID, symptomEvalFrag.getScores());
+                datetimeQuestions.parentActivity = this;
+                fragmentManager.beginTransaction().replace(R.id.fragment, datetimeQuestions).commit();
+            }else if (currentFrag == 2) {
+                nbinputquestions.parentActivity = this;
+                fragmentManager.beginTransaction().replace(R.id.fragment, nbinputquestions).commit();
+            }else if(currentFrag == 3) {
                 tfparts.parentActivity = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, tfparts).commit();
-            } else {
+            }else {
                 //db.addConcentrationScore(TestID, digitsFrag.getScore(), monthsFrag.getScore());
                 //use intents to go to new activity
                 Intent getHomeScreen = new Intent(view.getContext(), Homescreen.class);
@@ -88,11 +97,29 @@ public class background_form2 extends FragmentActivity{
 
     public void onPrevClick(View view){
         if(currentFrag == 0){
-            //updateStatus = symptomEvalFrag.prevQuestion();
-        }}
+            updateStatus = typingpart.prevQuestion(view);
+        }else if (currentFrag ==1){
+            updateStatus = tfparts.prevQuestion(view);
+        }
+
+        if(!updateStatus){
+            currentFrag -= 1;
+            if(currentFrag == 0) {
+                //db.addSymptomEvalScores(TestID, symptomEvalFrag.getScores());
+                typingpart.parentActivity = this;
+                fragmentManager.beginTransaction().replace(R.id.fragment, typingpart).commit();
+            }
+        }
+
+    }
 
     public void disableBack(View view){
         prev.setVisibility(View.INVISIBLE);
+    }
+
+    public void setdone(View view){
+        next.setVisibility(View.INVISIBLE);
+        done.setVisibility(View.VISIBLE);
     }
 
     public void enableBtns(View view){

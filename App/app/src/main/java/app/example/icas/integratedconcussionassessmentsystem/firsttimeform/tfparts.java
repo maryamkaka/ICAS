@@ -48,7 +48,6 @@ public class tfparts extends Fragment {
     };
 
     private TextView question;
-    private ButtonRectangle toapp,next;
 
 
     @Override
@@ -112,6 +111,20 @@ public class tfparts extends Fragment {
         i++;
         System.out.println(i);
         if(i==questionlist.length){
+            return false;
+        }else if(i==questionlist.length-1){
+            parentActivity.setdone(view);
+        }
+
+        question.setText(questionlist[i]);
+        updateScreen(view);
+        return true;
+    }
+
+    public boolean prevQuestion(View view){
+        //Decrement questions index
+        i--;
+        if(i < 0){
             return false;
         }
         question.setText(questionlist[i]);
