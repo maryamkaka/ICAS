@@ -34,7 +34,9 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     //Button next,skip;
     private int[] word_instructions;
     private int[] image_instructions;
-    private TextView X,Y,Z,Statusmsg;
+    private boolean done = false;
+    public Posture_test2 ParentActivity;
+    private TextView Statusmsg;
     ImageView   instr_pic,instr_word;
     private int image_index =0,click_index =1;
     private Sensor mySensor;
@@ -44,6 +46,7 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     private long testID;
     public String path = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/ICAS/Posture";
     private Boolean collectData = Boolean.FALSE;
+    private CountDownTimer countDownTimer;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -52,9 +55,10 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        //initialize database
+        //Initialize database
         db = new dbHelper(getContext());
 
+        //Create array of visual instructions and their corresponding text
         word_instructions = new int[]{R.drawable.postinstr1,R.drawable.postinstr2,R.drawable.postinstr3};
         image_instructions = new int[]{R.drawable.postinstpic1,R.drawable.postinstpic2,R.drawable.postinstpic3};
 
@@ -75,13 +79,6 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         //Register sensor listener
         SM.registerListener(this,mySensor,SensorManager.SENSOR_DELAY_NORMAL);
 
-        //Assign TextView
-        X = (TextView) getView().findViewById(R.id.X);
-        X.setVisibility(GONE);
-        Y = (TextView) getView().findViewById(R.id.Y);
-        Y.setVisibility(GONE);
-        Z = (TextView) getView().findViewById(R.id.Z);
-        Z.setVisibility(GONE);
         Statusmsg = (TextView) getView().findViewById(R.id.statusmsg);
         Statusmsg.setVisibility(GONE);
 
@@ -90,6 +87,9 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         //avi.setVisibility(GONE);
         //avi.setIndicator(indicator);
 
+        //Create timer object
+        countDownTimer = new postureTest_instructions.MyCountDownTimer(10000, 1000);
+
         //Create File directory
         File dir = new File(path);
         dir.mkdirs();
@@ -97,46 +97,35 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
 
     public void setTestID(long id){ testID = id; }
 
-    public boolean nextQuestion(){
+    public boolean nextQuestion() {
+        System.out.println("Click_index is now" + click_index);
+
         //If BESS test is complete return to main page
-        if (click_index == 6){
+        if (click_index == 6) {
+            System.out.println("about to return");
             return false;
         }
-
-        //show data collection
-        if(!(click_index%2==0)) {
+        if(click_index%2!=0){
+            //Disable next and previous buttons during collection
+            //ParentActivity.disableBtns(getView());
+            //Hide instructions
             instr_pic.setVisibility(GONE);
             instr_word.setVisibility(GONE);
-            X.setVisibility(View.GONE);
-            Y.setVisibility(View.GONE);
-            Z.setVisibility(View.GONE);
 
             Statusmsg.setVisibility(View.VISIBLE);
-           // avi.setVisibility(View.VISIBLE);
-           // startAnim();
+            // avi.setVisibility(View.VISIBLE);
+            // startAnim();
 
             click_index++;
             collectData = Boolean.TRUE;
-
-            //timer stuff
-            new CountDownTimer(30000, 1000){
-                public void onTick(long reminaingTime){
-
-                }
-
-                public void onFinish(){
-                    nextQuestion();
-                }
-            }.start();
-
-        //show instruction screen
         }else{
+            //Enable next and previous buttons
+           // ParentActivity.enableBtns(getView());
+            //Show instructions for next stance
             instr_pic.setVisibility(View.VISIBLE);
             instr_word.setVisibility(View.VISIBLE);
-           // avi.setVisibility(GONE);
-            X.setVisibility(GONE);
-            Y.setVisibility(GONE);
-            Z.setVisibility(GONE);
+            // avi.setVisibility(GONE);
+
             Statusmsg.setVisibility(View.GONE);
             instr_pic.setImageResource(image_instructions[image_index]);
             instr_word.setImageResource(word_instructions[image_index]);
@@ -145,6 +134,11 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
             collectData = Boolean.FALSE;
         }
 
+        //Update screen depending on if its a data collection phase (click_index is even) or instruction phase (click_index is odd)
+        //updateScreen();
+
+
+
         return true;
     }
 
@@ -152,23 +146,59 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
             return false;
 
     }
+
+    public class MyCountDownTimer extends CountDownTimer{
+        public MyCountDownTimer (long startTime, long interval){
+            super(startTime,interval);
+        }
+
+        @Override
+        public void onTick(long l) {
+
+        }
+
+        @Override
+        public void onFinish() {
+            nextQuestion();
+        }
+
+    }
     private void updateScreen(){
+        if(click_index%2==0){
+            //Disable next and previous buttons during collection
+            ParentActivity.disableBtns(getView());
+            //Hide instructions
+            instr_pic.setVisibility(GONE);
+            instr_word.setVisibility(GONE);
+
+            Statusmsg.setVisibility(View.VISIBLE);
+            // avi.setVisibility(View.VISIBLE);
+            // startAnim();
+
+            click_index++;
+            collectData = Boolean.TRUE;
+        }else{
+            //Enable next and previous buttons
+            ParentActivity.enableBtns(getView());
+            //Show instructions for next stance
+            instr_pic.setVisibility(View.VISIBLE);
+            instr_word.setVisibility(View.VISIBLE);
+            // avi.setVisibility(GONE);
+
+            Statusmsg.setVisibility(View.GONE);
+            instr_pic.setImageResource(image_instructions[image_index]);
+            instr_word.setImageResource(word_instructions[image_index]);
+            image_index++;
+            click_index++;
+            collectData = Boolean.FALSE;
+        }
     }
 
 
-    //void startAnim(){
-      //  avi.show();
-    //}
 
-   // void stopAnim(){
-       // avi.hide();
-    //}
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        X.setText("X: "+ sensorEvent.values[0]);
-        Y.setText("Y: "+ sensorEvent.values[1]);
-        Z.setText("Z: "+ sensorEvent.values[2]);
 
         if(collectData){
             long timestamp = (new Date()).getTime() + (sensorEvent.timestamp - System.nanoTime()) / 1000000L; // Convert to UNIX Time
@@ -181,4 +211,13 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
     public void onAccuracyChanged(Sensor sensor, int i) {
         //Not in use
     }
+
+
+    //void startAnim(){
+    //  avi.show();
+    //}
+
+    // void stopAnim(){
+    // avi.hide();
+    //}
 }

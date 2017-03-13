@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +29,7 @@ import static android.R.attr.parentActivityName;
 public class typingpart extends Fragment {
 
     private String key;
-    private int i;
+    private int i=0;
     private boolean end;
     public background_form parentActivity;
 
@@ -54,34 +54,12 @@ public class typingpart extends Fragment {
     private String answer;
     private ButtonRectangle nextbackquest;
 
-    public static typingpart newInstance(int i,boolean end){
-        Bundle bundle = new Bundle ();
-        bundle.putBoolean("ending",end);
-        bundle.putInt("index",i);
-
-        typingpart fragment = new typingpart();
-        fragment.setArguments(bundle);
-
-        return fragment;
-
-    }
-
-    private void readBundle (Bundle bundle){
-        if(bundle != null){
-            i = bundle.getInt("index");
-            end = bundle.getBoolean("ending");
-        }
-    }
-
-
-
-    @Override
+     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_typingpart, container, false);
 
         //Pass Background activity context to fragment to call changeposition method later
-        parentActivity = ((background_form)getActivity());
         return rootView;
     }
 
@@ -90,16 +68,6 @@ public class typingpart extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         question = (TextView) view.findViewById(R.id.questionintro);
         NameInput = (EditText) view.findViewById(R.id.Nameinput);
-        nextbackquest = (ButtonRectangle) view.findViewById(R.id.nextbackquest);
-        nextbackquest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                parentActivity.changeposition(i);
-            }
-        });
-
-
-        readBundle(getArguments());
 
         System.out.println(questionlist[i]);
         question.setText(questionlist[i]);
@@ -113,6 +81,19 @@ public class typingpart extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
     }
+
+    public boolean nextQuestion(View view) {
+        System.out.println("Next");
+        //Increment question index
+        i++;
+        System.out.println(i);
+        if(i>=questionlist.length){
+            return false;
+        }
+        question.setText(questionlist[i]);
+        return true;
+    }
+
 
     public String getAnswer(){
         return answer;

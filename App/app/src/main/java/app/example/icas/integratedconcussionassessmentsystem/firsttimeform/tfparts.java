@@ -3,7 +3,7 @@ package app.example.icas.integratedconcussionassessmentsystem.firsttimeform;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,24 +50,6 @@ public class tfparts extends Fragment {
     private TextView question;
     private ButtonRectangle toapp,next;
 
-    public static tfparts newInstance(int i,boolean end_of_form){
-        Bundle bundle = new Bundle ();
-        bundle.putBoolean("ending",end_of_form);
-        bundle.putInt("index",i);
-
-        tfparts fragment = new tfparts();
-        fragment.setArguments(bundle);
-
-        return fragment;
-
-    }
-
-    private void readBundle (Bundle bundle){
-        if(bundle != null){
-            i = bundle.getInt("index");
-            end_of_form = bundle.getBoolean("ending");
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,8 +57,6 @@ public class tfparts extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_tfparts, container, false);
 
         //Pass Background activity context to fragment to call changeposition method later
-        parentActivity = ((background_form)getActivity());
-
         return rootView;
     }
 
@@ -87,36 +67,11 @@ public class tfparts extends Fragment {
         question = (TextView) view.findViewById(R.id.questionintro);
         options = (RadioGroup) view.findViewById(R.id.options);
 
-        toapp = (ButtonRectangle) view.findViewById(R.id.toapp);
-        toapp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),Homescreen.class);
-                startActivity(intent);
-            }
-        });
-
-        readBundle(getArguments());
-        if (end_of_form) {
-            //next.setVisibility(View.GONE);
-            toapp.setVisibility(View.VISIBLE);
-        }
 
         question.setText(questionlist[i]);
         System.out.println(i);
 
-        next = (ButtonRectangle) view.findViewById(R.id.nextbackquest);
-        next.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                if (i+9<14) {
-                    parentActivity.changeposition(i + 9);
-                }else{
-                    parentActivity.changeposition(14);
-                    //next.setVisibility(View.GONE);
-                }
-            }
-        });
+
 
         options.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
             @Override
@@ -149,6 +104,19 @@ public class tfparts extends Fragment {
             ((RadioButton) options.getChildAt(2)).setVisibility(view.GONE);
 
         }
+    }
+
+    public boolean nextQuestion(View view) {
+        System.out.println("Next");
+        //Increment question index
+        i++;
+        System.out.println(i);
+        if(i==questionlist.length){
+            return false;
+        }
+        question.setText(questionlist[i]);
+        updateScreen(view);
+        return true;
     }
 
     public String getAnswer(){

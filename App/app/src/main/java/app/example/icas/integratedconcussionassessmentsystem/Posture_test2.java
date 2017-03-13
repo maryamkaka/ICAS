@@ -50,9 +50,11 @@ public class Posture_test2 extends FragmentActivity{
         //set next test fragment
         if(!updateStatus){
             currentFrag += 1;
+            System.out.println("Current Frag is" + currentFrag);
             if(currentFrag == 1) {
                 long id = Pre_posture_questions.getTestID();
 
+                postureTest_instructions.ParentActivity = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, postureTest_instructions).commit();
 
                 postureTest_instructions.setTestID(id);
@@ -69,8 +71,14 @@ public class Posture_test2 extends FragmentActivity{
         updateStatus = Pre_posture_questions.prevQuestion(view);
     }
 
+    public void disablePrev(View view){
+        prev.setVisibility(View.GONE);
+    }
+
     public void disableBtns(View view){
         prev.setVisibility(View.GONE);
+        next.setVisibility(View.GONE);
+
     }
 
     public void enableBtns(View view){

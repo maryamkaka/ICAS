@@ -74,7 +74,7 @@ public class Pre_posture_questions extends Fragment {
 
         //First Posture Question
         Q1.setVisibility(view.VISIBLE);
-        ParentActivity.disableBtns(view);
+        ParentActivity.disablePrev(view);
         updateScreen(view);
     }
 
@@ -139,7 +139,7 @@ public class Pre_posture_questions extends Fragment {
 
         //If first question, hide previous button
         if(i == 0){
-            ParentActivity.disableBtns(view);
+            ParentActivity.disablePrev(view);
 
         }
 
