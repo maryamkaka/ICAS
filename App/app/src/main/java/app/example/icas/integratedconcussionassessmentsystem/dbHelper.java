@@ -47,7 +47,7 @@ public class dbHelper extends SQLiteOpenHelper{
                 "Team text, " +
                 "DateInjury datetime, " +
                 "PastConcussionDate datetime, " +
-                "RecoveryLength text, " +
+                "RecoveryLength integer, " +
                 "Age integer, " +
                 "Education integer, " +
                 "PastConcussionCount integer, " +
@@ -138,7 +138,7 @@ public class dbHelper extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-    public long addUser(String[] typedData, String[] datetime, String[] dfData){
+    public long addUser(String[] typedData, String[] datetime, int[] nbData, String[] tfData){
         long TestID;
         ContentValues values = new ContentValues();
 
@@ -149,17 +149,18 @@ public class dbHelper extends SQLiteOpenHelper{
         values.put("DateInjury", datetime[0]);
         values.put("PastConcussionDate", datetime[1]);
         values.put("RecoveryLength", datetime[2]);
-        values.put("Age", datetime[3]);
-        values.put("Education", datetime[4]);
-        values.put("PastConcussionCount", datetime[5]);
 
-        values.put("DominantHand", dfData[0]);
-        values.put("Hospitalized", dfData[1]);
-        values.put("Headeaches", dfData[2]);
-        values.put("Disability", dfData[3]);
-        values.put("Psych", dfData[4]);
-        values.put("PsychFam", dfData[5]);
-        values.put("Medication", dfData[6]);
+        values.put("Age", nbData[0]);
+        values.put("Education", nbData[1]);
+        values.put("PastConcussionCount", nbData[2]);
+
+        values.put("DominantHand", tfData[0]);
+        values.put("Hospitalized", tfData[1]);
+        values.put("Headeaches", tfData[2]);
+        values.put("Disability", tfData[3]);
+        values.put("Psych", tfData[4]);
+        values.put("PsychFam", tfData[5]);
+        values.put("Medication", tfData[6]);
 
         TestID = db.insert("Users", null, values);
 
