@@ -93,6 +93,16 @@ public class background_form2 extends FragmentActivity{
         }else if (currentFrag ==1){
             updateStatus = tfparts.prevQuestion(view);
         }
+
+        if(!updateStatus){
+            currentFrag -= 1;
+            if(currentFrag == 0) {
+                //db.addSymptomEvalScores(TestID, symptomEvalFrag.getScores());
+                typingpart.parentActivity = this;
+                fragmentManager.beginTransaction().replace(R.id.fragment, typingpart).commit();
+            }
+        }
+
     }
 
     public void disableBack(View view){

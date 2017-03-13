@@ -69,7 +69,10 @@ public class typingpart extends Fragment {
         question = (TextView) view.findViewById(R.id.questionintro);
         NameInput = (EditText) view.findViewById(R.id.Nameinput);
 
-        parentActivity.disableBack(view);
+        //If Test just started
+        if (i == 0){
+            parentActivity.disableBack(view);
+        }
         question.setText(questionlist[i]);
         answer = NameInput.getText().toString();
         System.out.println(answer);
@@ -82,16 +85,25 @@ public class typingpart extends Fragment {
     }
 
     public boolean nextQuestion(View view) {
-        System.out.println("Next");
         parentActivity.enableBtns(view);
         //Increment question index
         i++;
         System.out.println(i);
         if(i>=questionlist.length){
+            //Set it so that coming back to the fragment doesn't throw an exception
+            i -= 1;
+            System.out.println("i is currently" + i);
             return false;
         }
         question.setText(questionlist[i]);
         return true;
+    }
+
+    public void updatescreen(){
+        //If Date and Time question, make edit text invisible, scroll wheel visible
+        if (i==2){
+
+        }
     }
 
     public boolean prevQuestion(View view){
