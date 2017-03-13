@@ -42,8 +42,7 @@ public class background_form extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         typingpart typingpart = new typingpart();
-        typingpart.parentActivity = this;
-    }
+  }
 
 
     @Override

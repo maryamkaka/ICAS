@@ -55,7 +55,9 @@ public class background_form2 extends FragmentActivity{
         prev = (ButtonRectangle) findViewById(R.id.prev);
 
         //Select first Test to initialize
+        typingpart.parentActivity = this;
         fragmentManager.beginTransaction().add(R.id.fragment, typingpart).commit();
+
 
     }
 
@@ -72,6 +74,7 @@ public class background_form2 extends FragmentActivity{
             currentFrag += 1;
             if(currentFrag == 1) {
                 //db.addSymptomEvalScores(TestID, symptomEvalFrag.getScores());
+                tfparts.parentActivity = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, tfparts).commit();
             } else {
                 //db.addConcentrationScore(TestID, digitsFrag.getScore(), monthsFrag.getScore());
@@ -88,8 +91,7 @@ public class background_form2 extends FragmentActivity{
             //updateStatus = symptomEvalFrag.prevQuestion();
         }}
 
-    public void disableBtns(View view){
-        next.setVisibility(View.INVISIBLE);
+    public void disableBack(View view){
         prev.setVisibility(View.INVISIBLE);
     }
 

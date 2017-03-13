@@ -24,7 +24,7 @@ public class tfparts extends Fragment {
     private int i;
     RadioGroup options;
     private boolean end_of_form;
-    public background_form parentActivity;
+    public background_form2 parentActivity;
     private RadioButton r;
 
     /**

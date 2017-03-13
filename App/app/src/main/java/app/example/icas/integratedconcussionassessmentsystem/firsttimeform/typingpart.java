@@ -31,7 +31,7 @@ public class typingpart extends Fragment {
     private String key;
     private int i=0;
     private boolean end;
-    public background_form parentActivity;
+    public background_form2 parentActivity;
 
     /**
      * The fragment argument representing the section number for this
@@ -69,9 +69,8 @@ public class typingpart extends Fragment {
         question = (TextView) view.findViewById(R.id.questionintro);
         NameInput = (EditText) view.findViewById(R.id.Nameinput);
 
-        System.out.println(questionlist[i]);
+        parentActivity.disableBack(view);
         question.setText(questionlist[i]);
-        System.out.println(i);
         answer = NameInput.getText().toString();
         System.out.println(answer);
     }
