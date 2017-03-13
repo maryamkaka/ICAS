@@ -30,7 +30,7 @@ public class background_form2 extends FragmentActivity{
     private int currentFrag = 0;
     private int fragcount = 0;
     private final FragmentManager fragmentManager = getFragmentManager();
-    private ButtonRectangle next,prev;
+    private ButtonRectangle next,prev,done;
     private dbHelper db;
     private long TestID;
 
@@ -53,6 +53,7 @@ public class background_form2 extends FragmentActivity{
 
         next = (ButtonRectangle) findViewById(R.id.next);
         prev = (ButtonRectangle) findViewById(R.id.prev);
+        done = (ButtonRectangle) findViewById(R.id.done);
 
         //Select first Test to initialize
         typingpart.parentActivity = this;
@@ -88,11 +89,19 @@ public class background_form2 extends FragmentActivity{
 
     public void onPrevClick(View view){
         if(currentFrag == 0){
-            //updateStatus = symptomEvalFrag.prevQuestion();
-        }}
+            updateStatus = typingpart.prevQuestion(view);
+        }else if (currentFrag ==1){
+            updateStatus = tfparts.prevQuestion(view);
+        }
+    }
 
     public void disableBack(View view){
         prev.setVisibility(View.INVISIBLE);
+    }
+
+    public void setdone(View view){
+        next.setVisibility(View.INVISIBLE);
+        done.setVisibility(View.VISIBLE);
     }
 
     public void enableBtns(View view){

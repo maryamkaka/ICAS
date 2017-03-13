@@ -83,6 +83,7 @@ public class typingpart extends Fragment {
 
     public boolean nextQuestion(View view) {
         System.out.println("Next");
+        parentActivity.enableBtns(view);
         //Increment question index
         i++;
         System.out.println(i);
@@ -93,6 +94,17 @@ public class typingpart extends Fragment {
         return true;
     }
 
+    public boolean prevQuestion(View view){
+        //Decrement questions index
+        i--;
+        if(i < 0){
+            return false;
+        }else if(i==0){
+            parentActivity.disableBack(view);
+        }
+        question.setText(questionlist[i]);
+        return true;
+    }
 
     public String getAnswer(){
         return answer;
