@@ -60,6 +60,7 @@ public class dbHelper extends SQLiteOpenHelper{
                 "Medication boolean " +
                 ");"
         );
+        db.execSQL("INSERT INTO Users (Name) VALUES ('');");
         db.execSQL("CREATE TABLE Posturography(" +
                 "TestID integer PRIMARY KEY AUTOINCREMENT, " +
                 "UserID integer, " +
