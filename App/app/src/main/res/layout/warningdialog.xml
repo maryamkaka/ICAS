@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:paddingBottom="10dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="24dp"
+        android:paddingTop="24dp"
+        android:text="Warning!"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:paddingRight="20dp"
+        android:text="Deleting the database will remove all previous test history and previous information. Please ensure the physician is aware of this deletion."
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/deletebutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:gravity="right|center_vertical|center_horizontal"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Delete"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp" />
+
+
+</LinearLayout>
