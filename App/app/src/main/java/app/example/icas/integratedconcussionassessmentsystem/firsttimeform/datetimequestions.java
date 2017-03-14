@@ -34,14 +34,14 @@ public class datetimequestions extends Fragment {
     private final String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "June", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"};
     private String[] answer = new String[2];
     private ButtonRectangle nextbackquest;
-    private Calendar currentDate = Calendar.getInstance(), userDate = Calendar.getInstance();
+    private Calendar currentDate = Calendar.getInstance();
 
      @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_datetimequestions, container, false);
 
-        //Pass Background activity context to fragment to call changeposition method later
+        //Pass Background activity context to fragment to call change position method later
         return rootView;
     }
 
@@ -60,14 +60,13 @@ public class datetimequestions extends Fragment {
         date.setMinValue(1);
         date.setMaxValue(31);
         year.setMinValue(currentDate.get(Calendar.YEAR) - 30);
-        year.setMaxValue(currentDate.get(Calendar.YEAR) + 30);
+        year.setMaxValue(currentDate.get(Calendar.YEAR));
         month.setMaxValue(0);
         month.setMaxValue(months.length - 1);
         month.setDisplayedValues(months);
         month.setWrapSelectorWheel(true);
         date.setWrapSelectorWheel(true);
         year.setWrapSelectorWheel(false);
-
 
         System.out.println(answer);
     }

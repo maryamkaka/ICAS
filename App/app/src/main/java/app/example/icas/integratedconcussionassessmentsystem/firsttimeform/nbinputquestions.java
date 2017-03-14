@@ -98,10 +98,18 @@ public class nbinputquestions extends Fragment {
     public void Updatepicker(){
         if(i==0){
             units.setText("days");
-        }else if(i==1 | i ==2){
+        }else if(i==1){
             units.setText("years");
+            days.setMinValue(10);
+            days.setMaxValue(100);
+        } else if(i ==2){
+            units.setText("years");
+            days.setMinValue(0);
+            days.setMaxValue(30);
         } else if (i == 3) {
             units.setText("concussions");
+            days.setMinValue(0);
+            days.setMaxValue(20);
         }
     }
     public int[] getAnswer(){
