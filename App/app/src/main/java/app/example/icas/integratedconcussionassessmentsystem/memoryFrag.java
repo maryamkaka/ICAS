@@ -20,17 +20,17 @@ import java.util.logging.LogRecord;
  */
 
 public class memoryFrag extends Fragment {
-    private TextView question;
+    private TextView question,instruction;
     public Scat3 parentActivity;
     private EditText wordOne, wordTwo, wordThree, wordFour, wordFive;
     private LinearLayout textInput;
     private int trial = 1;
     private boolean displayWords = true;
     private final String[][] wordList = {
-            {"elbow", "apple", "carpet", "saddle", "bubble"},
-            {"candle", "paper", "sugar", "sandwich", "wagon"},
-            {"baby", "monkey", "perfume", "sunset", "iron"},
-            {"finger", "penny", "blanket", "lemon", "insect"}
+            {"Elbow", "Apple", "Carpet", "Saddle", "Bubble"},
+            {"Candle", "Paper", "Sugar", "Sandwich", "Wagon"},
+            {"Baby", "Monkey", "Perfume", "Sunset", "Iron"},
+            {"Finger", "Penny", "Blanket", "Lemon", "Insect"}
     };
     private int currentList = new Random().nextInt(wordList.length);
     private int i=0;
@@ -51,8 +51,11 @@ public class memoryFrag extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         question = (TextView) getView().findViewById(R.id.question);
+        instruction = (TextView) getView().findViewById(R.id.instruction);
+        instruction.setVisibility(View.INVISIBLE);
         question.setText("Trial #" + trial + " \n You will be shown five words. Try to remember as many as you can");
 
+        parentActivity.disableBack(view);
         wordOne = (EditText) getView().findViewById(R.id.word1);
         wordTwo = (EditText) getView().findViewById(R.id.word2);
         wordThree = (EditText) getView().findViewById(R.id.word3);
@@ -67,7 +70,8 @@ public class memoryFrag extends Fragment {
     }
 
     private void displayWords(){
-
+        instruction.setVisibility(View.INVISIBLE);
+        question.setVisibility(View.VISIBLE);
         textInput.setVisibility(View.INVISIBLE);
         question.setText(wordList[currentList][0]);
         parentActivity.disableBtns(getView());
@@ -107,6 +111,8 @@ public class memoryFrag extends Fragment {
 
             trial++;
             i=0;
+            instruction.setVisibility(View.INVISIBLE);
+            question.setVisibility(View.VISIBLE);
             question.setText("Trial #" + trial + "\n" + "You will be shown the same list of words." +
                     " Repeat as many back as possible even if you have listed them before");
             textInput.setVisibility(View.INVISIBLE);
@@ -129,13 +135,16 @@ public class memoryFrag extends Fragment {
 
         @Override
         public void onFinish() {
-            question.setText("Enter the words you remember below");
+            question.setVisibility(View.INVISIBLE);
+            instruction.setVisibility(View.VISIBLE);
+            instruction.setText("Enter the words you remember below");
             textInput.setVisibility(View.VISIBLE);
             parentActivity.enableBtns(getView());
 
         }
 
     }
+
 
     public int[] getScores(){ return scores; }
 }

@@ -18,7 +18,7 @@ import java.util.Random;
 
 public class digitsFrag extends Fragment {
     private CountDownTimer countDownTimer;
-    private TextView question;
+    private TextView question, instruction;
     private EditText numInput;
     public Scat3 parentActivity1;
     private boolean timerHasStarted = false;
@@ -44,8 +44,12 @@ public class digitsFrag extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         question = (TextView) getView().findViewById(R.id.question);
+        instruction = (TextView) getView().findViewById(R.id.instruction);
+        instruction.setVisibility(View.INVISIBLE);
+
         question.setText("Trial #" + (trial+1) + " \n You will be shown a string of numbers. " +
                 "When completed input the numbers in reverse order");
+        parentActivity1.disableBack(view);
 
         numInput = (EditText) getView().findViewById(R.id.number);
         numInput.setVisibility(View.INVISIBLE);
@@ -59,6 +63,8 @@ public class digitsFrag extends Fragment {
     }
 
     private void displayNumbers(){
+        instruction.setVisibility(View.INVISIBLE);
+        question.setVisibility(View.VISIBLE);
         numInput.setVisibility(View.INVISIBLE);
         question.setText(""+numberList[currentList][trial][0]);
         startTime = (numberList[currentList][trial].length+1)*1000;
@@ -114,7 +120,8 @@ public class digitsFrag extends Fragment {
                 trial++;
                 score++;
             }
-
+            instruction.setVisibility(View.INVISIBLE);
+            question.setVisibility(View.VISIBLE);
             question.setText("Trial #" + (trial+1) + "\n You will be shown a string of numbers. " +
                     "When completed input the numbers in reverse order");
             numInput.setVisibility(View.INVISIBLE);
@@ -137,7 +144,9 @@ public class digitsFrag extends Fragment {
 
         @Override
         public void onFinish() {
-            question.setText("Enter the digits in reverse order");
+            question.setVisibility(View.INVISIBLE);
+            instruction.setVisibility(View.VISIBLE);
+            instruction.setText("Enter the digits in reverse order");
             numInput.setVisibility(View.VISIBLE);
             parentActivity1.enableBtns(getView());
 

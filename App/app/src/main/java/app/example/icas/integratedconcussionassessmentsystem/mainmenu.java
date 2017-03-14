@@ -43,7 +43,7 @@ public class mainmenu extends Fragment {
         eyegaze.setVisibility(View.VISIBLE);
 
         TextView welcomeTxt = (TextView) view.findViewById(R.id.welcomeTxt);
-        welcomeTxt.setText("Hello " + db.getUser());
+        welcomeTxt.setText("Hello, " + db.getUser());
 
         //Makes Images Interactive to access each test
         scat3.setOnClickListener(new View.OnClickListener() {

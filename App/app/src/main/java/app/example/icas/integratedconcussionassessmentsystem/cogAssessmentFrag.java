@@ -31,6 +31,7 @@ public class cogAssessmentFrag extends Fragment {
     private NumberPicker day, date, month, year, hr, min, AMPM;
     private LinearLayout dateLayout, time;
     private int score = 0 ;
+    private int posn_index = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -89,15 +90,17 @@ public class cogAssessmentFrag extends Fragment {
     }
 
     public boolean nextQuestion(View view) {
-        if(goNext){
+        posn_index++;
+        if(posn_index == 1){
             //set up time question
             questionTxt.setText("What is the time?");
             dateLayout.setVisibility(View.INVISIBLE);
             time.setVisibility(View.VISIBLE);
-            goNext = false;
             return true;
+        }else if (posn_index >=2){
+            calculateScore();
+            return false;
         }
-        calculateScore();
         return false;
     }
 
@@ -136,4 +139,18 @@ public class cogAssessmentFrag extends Fragment {
 
     public int getScore(){ return score; }
     public Calendar getUserDate(){ return userDate; }
+
+    public boolean prevQuestion(){
+        posn_index--;
+        //Decrement questions index
+        if(posn_index < 0){
+            posn_index++;
+            return false;
+        } else if(posn_index==0){
+            time.setVisibility(View.INVISIBLE);
+            questionTxt.setText("What is the date today?");
+            dateLayout.setVisibility(View.VISIBLE);
+        }
+        return true;
+    }
 }

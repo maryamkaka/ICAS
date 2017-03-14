@@ -84,6 +84,7 @@ public class Scat3 extends FragmentActivity{
 
         //Select first Test to initialize
         if(currentFrag == 0 ){
+            symptomEvalFrag.parentActivity = this;
             fragmentManager.beginTransaction().add(R.id.fragment, symptomEvalFrag).commit();
         } else if (currentFrag == 1) {
             fragmentManager.beginTransaction().add(R.id.fragment, cogAssessmentFrag).commit();
@@ -160,11 +161,27 @@ public class Scat3 extends FragmentActivity{
 
     public void onPrevClick(View view){
         if(currentFrag == 0){
-            updateStatus = symptomEvalFrag.prevQuestion();
-        }}
+            updateStatus = symptomEvalFrag.prevQuestion(view);
+        }else if(currentFrag == 1){
+            updateStatus = cogAssessmentFrag.prevQuestion();
+        }
+
+        if(!updateStatus){
+            currentFrag -= 1;
+            fragcount -=1;
+            if(currentFrag == 0) {
+                //db.addSymptomEvalScores(TestID, symptomEvalFrag.getScores());
+                fragmentManager.beginTransaction().replace(R.id.fragment, symptomEvalFrag).commit();
+            }
+        }
+    }
 
     public void disableBtns(View view){
         next.setVisibility(View.INVISIBLE);
+        prev.setVisibility(View.INVISIBLE);
+    }
+
+    public void disableBack(View view){
         prev.setVisibility(View.INVISIBLE);
     }
 
