@@ -2,6 +2,7 @@ package app.example.icas.integratedconcussionassessmentsystem.firsttimeform;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -65,18 +66,20 @@ public class tfparts extends Fragment {
         question = (TextView) view.findViewById(R.id.questionintro);
         options = (RadioGroup) view.findViewById(R.id.options);
 
-
         question.setText(questionlist[i]);
         System.out.println(i);
-
-
 
         options.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(RadioGroup options, int selectedId){
                 selectedId = options.getCheckedRadioButtonId();
-                r = (RadioButton) getView().findViewById(selectedId);
-                answer[i] = r.getText().toString();
+
+                if(selectedId != -1) {
+                    r = (RadioButton) getView().findViewById(selectedId);
+                    answer[i] = r.getText().toString();
+                } else {
+                    answer[i] = "";
+                }
             }
         });
 
@@ -118,9 +121,7 @@ public class tfparts extends Fragment {
         question.setText(questionlist[i]);
 
         //clear selection
-        ((RadioButton) options.getChildAt(0)).setChecked(false);
-        ((RadioButton) options.getChildAt(1)).setChecked(false);
-        ((RadioButton) options.getChildAt(2)).setChecked(false);
+        options.clearCheck();
 
         updateScreen(view);
         return true;
