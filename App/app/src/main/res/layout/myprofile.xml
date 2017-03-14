@@ -42,51 +42,55 @@
                         android:layout_weight="1">
 
                         <TextView
-                            android:text="Name:"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/name"
                             android:layout_weight="1"
-                            android:textSize="14sp"
-                            android:padding="10dp" />
+                            android:padding="10dp"
+                            android:text="Name:"
+                            android:textSize="14sp" />
 
                         <EditText
+                            android:id="@+id/name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:editable="false"
+                            android:ems="10"
+                            android:enabled="false"
                             android:inputType="textPersonName"
                             android:text="Name"
-                            android:ems="10"
-                            android:id="@+id/namein"
-                            android:layout_weight="1"
-                            android:background="@color/thumbColor"
-                            android:textSize="14sp"
-                            android:layout_marginRight="10dp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
+
                     <LinearLayout
-                        android:orientation="horizontal"
+                        android:id="@+id/hand"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="Dominant Hand"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/domhand"
                             android:layout_weight="1"
-                            android:textSize="14sp"
-                            android:padding="10dp" />
+                            android:padding="10dp"
+                            android:text="Dominant Hand"
+                            android:textSize="14sp" />
 
                         <EditText
+                            android:id="@+id/domHand"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:text="L/R"
-                            android:ems="10"
-                            android:id="@+id/domhandin"
+                            android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:background="@color/thumbColor"
-                            android:layout_marginRight="10dp"
+                            android:editable="false"
+                            android:ems="10"
+                            android:enabled="false"
+                            android:inputType="textPersonName"
+                            android:text="L/R"
                             android:textSize="14sp" />
                     </LinearLayout>
                     <LinearLayout
@@ -105,43 +109,48 @@
                             android:padding="10dp" />
 
                         <EditText
+                            android:id="@+id/edu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/thumbColor"
+                            android:editable="false"
+                            android:ems="10"
+                            android:enabled="false"
                             android:inputType="textPersonName"
                             android:text="####"
-                            android:ems="10"
-                            android:id="@+id/educatein"
-                            android:layout_weight="1"
-                            android:background="@color/thumbColor"
-                            android:textSize="14sp"
-                            android:layout_marginRight="10dp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
+
                     <LinearLayout
-                        android:orientation="horizontal"
+                        android:id="@+id/ageLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="Age:"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/age"
                             android:layout_weight="1"
-                            android:textSize="14sp"
-                            android:padding="10dp" />
+                            android:padding="10dp"
+                            android:text="Age:"
+                            android:textSize="14sp" />
 
                         <EditText
+                            android:id="@+id/age"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:text="Age"
-                            android:ems="10"
-                            android:id="@+id/agein"
+                            android:layout_marginRight="10dp"
                             android:layout_weight="0.91"
                             android:background="@color/thumbColor"
-                            android:textSize="14sp"
-                            android:layout_marginRight="10dp" />
+                            android:editable="false"
+                            android:ems="10"
+                            android:enabled="false"
+                            android:inputType="textPersonName"
+                            android:text="Age"
+                            android:textSize="14sp" />
                     </LinearLayout>
                     <LinearLayout
                         android:orientation="horizontal"
@@ -159,16 +168,18 @@
                             android:padding="10dp" />
 
                         <EditText
+                            android:id="@+id/gen"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:text="Male/Female"
-                            android:ems="10"
-                            android:id="@+id/genderin"
+                            android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:background="@color/thumbColor"
-                            android:textSize="14sp"
-                            android:layout_marginRight="10dp" />
+                            android:editable="false"
+                            android:ems="10"
+                            android:enabled="false"
+                            android:inputType="textPersonName"
+                            android:text="Male/Female"
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -210,16 +221,17 @@
                             android:padding="10dp" />
 
                         <EditText
+                            android:id="@+id/injuryDate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:text="##"
-                            android:ems="10"
-                            android:id="@+id/numconcin"
+                            android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:background="@color/thumbColor"
-                            android:textSize="14sp"
-                            android:layout_marginRight="10dp" />
+                            android:ems="10"
+                            android:enabled="false"
+                            android:inputType="textPersonName"
+                            android:text="##"
+                            android:textSize="14sp" />
                     </LinearLayout>
                     <LinearLayout
                         android:orientation="horizontal"
@@ -238,16 +250,17 @@
 
 
                         <EditText
+                            android:id="@+id/nPastConcuss"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:text="DD - MM - YYYY"
-                            android:ems="10"
-                            android:id="@+id/recentconcin"
+                            android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:background="@color/thumbColor"
-                            android:textSize="14sp"
-                            android:layout_marginRight="10dp" />
+                            android:ems="10"
+                            android:enabled="false"
+                            android:inputType="textPersonName"
+                            android:text="DD - MM - YYYY"
+                            android:textSize="14sp" />
                     </LinearLayout>
                     <LinearLayout
                         android:orientation="horizontal"
@@ -265,16 +278,17 @@
                             android:padding="10dp" />
 
                         <EditText
+                            android:id="@+id/pastConcussDate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:text="DD - MM - YYYY"
-                            android:ems="10"
-                            android:id="@+id/dateinjuryin"
+                            android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:background="@color/thumbColor"
-                            android:textSize="14sp"
-                            android:layout_marginRight="10dp" />
+                            android:ems="10"
+                            android:enabled="false"
+                            android:inputType="textPersonName"
+                            android:text="DD - MM - YYYY"
+                            android:textSize="14sp" />
                     </LinearLayout>
                     <LinearLayout
                         android:orientation="horizontal"
@@ -293,14 +307,15 @@
                             android:padding="10dp" />
 
                         <EditText
+                            android:id="@+id/hosp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:text="Y/N"
-                            android:ems="10"
-                            android:id="@+id/hosptin"
                             android:layout_weight="1"
                             android:background="@color/thumbColor"
+                            android:ems="10"
+                            android:enabled="false"
+                            android:inputType="textPersonName"
+                            android:text="Y/N"
                             android:textSize="14sp" />
                     </LinearLayout>
                     <LinearLayout
@@ -320,14 +335,15 @@
                             android:padding="10dp" />
 
                         <EditText
+                            android:id="@+id/head"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:text="Y/N"
-                            android:ems="10"
-                            android:id="@+id/headin"
                             android:layout_weight="1"
                             android:background="@color/thumbColor"
+                            android:ems="10"
+                            android:enabled="false"
+                            android:inputType="textPersonName"
+                            android:text="Y/N"
                             android:textSize="14sp" />
                     </LinearLayout>
                     <LinearLayout
@@ -346,16 +362,17 @@
                             android:padding="10dp" />
 
                         <EditText
+                            android:id="@+id/LD"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:text="Y/N"
-                            android:ems="10"
-                            android:id="@+id/LDin"
+                            android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:background="@color/thumbColor"
-                            android:textSize="14sp"
-                            android:layout_marginRight="10dp" />
+                            android:ems="10"
+                            android:enabled="false"
+                            android:inputType="textPersonName"
+                            android:text="Y/N"
+                            android:textSize="14sp" />
                     </LinearLayout>
                     <LinearLayout
                         android:orientation="horizontal"
@@ -373,16 +390,17 @@
                             android:padding="10dp" />
 
                         <EditText
+                            android:id="@+id/depress"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:text="Y/N"
-                            android:ems="10"
-                            android:id="@+id/depressionin"
+                            android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:background="@color/thumbColor"
-                            android:textSize="14sp"
-                            android:layout_marginRight="10dp" />
+                            android:ems="10"
+                            android:enabled="false"
+                            android:inputType="textPersonName"
+                            android:text="Y/N"
+                            android:textSize="14sp" />
                     </LinearLayout>
                     <LinearLayout
                         android:orientation="horizontal"
@@ -400,16 +418,17 @@
                             android:padding="10dp" />
 
                         <EditText
+                            android:id="@+id/famHist"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:text="Y/N"
-                            android:ems="10"
-                            android:id="@+id/famhistin"
+                            android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:background="@color/thumbColor"
-                            android:textSize="14sp"
-                            android:layout_marginRight="10dp" />
+                            android:ems="10"
+                            android:enabled="false"
+                            android:inputType="textPersonName"
+                            android:text="Y/N"
+                            android:textSize="14sp" />
                     </LinearLayout>
                     <LinearLayout
                         android:orientation="horizontal"
@@ -427,16 +446,17 @@
                             android:padding="10dp" />
 
                         <EditText
+                            android:id="@+id/med"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:text="Y(+specify)/N"
-                            android:ems="10"
-                            android:id="@+id/medsin"
+                            android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:background="@color/thumbColor"
-                            android:textSize="14sp"
-                            android:layout_marginRight="10dp" />
+                            android:ems="10"
+                            android:enabled="false"
+                            android:inputType="textPersonName"
+                            android:text="Y(+specify)/N"
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
 
