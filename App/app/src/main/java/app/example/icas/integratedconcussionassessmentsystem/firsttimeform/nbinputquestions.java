@@ -31,7 +31,7 @@ public class nbinputquestions extends Fragment {
             "Years of education completed?\n",
             "How many concussions do you think you have had in the past?"};
     private TextView question;
-    private String answer;
+    private int[] answer = new int[4];
     private ButtonRectangle nextbackquest;
 
      @Override
@@ -60,6 +60,7 @@ public class nbinputquestions extends Fragment {
 
     public boolean nextQuestion(View view) {
         parentActivity.enableBtns(view);
+
         //Increment question index
         i++;
         System.out.println(i);
@@ -85,7 +86,7 @@ public class nbinputquestions extends Fragment {
         return true;
     }
 
-    public String getAnswer(){
+    public int[] getAnswer(){
         return answer;
     }
 

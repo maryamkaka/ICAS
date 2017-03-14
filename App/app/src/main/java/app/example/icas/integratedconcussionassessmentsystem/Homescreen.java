@@ -73,7 +73,6 @@ public class Homescreen extends AppCompatActivity
 
 
         //create widgets
-        final TextView welcomeTxt = (TextView) findViewById(R.id.welcomeTxt);
     }
 
     private void setupDrawerContent(NavigationView navigationview){

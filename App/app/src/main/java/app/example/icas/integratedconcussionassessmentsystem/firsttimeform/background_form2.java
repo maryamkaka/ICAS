@@ -8,6 +8,8 @@ import android.view.View;
 
 import com.gc.materialdesign.views.ButtonRectangle;
 
+import java.util.ArrayList;
+
 import app.example.icas.integratedconcussionassessmentsystem.Homescreen;
 import app.example.icas.integratedconcussionassessmentsystem.R;
 import app.example.icas.integratedconcussionassessmentsystem.dbHelper;
@@ -23,14 +25,14 @@ public class background_form2 extends FragmentActivity{
     private datetimequestions datetimeQuestions = new datetimequestions();
     private nbinputquestions nbinputquestions = new nbinputquestions();
 
-
     private boolean updateStatus;
     private int currentFrag = 0;
-    private int fragcount = 0;
+    private int i = 0;
     private final FragmentManager fragmentManager = getFragmentManager();
     private ButtonRectangle next,prev,done;
     private dbHelper db;
-    private long TestID;
+    private String[] typingPartAnswers, tfAnswers, dateTimeAns;
+    private int[] nbinputAnswers;
 
     //Array containing test selection from dialog box
     private int[] testselection;
@@ -45,9 +47,8 @@ public class background_form2 extends FragmentActivity{
         decorView.setSystemUiVisibility(uiOptions);
         setContentView(R.layout.background_form2);
 
-        //Initialize database
+        //Initialize databasec
         db = new dbHelper(this);
-        //TestID = db.addSCAT3Test();
 
         next = (ButtonRectangle) findViewById(R.id.next);
         prev = (ButtonRectangle) findViewById(R.id.prev);
@@ -76,16 +77,21 @@ public class background_form2 extends FragmentActivity{
         if(!updateStatus) {
             currentFrag += 1;
             if (currentFrag == 1) {
-                //db.addSymptomEvalScores(TestID, symptomEvalFrag.getScores());
+                typingPartAnswers = typingpart.getAnswer();
                 datetimeQuestions.parentActivity = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, datetimeQuestions).commit();
             }else if (currentFrag == 2) {
+                dateTimeAns = datetimeQuestions.getAnswer();
                 nbinputquestions.parentActivity = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, nbinputquestions).commit();
             }else if(currentFrag == 3) {
+                nbinputAnswers = nbinputquestions.getAnswer();
                 tfparts.parentActivity = this;
                 fragmentManager.beginTransaction().replace(R.id.fragment, tfparts).commit();
             }else {
+                tfAnswers = tfparts.getAnswer();
+                db.addUser(typingPartAnswers, dateTimeAns, nbinputAnswers, tfAnswers);
+
                 //db.addConcentrationScore(TestID, digitsFrag.getScore(), monthsFrag.getScore());
                 //use intents to go to new activity
                 Intent getHomeScreen = new Intent(view.getContext(), Homescreen.class);
@@ -110,7 +116,7 @@ public class background_form2 extends FragmentActivity{
                 fragmentManager.beginTransaction().replace(R.id.fragment, typingpart).commit();
             }
         }
-
+        i--;
     }
 
     public void disableBack(View view){

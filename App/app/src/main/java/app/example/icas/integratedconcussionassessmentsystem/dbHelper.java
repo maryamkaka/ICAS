@@ -43,14 +43,14 @@ public class dbHelper extends SQLiteOpenHelper{
         db.execSQL("CREATE TABLE Users(" +
                 "UserID integer PRIMARY KEY AUTOINCREMENT, " +
                 "Name text, " +
+                "Gender text, " +
                 "Team text, " +
                 "DateInjury datetime, " +
+                "PastConcussionDate datetime, " +
+                "RecoveryLength integer, " +
                 "Age integer, " +
                 "Education integer, " +
-                "PastConcussions integer, " +
-                "RecentConcussion datetime, " +
-                "RecoveryLength text, " +
-                "Gender text, " +
+                "PastConcussionCount integer, " +
                 "DominantHand text, " +
                 "Hospitalized boolean, " +
                 "Headeaches boolean, " +
@@ -118,10 +118,7 @@ public class dbHelper extends SQLiteOpenHelper{
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        db.execSQL("DROP TABLE IF EXISTS Users");
-        db.execSQL("DROP TABLE IF EXISTS Posturography");
-        db.execSQL("DROP TABLE IF EXISTS AccelData");
-
+        deleteDatabase();
         onCreate(db);
     }
 
@@ -138,24 +135,29 @@ public class dbHelper extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-    public long addUser(String[] data){
+    public long addUser(String[] typedData, String[] datetime, int[] nbData, String[] tfData){
         long TestID;
         ContentValues values = new ContentValues();
 
-        values.put("Team", data[0]);
-        values.put("DateInjury", data[1]);
-        values.put("Age", data[2]);
-        values.put("Education", data[3]);
-        values.put("PastConcussions", data[4]);
-        values.put("RecoveryLength", data[5]);
-        values.put("Gender", data[6]);
-        values.put("DominantHand", data[7]);
-        values.put("Hospitalized", data[8]);
-        values.put("Headeaches", data[9]);
-        values.put("Disability", data[10]);
-        values.put("Psych", data[11]);
-        values.put("PsychFam", data[12]);
-        values.put("Medication", data[13]);
+        values.put("Name", typedData[0]);
+        values.put("Gender", typedData[1]);
+        values.put("Team", typedData[2]);
+
+        values.put("DateInjury", datetime[0]);
+        values.put("PastConcussionDate", datetime[1]);
+
+        values.put("RecoveryLength", nbData[0]);
+        values.put("Age", nbData[1]);
+        values.put("Education", nbData[2]);
+        values.put("PastConcussionCount", nbData[3]);
+
+        values.put("DominantHand", tfData[0]);
+        values.put("Hospitalized", tfData[1]);
+        values.put("Headeaches", tfData[2]);
+        values.put("Disability", tfData[3]);
+        values.put("Psych", tfData[4]);
+        values.put("PsychFam", tfData[5]);
+        values.put("Medication", tfData[6]);
 
         TestID = db.insert("Users", null, values);
 
@@ -267,18 +269,15 @@ public class dbHelper extends SQLiteOpenHelper{
         int idCol  = cursor.getColumnIndex("Name");
     }
 
-    public ArrayList<String> getUsers(){
-        ArrayList<String> users = new ArrayList<>();
+    public String getUser(){
+        String user = "";
         Cursor cursor = db.rawQuery("SELECT name from Users", null);
 
         cursor.moveToFirst();
-
-        while(cursor.isAfterLast() == false){
-            users.add(cursor.getString(cursor.getColumnIndex("Name")));
-            cursor.moveToNext();
-        }
+        user += cursor.getString(cursor.getColumnIndex("Name"));
         cursor.close();
-        return users;
+
+        return user;
     }
 
     public ArrayList<String[]> getSCAT3Test(){

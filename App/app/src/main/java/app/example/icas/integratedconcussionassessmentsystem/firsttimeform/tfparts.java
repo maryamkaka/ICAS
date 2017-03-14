@@ -20,7 +20,6 @@ import app.example.icas.integratedconcussionassessmentsystem.R;
 
 public class tfparts extends Fragment {
 
-    private String key, answer;
     private int i;
     RadioGroup options;
     private boolean end_of_form;
@@ -46,7 +45,7 @@ public class tfparts extends Fragment {
             "Left",
             "Neither"},{"Yes","No"}
     };
-
+    private String[] answer = new String[7];
     private TextView question;
 
 
@@ -77,7 +76,7 @@ public class tfparts extends Fragment {
             public void onCheckedChanged(RadioGroup options, int selectedId){
                 selectedId = options.getCheckedRadioButtonId();
                 r = (RadioButton) getView().findViewById(selectedId);
-                answer = r.getText().toString();
+                answer[i] = r.getText().toString();
             }
         });
 
@@ -132,7 +131,7 @@ public class tfparts extends Fragment {
         return true;
     }
 
-    public String getAnswer(){
+    public String[] getAnswer(){
         return answer;
     }
 }
