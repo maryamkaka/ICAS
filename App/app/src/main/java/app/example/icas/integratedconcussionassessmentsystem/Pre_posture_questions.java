@@ -63,10 +63,13 @@ public class Pre_posture_questions extends Fragment {
                 }else{
                     other.setVisibility(View.GONE);
                 }
-                selectedId = Q1.getCheckedRadioButtonId();
-                r = (RadioButton) getView().findViewById(selectedId);
-                response[i] = r.getText().toString();
 
+                if(selectedId != -1) {
+                    r = (RadioButton) getView().findViewById(selectedId);
+                    response[i] = r.getText().toString();
+                } else {
+                    response[i] = "";
+                }
 
             }
         });
@@ -89,12 +92,7 @@ public class Pre_posture_questions extends Fragment {
         }
 
         //Clear button selection
-        ((RadioButton) Q1.getChildAt(0)).setChecked(false);
-        ((RadioButton) Q1.getChildAt(1)).setChecked(false);
-        ((RadioButton) Q1.getChildAt(2)).setChecked(false);
-        ((RadioButton) Q1.getChildAt(3)).setChecked(false);
-        ((RadioButton) Q1.getChildAt(4)).setChecked(false);
-        ((RadioButton) Q1.getChildAt(5)).setChecked(false);
+        Q1.clearCheck();
 
         updateScreen(view);
         return true;
