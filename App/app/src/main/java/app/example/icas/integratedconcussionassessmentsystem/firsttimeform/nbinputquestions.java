@@ -70,7 +70,7 @@ public class nbinputquestions extends Fragment {
     public boolean nextQuestion(View view) {
         parentActivity.enableBtns(view);
         //Increment question index
-        i++;
+        answer[i++] = days.getValue();
         Updatepicker();
         System.out.println(i);
         if(i>=questionlist.length){

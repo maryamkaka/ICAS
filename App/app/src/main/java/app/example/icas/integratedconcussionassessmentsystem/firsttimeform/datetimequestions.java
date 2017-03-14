@@ -95,13 +95,9 @@ public class datetimequestions extends Fragment {
     }
 
     private void setAnswer(){
-        userDate.set(Calendar.YEAR, year.getValue());
-        userDate.set(Calendar.MONTH, month.getValue());
-        userDate.set(Calendar.DATE, date.getValue());
-
-        answer[i] = Integer.toString(userDate.get(Calendar.YEAR)) + "-" +
-                Integer.toString(userDate.get(Calendar.MONTH)+1) + "-" +
-                Integer.toString(userDate.get(Calendar.DATE));
+        answer[i] = Integer.toString(year.getValue()) + "-" +
+                Integer.toString(month.getValue()+1) + "-" +
+                Integer.toString(date.getValue());
     }
 
 
