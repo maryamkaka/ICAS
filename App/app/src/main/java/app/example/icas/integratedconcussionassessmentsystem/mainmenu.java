@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -17,7 +18,7 @@ import android.widget.Toast;
 
 public class mainmenu extends Fragment {
     private ImageButton scat3, posture, eyeGaze, EEG;
-
+    private dbHelper db;
 
     @Nullable
     @Override
@@ -29,6 +30,7 @@ public class mainmenu extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Home");
+        db = new dbHelper(getContext());
 
         //Gridview for ICAS Test options
         final ImageButton scat3 = (ImageButton) view.findViewById(R.id.scat3);
@@ -39,6 +41,9 @@ public class mainmenu extends Fragment {
         posture.setVisibility(View.VISIBLE);
         eeg.setVisibility(View.VISIBLE);
         eyegaze.setVisibility(View.VISIBLE);
+
+        TextView welcomeTxt = (TextView) view.findViewById(R.id.welcomeTxt);
+        welcomeTxt.setText("Hello " + db.getUser());
 
         //Makes Images Interactive to access each test
         scat3.setOnClickListener(new View.OnClickListener() {

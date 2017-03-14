@@ -269,18 +269,15 @@ public class dbHelper extends SQLiteOpenHelper{
         int idCol  = cursor.getColumnIndex("Name");
     }
 
-    public ArrayList<String> getUsers(){
-        ArrayList<String> users = new ArrayList<>();
+    public String getUser(){
+        String user = "";
         Cursor cursor = db.rawQuery("SELECT name from Users", null);
 
         cursor.moveToFirst();
-
-        while(cursor.isAfterLast() == false){
-            users.add(cursor.getString(cursor.getColumnIndex("Name")));
-            cursor.moveToNext();
-        }
+        user += cursor.getString(cursor.getColumnIndex("Name"));
         cursor.close();
-        return users;
+
+        return user;
     }
 
     public ArrayList<String[]> getSCAT3Test(){
