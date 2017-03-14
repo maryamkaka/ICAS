@@ -30,7 +30,7 @@ public class datetimequestions extends Fragment {
             "When was the most recent concussion (prior to your current one)?"};
     private TextView question;
     private NumberPicker month, date, year;
-    private String answer;
+    private String[] answer = new String[2];
     private ButtonRectangle nextbackquest;
 
      @Override
@@ -90,7 +90,7 @@ public class datetimequestions extends Fragment {
         return true;
     }
 
-    public String getAnswer(){
+    public String[] getAnswer(){
         return answer;
     }
 

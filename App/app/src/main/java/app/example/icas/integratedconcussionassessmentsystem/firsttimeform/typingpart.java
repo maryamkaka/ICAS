@@ -44,8 +44,8 @@ public class typingpart extends Fragment {
             "Sport/team/school:"};
     private TextView question;
     private EditText NameInput;
-    private String answer;
     private ButtonRectangle nextbackquest;
+    private String[] answers = new String[3];
 
      @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -67,8 +67,6 @@ public class typingpart extends Fragment {
             parentActivity.disableBack(view);
         }
         question.setText(questionlist[i]);
-        answer = NameInput.getText().toString();
-        System.out.println(answer);
     }
 
     @Override
@@ -79,6 +77,8 @@ public class typingpart extends Fragment {
 
     public boolean nextQuestion(View view) {
         parentActivity.enableBtns(view);
+        answers[i] =  NameInput.getText().toString();
+
         //Increment question index
         i++;
         System.out.println(i);
@@ -104,8 +104,8 @@ public class typingpart extends Fragment {
         return true;
     }
 
-    public String getAnswer(){
-        return answer;
+    public String[] getAnswer(){
+        return answers;
     }
 
 }

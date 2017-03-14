@@ -118,10 +118,7 @@ public class dbHelper extends SQLiteOpenHelper{
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        db.execSQL("DROP TABLE IF EXISTS Users");
-        db.execSQL("DROP TABLE IF EXISTS Posturography");
-        db.execSQL("DROP TABLE IF EXISTS AccelData");
-
+        deleteDatabase();
         onCreate(db);
     }
 
@@ -148,11 +145,11 @@ public class dbHelper extends SQLiteOpenHelper{
 
         values.put("DateInjury", datetime[0]);
         values.put("PastConcussionDate", datetime[1]);
-        values.put("RecoveryLength", datetime[2]);
 
-        values.put("Age", nbData[0]);
-        values.put("Education", nbData[1]);
-        values.put("PastConcussionCount", nbData[2]);
+        values.put("RecoveryLength", nbData[0]);
+        values.put("Age", nbData[1]);
+        values.put("Education", nbData[2]);
+        values.put("PastConcussionCount", nbData[3]);
 
         values.put("DominantHand", tfData[0]);
         values.put("Hospitalized", tfData[1]);
