@@ -60,6 +60,7 @@ public class dbHelper extends SQLiteOpenHelper{
                 "Medication boolean " +
                 ");"
         );
+        db.execSQL("INSERT INTO Users (Name) VALUES ('');");
         db.execSQL("CREATE TABLE Posturography(" +
                 "TestID integer PRIMARY KEY AUTOINCREMENT, " +
                 "UserID integer, " +
@@ -159,7 +160,7 @@ public class dbHelper extends SQLiteOpenHelper{
         values.put("PsychFam", tfData[5]);
         values.put("Medication", tfData[6]);
 
-        TestID = db.insert("Users", null, values);
+        TestID = db.update("Users", values, "UserID=1",null);
 
         return TestID;
     }
@@ -282,12 +283,14 @@ public class dbHelper extends SQLiteOpenHelper{
 
     public ArrayList<String[]> getSCAT3Test(){
         ArrayList<String[]> SCAT3Tests = new ArrayList<>();
-        String[] data = new String[2];
+        String[] data;
         Cursor c = db.rawQuery("SELECT * FROM SCAT3", null);
 
         c.moveToFirst();
 
         while (c.isAfterLast() == false && c.getCount() > 0) {
+            data = new String[2];
+
             data[0] = c.getString(c.getColumnIndex("TestID"));
             data[1] = c.getString(c.getColumnIndex("Date"));
 
@@ -338,11 +341,13 @@ public class dbHelper extends SQLiteOpenHelper{
 
     public ArrayList<String[]> getPostureTests() {
         ArrayList<String[]> postureData = new ArrayList<>();
-        String[] testInfo = new String[4];
+        String[] testInfo;
         Cursor c = db.rawQuery("SELECT * FROM Posturography", null);
         c.moveToFirst();
 
         while (c.isAfterLast() == false && c.getCount() > 0) {
+            testInfo = new String[4];
+
             testInfo[0] = c.getString(c.getColumnIndex("Date"));
             testInfo[1] = c.getString(c.getColumnIndex("TestingSurface"));
             testInfo[2] = c.getString(c.getColumnIndex("Footwear"));

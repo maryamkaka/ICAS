@@ -108,7 +108,7 @@ public class tfparts extends Fragment {
         System.out.println("Next");
         //Increment question index
         i++;
-        System.out.println(i);
+
         if(i==questionlist.length){
             return false;
         }else if(i==questionlist.length-1){
@@ -116,6 +116,12 @@ public class tfparts extends Fragment {
         }
 
         question.setText(questionlist[i]);
+
+        //clear selection
+        ((RadioButton) options.getChildAt(0)).setChecked(false);
+        ((RadioButton) options.getChildAt(1)).setChecked(false);
+        ((RadioButton) options.getChildAt(2)).setChecked(false);
+
         updateScreen(view);
         return true;
     }

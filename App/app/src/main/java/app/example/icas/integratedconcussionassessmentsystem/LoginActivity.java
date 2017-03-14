@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.facebook.stetho.Stetho;
+
 import app.example.icas.integratedconcussionassessmentsystem.firsttimeform.background_form2;
 
 public class LoginActivity extends AppCompatActivity {
@@ -18,6 +20,16 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
+
+        /* Initialize Stetho for Chrome Debugging
+         * http://facebook.github.io/stetho/
+         */
+        /*Stetho.initialize(
+                Stetho.newInitializerBuilder(this)
+                        .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
+                        .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
+                        .build());*/
+        Stetho.initializeWithDefaults(this);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -39,7 +51,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     /***
-     * Checks that application runs first time and write flag at SharedPreferences
+     * Checks that application runs first time and write flag at Sha
+     * redPreferences
      * @return true if 1st time
      */
     private boolean isFirstTime()
