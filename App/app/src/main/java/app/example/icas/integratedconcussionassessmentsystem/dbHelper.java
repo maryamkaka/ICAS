@@ -159,7 +159,7 @@ public class dbHelper extends SQLiteOpenHelper{
         values.put("PsychFam", tfData[5]);
         values.put("Medication", tfData[6]);
 
-        TestID = db.insert("Users", null, values);
+        TestID = db.update("Users", values, "UserID=1",null);
 
         return TestID;
     }
