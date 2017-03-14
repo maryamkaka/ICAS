@@ -24,6 +24,7 @@ public class symptomEvalFrag extends Fragment{
     int[] scores = new int[questions.getMaxIndex()];
     private dbHelper db;
     ImageView questionHeader;
+    public Scat3 parentActivity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -39,6 +40,10 @@ public class symptomEvalFrag extends Fragment{
         answer = (SeekBar) getView().findViewById(R.id.answer);
         scoreTxt = (TextView) getView().findViewById(R.id.score);
         questionHeader = (ImageView) getView().findViewById(R.id.imageView4);
+
+        if(questions.getIndex()==0) {
+            parentActivity.disableBack(view);
+        }
 
         scoreTxt.setText("0");
         updateScreen();
@@ -63,9 +68,11 @@ public class symptomEvalFrag extends Fragment{
     }
 
     public boolean nextQuestion(View view){
+        parentActivity.enableBtns(view);
         questions.incrementIndex();
 
         if(questions.getIndex() >= questions.getMaxIndex()){
+            questions.decrementIndex();
             return false;
         }
 
@@ -73,11 +80,13 @@ public class symptomEvalFrag extends Fragment{
         return true;
     }
 
-    public boolean prevQuestion(){
+    public boolean prevQuestion(View view){
         questions.decrementIndex();
 
         if(questions.getIndex() < 0){
             return false;
+        } else if(questions.getIndex() == 0){
+            parentActivity.disableBack(view);
         }
 
         updateScreen();

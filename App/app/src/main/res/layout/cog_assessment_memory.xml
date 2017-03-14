@@ -5,13 +5,30 @@
     android:padding="20dp">
 
     <TextView
-        android:padding="10dp"
-        android:layout_width="match_parent"
+        android:id="@+id/instruction"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text= "@string/Question"
-        android:textSize="20pt"
-        android:textAlignment = "center"
-        android:id="@+id/question" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:text="TextView"
+        android:textSize="40sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="@string/Question"
+            android:textAlignment="center"
+            android:textSize="20pt" />
+    </LinearLayout>
 
 
     <LinearLayout

@@ -5,35 +5,54 @@
     android:padding="20dp">
 
     <TextView
-        android:padding="10dp"
-        android:layout_width="match_parent"
+        android:id="@+id/instruction"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text= "@string/Question"
-        android:textSize="20pt"
-        android:textAlignment = "center"
-        android:id="@+id/question" />
-
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:text="TextView"
+        android:textSize="40sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/Question"
+            android:textAlignment="center"
+            android:textSize="20pt" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/numInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="100dp"
         android:orientation="vertical"
-        android:id="@+id/numInput">
+        android:paddingBottom="50dp">
 
         <EditText
+            android:id="@+id/number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:ems="10"
+            android:imeOptions="actionDone"
             android:inputType="numberSigned"
             android:text=""
-            android:ems="10"
-            android:textSize="15pt"
-            android:id="@+id/number"
-            android:imeOptions="actionDone"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="15pt" />
     </LinearLayout>
 
 
