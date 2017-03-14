@@ -78,6 +78,12 @@ public class Posturography extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent getHomeScreen = new Intent(this, Homescreen.class);
+        startActivity(getHomeScreen);
+    }
+
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 

@@ -97,6 +97,12 @@ public class Scat3_landing extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent getHomeScreen = new Intent(this, Homescreen.class);
+        getHomeScreen.putExtra("callingAct", "Main Activity");
+        startActivity(getHomeScreen);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -152,11 +152,16 @@ public class Scat3 extends FragmentActivity{
             } else {
                 db.addConcentrationScore(TestID, digitsFrag.getScore(), monthsFrag.getScore());
                 //use intents to go to new activity
-                Intent getHomeScreen = new Intent(view.getContext(), Homescreen.class);
-                getHomeScreen.putExtra("callingAct", "Main Activity");
-                startActivity(getHomeScreen);
+                Intent getTableView = new Intent(view.getContext(), Scat3_landing.class);
+                startActivity(getTableView);
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent getTableView = new Intent(this, Scat3_landing.class);
+        startActivity(getTableView);
     }
 
     public void onPrevClick(View view){
