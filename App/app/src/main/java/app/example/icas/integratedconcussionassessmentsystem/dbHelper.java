@@ -120,7 +120,6 @@ public class dbHelper extends SQLiteOpenHelper{
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
         deleteDatabase();
-        onCreate(db);
     }
 
     public void deleteDatabase(){
@@ -279,6 +278,35 @@ public class dbHelper extends SQLiteOpenHelper{
         cursor.close();
 
         return user;
+    }
+    public ArrayList<String> getUserInfo(){
+        ArrayList<String> userInfo = new ArrayList<>();
+        Cursor c = db.rawQuery("SELECT * FROM Users", null);
+
+        c.moveToFirst();
+
+        while (c.isAfterLast() == false && c.getCount() > 0) {
+            userInfo.add(c.getString(c.getColumnIndex("Name")));
+            userInfo.add(c.getString(c.getColumnIndex("Gender")));
+            userInfo.add(c.getString(c.getColumnIndex("Team")));
+            userInfo.add(c.getString(c.getColumnIndex("DateInjury")));
+            userInfo.add(c.getString(c.getColumnIndex("PastConcussionDate")));
+            userInfo.add(c.getString(c.getColumnIndex("RecoveryLength")));
+            userInfo.add(c.getString(c.getColumnIndex("Age")));
+            userInfo.add(c.getString(c.getColumnIndex("Education")));
+            userInfo.add(c.getString(c.getColumnIndex("PastConcussionCount")));
+            userInfo.add(c.getString(c.getColumnIndex("DominantHand")));
+            userInfo.add(c.getString(c.getColumnIndex("Hospitalized")));
+            userInfo.add(c.getString(c.getColumnIndex("Headeaches")));
+            userInfo.add(c.getString(c.getColumnIndex("Disability")));
+            userInfo.add(c.getString(c.getColumnIndex("Psych")));
+            userInfo.add(c.getString(c.getColumnIndex("PsychFam")));
+            userInfo.add(c.getString(c.getColumnIndex("Medication")));
+
+            c.moveToNext();
+        }
+        c.close();
+        return userInfo;
     }
 
     public ArrayList<String[]> getSCAT3Test(){
