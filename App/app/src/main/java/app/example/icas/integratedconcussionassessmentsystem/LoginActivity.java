@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import app.example.icas.integratedconcussionassessmentsystem.firsttimeform.background_form;
 import app.example.icas.integratedconcussionassessmentsystem.firsttimeform.background_form2;
 
 public class LoginActivity extends AppCompatActivity {
@@ -25,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
             public void run() {
 
                 //User !isFirstTime() to debug start form
-                if (isFirstTime()) {
+                if (!isFirstTime()) {
                     Intent intent = new Intent(LoginActivity.this, background_form2.class);
                     startActivity(intent);
                     finish();
