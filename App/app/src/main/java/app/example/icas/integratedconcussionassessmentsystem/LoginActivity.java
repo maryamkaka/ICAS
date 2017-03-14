@@ -39,7 +39,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     /***
-     * Checks that application runs first time and write flag at SharedPreferences
+     * Checks that application runs first time and write flag at Sha
+     * redPreferences
      * @return true if 1st time
      */
     private boolean isFirstTime()

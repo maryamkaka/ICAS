@@ -69,7 +69,6 @@ public class datetimequestions extends Fragment {
         year.setWrapSelectorWheel(false);
 
 
-
         System.out.println(answer);
     }
 
@@ -82,6 +81,7 @@ public class datetimequestions extends Fragment {
     public boolean nextQuestion(View view) {
         parentActivity.enableBtns(view);
         //Increment question index
+        setAnswer();
         i++;
         System.out.println(i);
         if(i>=questionlist.length){
@@ -92,6 +92,16 @@ public class datetimequestions extends Fragment {
         }
         question.setText(questionlist[i]);
         return true;
+    }
+
+    private void setAnswer(){
+        userDate.set(Calendar.YEAR, year.getValue());
+        userDate.set(Calendar.MONTH, month.getValue());
+        userDate.set(Calendar.DATE, date.getValue());
+
+        answer[i] = Integer.toString(userDate.get(Calendar.YEAR)) + "-" +
+                Integer.toString(userDate.get(Calendar.MONTH)+1) + "-" +
+                Integer.toString(userDate.get(Calendar.DATE));
     }
 
 
