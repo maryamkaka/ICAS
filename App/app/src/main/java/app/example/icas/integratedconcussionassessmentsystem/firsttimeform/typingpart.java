@@ -82,6 +82,10 @@ public class typingpart extends Fragment {
         //Increment question index
         i++;
         System.out.println(i);
+
+        //Clear edit text window
+        NameInput.setText("");
+
         if(i>=questionlist.length){
             //Set it so that coming back to the fragment doesn't throw an exception
             i -= 1;

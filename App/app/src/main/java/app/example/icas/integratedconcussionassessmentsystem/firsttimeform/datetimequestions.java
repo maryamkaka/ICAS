@@ -1,6 +1,7 @@
 package app.example.icas.integratedconcussionassessmentsystem.firsttimeform;
 
 import android.app.Fragment;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -30,8 +31,10 @@ public class datetimequestions extends Fragment {
             "When was the most recent concussion (prior to your current one)?"};
     private TextView question;
     private NumberPicker month, date, year;
+    private final String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "June", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"};
     private String[] answer = new String[2];
     private ButtonRectangle nextbackquest;
+    private Calendar currentDate = Calendar.getInstance(), userDate = Calendar.getInstance();
 
      @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,6 +55,20 @@ public class datetimequestions extends Fragment {
         date = (NumberPicker) getView().findViewById(R.id.date);
         month = (NumberPicker) getView().findViewById(R.id.month);
         year = (NumberPicker) getView().findViewById(R.id.year);
+
+        //set up
+        date.setMinValue(1);
+        date.setMaxValue(31);
+        year.setMinValue(currentDate.get(Calendar.YEAR) - 30);
+        year.setMaxValue(currentDate.get(Calendar.YEAR) + 30);
+        month.setMaxValue(0);
+        month.setMaxValue(months.length - 1);
+        month.setDisplayedValues(months);
+        month.setWrapSelectorWheel(true);
+        date.setWrapSelectorWheel(true);
+        year.setWrapSelectorWheel(false);
+
+
 
         System.out.println(answer);
     }
