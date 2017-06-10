@@ -39,6 +39,9 @@ public class dbHelper extends SQLiteOpenHelper{
     }
 
     @Override
+    /** Initialization of database schema
+     *  Only executes first time db is created
+     */
     public void onCreate(SQLiteDatabase db){
         db.execSQL("CREATE TABLE Users(" +
                 "UserID integer PRIMARY KEY AUTOINCREMENT, " +
@@ -135,6 +138,14 @@ public class dbHelper extends SQLiteOpenHelper{
         onCreate(db);
     }
 
+    /**
+     * Adds first time form information to Users table
+     * @param typedData - String Array = {Name, Gender, Team}
+     * @param datetime - String Array = {Date of Injury, Date of last concussion}
+     * @param nbData - Int Array = [Recovery Length, Age, Education, Number of Prev. concussions]
+     * @param tfData
+     * @return
+     */
     public long addUser(String[] typedData, String[] datetime, int[] nbData, String[] tfData){
         long TestID;
         ContentValues values = new ContentValues();
@@ -164,10 +175,10 @@ public class dbHelper extends SQLiteOpenHelper{
         return TestID;
     }
 
-    /* addSCAT3Test
-    * Adds SCAT3 Test
-    * Output: TestID
-    * */
+    /** addSCAT3Test
+     * Adds SCAT3 Test
+     * @return: TestID
+     */
     public long addSCAT3Test(){
         long TestID;
         SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -183,6 +194,11 @@ public class dbHelper extends SQLiteOpenHelper{
         return TestID;
     }
 
+    /**
+     * Adds users symptom evalutation scores to SymptomEvaluation table
+     * @param TestID - Associated SCAT3 TestID
+     * @param scores
+     */
     public void addSymptomEvalScores(long TestID, int[] scores){
         ContentValues values = new ContentValues();
 
@@ -195,6 +211,12 @@ public class dbHelper extends SQLiteOpenHelper{
         db.insert("SymptomEvaluation", null, values);
     }
 
+    /**
+     * Adds users answers to orientation test to Orientation table
+     * @param TestID - Associated SCAT3 TestID
+     * @param score
+     * @param userDate
+     */
     public void addOrientationScore(long TestID, int score, Calendar userDate){
         ContentValues values = new ContentValues();
         SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm");
@@ -207,6 +229,11 @@ public class dbHelper extends SQLiteOpenHelper{
         db.insert("Orientation", null, values);
     }
 
+    /**
+     * Add score of Memory test to Memory Table
+     * @param TestID - Associated SCAT3 TestID
+     * @param scores
+     */
     public void addMemoryScore(long TestID, int[] scores){
         ContentValues values = new ContentValues();
 
@@ -219,6 +246,12 @@ public class dbHelper extends SQLiteOpenHelper{
         db.insert("Memory", null, values);
     }
 
+    /**
+     * Add socres for Concentration test to Concentration table
+     * @param TestID - Associated SCAT3 TestID
+     * @param digitsScore
+     * @param monthsScore
+     */
     public void addConcentrationScore(long TestID, int digitsScore, int monthsScore){
         ContentValues values = new ContentValues();
 
@@ -229,6 +262,14 @@ public class dbHelper extends SQLiteOpenHelper{
         db.insert("Concentration", null, values);
     }
 
+    /**
+     * Adds acceleorometer data to AccelData table
+     * @param timestamp
+     * @param testID - Associated Posturography TestID
+     * @param x
+     * @param y
+     * @param z
+     */
     public void addAccelData(long timestamp, long testID, float x, float y, float z){
         ContentValues values = new ContentValues();
 
@@ -241,11 +282,13 @@ public class dbHelper extends SQLiteOpenHelper{
         db.insert("AccelData", null, values);
     }
 
-    /* addPostureTest
-    * Adds PrePosture Test Information to Posturography table
-    * Input: Date, TestingSurface, Focotware, DominantFoot
-    * Output: TestID
-    * */
+    /**
+     * Adds PrePosture Test Information to Posturography table
+     * @param surface
+     * @param foot
+     * @param footware
+     * @return: Posturogrphy TestID
+     */
     public long addPostureTest(String surface, String foot, String footware){
         long TestID;
         SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -263,12 +306,9 @@ public class dbHelper extends SQLiteOpenHelper{
         return TestID;
     }
 
-    public void getData(String table, String id){
-        Cursor cursor = db.rawQuery("SELECT * FROM "+ table, null);
-
-        int idCol  = cursor.getColumnIndex("Name");
-    }
-
+    /**
+     * @return - User
+     */
     public String getUser(){
         String user = "";
         Cursor cursor = db.rawQuery("SELECT name from Users", null);
@@ -279,6 +319,11 @@ public class dbHelper extends SQLiteOpenHelper{
 
         return user;
     }
+
+    /**
+     * Gets users profile information
+     * @return - ArrayList of user profile information (in order of questions)
+     */
     public ArrayList<String> getUserInfo(){
         ArrayList<String> userInfo = new ArrayList<>();
         Cursor c = db.rawQuery("SELECT * FROM Users", null);
@@ -309,6 +354,10 @@ public class dbHelper extends SQLiteOpenHelper{
         return userInfo;
     }
 
+    /**
+     * Returns all SCAT3 Tests taken
+     * @return - ArrayList of SCAT3 tests taken
+     */
     public ArrayList<String[]> getSCAT3Test(){
         ArrayList<String[]> SCAT3Tests = new ArrayList<>();
         String[] data;
@@ -329,12 +378,14 @@ public class dbHelper extends SQLiteOpenHelper{
         return SCAT3Tests;
     }
 
+    /**
+     * Gets SCAT3 scores for given TestID
+     * @param testID - SCAT3 TestID
+     * @return - ArrayList of SCAT3Data
+     */
     public ArrayList<String[]> getSCAT3Data(int testID){
         ArrayList<String[]> SCAT3Data = new ArrayList<>();
-        String[] symptomEval = new String[22];
-        String[] orintationScore = new String[3];
-        String[] memory = new String[3];
-        String[] concentration = new String[2];
+        String[] symptomEval, orintationScore, memory, concentration;
 
         Cursor c = db.rawQuery("SELECT * FROM " +
                 "(SELECT * FROM SCAT3 LEFT JOIN Memory, Orientation, SymptomEvaluation, Concentration USING (TestID))" +
@@ -342,6 +393,11 @@ public class dbHelper extends SQLiteOpenHelper{
         c.moveToFirst();
 
         while(c.isAfterLast() == false && c.getCount() > 0){
+            symptomEval = new String[22];
+            orintationScore = new String[3];
+            memory = new String[3];
+            concentration = new String[2];
+
             for(int i = 0; i < 22; i++){
                 symptomEval[i] = c.getString(c.getColumnIndex("Q" + Integer.toString(i+1)));
             }
@@ -363,10 +419,15 @@ public class dbHelper extends SQLiteOpenHelper{
 
             c.moveToNext();
         }
+
         c.close();
         return SCAT3Data;
     }
 
+    /**
+     * Returns all Posturography Tests taken
+     * @return - ArrayList of all Posturogrphy Tests
+     */
     public ArrayList<String[]> getPostureTests() {
         ArrayList<String[]> postureData = new ArrayList<>();
         String[] testInfo;
@@ -389,6 +450,10 @@ public class dbHelper extends SQLiteOpenHelper{
         return postureData;
     }
 
+    /**
+     * Gets Posturography scores for given TestID
+     * @return - String array of test information
+     */
     private String[] getPostureTests(int testID){
         String[] testInfo = new String[4];
         Cursor c = db.rawQuery("SELECT * FROM Posturography WHERE TestID = " +
@@ -407,6 +472,10 @@ public class dbHelper extends SQLiteOpenHelper{
         return testInfo;
     }
 
+    /**
+     * Exports Accelorometer data for given test to .csv file
+     * @param testID - Posturography TestID
+     */
     public void exportAccelData(int testID){
         String[] data = new String[4];
         String[] testInfo = getPostureTests(testID);
@@ -457,6 +526,11 @@ public class dbHelper extends SQLiteOpenHelper{
                 });
     }
 
+    /**
+     * Returns accelarometer data for a given posturography test
+     * @param testID - Posturography TestID
+     * @return - Array of accel data
+     */
     public ArrayList<String[]> getAccelData(int testID){
         ArrayList<String[]> accelData = new ArrayList<>();
         String[] dataPoint = new String[4];
@@ -479,6 +553,11 @@ public class dbHelper extends SQLiteOpenHelper{
         return accelData;
     }
 
+    /**
+     * Formats String array to comma seperated string
+     * @param data - String array
+     * @return - String
+     */
     private String formatLine(String[] data){
         String line = "";
 
