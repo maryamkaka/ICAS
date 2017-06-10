@@ -24,11 +24,6 @@ public class LoginActivity extends AppCompatActivity {
         /* Initialize Stetho for Chrome Debugging
          * http://facebook.github.io/stetho/
          */
-        /*Stetho.initialize(
-                Stetho.newInitializerBuilder(this)
-                        .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
-                        .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
-                        .build());*/
         Stetho.initializeWithDefaults(this);
 
         new Handler().postDelayed(new Runnable() {
@@ -36,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
             public void run() {
 
                 //User !isFirstTime() to debug start form
-                if (!isFirstTime()) {
+                if (isFirstTime()) {
                     Intent intent = new Intent(LoginActivity.this, background_form2.class);
                     startActivity(intent);
                     finish();

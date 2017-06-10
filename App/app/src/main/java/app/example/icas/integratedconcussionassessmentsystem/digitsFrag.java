@@ -42,6 +42,9 @@ public class digitsFrag extends Fragment {
     }
 
     @Override
+    /**
+     * Initialization of digit test fragment
+     */
     public void onViewCreated(View view, Bundle savedInstanceState) {
         question = (TextView) getView().findViewById(R.id.question);
         instruction = (TextView) getView().findViewById(R.id.instruction);
@@ -58,10 +61,16 @@ public class digitsFrag extends Fragment {
 
     }
 
+    /**
+     * Randomly selects number list to use (sets currentList)
+     */
     private void setCurrentList(){
         currentList  = new Random().nextInt(numberList.length);
     }
 
+    /**
+     * Display numbers in sequence to the user
+     */
     private void displayNumbers(){
         instruction.setVisibility(View.INVISIBLE);
         question.setVisibility(View.VISIBLE);
@@ -75,8 +84,11 @@ public class digitsFrag extends Fragment {
         timerHasStarted = true;
     }
 
+    /**
+     * Validates user input to ensure correct format
+     * @return
+     */
     private boolean validateInput(){
-
         String num = numInput.getText().toString();
         int numLen = numberList[currentList][trial].length;
 
@@ -86,7 +98,6 @@ public class digitsFrag extends Fragment {
         }
 
         for(int j = 0; j < numLen; j++){
-//            System.out.println("User: " + num.charAt(i) + " Value: " + numberList[currentList][trial][numLen - 1 - i]);
             if( Character.getNumericValue(num.charAt(j)) != numberList[currentList][trial][numLen - 1 - j]){
                 return false;
             }
@@ -95,6 +106,11 @@ public class digitsFrag extends Fragment {
         return true;
     }
 
+    /**
+     * Handles loading of next question
+     * @param  view
+     * @return load successful flag - returns false if unable to load next question (i.e. on last question)
+     */
     public boolean nextQuestion(View view) {
         System.out.println("Next");
         if(displayNumbers){
@@ -131,6 +147,9 @@ public class digitsFrag extends Fragment {
         return true;
     }
 
+    /**
+     * Timer object used to ensure numbers were displayed once every second
+     */
     public class MyCountDownTimer extends CountDownTimer {
         public MyCountDownTimer (long startTime, long interval){
             super(startTime,interval);
@@ -139,7 +158,6 @@ public class digitsFrag extends Fragment {
         @Override
         public void onTick(long l) {
             question.setText(""+numberList[currentList][trial][i++]);
-
         }
 
         @Override
@@ -149,11 +167,13 @@ public class digitsFrag extends Fragment {
             instruction.setText("Enter the digits in reverse order");
             numInput.setVisibility(View.VISIBLE);
             parentActivity1.enableBtns(getView());
-
         }
-
     }
 
+    /**
+     * Get digit test score
+     * @return score
+     */
     public int getScore() {
         return trial + 1;
     }

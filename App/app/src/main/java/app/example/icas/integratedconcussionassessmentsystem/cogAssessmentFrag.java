@@ -18,6 +18,7 @@ import java.sql.Time;
 import static java.lang.Math.abs;
 
 /**
+ * Cognative Assessment Fragment Class
  * Created by mkaka on 2016-12-27.
  */
 
@@ -89,7 +90,11 @@ public class cogAssessmentFrag extends Fragment {
         date.setVisibility(View.VISIBLE);
     }
 
-    public boolean nextQuestion(View view) {
+    /**
+     * Handles loading of next question
+     * @return: load successful flag - returns false if unable to load next question (i.e. reached last question)
+     */
+    public boolean nextQuestion() {
         posn_index++;
         if(posn_index == 1){
             //set up time question
@@ -104,6 +109,27 @@ public class cogAssessmentFrag extends Fragment {
         return false;
     }
 
+    /**
+     * Handles loading of previous question
+     * @return load successful flag - returns false if unable to load next question (i.e. on first question )
+     */
+    public boolean prevQuestion(){
+        posn_index--;
+        //Decrement questions index
+        if(posn_index < 0){
+            posn_index++;
+            return false;
+        } else if(posn_index==0){
+            time.setVisibility(View.INVISIBLE);
+            questionTxt.setText("What is the date today?");
+            dateLayout.setVisibility(View.VISIBLE);
+        }
+        return true;
+    }
+
+    /**
+     * Calculates the users score for cognitive assessment test
+     */
     private void calculateScore(){
         //calculate date score
         if(currentDate.get(Calendar.MONTH) == month.getValue()){
@@ -137,20 +163,16 @@ public class cogAssessmentFrag extends Fragment {
 
     }
 
+    /**
+     * Get cognative assessment score
+     * @return Cognative Assessment Score
+     */
     public int getScore(){ return score; }
+
+    /**
+     * Get date input from user
+     * @return user date
+     */
     public Calendar getUserDate(){ return userDate; }
 
-    public boolean prevQuestion(){
-        posn_index--;
-        //Decrement questions index
-        if(posn_index < 0){
-            posn_index++;
-            return false;
-        } else if(posn_index==0){
-            time.setVisibility(View.INVISIBLE);
-            questionTxt.setText("What is the date today?");
-            dateLayout.setVisibility(View.VISIBLE);
-        }
-        return true;
-    }
 }
