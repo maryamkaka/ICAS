@@ -19,6 +19,7 @@ import static java.lang.Math.abs;
 
 /**
  * Cognative Assessment Fragment Class
+ * Handles display, control and storage of cognative assessment questions questions
  * Created by mkaka on 2016-12-27.
  */
 

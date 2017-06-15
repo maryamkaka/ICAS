@@ -23,6 +23,10 @@ public class Posture_test2 extends FragmentActivity{
     private int currentFrag = 0;
     private final FragmentManager fragmentManager = getFragmentManager();
 
+    /**
+     * Initialize
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -35,11 +39,14 @@ public class Posture_test2 extends FragmentActivity{
         fragmentManager.beginTransaction().add(R.id.fragment, Pre_posture_questions).commit();
     }
 
+    /**
+     * Handles next button
+     */
     public void onNextClick(View view){
+        // set proper fragment
         if(currentFrag == 0){
             updateStatus = Pre_posture_questions.nextQuestion(view);
         } else if (currentFrag == 1) {
-            //updateStatus = Pre_posture_questions.nextQuestion(view);
             prev.setVisibility(View.VISIBLE);
             updateStatus = postureTest_instructions.nextQuestion();
         } else if (currentFrag == 2){
@@ -47,7 +54,7 @@ public class Posture_test2 extends FragmentActivity{
             startActivity(intent);
         }
 
-        //set next test fragment
+        // set next test fragment
         if(!updateStatus){
             currentFrag += 1;
             System.out.println("Current Frag is" + currentFrag);
@@ -66,21 +73,32 @@ public class Posture_test2 extends FragmentActivity{
         }
     }
 
+    /**
+     * Handle prev button
+     * @param view
+     */
     public void onPrevClick(View view){
-
         updateStatus = Pre_posture_questions.prevQuestion(view);
     }
+
 
     public void disablePrev(View view){
         prev.setVisibility(View.GONE);
     }
 
+    /**
+     * Disable prev and next buttons
+     * @param view
+     */
     public void disableBtns(View view){
         prev.setVisibility(View.GONE);
         next.setVisibility(View.GONE);
-
     }
 
+    /**
+     * Enable prev and next buttons
+     * @param view
+     */
     public void enableBtns(View view){
         next.setVisibility(View.VISIBLE);
         prev.setVisibility(View.VISIBLE);

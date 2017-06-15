@@ -12,6 +12,7 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 
 /**
+ * Handles display, control and storage of months questions (SCAT3)
  * Created by mkaka on 2016-12-27.
  */
 
@@ -27,6 +28,11 @@ public class monthsFrag extends Fragment {
         return inflater.inflate(R.layout.cog_assessment_months, container, false);   /* Layout inflator takes the provided xml layout  */
     }
 
+    /**
+     * Create Months fragment
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         //initialize views/variables
@@ -52,6 +58,9 @@ public class monthsFrag extends Fragment {
         System.out.println("Setup complete");
     }
 
+    /**
+     * Validate user inputs and calculate score
+     */
     private void validateInput(){
         if(month1.getText().toString().toLowerCase().equals("december") &&
                 month2.getText().toString().toLowerCase().equals("november") &&
@@ -69,7 +78,11 @@ public class monthsFrag extends Fragment {
         }
     }
 
-    public boolean nextQuestion(View view) {
+    /**
+     * Handles loading of next question
+     * @return load successful flag - returns false if unable to load next question (i.e. on last question)
+     */
+    public boolean nextQuestion() {
         if(goNext){
             questionTxt.setVisibility(View.INVISIBLE);
             textInput.setVisibility(View.VISIBLE);
@@ -81,6 +94,9 @@ public class monthsFrag extends Fragment {
         return false;
     }
 
+    /**
+     * @return score
+     */
     public int getScore() {
         return score;
     }

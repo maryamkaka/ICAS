@@ -16,6 +16,7 @@ import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 
 /**
+ * Handles display, control and storage of Memory questions (SCAT3)
  * Created by mkaka on 2017-01-02.
  */
 
@@ -35,8 +36,6 @@ public class memoryFrag extends Fragment {
     private int currentList = new Random().nextInt(wordList.length);
     private int i=0;
     private int[] scores = new int[3];
-
-    //George's attempt
     private CountDownTimer countDownTimer;
     private boolean timerHasStarted = false;
     private final long startTime = 6*1000;
@@ -48,6 +47,11 @@ public class memoryFrag extends Fragment {
         return inflater.inflate(R.layout.cog_assessment_memory, container, false);   /* Layout inflator takes the provided xml layout  */
     }
 
+    /**
+     * Create Memory test fragment
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         question = (TextView) getView().findViewById(R.id.question);
@@ -69,6 +73,9 @@ public class memoryFrag extends Fragment {
         countDownTimer = new MyCountDownTimer(startTime, interval);
     }
 
+    /**
+     * Set display to show words 
+     */
     private void displayWords(){
         instruction.setVisibility(View.INVISIBLE);
         question.setVisibility(View.VISIBLE);
@@ -77,10 +84,12 @@ public class memoryFrag extends Fragment {
         parentActivity.disableBtns(getView());
         countDownTimer.start();
         timerHasStarted = true;
-
-
     }
 
+    /**
+     * Validate user input and calculate score
+     * @return score
+     */
     private int validateList(){
         int score = 0;
 
@@ -96,6 +105,10 @@ public class memoryFrag extends Fragment {
         return score;
     }
 
+    /**
+     * Handles loading of next question
+     * @return load successful flag - returns false if unable to load next question (i.e. on last question)
+     */
     public boolean nextQuestion(View view) {
         System.out.println("Next");
         if(displayWords){
@@ -122,6 +135,9 @@ public class memoryFrag extends Fragment {
         return true;
     }
 
+    /**
+     * Timer used to ensure numbers were displayed once every second
+     */
     public class MyCountDownTimer extends CountDownTimer{
         public MyCountDownTimer (long startTime, long interval){
             super(startTime,interval);
@@ -145,6 +161,8 @@ public class memoryFrag extends Fragment {
 
     }
 
-
+    /**
+     * @return score
+     */
     public int[] getScores(){ return scores; }
 }

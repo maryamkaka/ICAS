@@ -14,6 +14,7 @@ import org.w3c.dom.Text;
 import java.util.Arrays;
 
 /**
+ * Symptoms Evaluation Fragment
  * Created by mkaka on 2016-12-05.
  */
 
@@ -31,10 +32,13 @@ public class symptomEvalFrag extends Fragment{
         return inflater.inflate(R.layout.symptom_eval, container, false);   /* Layout inflator takes the provided xml layout  */
     }
 
+    /**
+     * Create Symptom evaluation fragment
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        System.out.println("Sympton Eval");
-
         db = new dbHelper(getContext());
         questionTxt = (TextView) getView().findViewById(R.id.question);
         answer = (SeekBar) getView().findViewById(R.id.answer);
@@ -67,6 +71,10 @@ public class symptomEvalFrag extends Fragment{
         });
     }
 
+    /**
+     * Handles loading of next question
+     * @return load successful flag - returns false if unable to load next question
+     */
     public boolean nextQuestion(View view){
         parentActivity.enableBtns(view);
         questions.incrementIndex();
@@ -80,6 +88,10 @@ public class symptomEvalFrag extends Fragment{
         return true;
     }
 
+    /**
+     * Handles loading of previous question
+     * @return load successful flag - returns false if unable to load previous question
+     */
     public boolean prevQuestion(View view){
         questions.decrementIndex();
 
@@ -93,11 +105,17 @@ public class symptomEvalFrag extends Fragment{
         return true;
     }
 
+    /**
+     * Update UI to reflect changes
+     */
     private void updateScreen(){
         questionTxt.setText(questions.getCurrentQuestion());
         answer.setProgress(0);
     }
 
+    /**
+     * @return symptom evaluation score
+     */
     public int[] getScores(){
         return scores;
     }

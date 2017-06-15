@@ -15,7 +15,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+/**
+ * Pre-posturography questions fragment
+ */
 public class Pre_posture_questions extends Fragment {
 
     BESSEvaluationQuestions questions;
@@ -41,9 +43,14 @@ public class Pre_posture_questions extends Fragment {
         return inflater.inflate(R.layout.fragment_pre_posture_questions, container, false);
     }
 
+    /**
+     * Initialize and create pre-posturography question fragment
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        //initalize database
+        //initialize database
         db = new dbHelper(getContext());
 
         questions = new BESSEvaluationQuestions();
@@ -51,8 +58,8 @@ public class Pre_posture_questions extends Fragment {
         questionTxt = (TextView) getView().findViewById(R.id.question);
         Q1  = (RadioGroup) view.findViewById(R.id.Q1);
         other = (EditText) view.findViewById(R.id.otherfield);
+
         other.setVisibility(View.GONE);
-        //Hide "Previous Button"
 
         //TODO: STORE OTHER ANSWERS
         Q1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
@@ -74,13 +81,16 @@ public class Pre_posture_questions extends Fragment {
             }
         });
 
-
         //First Posture Question
         Q1.setVisibility(view.VISIBLE);
         ParentActivity.disablePrev(view);
         updateScreen(view);
     }
 
+    /**
+     * Handles loading of next question
+     * @return load successful flag - returns false if unable to load next question (i.e. on last question)
+     */
     public boolean nextQuestion(View view){
         questions.incrementIndex();
 
@@ -98,6 +108,11 @@ public class Pre_posture_questions extends Fragment {
         return true;
     }
 
+
+    /**
+     * Handles loading of previous question
+     * @return load successful flag - returns false if unable to load prev question
+     */
     public boolean prevQuestion(View view){
         questions.decrementIndex();
         if(questions.getIndex() < 0){
@@ -107,13 +122,19 @@ public class Pre_posture_questions extends Fragment {
         return true;
     }
 
+    /**
+     * @return testID
+     */
     public long getTestID(){ return testID; }
 
+    /**
+     * Updates the UI to reflect changes
+     * @param view
+     */
     private void updateScreen(View view){
         //set questions
         i = questions.getIndex();
         questionTxt.setText(questions.getCurrentQuestion());
-
 
         ParentActivity.enableBtns(view);
 
@@ -132,13 +153,11 @@ public class Pre_posture_questions extends Fragment {
             (Q1.getChildAt(3)).setVisibility(view.VISIBLE);
             (Q1.getChildAt(4)).setVisibility(view.VISIBLE);
             (Q1.getChildAt(5)).setVisibility(view.VISIBLE);
-
         }
 
         //If first question, hide previous button
         if(i == 0){
             ParentActivity.disablePrev(view);
-
         }
 
         //Update Text

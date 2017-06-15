@@ -1,6 +1,8 @@
 package app.example.icas.integratedconcussionassessmentsystem;
 
 /**
+ * Symptom Evaluation Questions
+ * Handles question manipulation for symptom evaluation fragment
  * Created by mkaka on 2016-12-05.
  */
 
@@ -38,16 +40,25 @@ public class symptomEvaluationQuestions {
         this.max = questions.length;
     }
 
+    /**
+     * @return currently selected question
+     */
     public String getCurrentQuestion(){
         return questions[this.index];
     }
 
+    /**
+     * Increment index to select next question
+     */
     public void incrementIndex(){
         if(this.index < this.max) {
             this.index++;
         }
     }
 
+    /**
+     * Decrement index to select previous question
+     */
     public void decrementIndex(){
         if(this.index > 0){
             this.index --;

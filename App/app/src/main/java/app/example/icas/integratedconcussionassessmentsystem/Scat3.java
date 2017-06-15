@@ -19,8 +19,6 @@ import java.util.ArrayList;
 /**
  * SCAT 3 Test, Fragment Manager
  */
-
-
 public class Scat3 extends FragmentActivity{
     private symptomEvalFrag symptomEvalFrag = new symptomEvalFrag();
     private cogAssessmentFrag cogAssessmentFrag = new cogAssessmentFrag();
@@ -40,6 +38,10 @@ public class Scat3 extends FragmentActivity{
     //Array increased by 1 cell to accout for months backward frag
     private int[] augmented_testselection = {0,0,0,0,0};
 
+    /**
+     * Creation of SCAT3 Activity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -98,18 +100,23 @@ public class Scat3 extends FragmentActivity{
         }
     }
 
+    /**
+     * Handles loading of next question within each fragment
+     * Load next fragment when complete
+     * @param view
+     */
     public void onNextClick(View view){
 
         if(currentFrag == 0){
             updateStatus = symptomEvalFrag.nextQuestion(view);
         } else if (currentFrag == 1) {
-            updateStatus = cogAssessmentFrag.nextQuestion(view);
+            updateStatus = cogAssessmentFrag.nextQuestion();
         } else if (currentFrag== 2){
             updateStatus = memoryFrag.nextQuestion(view);
         } else if (currentFrag == 3) {
             updateStatus = digitsFrag.nextQuestion(view);
         } else if (currentFrag == 4) {
-            updateStatus = monthsFrag.nextQuestion(view);
+            updateStatus = monthsFrag.nextQuestion();
         }
 
         //set next test fragment
@@ -158,12 +165,21 @@ public class Scat3 extends FragmentActivity{
         }
     }
 
+    /**
+     * Handle clicking the native android back button
+     * Sends users back to SCAT3 landing page
+     */
     @Override
     public void onBackPressed() {
         Intent getTableView = new Intent(this, Scat3_landing.class);
         startActivity(getTableView);
     }
 
+    /**
+     * Handles loading of previous question in a fragment
+     * Loads previous fragment
+     * @param view
+     */
     public void onPrevClick(View view){
         if(currentFrag == 0){
             updateStatus = symptomEvalFrag.prevQuestion(view);
@@ -181,15 +197,27 @@ public class Scat3 extends FragmentActivity{
         }
     }
 
+    /**
+     * Disables next and previous buttons
+     * @param view
+     */
     public void disableBtns(View view){
         next.setVisibility(View.INVISIBLE);
         prev.setVisibility(View.INVISIBLE);
     }
 
+    /**
+     * Disables back button
+     * @param view
+     */
     public void disableBack(View view){
         prev.setVisibility(View.INVISIBLE);
     }
 
+    /**
+     * Enable next and previous buttons
+     * @param view
+     */
     public void enableBtns(View view){
         next.setVisibility(View.VISIBLE);
         prev.setVisibility(View.VISIBLE);

@@ -13,6 +13,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 /**
+ * Handles display, control and storage of digits questions
  * Created by mkaka on 2017-01-02.
  */
 
@@ -148,7 +149,7 @@ public class digitsFrag extends Fragment {
     }
 
     /**
-     * Timer object used to ensure numbers were displayed once every second
+     * Timer used to ensure numbers were displayed once every second
      */
     public class MyCountDownTimer extends CountDownTimer {
         public MyCountDownTimer (long startTime, long interval){

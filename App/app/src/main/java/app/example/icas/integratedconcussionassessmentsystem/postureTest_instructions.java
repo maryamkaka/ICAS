@@ -29,12 +29,14 @@ import java.util.Date;
 
 import static android.view.View.GONE;
 
+/**
+ * Posturography Fragment
+ */
 
 public class postureTest_instructions extends Fragment implements SensorEventListener   {
     //Button next,skip;
     private int[] word_instructions;
     private int[] image_instructions;
-    private boolean done = false;
     public Posture_test2 ParentActivity;
     private TextView Statusmsg;
     ImageView   instr_pic,instr_word;
@@ -53,6 +55,11 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         return inflater.inflate(R.layout.fragment_posture_test_instructions, container, false);   /* Layout inflator takes the provided xml layout  */
     }
 
+    /**
+     * Create postureography test fragment
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         //Initialize database
@@ -95,8 +102,16 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         dir.mkdirs();
     }
 
+    /**
+     * set testID
+     * @param id
+     */
     public void setTestID(long id){ testID = id; }
 
+    /**
+     * Handles loading of next test
+     * @return load successful flag - returns false if unable to load next question (i.e. on last question)
+     */
     public boolean nextQuestion() {
         System.out.println("Click_index is now" + click_index);
 
@@ -105,9 +120,12 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
             System.out.println("about to return");
             return false;
         }
+
+        //swtich between instruction and data collection screens
         if(click_index%2!=0){
             //Disable next and previous buttons during collection
-            //ParentActivity.disableBtns(getView());
+            ParentActivity.disableBtns(getView());
+
             //Hide instructions
             instr_pic.setVisibility(GONE);
             instr_word.setVisibility(GONE);
@@ -118,9 +136,9 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
 
             click_index++;
             collectData = Boolean.TRUE;
-        }else{
+        } else {
             //Enable next and previous buttons
-           // ParentActivity.enableBtns(getView());
+            ParentActivity.enableBtns(getView());
             //Show instructions for next stance
             instr_pic.setVisibility(View.VISIBLE);
             instr_word.setVisibility(View.VISIBLE);
@@ -134,19 +152,21 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
             collectData = Boolean.FALSE;
         }
 
-        //Update screen depending on if its a data collection phase (click_index is even) or instruction phase (click_index is odd)
-        //updateScreen();
-
-
-
         return true;
     }
 
+    /**
+     * Handles loading of prev test
+     * @return load successful flag - returns false if unable to load prev test
+     */
     public boolean prevQuestion(View view){
             return false;
 
     }
 
+    /**
+     * Countdown timer
+     */
     public class MyCountDownTimer extends CountDownTimer{
         public MyCountDownTimer (long startTime, long interval){
             super(startTime,interval);
@@ -163,40 +183,12 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         }
 
     }
-    private void updateScreen(){
-        if(click_index%2==0){
-            //Disable next and previous buttons during collection
-            ParentActivity.disableBtns(getView());
-            //Hide instructions
-            instr_pic.setVisibility(GONE);
-            instr_word.setVisibility(GONE);
 
-            Statusmsg.setVisibility(View.VISIBLE);
-            // avi.setVisibility(View.VISIBLE);
-            // startAnim();
-
-            click_index++;
-            collectData = Boolean.TRUE;
-        }else{
-            //Enable next and previous buttons
-            ParentActivity.enableBtns(getView());
-            //Show instructions for next stance
-            instr_pic.setVisibility(View.VISIBLE);
-            instr_word.setVisibility(View.VISIBLE);
-            // avi.setVisibility(GONE);
-
-            Statusmsg.setVisibility(View.GONE);
-            instr_pic.setImageResource(image_instructions[image_index]);
-            instr_word.setImageResource(word_instructions[image_index]);
-            image_index++;
-            click_index++;
-            collectData = Boolean.FALSE;
-        }
-    }
-
-
-
-
+    /**
+     * Handles snesor change events
+     * Saves accelerometer reading to database
+     * @param sensorEvent
+     */
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
 
@@ -212,12 +204,4 @@ public class postureTest_instructions extends Fragment implements SensorEventLis
         //Not in use
     }
 
-
-    //void startAnim(){
-    //  avi.show();
-    //}
-
-    // void stopAnim(){
-    // avi.hide();
-    //}
 }

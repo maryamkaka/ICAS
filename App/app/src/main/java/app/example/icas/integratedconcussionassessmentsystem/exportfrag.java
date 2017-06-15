@@ -20,6 +20,9 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+/**
+ * Handles display, control and storage of export data fragment
+ */
 public class exportfrag extends Fragment {
     private ButtonRectangle export;
     private TextView pathtext;
@@ -34,6 +37,13 @@ public class exportfrag extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    /**
+     * Create export fragment view
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
